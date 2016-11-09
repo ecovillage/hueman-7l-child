@@ -1,8 +1,159 @@
 /*
-Theme Name: Hueman 7L Child
+Theme Name: 7 Linden Hueman
 Version: 1.0
-Description: A child theme of Hueman
+Description: A child theme of Hueman for siebenlinden.org
 Template: hueman
 Author: Felix Wolfsteller
 */
+
+@import url("../hueman/style.css");
 /* Your awesome customization starts here */
+
+/* Float language switcher elements to the right */
+.lang-item {
+  float: right;
+  right: 60px;
+}
+
+/* Black letters in top menu */
+#nav-topbar .nav li a {
+  color: black;
+}
+
+/* Line above title */
+.page-title {
+  /*border-top: 1px solid #eee;*/
+  background-color: #f1f1c3;
+  padding-bottom: 18px;
+  border: 0;
+}
+
+/* Greyish footer */
+#footer-bottom.container {
+  background-color: rgb(245,245,245);
+}
+/* Darker script on greyish footer */
+#copyright p {
+  color: rgb(102,102,102);
+}
+
+/* Background in header on home front page */
+.home #header .pad {
+  background: url("http://draft.siebenlinden.org/wp-content/uploads/2016/06/header_bg.jpg");
+}
+
+/* Right sidebar orangish */
+.s2 {
+  background-color: #fceacc;
+}
+
+/* Highlight current position in menu in darker green */
+#nav-topbar li.current_page_item, li.current-page-ancestor, li.current-page-parent, li.current-page-item {
+  background-color: #b5bd0d;
+}
+
+/* Less white space in header (no submenu) */
+#header .pad {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Green content top header bar on homepage */
+.home .page-title {
+  background-color: #c9d30e;
+}
+
+/* Thin line below top menu */
+#nav-topbar.nav-container {
+  border: 1px solid #9b9c96;
+  border-width: 0px 0px 1px 0px;
+}
+
+/* Children menu indentation */
+.children {
+  padding-left: 12px;
+}
+
+/* Darken link color a bit */
+.content a {
+  font-weight: 400;
+  color: #7B4;
+}
+
+/* Left sidebar smaller (280px instead of 340px) */
+.col-2cl .main-inner { padding-right: -280px; }
+.col-2cl .s1 { margin-right: -280px; }
+
+.col-2cr .main-inner { padding-left: 280px; }
+.col-2cr .s1 { margin-left: -280px; }
+
+.col-3cm .main-inner { padding-left: 280px;}
+.col-3cm .s1 { margin-left: -280px; }
+
+.s1 { width: 280px; }
+
+.search-expand { width: 280px; }
+
+
+@media only screen and (min-width: 961px) and (max-width: 1200px) {
+  /* 3 column, content right */
+  .col-3cl .main-inner { padding-right: 330px; }
+  .col-3cl .s1 { margin-right: -330px; }
+  .col-3cl.s2-expand .s2 { right: 280px; }
+
+  /* 3 column, content left */
+  .col-3cr .main-inner { padding-left: 330px; }
+  .col-3cr .s1 { margin-left: -330px; }
+  .col-3cr.s2-expand .s2 { left: 280px; }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 960px) {
+  /* s1 expand/collapse */
+  .s1-expand .s1 { width: 280px; }
+  .s1-expand .s1 .sidebar-content,
+  .s1-expand .s1 .post-nav { min-width: 280px; }
+  /* ipad, iphone fix */
+  .safari.s1-expand .s1 { min-width: 280px; max-width: 280px; }
+}
+
+.col-2cl .main-inner { background-size: 280px; }
+.col-2cr .main-inner { background-size: 280px; }
+.col-3cm .main-inner { background-size: 280px; }
+
+/*
+.col-3cm .s1 {
+ margin-left: -280px;
+}
+
+.col-3cm .main-inner {
+  background-size: 280px auto;
+}
+
+.main-inner.group {
+  padding-left: 280px;
+}
+*/
+
+/*
+li.current_page_item {
+  background-color: #b5bd0d;
+}
+
+li.current-page-ancestor {
+  background-color: #b5bd0d;
+}
+
+li.current-page-parent {
+  background-color: #b5bd0d;
+}
+
+li.current-page-item {
+  background-color: #b5bd0d;
+}
+*/
+
+/* Show slideshow */
+.bx-wrapper {
+  width: 99%;
+}
+
