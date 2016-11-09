@@ -4,4 +4,4 @@ A [hueman child theme](http://presscustomizr.com/hueman/) for the wordpress inst
 
 Authored by Felix Wolfsteller.
 
-Works together with custom plugin.
+Works together with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
