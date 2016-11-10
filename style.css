@@ -157,3 +157,20 @@ li.current-page-item {
   width: 99%;
 }
 
+/* ev7l Event List Widget heading */
+h2.event-list-month-name {
+  color: #f29400;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+}
+
+ul.ev7l_event_list {
+  padding-bottom: 1em;
+}
+
+.ev7l_event_list > li {
+  color: black;
+}
+.ev7l_event_list > li > a{
+  color: black;
+}
