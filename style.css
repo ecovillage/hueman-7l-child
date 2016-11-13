@@ -174,3 +174,28 @@ ul.ev7l_event_list {
 .ev7l_event_list > li > a{
   color: black;
 }
+
+.event-dates {
+  font-weight: 400;
+  color: #8ed366;
+}
+
+article.ev7l-event h2 {
+  color: #8ed366;
+}
+
+.past-events {
+  background-color: #ececed;
+  margin-left:  -30px;
+  margin-right: -30px;
+  padding-right: 30px;
+  padding-left:  30px;
+}
+.past-events h2 {
+  color: #f29400;
+}
+.upcoming-events {
+}
+.upcoming-events h2 {
+  color: #7B4;
+}
