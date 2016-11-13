@@ -19,7 +19,7 @@
 					<div class="<?php echo implode( ' ', apply_filters( 'hu_single_entry_class', array('entry','themeform') ) ) ?>">
             <div class="entry-inner">
 
-<?php /* Leaving vanilla hueman */ ?>
+<?php /* Leaving vanilla hueman v3.2.9 post.php */ ?>
 					<?php if ( has_post_thumbnail() ): ?>
 						<?php hu_the_post_thumbnail('thumb-medium'); ?>
 					<?php elseif ( hu_is_checked('placeholder') ): ?>
@@ -28,13 +28,38 @@
 
 <!-- get_query_var -->
               <?php the_content(); ?>
-                  Seminare: in future (asc), dann in vergangenheit (desc)
+                  Zukünftige Seminare
                   <?php
                     /* Non-reciprocal many-to-many models are possible with this, too. */
-                    $events = new WP_Query( array(
+// bidirectional
+//
+                    /*$events = new WP_Query( array(
                       'post_type' => 'event-7l',
                       'post__in' => get_post_meta( $post, 'event_ids', true ),
+                      'meta_query' => array(
+                        array(
+                          'key' => 'fromdate',
+                          'value' => strtotime('today'),
+                          'compare' => '>='
+                        )
+                      ),
+                      'order' => 'ASC',
+                      'orderby' => 'meta_value',
+                      'nopaging' => true) );*/
+                    // put in event_category#queries
+                    $events = new WP_Query( array(
+                      'post_type' => 'event-7l',
+                      'meta_query' => array(
+                        array(
+                          'key' => 'event_category_id',
+                          'value' => $post->ID,
+                          'compare' => '='
+                        )
+                      ),
+                      'order' => 'ASC',
+                      //'orderby' => 'meta_value',
                       'nopaging' => true) );
+                    //$events = upcoming_events(); # pass category...
                     if ( $events->have_posts() ) {
                       while ( $events->have_posts() ) {
                         $events->the_post();
@@ -46,9 +71,37 @@
                     /* Restore original Post data */
                     wp_reset_postdata();
                   ?>
-                  Seminare: in vergangenheit (desc)
 
-<?php /* Re-entering vanilla hueman */ ?>
+                  <h2>Seminare: in Vergangenheit</h2>
+                  <?php
+                    /* Non-reciprocal many-to-many models are possible with this, too (inverting the query via meta). */
+                    $events = new WP_Query( array(
+                      'post_type' => 'event-7l',
+                      'post__in' => get_post_meta( $post, 'event_ids', true ),
+                      'meta_query' => array(
+                        array(
+                          'key' => 'fromdate',
+                          'value' => strtotime('today'),
+                          'compare' => '<='
+                        )
+                      ),
+                      'order' => 'DESC',
+                      'orderby' => 'meta_value',
+                      'nopaging' => true) );
+                    /* have months subsections */
+                    if ( $events->have_posts() ) {
+                      while ( $events->have_posts() ) {
+                        $events->the_post();
+                        ?>
+                          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                          von <?php echo date('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?> bis <?php echo date('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                            <?php the_excerpt(); ?></li>
+                  <?php }}
+                    /* Restore original Post data */
+                    wp_reset_postdata();
+                  ?>
+
+<?php /* Leaving vanilla hueman v3.2.9 post.php */ ?>
 
 							<?php the_content(); ?>
 							<nav class="pagination group">
