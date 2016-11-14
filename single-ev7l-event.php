@@ -26,8 +26,8 @@
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
 				      <?php hu_get_template_part('parts/page-image'); ?>
               <div class="event-dates">
-                Von <?php echo date('d.M. Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                bis <?php echo date('d.M. Y', get_post_meta($post->ID, 'todate', true)); ?>
+                Von <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                bis <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true)); ?>
               </div>
               <br>
 
