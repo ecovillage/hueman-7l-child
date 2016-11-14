@@ -65,7 +65,8 @@
                         $events->the_post();
                         ?>
                           <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                          von <?php echo date('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?> bis <?php echo date('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                          von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                          bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
                             <?php the_excerpt(); ?></li>
                   <?php }}
                     /* Restore original Post data */
@@ -94,7 +95,8 @@
                         $events->the_post();
                         ?>
                           <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                          von <?php echo date('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?> bis <?php echo date('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                          von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                          bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
                             <?php the_excerpt(); ?></li>
                   <?php }}
                     /* Restore original Post data */
