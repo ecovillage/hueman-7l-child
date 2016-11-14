@@ -184,18 +184,40 @@ article.ev7l-event h2 {
   color: #8ed366;
 }
 
+.upcoming-events {
+  padding-bottom: 2em;
+}
+.upcoming-events h2 {
+  color: #7B4;
+  font-size: 16pt;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
 .past-events {
   background-color: #ececed;
   margin-left:  -30px;
   margin-right: -30px;
   padding-right: 30px;
   padding-left:  30px;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 .past-events h2 {
   color: #f29400;
+  font-size: 16pt;
 }
-.upcoming-events {
+.past-events h2.month-section {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
-.upcoming-events h2 {
-  color: #7B4;
+
+.datecol {
+  font-weight: 400;
+  color: black;
+  margin-right: 2em;
+  padding-right: 2em;
+}
+.eventcol a{
+  font-weight: 400;
+  color: black;
 }

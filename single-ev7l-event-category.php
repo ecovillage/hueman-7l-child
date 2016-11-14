@@ -58,16 +58,26 @@
                 'nopaging' => true) );
               if ( $events->have_posts() ) {
                 echo "<table>";
+
+                // Loop vars to find month changes.
+                $monthyear  = -1;
+
                 while ( $events->have_posts() ) {
                   $events->the_post();
-                  ?>
+                  if ($monthyear != date('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                    $monthyear = date('F Y', get_post_meta($post->ID, 'fromdate', true));
+                    echo '</table><h2>'.$monthyear.'</h2><table>';
+                  }
+                    ?>
                     <tr>
-                      <td>
-                        <?php echo date('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                        - <?php echo date('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                      <td class="datecol">
+                        <?php echo date('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                        - <?php echo date('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
                       </td>
-                      <td>
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?><?php the_excerpt(); ?></a>
+                      <td class="eventcol">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?>
+                          <?php /* the_excerpt(); */ ?>
+                        </a>
                       </td>
                     </tr>
               <?php }
@@ -100,20 +110,28 @@
                 'order' => 'DESC',
                 'orderby' => 'meta_value',
                 'nopaging' => true) );
-              /* have months subsections */
+
               if ( $events->have_posts() ) {
                 echo '<table>';
+
+                // Loop vars to find month changes.
+                $monthyear  = -1;
+
                 while ( $events->have_posts() ) {
                   $events->the_post();
+                  if ($monthyear != date('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                    $monthyear = date('F Y', get_post_meta($post->ID, 'fromdate', true));
+                    echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
+                  }
                   ?>
                     <tr>
-                      <td>
-                        <?php echo date('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                        - <?php echo date('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                      <td class="datecol">
+                        <?php echo date('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                        - <?php echo date('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
                       </td>
-                      <td>
+                      <td class="eventcol">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php the_excerpt(); ?></li>
+                        <?php /* the_excerpt(); */ ?>
                       </td>
                     </tr>
             <?php }
