@@ -53,7 +53,8 @@
                   )
                 ),
                 'order' => 'ASC',
-                //'orderby' => 'meta_value',
+                'meta_key'   => 'fromdate',
+                'orderby' => 'meta_value',
                 'nopaging' => true) );
               if ( $events->have_posts() ) {
                 echo "<table>";
@@ -78,12 +79,11 @@
           </div><!-- .upcoming-events -->
 
           <div class="past-events">
-            <h2>Seminare: in Vergangenheit</h2>
+            <h2>Seminare in der Vergangenheit</h2>
             <?php
-              /* Non-reciprocal many-to-many models are possible with this, too (inverting the query via meta). */
               $events = new WP_Query( array(
-                'post_type' => 'ev7l-event',
-                //'post__in' => get_post_meta( $post, 'event_ids', true ),
+                'post_type'  => 'ev7l-event',
+                'meta_key'   => 'fromdate',
                 'meta_query' => array(
                   'relation' => 'AND',
                   array(
