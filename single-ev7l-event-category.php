@@ -35,27 +35,8 @@
 
           <div class="upcoming-events">
             <?php
-              // TODO put in event_category#queries
-              //$events = upcoming_events(); # pass category...
-              $events = new WP_Query( array(
-                'post_type' => 'ev7l-event',
-                'meta_query' => array(
-                  'relation' => 'AND',
-                  array(
-                    'key' => 'event_category_id',
-                    'value' => $post->ID,
-                    'compare' => '='
-                  ),
-                  array(
-                    'key' => 'fromdate',
-                    'value' => strtotime('today'),
-                    'compare' => '>='
-                  )
-                ),
-                'order' => 'ASC',
-                'meta_key'   => 'fromdate',
-                'orderby' => 'meta_value',
-                'nopaging' => true) );
+              $events = upcoming_events_in_category($post->ID);
+
               if ( $events->have_posts() ) {
                 echo "<table>";
 
@@ -91,25 +72,7 @@
           <div class="past-events">
             <h2>Seminare in der Vergangenheit</h2>
             <?php
-              $events = new WP_Query( array(
-                'post_type'  => 'ev7l-event',
-                'meta_key'   => 'fromdate',
-                'meta_query' => array(
-                  'relation' => 'AND',
-                  array(
-                    'key' => 'event_category_id',
-                    'value' => $post->ID,
-                    'compare' => '='
-                  ),
-                  array(
-                    'key' => 'fromdate',
-                    'value' => strtotime('today'),
-                    'compare' => '<='
-                  )
-                ),
-                'order' => 'DESC',
-                'orderby' => 'meta_value',
-                'nopaging' => true) );
+              $events = past_events_in_category($post->ID);
 
               if ( $events->have_posts() ) {
                 echo '<table>';
