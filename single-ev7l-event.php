@@ -24,7 +24,8 @@
             <div class="entry-inner">
 
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
-				      <?php hu_get_template_part('parts/page-image'); ?>
+              <?php hu_get_template_part('parts/page-image'); ?>
+              <?php $event = $post; ?>
               <div class="event-dates">
                 Von <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true)); ?>
                 bis <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true)); ?>
@@ -49,16 +50,27 @@
               ?><br/><?php
               } ?>
 
-                   Mehr metadata (vor allem: Zeiten)
-                   <?php wp_reset_postdata(); ?>
-
-<?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
-                <h2>Referenten</h2>
-                TBD
-<?php /* Re-entering vanilla hueman */ ?>
+                <?php wp_reset_postdata(); ?>
 
 							<?php the_content(); ?>
-                <h2>Referenten</h2>
+
+                <h2>Referent*</h2>
+                <?php
+                $referees = referees_by_event($post->ID);
+                if ( $referees-> have_posts() ) {
+                  while ( $referees->have_posts() ) {
+                    $referees->the_post();
+                    ?>
+                    <a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <div class="referee-qualification">
+                      <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
+                    </div>
+              <?php
+                  }
+                }
+                wp_reset_postdata();
+              ?>
+              <br/>
 
 <?php /* Re-entering vanilla hueman */ ?>
 							<nav class="pagination group">
