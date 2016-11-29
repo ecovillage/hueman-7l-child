@@ -38,15 +38,18 @@
 
 <?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
 
-            <?php echo $eventyear; ?>
-            <?php echo $eventmonth; ?>
-            <?php if ($eventyear && !$eventmonth) {
+            <?php 
+              echo $eventyear;
+              echo $eventmonth;
+            if ($eventyear && !$eventmonth) {
               $events = events_in_year($eventyear);
               echo 'Year only';
             } elseif ($eventmonth && !$eventyear) {
+              $events = events_in_year_month(date('Y'), $eventmonth);
               echo 'Month only';
               // Should probably default to current year.  Can we default that in the get_query_var / eventyear assignment?
             } elseif ($eventmonth && $eventyear) {
+              $events = events_in_year_month($eventyear, $eventmonth);
               echo 'Year and month';
             } else {
               echo 'Default (no year, no month)';
@@ -67,9 +70,11 @@
                 <?php /* this is a bug, isnt it? undefinde function: hu_print_placeholder_thumb( 'thumb-small' ); */ ?>
               <?php endif; /* display like in alx-tabs */ ?></div>
                    <div class="tab-item-inner group">
-                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                      von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                      bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
+                      <div class="event-dates-small">
+                        von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                        bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                      </div>
                       <?php the_excerpt(); ?>
                   </div>
                  </li>

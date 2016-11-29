@@ -221,3 +221,7 @@ article.ev7l-event h2 {
   font-weight: 400;
   color: black;
 }
+
+.event-dates-small {
+  font-size: 12pt;
+}
