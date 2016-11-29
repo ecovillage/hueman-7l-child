@@ -18,7 +18,7 @@
     <?php } elseif ($eventmonth && !$eventyear) { ?>
       <h2><?php echo $eventmoth; ?> - Ganzer Monat aktuelles Jahr</h2>
     <?php } elseif ($eventmonth && $eventyear) { ?>
-      <h2><?php echo $eventyear.$eventmoth; ?> - Ganzer Monat im Jahr</h2>
+      <h2><?php echo $eventyear.$eventmonth; ?> - Ganzer Monat im Jahr</h2>
     <?php } else { ?>
       <h2>- <?php the_title(); ?></h2>
     <?php } ?>
