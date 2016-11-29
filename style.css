@@ -9,6 +9,11 @@ Author: Felix Wolfsteller
 @import url("../hueman/style.css");
 /* Your awesome customization starts here */
 
+/* Darken font color. */
+body {
+  color: #444;
+}
+
 /* Float language switcher elements to the right */
 .lang-item {
   float: right;
