@@ -37,13 +37,6 @@
           <?php the_content(); ?>
 
 <?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
-          <?php
-            // an associative array containing the query var and its value
-            //$params = array('eventmonth' => '8', 'eventyear' => '2016');
-            $params = array('eventyear' => date('Y'));
-          ?>
-          <!-- pass in the $params array and the URL -->
-          <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> Aktuelles Jahr (<?php echo date('Y'); ?>)</a>
 
             <?php echo $eventyear; ?>
             <?php echo $eventmonth; ?>
@@ -90,6 +83,18 @@
   <?php wp_reset_postdata(); ?>
 
 will put test links here
+          <?php
+            // an associative array containing the query var and its value
+            $params = array('eventyear' => date('Y'));
+          ?>
+          <!-- pass in the $params array and the URL -->
+          <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> Aktuelles Jahr (<?php echo date('Y'); ?>)</a>
+
+          <?php
+            $params = array('eventmonth' => '11', 'eventyear' => '2016');
+          ?>
+          <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> 2016/8</a>
+
 
 <?php /* Re-entering hueman vanilla 3.2.9 page */ ?>
 
