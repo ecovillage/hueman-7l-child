@@ -83,8 +83,10 @@
 
             <?php
                 }
-            echo '</ul>';
-            } ?>
+              echo '</ul>';
+              } else { ?>
+                Keine Veranstaltungen im gewählten Zeitraum
+            <?php } ?>
   <?php wp_reset_postdata(); ?>
 
 will put test links here
