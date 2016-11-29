@@ -137,11 +137,13 @@
 				<p class="bio-desc"><?php the_author_meta('description'); ?></p>
 				<div class="clear"></div>
 			</div>
-		<?php endif; ?>
+    <?php endif; ?>
 
+<?php /* vanilla hueman v3.2.9 post.php
 		<?php if ( 'content' == hu_get_option( 'post-nav' ) ) { get_template_part('parts/post-nav'); } ?>
 
 		<?php if ( '1' != hu_get_option( 'related-posts' ) ) { get_template_part('parts/related-posts'); } ?>
+ */ ?>
 
 		<?php if ( hu_is_checked('post-comments') ) { comments_template('/comments.php',true); } ?>
 

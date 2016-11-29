@@ -124,6 +124,7 @@
 
 <?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
 
+<?php /* vanilla hueman single.php v3.2.9:
 				<div class="post-inner group">
 
           <?php hu_get_template_part('parts/single-heading'); ?>
@@ -152,10 +153,15 @@
 					</div><!--/.entry-->
 
 				</div><!--/.post-inner-->
+ */ ?>
+
 			</article><!--/.post-->
 		<?php endwhile; ?>
 
-		<div class="clear"></div>
+    <div class="clear"></div>
+
+
+<?php /* vanilla hueman single.php v3.2.9:
 
 		<?php the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>'); ?>
 
@@ -173,6 +179,7 @@
 		<?php if ( '1' != hu_get_option( 'related-posts' ) ) { get_template_part('parts/related-posts'); } ?>
 
 		<?php if ( hu_is_checked('post-comments') ) { comments_template('/comments.php',true); } ?>
+*/ ?>
 
 	</div><!--/.pad-->
 
