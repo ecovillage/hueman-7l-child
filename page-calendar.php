@@ -2,14 +2,26 @@
 
 <section class="content">
 
+<?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
+  <?php $eventyear  = get_query_var('eventyear', date('Y')); ?>
+  <?php $eventmonth = get_query_var('eventmonth'); ?>
+<?php /* Re-entering hueman vanilla 3.2.9 page */ ?>
+
 <?php /* hueman vanilla 3.2.9 page.php 
 	<?php hu_get_template_part('parts/page-title'); ?>
 */ ?>
 
 <?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
   <div class="page-title pad group">
-   <!-- ganzes jahr .... -->
-    <h2>- <?php the_title(); ?></h2>
+    <?php if ($eventyear && !$eventmonth) { ?>
+      <h2><?php echo $eventyear; ?> - Ganzes Jahr</h2>
+    <?php } elseif ($eventmonth && !$eventyear) { ?>
+      <h2><?php echo $eventmoth; ?> - Ganzer Monat aktuelles Jahr</h2>
+    <?php } elseif ($eventmonth && $eventyear) { ?>
+      <h2><?php echo $eventyear.$eventmoth; ?> - Ganzer Monat im Jahr</h2>
+    <?php } else { ?>
+      <h2>- <?php the_title(); ?></h2>
+    <?php } ?>
   </div><!--/.page-title-->
 <?php /* Re-entering hueman vanilla 3.2.9 page */ ?>
 
@@ -33,8 +45,6 @@
           <!-- pass in the $params array and the URL -->
           <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> Aktuelles Jahr (<?php echo date('Y'); ?>)</a>
 
-            <?php $eventyear  = get_query_var('eventyear', date('Y')); ?>
-            <?php $eventmonth = get_query_var('eventmonth'); ?>
             <?php echo $eventyear; ?>
             <?php echo $eventmonth; ?>
             <?php if ($eventyear && !$eventmonth) {
