@@ -54,10 +54,11 @@
 
 							<?php the_content(); ?>
 
-                <h2>Referent*</h2>
                 <?php
                 $referees = referees_by_event($post->ID);
-                if ( $referees-> have_posts() ) {
+                if ( $referees-> have_posts() ) {?>
+                  <h2>Referent*</h2>
+							    <?php
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
                     ?>
