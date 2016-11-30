@@ -16,6 +16,14 @@ View of a single event.
 
 View of a single event category (listing events).
 
+### single-ev7l-referee.php
+
+View of a single referee (listing events).
+
+### page-calendar.php
+
+Calendar page, if needed.
+
 ### style.css
 
 Main css overrides and new definitions.
