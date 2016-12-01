@@ -22,7 +22,7 @@ View of a single referee (listing events).
 
 ### page-calendar.php
 
-Calendar page, if needed.
+Calendar page, if needed.  In order for it to work, you'll need a page called ... 'calendar'.
 
 ### style.css
 
