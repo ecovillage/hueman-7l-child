@@ -37,6 +37,7 @@ body {
 #footer-bottom.container {
   background-color: rgb(245,245,245);
 }
+
 /* Darker script on greyish footer */
 #copyright p {
   color: rgb(102,102,102);
