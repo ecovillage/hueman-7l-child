@@ -33,33 +33,33 @@
           <div class="clear"></div>
           <div class="hr"></div>
 
-            <?php
-              $events = upcoming_events_in_category($post->ID);
+          <?php
+            $events = upcoming_events_in_category($post->ID);
 
-              if ( $events->have_posts() ) {
-                ?>
-                <div class="upcoming-events">
-                  <table>
+            if ( $events->have_posts() ) {
+              ?>
+              <div class="upcoming-events">
+                <table>
 
-                <?php
-                // Loop vars to find month changes.
-                $monthyear  = -1;
+              <?php
+              // Loop vars to find month changes.
+              $monthyear  = -1;
 
-                while ( $events->have_posts() ) {
-                  $events->the_post();
-                  if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                    $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                    echo '</table><h2>'.$monthyear.'</h2><table>';
-                  }
-                  get_template_part('parts/event_row');
-               }
-                echo "</table>";
-                echo "</div><!-- .upcoming-events -->";
-              }
-              // else: No upcoming events
-                    /* Restore original Post data */
-                    wp_reset_postdata();
-                  ?>
+              while ( $events->have_posts() ) {
+                $events->the_post();
+                if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                  $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                  echo '</table><h2>'.$monthyear.'</h2><table>';
+                }
+                get_template_part('parts/event_row');
+             }
+              echo "</table>";
+              echo "</div><!-- .upcoming-events -->";
+            }
+            // else: No upcoming events
+            /* Restore original Post data */
+            wp_reset_postdata();
+          ?>
 
             <?php
               $events = past_events_in_category($post->ID);
