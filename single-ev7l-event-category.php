@@ -33,13 +33,15 @@
           <div class="clear"></div>
           <div class="hr"></div>
 
-          <div class="upcoming-events">
             <?php
               $events = upcoming_events_in_category($post->ID);
 
               if ( $events->have_posts() ) {
-                echo "<table>";
+                ?>
+                <div class="upcoming-events">
+                  <table>
 
+                <?php
                 // Loop vars to find month changes.
                 $monthyear  = -1;
 
@@ -80,18 +82,21 @@
                     </tr>
               <?php }
                 echo "</table>";
+                echo "</div><!-- .upcoming-events -->";
               }
+              // else: No upcoming events
                     /* Restore original Post data */
                     wp_reset_postdata();
                   ?>
-          </div><!-- .upcoming-events -->
 
-          <div class="past-events">
-            <h2>Seminare in der Vergangenheit</h2>
             <?php
               $events = past_events_in_category($post->ID);
 
               if ( $events->have_posts() ) {
+?>
+          <div class="past-events">
+            <h2>Seminare in der Vergangenheit</h2>
+            <?php
                 echo '<table>';
 
                 // Loop vars to find month changes.
@@ -114,13 +119,16 @@
                         <?php /* the_excerpt(); */ ?>
                       </td>
                     </tr>
-            <?php }
-                echo '</table>';
+                 <?php }
+                 ?>
+                </table>
+                </div><!-- .past-events -->
+              <?php
               }
+              // else: No upcoming events
               /* Restore original Post data */
               wp_reset_postdata();
             ?>
-          </div><!-- .past-events -->
 
 <?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
 
