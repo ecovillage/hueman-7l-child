@@ -38,24 +38,26 @@
 
 <?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
 
-            <?php 
+            <?php
+              /*
               echo $eventyear;
               echo $eventmonth;
+              */
             if ($eventyear && !$eventmonth) {
               $events = events_in_year($eventyear);
-              echo 'Year only';
+              //echo 'Year only';
             } elseif ($eventmonth && !$eventyear) {
               $events = events_in_year_month(date('Y'), $eventmonth);
-              echo 'Month only';
+              //echo 'Month only';
               // Should probably default to current year.  Can we default that in the get_query_var / eventyear assignment?
             } elseif ($eventmonth && $eventyear) {
               $events = events_in_year_month($eventyear, $eventmonth);
-              echo 'Year and month';
+              //echo 'Year and month';
             } else {
-              echo 'Default (no year, no month)';
+              //echo 'Default (no year, no month)';
             }
             ?>
-            iterate over events.
+
             <?php
               if ($events->have_posts() ) {
                 ?>
@@ -87,18 +89,21 @@
             <?php } ?>
   <?php wp_reset_postdata(); ?>
 
-will put test links here
           <?php
+            // Test links
             // an associative array containing the query var and its value
             $params = array('eventyear' => date('Y'));
           ?>
+          <?php /*
           <!-- pass in the $params array and the URL -->
           <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> Aktuelles Jahr (<?php echo date('Y'); ?>)</a>
-
+          */ ?>
           <?php
             $params = array('eventmonth' => '11', 'eventyear' => '2016');
           ?>
+          <?php /*
           <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> 2016/8</a>
+          */ ?>
 
 
 <?php /* Re-entering hueman vanilla 3.2.9 page */ ?>
