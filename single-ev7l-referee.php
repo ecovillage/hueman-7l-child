@@ -150,7 +150,9 @@
 
 		<?php if ( 'content' == hu_get_option( 'post-nav' ) ) { get_template_part('parts/post-nav'); } ?>
 
-		<?php if ( '1' != hu_get_option( 'related-posts' ) ) { get_template_part('parts/related-posts'); } ?>
+<?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
+    <?php /*if ( '1' != hu_get_option( 'related-posts' ) ) { get_template_part('parts/related-posts'); }*/ ?>
+<?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
 
 		<?php if ( hu_is_checked('post-comments') ) { comments_template('/comments.php',true); } ?>
 
