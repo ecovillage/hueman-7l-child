@@ -81,13 +81,13 @@
                       'post__in' => get_post_meta( $post, 'event_ids', true ),
                       'meta_query' => array(
                         array(
-                          'key' => 'fromdate',
-                          'value' => strtotime('today'),
+                          'key'     => 'fromdate',
+                          'value'   => strtotime('today'),
                           'compare' => '<='
                         )
                       ),
-                      'order' => 'DESC',
-                      'orderby' => 'meta_value',
+                      'order'    => 'DESC',
+                      'orderby'  => 'meta_value',
                       'nopaging' => true) );
                     /* have months subsections */
                     if ( $events->have_posts() ) {
@@ -98,7 +98,9 @@
                           von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
                           bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
                             <?php the_excerpt(); ?></li>
-                  <?php }}
+                    <?php
+                      }
+                    }
                     /* Restore original Post data */
                     wp_reset_postdata();
                   ?>
