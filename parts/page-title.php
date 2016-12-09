@@ -36,8 +36,9 @@
 	<?php else: ?>
     <?php if ( ! is_home() && ! hu_is_checked('blog-heading-enabled') ) : ?>
 		  <h2><?php the_title(); ?></h2>
-    <?php endif; ?>
-
+    <?php elseif ( is_post_type_archive() ) : ?>
+      <h2><?php post_type_archive_title(); ?></h2>
+	  <?php endif; ?>
 	<?php endif; ?>
 
 </div><!--/.page-title-->
