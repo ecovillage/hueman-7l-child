@@ -12,6 +12,10 @@ Works together with custom wordpress plugin [ev7l-events](https://github.com/eco
 
 View of a single event.
 
+### archive-ev7l-event.php
+
+View list of events (this could become the calendar).
+
 ### single-ev7l-event-category.php
 
 View of a single event category (listing events).
@@ -27,6 +31,10 @@ Calendar page, if needed.  In order for it to work, you'll need a page called ..
 ### style.css
 
 Main css overrides and new definitions.
+
+### functions.php
+
+Enough emptiness for everybody.
 
 
 ## Hueman settings at siebenlinden.org
