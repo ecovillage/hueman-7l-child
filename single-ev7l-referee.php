@@ -49,28 +49,17 @@
 
                 while ( $events->have_posts() ) {
                   $events->the_post();
-                  $base_referee_id = the_post()->ID;
+                  $base_referee_id = $post->ID;
                   if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
                     $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
                     echo '</table><h2>'.$monthyear.'</h2><table>';
                   }
-                    ?>
-                    <tr>
-                      <td class="datecol">
-                        <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                        - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
-                      </td>
-                      <td class="eventcol">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?>
-                          <?php /* the_excerpt(); */ ?>
-                        </a>
-                      </td>
-                    </tr>
-              <?php }
+                  get_template_part('parts/event_row_without_referee');
+                }
                 echo "</table>";
               }
               else {
-                echo "Derzeit keine Veranstalungen in naher Zukunft geplant."
+                echo "Derzeit keine Veranstalungen in naher Zukunft geplant.";
               }
                 /* Restore original Post data */
                 wp_reset_postdata();
