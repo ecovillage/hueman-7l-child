@@ -73,7 +73,6 @@
                     wp_reset_postdata();
                   ?>
 
-                  <h2>Seminare: in Vergangenheit</h2>
                   <?php
                     /* Non-reciprocal many-to-many models are possible with this, too (inverting the query via meta). */
                     $events = new WP_Query( array(
@@ -91,6 +90,7 @@
                       'nopaging' => true) );
                     /* have months subsections */
                     if ( $events->have_posts() ) {
+                      echo '<h2>Seminare: in Vergangenheit</h2>';
                       while ( $events->have_posts() ) {
                         $events->the_post();
                         ?>
