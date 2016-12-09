@@ -33,54 +33,55 @@
           <div class="clear"></div>
           <div class="hr"></div>
 
+          <div class="upcoming-events">
+
           <?php
             $events = upcoming_events_in_category($post->ID);
 
             if ( $events->have_posts() ) {
               ?>
-              <div class="upcoming-events">
-                <table>
-
-              <?php
-              // Loop vars to find month changes.
-              $monthyear  = -1;
-
-              while ( $events->have_posts() ) {
-                $events->the_post();
-                if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                  $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                  echo '</table><h2>'.$monthyear.'</h2><table>';
-                }
-                get_template_part('parts/event_row');
-             }
-              echo "</table>";
-              echo "</div><!-- .upcoming-events -->";
-            }
-            // else: No upcoming events
-            /* Restore original Post data */
-            wp_reset_postdata();
-          ?>
-
-            <?php
-              $events = past_events_in_category($post->ID);
-
-              if ( $events->have_posts() ) {
-?>
-          <div class="past-events">
-            <h2>Seminare in der Vergangenheit</h2>
-            <?php
-                echo '<table>';
-
+              <table>
+                <?php
                 // Loop vars to find month changes.
                 $monthyear  = -1;
 
                 while ( $events->have_posts() ) {
                   $events->the_post();
-                  if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                    $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                    echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
+                  $post_fy = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                  if ($monthyear != $post_fy) {
+                    $monthyear = $post_fy;
+                    echo '</table><h2>'.$monthyear.'</h2><table>';
                   }
-                  ?>
+                  get_template_part('parts/event_row');
+                }
+                echo "</table>";
+            } else {
+              echo "Keine entsprechenden Veranstaltungen in der Zukunft";
+            }
+            /* Restore original Post data */
+            wp_reset_postdata();
+          ?>
+          </div><!-- .upcoming-events -->
+
+            <?php
+              $events = past_events_in_category($post->ID);
+
+              if ( $events->have_posts() ) {
+              ?>
+                <div class="past-events">
+                  <h2>Seminare in der Vergangenheit</h2>
+                  <table>
+                    <?php
+                    // Loop vars to find month changes.
+                    $monthyear  = -1;
+
+                    while ( $events->have_posts() ) {
+                      $events->the_post();
+                      if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                        $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                        echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
+                      }
+                      ?>
                     <tr>
                       <td class="datecol">
                         <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
