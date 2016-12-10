@@ -2,7 +2,12 @@
 
 <section class="content">
 
-	<?php hu_get_template_part('parts/page-title'); ?>
+<?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
+  <?php /*hu_get_template_part('parts/page-title');*/ ?>
+  <div class="page-title pad group">
+    <h2>Ausgewähltes Seminar</h2>
+  </div><!--/.page-title-->
+<?php /* Re-entering vanilla hueman */ ?>
 
 	<div class="pad group">
 
