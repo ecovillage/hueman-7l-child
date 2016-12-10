@@ -16,6 +16,9 @@
 
 		<?php while ( have_posts() ): the_post(); ?>
 			<article <?php post_class(); ?>>
+				<div class="post-inner group">
+
+          <?php hu_get_template_part('parts/single-heading'); ?>
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
         <div class="grid one-half">
@@ -103,10 +106,6 @@
           </div><!-- .past-events -->
 
 <?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
-
-				<div class="post-inner group">
-
-          <?php hu_get_template_part('parts/single-heading'); ?>
 
 					<?php if( get_post_format() ) { get_template_part('parts/post-formats'); } ?>
 
