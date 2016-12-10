@@ -21,7 +21,6 @@
           }
           echo ")";
         }
-        $events->reset_postdata();
       ?>
     </a>
   </td>
