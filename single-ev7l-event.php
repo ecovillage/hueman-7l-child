@@ -114,7 +114,9 @@
 
 		<?php if ( 'content' == hu_get_option( 'post-nav' ) ) { get_template_part('parts/post-nav'); } ?>
 
-		<?php if ( '1' != hu_get_option( 'related-posts' ) ) { get_template_part('parts/related-posts'); } ?>
+<?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
+    <?php /*if ( '1' != hu_get_option( 'related-posts' ) ) { get_template_part('parts/related-posts'); } */?>
+<?php /* Re-entering vanilla hueman */ ?>
 
 		<?php if ( hu_is_checked('post-comments') ) { comments_template('/comments.php',true); } ?>
 
