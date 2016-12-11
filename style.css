@@ -231,3 +231,13 @@ article.ev7l-event h2 {
 .event-dates-small {
   font-size: 12pt;
 }
+
+ul.calendar-events {
+  list-style: none;
+}
+
+ul.calendar-events li {
+  list-style: none;
+  display: inline-block;
+}
+

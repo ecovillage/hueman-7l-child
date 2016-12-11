@@ -59,28 +59,28 @@
             ?>
 
             <?php
-              if ($events->have_posts() ) {
-                ?>
-			          <ul id="tab-popular-1" class="alx-tab group thumbs-enabled">
-                <?php
-                while ( $events->have_posts() ) {
-                  $events->the_post(); ?>
-                  <li><div class="tab-item-thumbnail"> <! change css class, bigger (you may also like size is good)! -->
-							<?php if ( has_post_thumbnail() ): ?>
-								<?php hu_the_post_thumbnail('thumb-small'); ?>
-							<?php else: ?>
-                <?php /* this is a bug, isnt it? undefinde function: hu_print_placeholder_thumb( 'thumb-small' ); */ ?>
-              <?php endif; /* display like in alx-tabs */ ?></div>
-                   <div class="tab-item-inner group">
-                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
-                      <div class="event-dates-small">
-                        von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                        bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                if ($events->have_posts() ) { ?>
+                <ul class="calendar-events">
+                  <?php
+                  while ( $events->have_posts() ) {
+                    $events->the_post(); ?>
+                    <li class="calendar-event-row">
+                      <div class="grid one-third">
+                      <?php if ( has_post_thumbnail() ): ?>
+                        <?php hu_the_post_thumbnail('thumbnail'); ?>
+                      <?php else: ?>
+                        <?php hu_the_post_thumbnail('thumbnail'); ?>
+                      <?php endif; /* placeholder would be cool */ ?>
                       </div>
-                      <?php the_excerpt(); ?>
-                  </div>
-                 </li>
-
+                      <div class="grid two-third last">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
+                        <div class="event-dates-small">
+                          von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                          bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                        </div>
+                        <?php the_excerpt(); ?>
+                      </div>
+                    </li>
             <?php
                 }
               echo '</ul>';
