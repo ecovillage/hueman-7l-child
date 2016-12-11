@@ -21,17 +21,15 @@
           <?php hu_get_template_part('parts/single-heading'); ?>
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
-        <div class="grid one-half">
+        <div class="grid one-third">
+          <?php if ( has_post_thumbnail() ): ?>
+            <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
+          <?php endif; ?>
+
         </div>
-        <div class="grid one-half last">
+        <div class="grid two-third last">
           <?php the_content(); ?>
         </div>
-
-					<?php if ( has_post_thumbnail() ): ?>
-						<?php hu_the_post_thumbnail('thumb-medium'); ?>
-					<?php elseif ( hu_is_checked('placeholder') ): ?>
-            <?php /*Code does not work here:  hu_print_placeholder_thumb('thumb-medium'); */ ?>
-          <?php endif; ?>
 
           <div class="clear"></div>
           <div class="hr"></div>
@@ -113,7 +111,6 @@
 
 					<div class="<?php echo implode( ' ', apply_filters( 'hu_single_entry_class', array('entry','themeform') ) ) ?>">
 						<div class="entry-inner">
-							<?php the_content(); ?>
 							<nav class="pagination group">
                 <?php
                   //Checks for and uses wp_pagenavi to display page navigation for multi-page posts.
