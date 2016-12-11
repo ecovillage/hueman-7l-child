@@ -4,7 +4,7 @@
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
   <div class="page-title pad group">
-    <h2>Referent - <?php the_title(); ?></h2>
+    <h2>Referent* - <?php the_title(); ?></h2>
   </div><!--/.page-title-->
 <?php /* continue vanilla hueman archive.php v3.2.9 */ ?>
 
