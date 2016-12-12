@@ -16,7 +16,7 @@
     <?php /* Poor mans breadcrumbs */ ?>
     <h2>
       <?php
-        foreach ( get_ancestors($post->ID, 'page') as $ancestor) {
+        foreach ( array_reverse(get_ancestors($post->ID, 'page')) as $ancestor) {
           echo '<a href="' . get_page_link($ancestor) .'">' . get_page($ancestor)->post_title .  ' / </a>';
         }
       ?>
