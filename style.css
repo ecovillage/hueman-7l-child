@@ -241,3 +241,17 @@ ul.calendar-events li {
   display: inline-block;
 }
 
+ul.event-categories {
+  list-style: none;
+}
+ul.event-categories li {
+  list-style: none;
+  display: inline-block;
+}
+
+h2.firstlettername {
+  margin-bottom: 1.5em;
+  margin-top: 2em;
+  font-size: 16pt;
+}
+
