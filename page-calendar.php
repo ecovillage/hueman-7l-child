@@ -14,11 +14,11 @@
 <?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
   <div class="page-title pad group">
     <?php if ($eventyear && !$eventmonth) { ?>
-      <h2><?php echo $eventyear; ?> - Ganzes Jahr</h2>
+      <h2>Veranstaltungen in <?php echo $eventyear; ?></h2>
     <?php } elseif ($eventmonth && !$eventyear) { ?>
-      <h2><?php echo $eventmoth; ?> - Ganzer Monat aktuelles Jahr</h2>
+      <h2>Veranstaltungen im <?php echo date_i18n('F', $eventmoth); ?> - aktuelles Jahr</h2>
     <?php } elseif ($eventmonth && $eventyear) { ?>
-      <h2><?php echo $eventyear . ' ' . $eventmonth; ?> - Ganzer Monat im Jahr</h2>
+      <h2>Veranstaltungen im <?php echo date_i18n('F', $eventmonth); ?> <?php echo $eventyear ; ?></h2>
     <?php } else { ?>
       <h2>- <?php the_title(); ?></h2>
     <?php } ?>
