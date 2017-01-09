@@ -68,11 +68,11 @@
           </div><!-- .upcoming-events -->
 
           <div class="past-events">
-            <h2>Seminare in der Vergangenheit</h2>
             <?php
               $events = past_events_by_referee($post->ID);
 
               if ( $events->have_posts() ) {
+                echo '<h2>Seminare in der Vergangenheit</h2>';
                 echo '<table>';
 
                 // Loop vars to find month changes.
