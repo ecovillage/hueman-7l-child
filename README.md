@@ -36,6 +36,9 @@ Main css overrides and new definitions.
 
 Enough emptiness for everybody.
 
+### screenshot.png
+
+Backend theme listing image.
 
 ## Hueman settings at siebenlinden.org
 
