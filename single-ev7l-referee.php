@@ -22,13 +22,12 @@
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
         <div class="grid one-third">
+          <?php the_content(); ?>
+        </div>
+        <div class="grid two-third last">
           <?php if ( has_post_thumbnail() ): ?>
             <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
           <?php endif; ?>
-
-        </div>
-        <div class="grid two-third last">
-          <?php the_content(); ?>
         </div>
 
           <div class="clear"></div>
