@@ -6,6 +6,10 @@ Authored by Felix Wolfsteller, Copyright 2016, 2017, released under the GPLv3+.
 
 Works together with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
 
+## Installation
+
+Fit to be used with the [github updater plugin](https://github.com/afragen/github-updater/wiki/Installation).
+
 ## Files Included
 
 ### single-ev7l-event.php
