@@ -2,7 +2,7 @@
 
 A [hueman child theme](http://presscustomizr.com/hueman/) for the wordpress installation of the ecovillage Sieben Linden (siebenlinden.org).
 
-Authored by Felix Wolfsteller, copyright 2016, released under the GPLv3+.
+Authored by Felix Wolfsteller, Copyright 2016, 2017, released under the GPLv3+.
 
 Works together with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
 
