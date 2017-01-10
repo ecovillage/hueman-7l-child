@@ -20,94 +20,6 @@
 
           <?php hu_get_template_part('parts/single-heading'); ?>
 
-<?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
-        <div class="grid one-third">
-          <?php the_content(); ?>
-        </div>
-        <div class="grid two-third last">
-          <?php if ( has_post_thumbnail() ): ?>
-            <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
-          <?php elseif ( hu_is_checked('placeholder') ): ?>
-            <?php
-            /* Code does not work here:  hu_print_placeholder_thumb('thumb-medium');
-            *  Also nice trick would be to overwrite parts/post-list-authore-date !
-            */ ?>
-          <?php endif; ?>
-        </div>
-
-          <div class="clear"></div>
-          <div class="hr"></div>
-
-          <div class="event-listing-heading">
-            <h2>Veranstaltungen von und mit <?php echo the_title(); ?></h2>
-          </div>
-
-          <div class="upcoming-events">
-            <?php
-              $events = upcoming_events_by_referee($post->ID);
-
-              if ( $events->have_posts() ) {
-                echo "<table>";
-
-                // Loop vars to find month changes.
-                $monthyear  = -1;
-
-                while ( $events->have_posts() ) {
-                  $events->the_post();
-                  $base_referee_id = $post->ID;
-                  if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                    $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                    echo '</table><h2>'.$monthyear.'</h2><table>';
-                  }
-                  get_template_part('parts/event_row_without_referee');
-                }
-                echo "</table>";
-              }
-              else {
-                echo "Derzeit keine Veranstalungen in naher Zukunft geplant.";
-              }
-                /* Restore original Post data */
-                wp_reset_postdata();
-              ?>
-          </div><!-- .upcoming-events -->
-
-          <div class="past-events">
-            <?php
-              $events = past_events_by_referee($post->ID);
-
-              if ( $events->have_posts() ) {
-                echo '<h2>Seminare in der Vergangenheit</h2>';
-                echo '<table>';
-
-                // Loop vars to find month changes.
-                $monthyear  = -1;
-
-                while ( $events->have_posts() ) {
-                  $events->the_post();
-                  if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                    $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                    echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
-                  }
-                  ?>
-                    <tr>
-                      <td class="datecol">
-                        <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                        - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
-                      </td>
-                      <td class="eventcol">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        <?php /* the_excerpt(); */ ?>
-                      </td>
-                    </tr>
-            <?php }
-                echo '</table>';
-              }
-              /* Restore original Post data */
-              wp_reset_postdata();
-            ?>
-          </div><!-- .past-events -->
-
-<?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
 
 					<?php if( get_post_format() ) { get_template_part('parts/post-formats'); } ?>
 
@@ -115,6 +27,96 @@
 
 					<div class="<?php echo implode( ' ', apply_filters( 'hu_single_entry_class', array('entry','themeform') ) ) ?>">
 						<div class="entry-inner">
+
+<?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
+              <div class="grid one-third">
+                <?php the_content(); ?>
+              </div>
+              <div class="grid two-third last">
+                <?php if ( has_post_thumbnail() ): ?>
+                  <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
+                <?php elseif ( hu_is_checked('placeholder') ): ?>
+                  <?php
+                  /* Code does not work here:  hu_print_placeholder_thumb('thumb-medium');
+                  *  Also nice trick would be to overwrite parts/post-list-authore-date !
+                  */ ?>
+                <?php endif; ?>
+              </div>
+      
+                <div class="clear"></div>
+                <div class="hr"></div>
+      
+                <div class="event-listing-heading">
+                  <h2>Veranstaltungen von und mit <?php echo the_title(); ?></h2>
+                </div>
+      
+                <div class="upcoming-events">
+                  <?php
+                    $events = upcoming_events_by_referee($post->ID);
+      
+                    if ( $events->have_posts() ) {
+                      echo "<table>";
+      
+                      // Loop vars to find month changes.
+                      $monthyear  = -1;
+      
+                      while ( $events->have_posts() ) {
+                        $events->the_post();
+                        $base_referee_id = $post->ID;
+                        if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                          $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                          echo '</table><h2>'.$monthyear.'</h2><table>';
+                        }
+                        get_template_part('parts/event_row_without_referee');
+                      }
+                      echo "</table>";
+                    }
+                    else {
+                      echo "Derzeit keine Veranstalungen in naher Zukunft geplant.";
+                    }
+                      /* Restore original Post data */
+                      wp_reset_postdata();
+                    ?>
+                </div><!-- .upcoming-events -->
+      
+                <div class="past-events">
+                  <?php
+                    $events = past_events_by_referee($post->ID);
+      
+                    if ( $events->have_posts() ) {
+                      echo '<h2>Seminare in der Vergangenheit</h2>';
+                      echo '<table>';
+      
+                      // Loop vars to find month changes.
+                      $monthyear  = -1;
+      
+                      while ( $events->have_posts() ) {
+                        $events->the_post();
+                        if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                          $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                          echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
+                        }
+                        ?>
+                          <tr>
+                            <td class="datecol">
+                              <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                              - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                            </td>
+                            <td class="eventcol">
+                              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                              <?php /* the_excerpt(); */ ?>
+                            </td>
+                          </tr>
+                  <?php }
+                      echo '</table>';
+                    }
+                    /* Restore original Post data */
+                    wp_reset_postdata();
+                  ?>
+                </div><!-- .past-events -->
+
+<?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
+
 							<nav class="pagination group">
                 <?php
                   //Checks for and uses wp_pagenavi to display page navigation for multi-page posts.
