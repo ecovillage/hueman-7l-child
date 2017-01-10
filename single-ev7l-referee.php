@@ -27,6 +27,11 @@
         <div class="grid two-third last">
           <?php if ( has_post_thumbnail() ): ?>
             <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
+          <?php elseif ( hu_is_checked('placeholder') ): ?>
+            <?php
+            /* Code does not work here:  hu_print_placeholder_thumb('thumb-medium');
+            *  Also nice trick would be to overwrite parts/post-list-authore-date !
+            */ ?>
           <?php endif; ?>
         </div>
 
