@@ -255,3 +255,6 @@ h2.firstlettername {
   font-size: 16pt;
 }
 
+h2.breadcrumbs {
+  color: rgb(119, 187, 68);
+}

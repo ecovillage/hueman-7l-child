@@ -14,7 +14,7 @@
     <?php /* Leaving vanilla hueman 3.2.9 parts/page-title.php */ ?>
     <?php /* <h2><?php echo hu_get_page_title(); ?></h2> */ ?>
     <?php /* Poor mans breadcrumbs */ ?>
-    <h2>
+    <h2 class="breadcrumbs">
       <?php
         foreach ( array_reverse(get_ancestors($post->ID, 'page')) as $ancestor) {
           echo '<a href="' . get_page_link($ancestor) .'">' . get_page($ancestor)->post_title .  ' / </a>';
