@@ -29,10 +29,10 @@
 						<div class="entry-inner">
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
-              <div class="grid one-third">
+              <div class="grid two-third">
                 <?php the_content(); ?>
               </div>
-              <div class="grid two-third last">
+              <div class="grid one-third last">
                 <?php if ( has_post_thumbnail() ): ?>
                   <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
                 <?php elseif ( hu_is_checked('placeholder') ): ?>
