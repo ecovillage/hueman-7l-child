@@ -34,7 +34,7 @@
               </div>
               <div class="grid one-third last">
                 <?php if ( has_post_thumbnail() ): ?>
-                  <?php hu_the_post_thumbnail(/*'thumb-medium'*/ 'thumbnail'); ?>
+                  <?php hu_the_post_thumbnail('medium'); ?>
                 <?php elseif ( hu_is_checked('placeholder') ): ?>
                   <?php
                   /* Code does not work here:  hu_print_placeholder_thumb('thumb-medium');

@@ -67,7 +67,7 @@
                     <li class="calendar-event-row">
                       <div class="grid one-third">
                       <?php if ( has_post_thumbnail() ): ?>
-                        <?php hu_the_post_thumbnail('thumbnail'); ?>
+                        <?php hu_the_post_thumbnail('thumb-medium'); ?>
                       <?php else: ?>
                         <?php hu_the_post_thumbnail('thumbnail'); ?>
                       <?php endif; /* placeholder would be cool */ ?>
