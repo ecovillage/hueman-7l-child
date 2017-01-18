@@ -57,7 +57,64 @@
 
                 <?php wp_reset_postdata(); ?>
 
-							<?php the_content(); ?>
+              <?php the_content(); ?>
+                <div id="event-infos">
+                  <h2>Informationen zum Seminar</h2>
+                  <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
+                        $arrival       = get_post_meta($post->ID, 'arrival', true);
+                        $costs_participation = get_post_meta($post->ID, 'costs_participation', true);
+                        $costs_catering      = get_post_meta($post->ID, 'costs_catering', true);
+                        $info_housing        = get_post_meta($post->ID, 'info_housing', true);
+                        $participants_please_bring   = get_post_meta($post->ID, 'participants_please_bring', true);
+                        $participants_prerequisites  = get_post_meta($post->ID, 'participants_prerequisites', true);
+                        ?>
+                  <?php if(!empty($arrival)) { ?>
+                  <div id="arrival-info">
+                    <h3>Anreise</h3>
+                    <?php echo $arrival; ?>
+                  </div>
+                  <?php } ?>
+                  <div id="departure-info">
+                    <h3>Abreise</h3>
+                    <?php echo get_post_meta($post->ID, 'departure', true); ?>
+                  </div>
+                  <?php if(!empty($costs_participation)) { ?>
+                  <div id="costs-participation">
+                    <h3>Seminarkosten</h3>
+                    <?php echo $costs_participation; ?>
+                  </div>
+                  <?php } ?>
+                  <?php if(!empty($costs_catering)) { ?>
+                  <div id="costs-catering">
+                    <h3>Biovollverpflegung</h3>
+                    <?php echo $costs_catering; ?>
+                  </div>
+                  <?php } ?>
+                  <?php if(!empty($info_housing)) { ?>
+                  <div id="info-housing">
+                    <h3>Unterkunft</h3>
+                    <?php echo $info_housing; ?>
+                  </div>
+                  <?php } ?>
+                  <?php if(!empty($current_infos)) { ?>
+                  <div id="current-info">
+                    <h3>Aktuelle Informationen</h3>
+                    <?php echo $current_infos; ?>
+                  </div>
+                  <?php } ?>
+                  <?php if(!empty($participants_please_bring)) { ?>
+                  <div id="participants-please-bring">
+                    <h3>Bitte mitbringen</h3>
+                    <?php echo $participants_please_bring; ?>
+                  </div>
+                  <?php } ?>
+                  <?php if(!empty($participants_prerequisites)) { ?>
+                  <div id="participants-prerequisites">
+                    <h3>Voraussetzungen für Teilnehmer*</h3>
+                    <?php echo $participants_prerequisites; ?>
+                  </div>
+                  <?php } ?>
+                </div> <!-- #event-infos -->
 
                 <?php
                 $referees = referees_by_event($post->ID);

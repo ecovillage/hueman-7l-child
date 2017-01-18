@@ -259,3 +259,16 @@ h2.firstlettername {
 h2.breadcrumbs {
   color: rgb(119, 187, 68);
 }
+
+#event-infos h2 {
+  color: rgb(119, 187, 68);
+  font-size: 16pt;
+}
+
+#event-infos h3 {
+  color: rgb(119, 187, 68);
+  font-size: 14pt;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
