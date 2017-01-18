@@ -37,7 +37,7 @@
               </div>
               <br>
 
-              <?php if(get_post_meta($post->ID, 'event_category_id', false)) {
+              <?php if(false && get_post_meta($post->ID, 'event_category_id', false)) {
                 ?>
                 In Rubriken:
                 <?php
