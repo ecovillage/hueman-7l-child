@@ -272,3 +272,8 @@ h2.breadcrumbs {
   margin-top: 12px;
 }
 
+#header .pad {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
