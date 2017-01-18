@@ -78,42 +78,42 @@
                       wp_reset_postdata();
                     ?>
                 </div><!-- .upcoming-events -->
-      
-                <div class="past-events">
-                  <?php
-                    $events = past_events_by_referee($post->ID);
-      
-                    if ( $events->have_posts() ) {
-                      echo '<h2>Seminare in der Vergangenheit</h2>';
-                      echo '<table>';
-      
-                      // Loop vars to find month changes.
-                      $monthyear  = -1;
-      
-                      while ( $events->have_posts() ) {
-                        $events->the_post();
-                        if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                          $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                          echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
-                        }
-                        ?>
-                          <tr>
-                            <td class="datecol">
-                              <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                              - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
-                            </td>
-                            <td class="eventcol">
-                              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                              <?php /* the_excerpt(); */ ?>
-                            </td>
-                          </tr>
-                  <?php }
-                      echo '</table>';
-                    }
-                    /* Restore original Post data */
-                    wp_reset_postdata();
-                  ?>
-                </div><!-- .past-events -->
+
+                <?php
+                  $events = past_events_by_referee($post->ID);
+
+                  if ( $events->have_posts() ) {
+                    echo '<div class="past-events">';
+                    echo '<h2>Seminare in der Vergangenheit</h2>';
+                    echo '<table>';
+
+                    // Loop vars to find month changes.
+                    $monthyear  = -1;
+
+                    while ( $events->have_posts() ) {
+                      $events->the_post();
+                      if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
+                        $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                        echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
+                      }
+                      ?>
+                        <tr>
+                          <td class="datecol">
+                            <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                            - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                          </td>
+                          <td class="eventcol">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <?php /* the_excerpt(); */ ?>
+                          </td>
+                        </tr>
+                <?php }
+                    echo '</table>';
+                    echo '</div> <!-- .past-events -->';
+                  }
+                  /* Restore original Post data */
+                  wp_reset_postdata();
+                ?>
 
 <?php /* pickup vanilla hueman archive.php v3.2.9 */ ?>
 
