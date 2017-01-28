@@ -42,4 +42,3 @@
 	<?php endif; ?>
 
 </div><!--/.page-title-->
-

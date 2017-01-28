@@ -22,12 +22,6 @@
 <?php $current_menu_item_parents = h7lc_current_menu_item_parents(); ?>
 <?php $current_menu_item         = h7lc_current_menu_item(); ?>
 <?php $parent_ids                = h7lc_childful_menu_item_ids(); ?>
-<pre>
-<?php /* echo var_dump($current_menu_item_parents); ?>
-<?php echo var_dump($current_menu_item); ?>
-<?php echo var_dump($current_menu_item->menu_item_parent); ?>
-<?php echo var_dump($current_menu_item);*/ ?>
-</pre>
 <!--has title and url, and id, menu_item_parent-->
 
 <?php
@@ -36,7 +30,8 @@
 
 echo "<ul class=\"child-menu group\">";
 
-$items = wp_get_nav_menu_items( 't' );
+// TODO This needs honest refactoring.
+$items = wp_get_nav_menu_items( 'top-de' );
 //echo var_dump($items);
 foreach ( $items as $root_item) {
   if ( !$root_item->menu_item_parent ) {
