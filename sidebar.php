@@ -19,9 +19,9 @@
 <!-- Leaving vanilla 3.3.4 hueman theme -->
       <?php if( true || is_page_template('page-templates/child-menu.php') ): ?>
 
-<?php $current_menu_item_parents = h7lc_current_menu_item_parents(); ?>
-<?php $current_menu_item         = h7lc_current_menu_item(); ?>
-<?php $parent_ids                = h7lc_childful_menu_item_ids(); ?>
+<?php $current_menu_item_ancestors = h7lc_current_menu_item_ancestors(); ?>
+<?php $current_menu_item          = h7lc_current_menu_item(); ?>
+<?php $parent_ids                 = h7lc_childful_menu_item_ids(); ?>
 <!--has title and url, and id, menu_item_parent-->
 
 <?php
@@ -37,7 +37,7 @@ $root_items = array_filter($items, function($k) { return !$k->menu_item_parent; 
 
 foreach ( $root_items as $root_item ) {
   // Put only the oldest ancestor.
-  if ( in_array($root_item->ID, $current_menu_item_parents ) ) {
+  if ( in_array($root_item->ID, $current_menu_item_ancestors ) ) {
     $item_id = $root_item->ID;
     $url     = $root_item->url;
     $title   = $root_item->title;
@@ -57,7 +57,7 @@ foreach ( $root_items as $root_item ) {
     echo "<ul class=\"children\">";
     foreach ($children as $child) {
       $current_page_class = ($child->ID == $current_menu_item->ID) ? ' current_page_item ' : '';
-      $current_page_ancestor_class = (in_array($child->ID, $current_menu_item_parents)) ? ' current_page_ancestor ' : '';
+      $current_page_ancestor_class = (in_array($child->ID, $current_menu_item_ancestors)) ? ' current_page_ancestor ' : '';
       echo "<li class=\"page_item page_item_".$child->ID.$current_page_class.$current_page_ancestor_class."\">";
       if (!in_array($child->ID, $parent_ids)) {
         echo "  <a class=\"childless\" href=\"".$child->url."\">".$child->title."</a></li>";
@@ -122,11 +122,13 @@ echo "</ul>";
     <a href="http://wp_felix.7l/de/first-middel/">First Middel</a></li>
 </ul>
 -->
+			<?php endif; ?>
 
 <!-- Re-entering vanilla 3.3.4 hueman theme -->
+      <?php if( is_page_template('page-templates/child-menu.php') ): ?>
 
 			<ul class="child-menu group">
-				<?php wp_list_pages('title_li=&sort_column=menu_order&depth=3'); ?>
+        <?php wp_list_pages('title_li=&sort_column=menu_order&depth=3'); ?>
 			</ul>
 			<?php endif; ?>
 

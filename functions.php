@@ -2,11 +2,15 @@
 /* Wrote my awesome functions below */
 
 function h7lc_sidebar_submenu () {
+  // current displayed item
+  // list of parents
+  // menu
+  // cropped menu
 }
 
 // Return an array with the menu item object ids of
 // the current selected and all ancestors (up to 0/the root).
-function h7lc_current_menu_item_parents() {
+function h7lc_current_menu_item_ancestors() {
   $current_menu_item_ancestors = array();
   // Identify current menu item
   $menu_items = wp_get_nav_menu_items( 'top-de' );
