@@ -35,25 +35,24 @@ $items = wp_get_nav_menu_items( 'top-de' );
 // Get root items (they dont have children)
 $root_items = array_filter($items, function($k) { return !$k->menu_item_parent; });
 
-//echo var_dump($items);
-foreach ( $root_items as $root_item) {
-  $item_id = $root_item->ID;
-  $url     = $root_item->url;
-  $title   = $root_item->title;
-  $has_children = in_array($item_id, $parent_ids);
-  $children_class = ($has_children ? " page_item_has_children " : "");
-
-  // Start a new thing, but only add class if its in list of ancesters
+foreach ( $root_items as $root_item ) {
+  // Put only the oldest ancestor.
   if ( in_array($root_item->ID, $current_menu_item_parents ) ) {
+    $item_id = $root_item->ID;
+    $url     = $root_item->url;
+    $title   = $root_item->title;
+    $has_children = in_array($item_id, $parent_ids);
+    $children_class = ($has_children ? " page_item_has_children " : "");
+
     echo "<li class=\"page_item current_page_ancestor current_page_parent".$children_class."\">";
+
     $children = array_filter($items, function($k) use (&$item_id) {
       return $k->menu_item_parent == $item_id;
     });
-    if (empty($children)) {
-      echo "  <a class=\"childless\" href=\"".$url."\">".$title."</a>";
-    } else {
-      echo "  <a href=\"".$url."\">".$title."</a>";
-    }
+
+    $a_childless_class = (!$has_children) ? 'childless' : '';
+    echo "  <a class=\"".$a_childless_class."\" href=\"".$url."\">".$title."</a>";
+
     // Then li children
     echo "<ul class=\"children\">";
     foreach ($children as $child) {
