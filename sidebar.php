@@ -74,7 +74,8 @@ foreach ( $root_items as $root_item ) {
         });
         foreach ($grand_children as $grandchild) {
           // If grandchild is current_page add the style
-          echo "<li class=\"page_item page_item_170i4\">";
+          $current_page_class = ($grandchild->ID == $current_menu_item->ID) ? ' current_page_item ' : '';
+          echo "<li class=\"page_item page_item_".$grandchild->ID.$current_page_class."\">";
           echo "  <a href=\"".$grandchild->url."\">".$grandchild->title."</a></li>";
           echo "</li>";
         }
