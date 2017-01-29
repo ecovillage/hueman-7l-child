@@ -44,15 +44,42 @@ foreach ( $items as $root_item) {
     // Start a new thing, but only add class if its in list of ancesters
     if ( in_array($root_item->ID, $current_menu_item_parents ) ) {
       echo "<li class=\"page_item current_page_ancestor current_page_parent".$children_class."\">";
-      echo "  <a href=\"".$url."\">".$title."</a>";
-      // Then li children
       $children = array_filter($items, function($k) use (&$item_id) {
         return $k->menu_item_parent == $item_id;
       });
+      if (empty($children)) {
+        echo "  <a class=\"childless\" href=\"".$url."\">".$title."</a>";
+      } else {
+        echo "  <a href=\"".$url."\">".$title."</a>";
+      }
+      // Then li children
       echo "<ul class=\"children\">";
       foreach ($children as $child) {
-        echo "<li class=\"page_item page_item_1704\">";
-        echo "  <a href=\"".$child->url."\">".$child->title."</a></li>";
+        $current_page_class = ($child->ID == $current_menu_item->ID) ? ' current_page_item ' : '';
+        $current_page_ancestor_class = (in_array($child->ID, $current_menu_item_parents)) ? ' current_page_ancestor ' : '';
+        echo "<li class=\"page_item page_item_".$child->ID.$current_page_class.$current_page_ancestor_class."\">";
+        if (!in_array($child->ID, $parent_ids)) {
+          echo "  <a class=\"childless\" href=\"".$child->url."\">".$child->title."</a></li>";
+        } else {
+          echo "  <a href=\"".$child->url."\">".$child->title."</a>";
+          // And again, last time, go down into children
+          // But show these only if child is current page
+          // (then the child li has page_item page-item-1859 page_item_has_children current_page_ancestor current_page_parent
+          // and the grandchild + current_page_item
+          echo "<ul class=\"children\">";
+          $child_id = $child->ID;
+          $grand_children = array_filter($items, function($k) use (&$child_id) {
+            return $k->menu_item_parent == $child_id;
+          });
+          foreach ($grand_children as $grandchild) {
+            // If grandchild is current_page add the style
+            echo "<li class=\"page_item page_item_170i4\">";
+            echo "  <a href=\"".$grandchild->url."\">".$grandchild->title."</a></li>";
+            echo "</li>";
+          }
+          echo "</li>";
+          echo "</ul>";
+        }
       }
       echo "</ul>";
       echo "</li>";
