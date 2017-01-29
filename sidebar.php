@@ -30,62 +30,62 @@
 
 echo "<ul class=\"child-menu group\">";
 
-// TODO This needs honest refactoring.
 $items = wp_get_nav_menu_items( 'top-de' );
-//echo var_dump($items);
-foreach ( $items as $root_item) {
-  if ( !$root_item->menu_item_parent ) {
-    $item_id = $root_item->ID;
-    $url     = $root_item->url;
-    $title   = $root_item->title;
-    $has_children = in_array($item_id, $parent_ids);
-    $children_class = ($has_children ? " page_item_has_children " : "");
 
-    // Start a new thing, but only add class if its in list of ancesters
-    if ( in_array($root_item->ID, $current_menu_item_parents ) ) {
-      echo "<li class=\"page_item current_page_ancestor current_page_parent".$children_class."\">";
-      $children = array_filter($items, function($k) use (&$item_id) {
-        return $k->menu_item_parent == $item_id;
-      });
-      if (empty($children)) {
-        echo "  <a class=\"childless\" href=\"".$url."\">".$title."</a>";
-      } else {
-        echo "  <a href=\"".$url."\">".$title."</a>";
-      }
-      // Then li children
-      echo "<ul class=\"children\">";
-      foreach ($children as $child) {
-        $current_page_class = ($child->ID == $current_menu_item->ID) ? ' current_page_item ' : '';
-        $current_page_ancestor_class = (in_array($child->ID, $current_menu_item_parents)) ? ' current_page_ancestor ' : '';
-        echo "<li class=\"page_item page_item_".$child->ID.$current_page_class.$current_page_ancestor_class."\">";
-        if (!in_array($child->ID, $parent_ids)) {
-          echo "  <a class=\"childless\" href=\"".$child->url."\">".$child->title."</a></li>";
-        } else {
-          echo "  <a href=\"".$child->url."\">".$child->title."</a>";
-          // And again, last time, go down into children
-          // But show these only if child is current page
-          // (then the child li has page_item page-item-1859 page_item_has_children current_page_ancestor current_page_parent
-          // and the grandchild + current_page_item
-          echo "<ul class=\"children\">";
-          $child_id = $child->ID;
-          $grand_children = array_filter($items, function($k) use (&$child_id) {
-            return $k->menu_item_parent == $child_id;
-          });
-          foreach ($grand_children as $grandchild) {
-            // If grandchild is current_page add the style
-            echo "<li class=\"page_item page_item_170i4\">";
-            echo "  <a href=\"".$grandchild->url."\">".$grandchild->title."</a></li>";
-            echo "</li>";
-          }
-          echo "</li>";
-          echo "</ul>";
-        }
-      }
-      echo "</ul>";
-      echo "</li>";
+// Get root items (they dont have children)
+$root_items = array_filter($items, function($k) { return !$k->menu_item_parent; });
+
+//echo var_dump($items);
+foreach ( $root_items as $root_item) {
+  $item_id = $root_item->ID;
+  $url     = $root_item->url;
+  $title   = $root_item->title;
+  $has_children = in_array($item_id, $parent_ids);
+  $children_class = ($has_children ? " page_item_has_children " : "");
+
+  // Start a new thing, but only add class if its in list of ancesters
+  if ( in_array($root_item->ID, $current_menu_item_parents ) ) {
+    echo "<li class=\"page_item current_page_ancestor current_page_parent".$children_class."\">";
+    $children = array_filter($items, function($k) use (&$item_id) {
+      return $k->menu_item_parent == $item_id;
+    });
+    if (empty($children)) {
+      echo "  <a class=\"childless\" href=\"".$url."\">".$title."</a>";
+    } else {
+      echo "  <a href=\"".$url."\">".$title."</a>";
     }
+    // Then li children
+    echo "<ul class=\"children\">";
+    foreach ($children as $child) {
+      $current_page_class = ($child->ID == $current_menu_item->ID) ? ' current_page_item ' : '';
+      $current_page_ancestor_class = (in_array($child->ID, $current_menu_item_parents)) ? ' current_page_ancestor ' : '';
+      echo "<li class=\"page_item page_item_".$child->ID.$current_page_class.$current_page_ancestor_class."\">";
+      if (!in_array($child->ID, $parent_ids)) {
+        echo "  <a class=\"childless\" href=\"".$child->url."\">".$child->title."</a></li>";
+      } else {
+        echo "  <a href=\"".$child->url."\">".$child->title."</a>";
+        // And again, last time, go down into children
+        // But show these only if child is current page
+        // (then the child li has page_item page-item-1859 page_item_has_children current_page_ancestor current_page_parent
+        // and the grandchild + current_page_item
+        echo "<ul class=\"children\">";
+        $child_id = $child->ID;
+        $grand_children = array_filter($items, function($k) use (&$child_id) {
+          return $k->menu_item_parent == $child_id;
+        });
+        foreach ($grand_children as $grandchild) {
+          // If grandchild is current_page add the style
+          echo "<li class=\"page_item page_item_170i4\">";
+          echo "  <a href=\"".$grandchild->url."\">".$grandchild->title."</a></li>";
+          echo "</li>";
+        }
+        echo "</li>";
+        echo "</ul>";
+      }
+    }
+    echo "</ul>";
+    echo "</li>";
   }
-  // else {;} // Only walk over root items
 }
 echo "</ul>";
 ?>
