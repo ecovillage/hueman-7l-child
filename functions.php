@@ -34,7 +34,7 @@ function h7lc_childful_menu_item_ids() {
 
 function h7lc_current_menu_item() {
   // Identify current menu item
-  $menu_items = wp_get_nav_menu_items( 't' );
+  $menu_items = wp_get_nav_menu_items( 'top-de' );
   $current_menu_item = current( wp_filter_object_list( $menu_items, array( 'object_id' => get_queried_object_id() ) ) );
   return $current_menu_item;
 }
