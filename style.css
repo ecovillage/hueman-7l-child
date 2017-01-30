@@ -242,6 +242,15 @@ ul.calendar-events li {
   display: inline-block;
 }
 
+ul.referee-events {
+  list-style: none;
+}
+
+ul.referee-events li {
+  list-style: none;
+  display: inline-block;
+}
+
 ul.event-categories {
   list-style: none;
 }

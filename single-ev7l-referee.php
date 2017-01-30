@@ -55,7 +55,7 @@
                     $events = upcoming_events_by_referee($post->ID);
       
                     if ( $events->have_posts() ) {
-                      echo "<table>";
+                      echo '<ul class="referee-events">';
       
                       // Loop vars to find month changes.
                       $monthyear  = -1;
@@ -65,11 +65,11 @@
                         $base_referee_id = $post->ID;
                         if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
                           $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
-                          echo '</table><h2>'.$monthyear.'</h2><table>';
+                          echo '</ul><h2>'.$monthyear.'</h2><ul class="referee-events">';
                         }
-                        get_template_part('parts/event_row_without_referee');
+                        get_template_part('parts/event_list_line');
                       }
-                      echo "</table>";
+                      echo "</ul>";
                     }
                     else {
                       echo "Derzeit keine Veranstalungen in naher Zukunft geplant.";
