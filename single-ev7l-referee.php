@@ -44,6 +44,13 @@
               </div>
       
                 <div class="clear"></div>
+                <?php $homepage = get_post_meta($post->ID, 'homepage', true); ?>
+                <?php if (!empty($homepage) ): ?>
+                <div>
+                  <h2>Homepage</h2>
+                  <a href="<?php echo $homepage;?>"><?php echo $homepage;?></a>
+                </div>
+                <?php endif; ?>
                 <div class="hr"></div>
       
                 <div class="event-listing-heading">
