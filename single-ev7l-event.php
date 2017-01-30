@@ -147,10 +147,6 @@
                     <?php endif; /* TODO: image-grid, placeholder would be cool */ ?>
 
                 <!-- Only if correct time and the seminar actually needs registration ... -->
-                <div id="registration">
-                  <h2>Anmeldung</h2>
-                  <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen hier möglich.</a>
-                </div>
 
 
               <?php
@@ -159,6 +155,10 @@
                 wp_reset_postdata();
               ?>
               <br/>
+                <div id="registration">
+                  <h2>Anmeldung</h2>
+                  <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen hier möglich.</a>
+                </div>
 
 <?php /* Re-entering vanilla hueman */ ?>
 							<nav class="pagination group">
