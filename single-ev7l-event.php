@@ -121,9 +121,10 @@
 
                 <?php
                 $referees = referees_by_event($post->ID);
-                if ( $referees-> have_posts() ) {?>
+                if ( $referees-> have_posts() ) { ?>
+                  <div id="referees">
                   <h2>Referent*</h2>
-							    <?php
+                  <?php
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
                     ?>
@@ -151,6 +152,7 @@
 
               <?php
                   }
+                echo "</div>";
                 }
                 wp_reset_postdata();
               ?>
