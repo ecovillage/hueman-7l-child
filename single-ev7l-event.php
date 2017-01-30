@@ -145,6 +145,14 @@
                         <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
                       </div>
                     <?php endif; /* TODO: image-grid, placeholder would be cool */ ?>
+
+                <!-- Only if correct time and the seminar actually needs registration ... -->
+                <div id="registration">
+                  <h2>Anmeldung</h2>
+                  <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen hier möglich.</a>
+                </div>
+
+
               <?php
                   }
                 }
