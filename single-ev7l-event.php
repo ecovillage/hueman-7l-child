@@ -62,6 +62,7 @@
                   <h2>Informationen zum Seminar</h2>
                   <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
                         $arrival       = get_post_meta($post->ID, 'arrival', true);
+                        $departure     = get_post_meta($post->ID, 'departure', true);
                         $costs_participation = get_post_meta($post->ID, 'costs_participation', true);
                         $costs_catering      = get_post_meta($post->ID, 'costs_catering', true);
                         $info_housing        = get_post_meta($post->ID, 'info_housing', true);
@@ -74,10 +75,12 @@
                     <?php echo $arrival; ?>
                   </div>
                   <?php } ?>
+                  <?php if(!empty($departure)) { ?>
                   <div id="departure-info">
                     <h3>Abreise</h3>
-                    <?php echo get_post_meta($post->ID, 'departure', true); ?>
+                    <?php echo $departure; ?>
                   </div>
+                  <?php } ?>
                   <?php if(!empty($costs_participation)) { ?>
                   <div id="costs-participation">
                     <h3>Seminarkosten</h3>
@@ -124,10 +127,24 @@
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
                     ?>
-                    <a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    <div class="referee-qualification">
-                      <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
-                    </div>
+                    <?php if ( has_post_thumbnail() ): ?>
+                      <div class="grid two-third">
+                        <a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <div class="referee-qualification">
+                          <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
+                        </div>
+                      </div>
+                      <div class="grid one-third last">
+                        <div class="referee-image">
+                          <?php hu_the_post_thumbnail('thumbnail'); ?>
+                        </div>
+                      </div>
+                    <?php else: ?>
+                      <a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                      <div class="referee-qualification">
+                        <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
+                      </div>
+                    <?php endif; /* TODO: image-grid, placeholder would be cool */ ?>
               <?php
                   }
                 }
