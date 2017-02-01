@@ -60,7 +60,8 @@ foreach ( $root_items as $root_item ) {
       $current_page_ancestor_class = (in_array($child->ID, $current_menu_item_ancestors)) ? ' current_page_ancestor ' : '';
       echo "<li class=\"page_item page_item_".$child->ID.$current_page_class.$current_page_ancestor_class."\">";
       if (!in_array($child->ID, $parent_ids)) {
-        echo "  <a class=\"childless\" href=\"".$child->url."\">".$child->title."</a></li>";
+        echo "  <a class=\"childless\" href=\"".$child->url."\">".$child->title."</a>";
+        echo "</li>";
       } else {
         echo "  <a href=\"".$child->url."\">".$child->title."</a>";
         // And again, last time, go down into children
@@ -76,11 +77,11 @@ foreach ( $root_items as $root_item ) {
           // If grandchild is current_page add the style
           $current_page_class = ($grandchild->ID == $current_menu_item->ID) ? ' current_page_item ' : '';
           echo "<li class=\"page_item page_item_".$grandchild->ID.$current_page_class."\">";
-          echo "  <a href=\"".$grandchild->url."\">".$grandchild->title."</a></li>";
+          echo "  <a href=\"".$grandchild->url."\">".$grandchild->title."</a>";
           echo "</li>";
         }
-        echo "</li>";
         echo "</ul>";
+        echo "</li>";
       }
     }
     echo "</ul>";
