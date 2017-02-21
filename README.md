@@ -28,6 +28,10 @@ View of a single event category (listing events).
 
 View of a single referee (listing events).
 
+### page.php
+
+Standard page, with heading above image.
+
 ### page-calendar.php
 
 Calendar page, if needed.  In order for it to work, you'll need a page called ... 'calendar'.
