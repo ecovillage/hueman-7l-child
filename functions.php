@@ -22,7 +22,9 @@ function h7lc_current_menu_item_ancestors() {
   $current_menu_item_ancestors = array();
   // Identify current menu item
   $menu_items = wp_get_nav_menu_items( 'top-de' );
-  $current_menu_item = current( wp_filter_object_list( $menu_items, array( 'object_id' => get_queried_object_id() ) ) );
+  // Not perfectly optimized (h7lc_current_menu_item does a menu_items query
+  // too), but DRYer.
+  $current_menu_item = h7lc_current_menu_item();
 
   // If current page not in the menu, freak out a bit, TODO but show main menu.
   // Also, this might mean we look at an archive
@@ -56,6 +58,11 @@ function h7lc_childful_menu_item_ids() {
 function h7lc_current_menu_item() {
   // Identify current menu item
   $menu_items = wp_get_nav_menu_items( 'top-de' );
+  // Alternative: get_queried_object.
   $current_menu_item = current( wp_filter_object_list( $menu_items, array( 'object_id' => get_queried_object_id() ) ) );
+  // If not found, check for url match.
+  if ($current_menu_item == false) {
+    $current_menu_item = current( wp_filter_object_list( $menu_items, array( 'url' => h7lc_current_url() ) ) );
+  }
   return $current_menu_item;
 }
