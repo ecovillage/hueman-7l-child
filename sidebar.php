@@ -1,4 +1,4 @@
-﻿<?php $layout = hu_layout_class(); ?>
+<?php $layout = hu_layout_class(); ?>
 <?php if ( $layout != 'col-1c'): ?>
 
 	<div class="sidebar s1">
