@@ -1,7 +1,15 @@
 <?php
 /* Wrote my awesome functions below */
 
-function h7lc_sidebar_submenu () {
+
+// Return the current URL.  Please improve my worldview by pointing me to
+// the actual implementation in wordpress core if you find it.
+function h7lc_current_url() {
+  return 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+}
+
+
+function h7lc_sidebar_submenu() {
   // current displayed item
   // list of parents
   // menu
