@@ -301,6 +301,6 @@ h2.breadcrumbs {
 }
 
 /* Black highlight of left child menus current page. */
-.child-menu .current_page_item > a {
+.sidebar-content .child-menu .current_page_item > a {
   color: black;
 }
