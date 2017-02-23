@@ -195,9 +195,10 @@
                     <label for="comment">Bemerkung</label>
                     <input type="text" placeholder="..." id="comment" name="registration[comment]"/>
 
-                    <label for="accept_terms">Rücktrittsbedingungen</label>
-                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Akzeptieren</input>
-
+                    <h4>Rücktrittsbedingungen</h4>
+                    <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?><br/>
+                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen</input>
+                    <br/>
 
                     <input type="submit" value="Anmelden"></submit>
                   </form>
