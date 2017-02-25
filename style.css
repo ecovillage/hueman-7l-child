@@ -298,6 +298,7 @@ h2.breadcrumbs {
 /* fa-circle-thin: "\f1db" for menu items without children */
 .child-menu > li > ul > li > a.childless::before {
   content: "\f1db";
+  visibility: hidden;
 }
 
 /* Black highlight of left child menus current page. */
