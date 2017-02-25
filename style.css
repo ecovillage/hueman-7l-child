@@ -310,7 +310,7 @@ h2.breadcrumbs {
 .caption {
   color: white;
   display: inline-block;
-  background: rgb(119, 187, 68);
+  background: #C9D30E;
 }
 
 /* Image caption now serves as heading. Change color to whitish, margins. */
