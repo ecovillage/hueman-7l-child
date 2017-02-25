@@ -304,3 +304,22 @@ h2.breadcrumbs {
 .sidebar-content .child-menu .current_page_item > a {
   color: black;
 }
+
+/* Image caption now serves as heading. Change color to whitish. */
+.caption {
+  color: white;
+  display: inline-block;
+  background: rgb(119, 187, 68);
+}
+
+/* Image caption now serves as heading. Change color to whitish, margins. */
+.caption h1 {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Text in image should be at 1/3 height. */
+.page-image-text {
+  top: 30%;
+}
