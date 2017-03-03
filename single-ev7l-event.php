@@ -157,7 +157,9 @@
                 wp_reset_postdata();
               ?>
               <br/>
-                <?php if(get_post_meta($event->ID, 'registration_needed', true)) { ?>
+                <?php
+                  $todaytotime = strtotime('today');
+                  if(get_post_meta($event->ID, 'registration_needed', true) && ev7l_is_after($event->ID, $todaytotime)) { ?>
 
                 <div id="registration">
                   <h2>Anmeldung</h2>
@@ -205,8 +207,11 @@
                 </div> <!-- #registration -->
               <?php
                 }
-                else { ?>
+              elseif (ev7l_is_after($event->ID, $todaytotime)) { ?>
                 <b>Keine Anmeldung nötig.</b>
+              <?php
+                } else { ?>
+                <b>Veranstaltung liegt in der Vergangenheit.</b>
               <?php
                 }
                ?>
