@@ -59,10 +59,12 @@ function h7lc_current_menu_item() {
   // Identify current menu item
   $menu_items = wp_get_nav_menu_items( 'top-de' );
   // Alternative: get_queried_object.
-  $current_menu_item = current( wp_filter_object_list( $menu_items, array( 'object_id' => get_queried_object_id() ) ) );
+  $current_menu_item = current( wp_filter_object_list( $menu_items,
+    array( 'object_id' => get_queried_object_id() ) ) );
   // If not found, check for url match.
   if ($current_menu_item == false) {
-    $current_menu_item = current( wp_filter_object_list( $menu_items, array( 'url' => h7lc_current_url() ) ) );
+    $current_menu_item = current( wp_filter_object_list( $menu_items,
+      array( 'url' => h7lc_current_url() ) ) );
   }
   return $current_menu_item;
 }
