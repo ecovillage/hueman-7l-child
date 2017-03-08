@@ -59,10 +59,11 @@ body {
   background-color: #b5bd0d;
 }
 
-/* Less white space in header (no submenu) */
+/* Less white space in header (no submenu), but space white indeed */
 #header .pad {
   padding-top: 10px;
   padding-bottom: 10px;
+  background: white;
 }
 
 /* Green content top header bar on homepage */
@@ -294,12 +295,6 @@ h2.breadcrumbs {
   font-size: 14pt;
   margin-bottom: 8px;
   margin-top: 12px;
-}
-
-#header .pad {
-  background: white;
-  padding-top: 0px;
-  padding-bottom: 0px;
 }
 
 /* fa-circle-thin: "\f1db" for menu items without children */
