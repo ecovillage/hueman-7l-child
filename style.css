@@ -291,6 +291,7 @@ h2.breadcrumbs {
 }
 
 #header .pad {
+  background: white;
   padding-top: 0px;
   padding-bottom: 0px;
 }
