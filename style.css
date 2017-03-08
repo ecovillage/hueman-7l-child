@@ -246,6 +246,10 @@ ul.calendar-events {
   list-style: none;
 }
 
+.hu-img-placeholder{
+margin-top: 10px;
+}
+
 ul.calendar-events li {
   list-style: none;
   display: inline-block;
