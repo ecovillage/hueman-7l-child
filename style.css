@@ -72,6 +72,8 @@ body {
 
 /* Thin line below top menu */
 #nav-topbar.nav-container {
+  margin-left: 20px;
+  margin-right: 20px;
   border: 1px solid #9b9c96;
   border-width: 0px 0px 1px 0px;
 }
