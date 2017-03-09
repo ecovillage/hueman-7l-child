@@ -250,7 +250,7 @@ ul.calendar-events {
 }
 
 /* Make calendar images h-align with text. */
-ul.calendar-events .hu-img-placeholder{
+ul.calendar-events img{
   margin-top: 10px;
 }
 
