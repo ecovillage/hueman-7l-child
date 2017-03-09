@@ -330,6 +330,7 @@ h2.breadcrumbs {
   top: 30%;
 }
 
+/* Adjust event featured image text overlay. */
 .ev7l-event .post-inner .entry .entry-inner .page-image .image-container .page-image-text .caption h1 {
   font-weight:600;
   font-size: xx-large;
@@ -337,6 +338,6 @@ h2.breadcrumbs {
 }
 
 /* Text in image: hide original h1 */
-.ev7l-event .post-inner h1.entry-title { 
+.ev7l-event .post-inner h1.entry-title {
   display: none;
 }
