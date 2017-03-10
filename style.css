@@ -1,6 +1,6 @@
 /*
 Theme Name: siebenlinden.org hueman child theme
-Version: 0.3.8
+Version: 0.3.9
 Description: A child theme of Hueman for siebenlinden.org
 Template: hueman
 Author: Felix Wolfsteller
@@ -87,7 +87,7 @@ body {
 /* Darken link color a bit */
 .content a {
   font-weight: 400;
-  color: #7B4;
+  color: #989F30;
 }
 
 /* Left sidebar smaller (280px instead of 340px) */
@@ -198,7 +198,7 @@ article.ev7l-event h2 {
   padding-bottom: 2em;
 }
 .upcoming-events h2 {
-  color: #7B4;
+  color: #989F30;
   font-size: 16pt;
   margin-bottom: 2em;
   margin-top: 2em;
@@ -233,7 +233,7 @@ article.ev7l-event h2 {
 }
 
 .event-dates-small {
-  color: #7B4;
+  color: #989F30;
   font-size: 12pt;
 }
 
