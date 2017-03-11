@@ -46,6 +46,10 @@ Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'bet
 
 Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'betrieb' archive view.
 
+### content.php
+
+Overwritten from vanilla hueman (3.3.4) - do not category if about in a 'betrieb' post (over)view.
+
 ### style.css
 
 Main css overrides and new definitions.
