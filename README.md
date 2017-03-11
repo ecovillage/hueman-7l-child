@@ -38,6 +38,10 @@ Standard page, with heading above image.
 
 Calendar page, if needed.  In order for it to work, you'll need a page called ... 'calendar'.
 
+### parts/single-author-date.php
+
+Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'betrieb' single view.
+
 ### style.css
 
 Main css overrides and new definitions.
