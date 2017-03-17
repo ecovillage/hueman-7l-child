@@ -129,16 +129,15 @@ function h7lc_shortcode_pages_list($atts) {
   // From archive.php :
   ob_start();
 
-?>
-    <?php if ( $children_query->have_posts() ) : ?>
+  if ( $children_query->have_posts() ) { ?>
       <div class="post-list group">
         <?php echo '<div class="post-row">'; while ( $children_query->have_posts() ): $children_query->the_post(); ?>
           <?php get_template_part('content'); ?>
         <?php if( ( $children_query->current_post + 1 ) % 2 == 0 ) { echo '</div><div class="post-row">'; }; endwhile; echo '</div>'; ?>
       </div><!--/.post-list-->
       <!--?php get_template_part('parts/pagination'); ?-->
-      <?php endif; ?>
   <?php
+  }
   $ret = ob_get_contents();
   ob_end_clean();
   wp_reset_query();
