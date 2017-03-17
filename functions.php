@@ -84,3 +84,13 @@ function h7lc_current_menu_item() {
 
 add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
 
+function h7lc_shortcode_featured_flexslider() {
+  ob_start();
+  get_template_part('parts/featured_custom');
+  $ret = ob_get_contents();
+  ob_end_clean();
+  return $ret;
+}
+
+add_shortcode( 'featured_news', 'h7lc_shortcode_featured_flexslider' );
+
