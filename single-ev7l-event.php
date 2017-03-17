@@ -27,6 +27,7 @@
 
 					<div class="<?php echo implode( ' ', apply_filters( 'hu_single_entry_class', array('entry','themeform') ) ) ?>">
             <div class="entry-inner">
+             <h1><?php echo the_title(); ?></h1>
 
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
               <?php hu_get_template_part('parts/page-image'); ?>
