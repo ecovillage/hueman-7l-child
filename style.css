@@ -350,3 +350,13 @@ h2.breadcrumbs {
 .ev7l-event .post-inner h1.entry-title {
   display: none;
 }
+
+/* Do not show list bullets for flexslider navigation */
+#flexslider-featured li {
+  list-style: none;
+}
+
+/* Let event list look wider on start page */
+.home .ev7l_event_list {
+  margin-left: 0px;
+}
