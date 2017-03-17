@@ -38,6 +38,10 @@ Standard page, with heading above image.
 
 Calendar page, if needed.  In order for it to work, you'll need a page called ... 'calendar'.
 
+### content-featured-custom.php
+
+For 'featured-news-slider' (used by shortcode), do not display the category.  Derived from content-featured.php (vanilla hueman 3.3.4).
+
 ### parts/single-author-date.php
 
 Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'betrieb' single view.
@@ -56,7 +60,22 @@ Main css overrides and new definitions.
 
 ### functions.php
 
-Enough emptiness for everybody.
+Enough emptiness for everybody.  Now, things start to happen here.
+
+#### Define some shortcodes
+
+##### [featured_news]
+
+Shows a flexslider running through latest posts of the 'news' category.
+
+##### [upcoming_events]
+
+Shows an 'alx' style list of upcoming events, much like in the sidebar widget of the ev7l-events plugin.
+
+##### [pages_list]
+
+Shows child pages of a certain page as in the two-column post list.
+Example: `[pages_list parent_name="My Parent Page Title"]`
 
 ### screenshot.png
 
