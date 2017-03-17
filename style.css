@@ -172,6 +172,8 @@ h2.event-list-month-name {
   color: #f29400;
   padding-bottom: 1em;
   text-transform: uppercase;
+  font-size: 0.9375em;
+  text-transform: uppercase;
 }
 
 ul.ev7l_event_list {
@@ -364,4 +366,8 @@ h2.breadcrumbs {
 /* Let event list look wider on start page */
 .home .ev7l_event_list {
   margin-left: 0px;
+}
+
+.post-list h2.post-title {
+  font-size: 1.375em;
 }
