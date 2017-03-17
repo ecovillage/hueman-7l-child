@@ -69,6 +69,8 @@ function h7lc_current_menu_item() {
   return $current_menu_item;
 }
 
+  /* TODO This needs more precision, we do not always need the flexslider js, but
+   * for pages that use the featured posts feature ... */
   function load_flexslider_js() {
     //  if ( is_page_template( 'template-registration-page.php' ) ) {
     if (1 == 1) {
@@ -84,6 +86,7 @@ function h7lc_current_menu_item() {
 
 add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
 
+/** Load featured_custom partial to render news as a flexslider. */
 function h7lc_shortcode_featured_flexslider() {
   ob_start();
   get_template_part('parts/featured_custom');
