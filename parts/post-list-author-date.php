@@ -9,7 +9,7 @@
 
 <?php /* Leaving vanilla hueman 3.3.4 parts/post-list-author-date.php */ ?>
 <?php /*both is_category and has_category seem to do what we want */ ?>
-<?php if(!has_category('betriebe')) { ?>
+<?php if(!has_category('betriebe') && !is_page()) { ?>
 <?php /* Reentering vanilla hueman 3.3.4 parts/post-list-author-date.php */ ?>
 <p class="post-date">
   <time class="published updated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time( get_option('date_format') ); ?></time>
