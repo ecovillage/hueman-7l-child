@@ -97,53 +97,15 @@ add_shortcode( 'featured_news', 'h7lc_shortcode_featured_flexslider' );
 // Shortcode to output the next 10 events in our style.
 function h7lc_shortcode_upcoming_events() {
   ob_start();
-  // TODO this is copy-and-paste code from ev7l widgets event-list-alx.php
-  // -> extract it.
-  $events = upcoming_events();
 
-  if ( $events->have_posts() ) {
-    echo '<div class="widget widget_ev7l_event_list_widget">';
-    // move separate uls into loop
-    echo '<ul class="ev7l_event_list alx-posts group thumbs-enabled">';
-    $month = -1;
-    $year = -1;
-    global $post;
-    while ( $events->have_posts() ) {
-      $events->the_post();
-      // New month?
-      $start_month = date_i18n('F', get_post_meta($post->ID, 'fromdate', true));
-      if ($month != $start_month) {
-        $month = $start_month;
-        echo '</ul>';
-        echo '<h2 class="event-list-month-name">' . $month . '</h2>';
-        echo '<ul class="ev7l_event_list alx-posts group thumbs-enabled">';
-      }
-      ?>
-        <li>
-          <div class="post-item-thumbnail">
-            <a href="<?php echo get_permalink($post->ID); ?>" title="<?php echo get_the_title($post->ID); ?>">
-            <?php hu_the_post_thumbnail('thumb-medium'); ?>
-          </div>
-          <div class="post-item-inner group">
-            <p class="post-item-category"><a href="" rel="category tag">Veranstaltung</a>
-            </p>
-            <p class="post-item-title">
-              <a href="<?php echo get_permalink($post->ID); ?>" rel="bookmark" title="<?php echo get_the_title($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
-            </p>
-            <p class="post-item-date">
-              <?php echo date_i18n('D, d.m', get_post_meta($post->ID, 'fromdate', true)); ?>
-              -
-              <?php echo date_i18n('D, d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
-            </p>
-          </div>
-        </li>
-     <?php
-    } // while $events->have_posts()
-    echo '</ul>';
-    echo '</div>';
+  // TODO the template part is copy-and-paste code from ev7l widgets
+  // event-list-alx.php -> extract/merge it
+  global $upcoming_events;
+  $upcoming_events = upcoming_events();
 
-    wp_reset_postdata();
-  } // if $events->have_posts()
+  get_template_part('parts/event_list_alx');
+
+  wp_reset_postdata();
   $ret = ob_get_contents();
   ob_end_clean();
   return $ret;
