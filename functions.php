@@ -68,3 +68,19 @@ function h7lc_current_menu_item() {
   }
   return $current_menu_item;
 }
+
+  function load_flexslider_js() {
+    //  if ( is_page_template( 'template-registration-page.php' ) ) {
+    if (1 == 1) {
+      wp_enqueue_script(
+        'flexslider',
+        get_template_directory_uri() . '/assets/front/js/lib/jquery.flexslider.min.js',
+        array( 'jquery' ),
+        '',
+        false
+      );
+    }
+  }
+
+add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
+
