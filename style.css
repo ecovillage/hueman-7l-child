@@ -245,6 +245,11 @@ article.ev7l-event h2 {
   margin-top: 12px;
 }
 
+#referees h2 {
+  color: #666;
+  font-size: 1.125em;
+}
+
 #registration {
   display: "inline-block";
 }
