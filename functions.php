@@ -116,11 +116,14 @@ function h7lc_shortcode_upcoming_events() {
 
 add_shortcode( 'upcoming_events', 'h7lc_shortcode_upcoming_events' );
 
+// Parameters in attr: 'parent_name' is the title of page whose
+// children will be listed.
 function h7lc_shortcode_pages_list($atts) {
   $a = shortcode_atts( array('parent_name' => 'Projekte'), $atts );
-  //$parent_page = get_page_by_title($a['parent_name']);
+  //$parent_page = get_page_by_path( 'page-slug' );
+  $parent_page = get_page_by_title($a['parent_name']);
   $children_query = new WP_Query(
-    array('post_type' => 'page', 'posts_per_page' => '-1', 'post_parent' => 1870));//$parent_page->ID));
+    array('post_type' => 'page', 'posts_per_page' => '-1', 'post_parent' => $parent_page->ID));
   $children_query->have_posts();
 
   // From archive.php :
@@ -128,23 +131,14 @@ function h7lc_shortcode_pages_list($atts) {
 
 ?>
     <?php if ( $children_query->have_posts() ) : ?>
-
-      <?php if ( hu_is_checked('blog-standard') ): ?>
-        <?php while ( $children_query->have_posts() ): $children_query->the_post(); ?>
-          <?php get_template_part('content-standard'); ?>
-        <?php endwhile; ?>
-      <?php else: ?>
       <div class="post-list group">
         <?php echo '<div class="post-row">'; while ( $children_query->have_posts() ): $children_query->the_post(); ?>
           <?php get_template_part('content'); ?>
         <?php if( ( $children_query->current_post + 1 ) % 2 == 0 ) { echo '</div><div class="post-row">'; }; endwhile; echo '</div>'; ?>
       </div><!--/.post-list-->
-      <?php endif; ?>
-
       <!--?php get_template_part('parts/pagination'); ?-->
-
-      <?php endif; ?><?php
-
+      <?php endif; ?>
+  <?php
   $ret = ob_get_contents();
   ob_end_clean();
   wp_reset_query();
