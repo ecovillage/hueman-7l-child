@@ -369,3 +369,11 @@ h2.breadcrumbs {
 .post-list h2.post-title {
   font-size: 1.375em;
 }
+
+.calendar-events .referees {
+  font-size: 0.8em;
+}
+
+li.calendar-event-row {
+  margin-bottom: 2em;
+}

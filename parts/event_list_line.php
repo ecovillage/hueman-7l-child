@@ -12,6 +12,24 @@
       von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
       bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
     </div>
+    <?php
+      $referees = referees_by_event($post->ID);
+      if ($referees->have_posts()) {
+        // TODO transform to array and implode
+        echo "<div class=\"referees\">(mit ";
+        while ($referees->have_posts()) {
+          $referees->the_post();
+          ?>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          <?php
+            // In all its madness, this is proposed by official documentation:
+            // https://codex.wordpress.org/Function_Reference/have_posts#Note
+            if ($referees->current_post + 1 < $referees->post_count) { echo ' und '; }
+        }
+        echo ")</div>";
+      }
+      $referees->reset_postdata();
+    ?>
     <?php the_excerpt(); ?>
   </div>
 </li>

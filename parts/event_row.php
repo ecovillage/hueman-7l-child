@@ -9,7 +9,8 @@
       <?php
         $referees = referees_by_event($post->ID);
         if ($referees->have_posts()) {
-          echo "(mit ";
+          // TODO transform to array and implode
+          echo "<div class=\"referees\">(mit ";
           while ($referees->have_posts()) {
             $referees->the_post();
             ?>
@@ -19,8 +20,9 @@
               // https://codex.wordpress.org/Function_Reference/have_posts#Note
               if ($referees->current_post + 1 < $referees->post_count) { echo ' und '; }
           }
-          echo ")";
+          echo ")</div>";
         }
+        $referees->reset_postdata();
       ?>
     </a>
   </td>
