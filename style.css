@@ -377,3 +377,7 @@ h2.breadcrumbs {
 li.calendar-event-row {
   margin-bottom: 2em;
 }
+
+.referee-events .calendar-event-row img {
+  margin-top: 0.4em;
+}
