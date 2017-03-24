@@ -42,7 +42,7 @@
                   */ ?>
                 <?php endif; ?>
               </div>
-      
+
                 <div class="clear"></div>
                 <?php $homepage = get_post_meta($post->ID, 'homepage', true); ?>
                 <?php if (!empty($homepage) ): ?>
@@ -52,21 +52,21 @@
                 </div>
                 <?php endif; ?>
                 <div class="hr"></div>
-      
+
                 <div class="event-listing-heading">
                   <h2>Veranstaltungen von und mit <?php echo the_title(); ?></h2>
                 </div>
-      
+
                 <div class="upcoming-events">
                   <?php
                     $events = upcoming_events_by_referee($post->ID);
-      
+
                     if ( $events->have_posts() ) {
                       echo '<ul class="referee-events">';
-      
+
                       // Loop vars to find month changes.
                       $monthyear  = -1;
-      
+
                       while ( $events->have_posts() ) {
                         $events->the_post();
                         $base_referee_id = $post->ID;
