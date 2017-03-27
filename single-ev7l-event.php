@@ -131,7 +131,7 @@
                     ?>
                     <?php if ( has_post_thumbnail() ): ?>
                       <div class="grid two-third">
-                        <a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <h3><a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         <div class="referee-qualification">
                           <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
                         </div>

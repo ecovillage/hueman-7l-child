@@ -234,8 +234,6 @@ article.ev7l-event h2 {
 
 #referees {
   display: "inline-block";
-  color: #989F30;
-  font-size: 1.125em;
   margin-bottom: 8px;
   margin-top: 12px;
 }
@@ -243,6 +241,11 @@ article.ev7l-event h2 {
 #referees h2 {
   color: #666;
   font-size: 1.125em;
+}
+
+#referees h3 {
+  color: #989F30;
+  font-size: 1.1em;
 }
 
 #registration {
