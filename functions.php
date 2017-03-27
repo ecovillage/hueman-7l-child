@@ -55,6 +55,13 @@ function h7lc_childful_menu_item_ids() {
   return $parent_ids;
 }
 
+/**
+ * Get the menu_item object of the currently shown page/post.
+ * If no menu item refers to the current posts object_id,
+ * try a url match.  If that also fails, check whether we are
+ * looking at a single ev7l-event (which are not all listed in the
+ * menu).  If so, let the current menu item be a fixed one.
+ */
 function h7lc_current_menu_item() {
   // Identify current menu item
   $menu_items = wp_get_nav_menu_items( 'top-de' );
@@ -65,6 +72,13 @@ function h7lc_current_menu_item() {
   if ($current_menu_item == false) {
     $current_menu_item = current( wp_filter_object_list( $menu_items,
       array( 'url' => h7lc_current_url() ) ) );
+  }
+  if ($current_menu_item == false) {
+    if (get_post_type() == "ev7l-event") {
+      $current_menu_item = current( wp_filter_object_list( $menu_items,
+        //array( 'object_id' => 1927 ) ) );
+        array( 'title' => 'Unser Gästebetrieb' ) ) );
+    }
   }
   return $current_menu_item;
 }
