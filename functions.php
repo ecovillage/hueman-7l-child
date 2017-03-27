@@ -104,7 +104,7 @@ function h7lc_shortcode_upcoming_events() {
   // TODO the template part is copy-and-paste code from ev7l widgets
   // event-list-alx.php -> extract/merge it
   global $upcoming_events;
-  $upcoming_events = upcoming_events();
+  $upcoming_events = upcoming_events(10);
 
   get_template_part('parts/event_list_alx');
 
