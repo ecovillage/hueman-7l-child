@@ -20,8 +20,8 @@
       <?php if( true || is_page_template('page-templates/child-menu.php') ): ?>
 
 <?php $current_menu_item_ancestors = h7lc_current_menu_item_ancestors(); ?>
-<?php $current_menu_item          = h7lc_current_menu_item(); ?>
-<?php $parent_ids                 = h7lc_childful_menu_item_ids(); ?>
+<?php $current_menu_item           = h7lc_current_menu_item(); ?>
+<?php $parent_ids                  = h7lc_childful_menu_item_ids(); ?>
 <!--has title and url, and id, menu_item_parent-->
 
 <?php
