@@ -79,6 +79,10 @@ function h7lc_current_menu_item() {
         //array( 'object_id' => 1927 ) ) );
         array( 'title' => 'Unser Gästebetrieb' ) ) );
     }
+    else if (get_post_type() == "ev7l-referee") {
+      $current_menu_item = current( wp_filter_object_list( $menu_items,
+        array( 'title' => 'Referent*innen' ) ) );
+    }
   }
   return $current_menu_item;
 }
