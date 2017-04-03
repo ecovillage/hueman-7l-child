@@ -51,11 +51,11 @@
                   $post_fy = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
                   if ($monthyear != $post_fy) {
                     $monthyear = $post_fy;
-                    echo '</table><h2>'.$monthyear.'</h2><table>';
+                    echo '</ul><h2>'.$monthyear.'</h2><ul class="category-events">';
                   }
-                  get_template_part('parts/event_row');
+                  get_template_part('parts/event_list_line');
                 }
-                echo "</table>";
+                echo "</ul>";
             } else {
               echo "Keine entsprechenden Veranstaltungen in der Zukunft";
             }

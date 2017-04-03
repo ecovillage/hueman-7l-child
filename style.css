@@ -275,6 +275,15 @@ ul.referee-events li {
   display: inline-block;
 }
 
+ul.category-events {
+  list-style: none;
+}
+
+ul.category-events li {
+  list-style: none;
+  display: inline-block;
+}
+
 ul.event-categories {
   list-style: none;
 }
