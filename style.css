@@ -187,6 +187,12 @@ ul.ev7l_event_list {
 
 article.ev7l-event h2 {
   color: #c9d30e;
+  font-size: 1.75em;
+}
+
+article.ev7l-event h3 {
+  color: #c9d30e;
+  font-size: 1.5em;
 }
 
 .upcoming-events {
