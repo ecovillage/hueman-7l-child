@@ -326,6 +326,14 @@ h2.breadcrumbs {
   visibility: hidden;
 }
 
+.child-menu a {
+  color: #222;
+}
+
+.child-menu a:hover {
+  color: #b5bd0d;
+}
+
 /* Black highlight of left child menus current page. */
 .sidebar-content .child-menu .current_page_item > a {
   color: black;
