@@ -402,3 +402,8 @@ li.calendar-event-row {
 .referee-events .calendar-event-row img {
   margin-top: 0.4em;
 }
+
+.textwidget ul {
+  margin-left: 1.5em;
+  list-style: square;
+}
