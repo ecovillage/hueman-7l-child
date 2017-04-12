@@ -17,7 +17,7 @@
 				<?php while ( have_posts() ): the_post(); ?>
           <li class="event-category-row">
             <div class="grid one-third">
-              <?php hu_the_post_thumbnail('thumbnail'); ?>
+              <?php hu_the_post_thumbnail('thumb-medium'); ?>
             </div>
             <div class="grid two-third last">
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
