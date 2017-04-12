@@ -61,6 +61,8 @@ function h7lc_childful_menu_item_ids() {
  * try a url match.  If that also fails, check whether we are
  * looking at a single ev7l-event (which are not all listed in the
  * menu).  If so, let the current menu item be a fixed one.
+ *
+ * If no one is found, default to the top page.
  */
 function h7lc_current_menu_item() {
   // Identify current menu item
@@ -82,8 +84,12 @@ function h7lc_current_menu_item() {
     else if (get_post_type() == "ev7l-referee") {
       $current_menu_item = current( wp_filter_object_list( $menu_items,
         array( 'title' => 'Referent*innen' ) ) );
+    } else {
+      // Default to start page/full menu
+      $current_menu_item = $menu_items[0];
     }
   }
+
   return $current_menu_item;
 }
 
