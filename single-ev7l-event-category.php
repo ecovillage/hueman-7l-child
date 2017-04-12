@@ -19,17 +19,8 @@
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
         <?php /* if (the_content(); not empty ... */ ?>
-        <div class="grid one-third">
-        </div>
-        <div class="grid two-third last">
-          <?php the_content(); ?>
-        </div>
-
-					<?php if ( has_post_thumbnail() ): ?>
-						<?php hu_the_post_thumbnail('thumb-medium'); ?>
-					<?php elseif ( hu_is_checked('placeholder') ): ?>
-            <?php /*Code does not work here:  hu_print_placeholder_thumb('thumb-medium'); */ ?>
-          <?php endif; ?>
+        <?php get_template_part('parts/page-image'); ?>
+        <?php the_content(); ?>
 
           <div class="clear"></div>
           <div class="hr"></div>
@@ -41,7 +32,7 @@
 
             if ( $events->have_posts() ) {
               ?>
-              <table>
+              <ul>
                 <?php
                 // Loop vars to find month changes.
                 $monthyear  = -1;
