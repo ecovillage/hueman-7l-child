@@ -9,7 +9,7 @@
 
 <?php /* Leaving vanilla hueman 3.3.4 parts/post-list-author-date.php */ ?>
 <?php /*both is_category and has_category seem to do what we want */ ?>
-<?php if(!has_category('betriebe') && !is_page()) { ?>
+<?php if(!has_category('betriebe' && !has_category('kooperationsprojekte')) && !is_page()) { ?>
 <?php /* Reentering vanilla hueman 3.3.4 parts/post-list-author-date.php */ ?>
 <p class="post-date">
   <?php if(get_post_type() == "ev7l-referee") {

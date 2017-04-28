@@ -1,6 +1,6 @@
 <?php /* Leaving vanilla hueman 3.3.4 parts/single-author-date.php */ ?>
 <?php /*both is_category and has_category seem to do what we want */ ?>
-<?php if(!has_category('betriebe')) { ?>
+<?php if(!has_category('betriebe') && !has_category('kooperationsprojekte')) { ?>
 <?php /* Reentering vanilla hueman 3.3.4 parts/single-author-date.php */ ?>
 <?php
 /*  Print the post author. Compatible with Google Structured data. Must be used in the WordPress loop
