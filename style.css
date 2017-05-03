@@ -407,3 +407,7 @@ li.calendar-event-row {
   margin-left: 1.5em;
   list-style: square;
 }
+
+.wpcf7 label {
+  width: 50%;
+}

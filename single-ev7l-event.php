@@ -198,14 +198,24 @@
                     <label for="comment">Bemerkung</label>
                     <input type="text" placeholder="..." id="comment" name="registration[comment]"/>
 
+                    <br/>
                     <h4>Rücktrittsbedingungen</h4>
                     <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?><br/>
+                    <br/>
                     <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen</input>
                     <br/>
 
                     <input type="submit" value="Anmelden"></submit>
                   </form>
                 </div> <!-- #registration -->
+                <hr/>
+                <div id="question">
+                  <h3>Frage zur Veranstaltung stellen</h3>
+                  <?php echo do_shortcode('[contact-form-7 id="2325" title="Kontaktformular 1"]'); ?>
+                </div>
+                <script type="text/javascript">
+                    document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?>';
+                </script>
               <?php
                 }
               elseif (ev7l_is_after($event->ID, $todaytotime)) { ?>
