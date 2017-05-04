@@ -171,6 +171,8 @@
                   <form id="registration_form" action="http://seminare.siebenlinden.de/seminar/register" charset="UTF-8" method="POST">
                     <input type="hidden" name="seminar_id" value="<?php echo get_post_meta($event->ID, 'uuid', true) ?>"/>
 
+                    <div class="grid one-half">
+
                     <label for="firstname">Vorname</label>
                     <input type="text" placeholder="Vorname" id="firstname" name="registration[firstname]"/>
 
@@ -189,6 +191,9 @@
                     <label for="land">Land</label>
                     <input type="text" placeholder="Land" id="land" name="registration[land]"/>
 
+                    </div>
+                    <div class="grid one-half last">
+
                     <label for="email">E-Mail</label>
                     <input type="text" placeholder="email" id="email" name="registration[email]"/>
 
@@ -200,6 +205,8 @@
 
                     <label for="comment">Bemerkung</label>
                     <input type="text" placeholder="..." id="comment" name="registration[comment]"/>
+
+                    </div>
 
                     <br/>
                     <h4>Rücktrittsbedingungen</h4>
