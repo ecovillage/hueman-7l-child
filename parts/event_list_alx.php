@@ -22,6 +22,7 @@
           <div class="post-item-thumbnail">
             <a href="<?php echo get_permalink($post->ID); ?>" title="<?php echo get_the_title($post->ID); ?>">
             <?php hu_the_post_thumbnail('thumb-medium'); ?>
+            </a>
           </div>
           <div class="post-item-inner group">
             <p class="post-item-category"><a href="" rel="category tag">Veranstaltung</a>
