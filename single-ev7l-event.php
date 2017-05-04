@@ -164,7 +164,10 @@
 
                 <div id="registration">
                   <h2>Anmeldung</h2>
-                  <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen hier möglich.</a>
+                  <span style="color:red;">
+                    ACHTUNG: siebenlinden.org ist noch ganz frisch.  Solltest du andere Personen mit anmelden wollen, benutze bitte vorerst unsere 'alte' Webseite:
+                  </span>
+                  <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen über alte Webseite hier möglich.</a>
                   <form id="registration_form" action="http://seminare.siebenlinden.de/seminar/register" charset="UTF-8" method="POST">
                     <input type="hidden" name="seminar_id" value="<?php echo get_post_meta($event->ID, 'uuid', true) ?>"/>
 
@@ -202,7 +205,12 @@
                     <h4>Rücktrittsbedingungen</h4>
                     <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?><br/>
                     <br/>
-                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen</input>
+                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen und die <a href="http://draft.siebenlinden.org/seminare/agb/">Allgemeinen Geschäftsbedingungen</a></input>
+                    <br/>
+                    <br/>
+                    <span style="color:red;">
+                      ACHTUNG, zur Zeit wirst Du nach/zur Anmeldung noch auf das alte Portal (http://seminare.siebenlinden.de) weitergeleitet.
+                    </span>
                     <br/>
 
                     <input type="submit" value="Anmelden"></submit>
@@ -211,7 +219,7 @@
                 <hr/>
                 <div id="question">
                   <h3>Frage zur Veranstaltung stellen</h3>
-                  <?php echo do_shortcode('[contact-form-7 id="2325" title="Kontaktformular 1"]'); ?>
+                  <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
                 </div>
                 <script type="text/javascript">
                     document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?>';
