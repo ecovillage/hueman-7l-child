@@ -169,3 +169,46 @@ function h7lc_shortcode_pages_list($atts) {
 }
 
 add_shortcode( 'pages_list', 'h7lc_shortcode_pages_list' );
+
+
+/* Show a calender, built out of ul#calendar_events and parts/event_list_line
+ * templates.
+ * attrs can hold year and name (both as integers)
+ * */
+function h7lc_calendar($atts) {
+  $a = shortcode_atts(array('year' => date('Y'), 'month' => date('m')), $atts );
+  $eventyear = $a['year'];
+  $eventmonth = $a['month'];
+  if ($eventyear && !$eventmonth) {
+    $events = events_in_year($eventyear);
+    // TODO now we also want to split upcoming and past ....
+    // there is ev7l functions for this already, but this should only apply to
+    // the current year!
+  } elseif ($eventmonth && !$eventyear) {
+    $events = events_in_year_month(date('Y'), $eventmonth);
+    // Should probably default to current year.  Can we default that in the get_query_var / eventyear assignment?
+  } elseif ($eventmonth && $eventyear) {
+    $events = events_in_year_month($eventyear, $eventmonth);
+  } else {
+    //echo 'Default (no year, no month)';
+  }
+  if ($events->have_posts() ) { ?>
+    <ul class="calendar-events">
+      <?php
+      while ( $events->have_posts() ) {
+        $events->the_post();
+        get_template_part('parts/event_list_line');
+      }
+    echo '</ul>';
+  } else { ?>
+    Keine Veranstaltungen im gewählten Zeitraum
+  <?php
+  }
+
+  $ret = ob_get_contents();
+  ob_end_clean();
+  wp_reset_query();
+  return $ret;
+}
+
+add_shortcode( 'event_calendar', 'h7lc_calendar');
