@@ -202,10 +202,12 @@
                       <input type="text" placeholder="0123 45678" id="mobile" name="registration[mobile]"/>
 
                       <label for="comment">Bemerkung</label>
-                      <input type="text" placeholder="..." id="comment" name="registration[comment]"/>
+                      <textarea placeholder="..." id="comment" name="registration[comment]" rows="7"></textarea>
                     </div>
 
                     <br/>
+                    <br class="clear"/>
+                    <div class="registration-controls">
                     <h4>Rücktrittsbedingungen</h4>
                     <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?><br/>
                     <br/>
@@ -218,6 +220,7 @@
                     <br/>
 
                     <input type="submit" value="Anmelden"></submit>
+                    </div>
                   </form>
                 </div> <!-- #registration -->
                 <hr/>
