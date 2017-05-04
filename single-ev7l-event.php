@@ -172,40 +172,37 @@
                     <input type="hidden" name="seminar_id" value="<?php echo get_post_meta($event->ID, 'uuid', true) ?>"/>
 
                     <div class="grid one-half">
+                      <label for="firstname">Vorname</label>
+                      <input type="text" placeholder="Vorname" id="firstname" name="registration[firstname]"/>
 
-                    <label for="firstname">Vorname</label>
-                    <input type="text" placeholder="Vorname" id="firstname" name="registration[firstname]"/>
+                      <label for="lastname">Nachname</label>
+                      <input type="text" placeholder="Nachname" id="lastname" name="registration[lastname]"/>
 
-                    <label for="lastname">Nachname</label>
-                    <input type="text" placeholder="Nachname" id="lastname" name="registration[lastname]"/>
+                      <label for="street_and_no">Straße und Hausnummer</label>
+                      <input type="text" placeholder="Straße und Hausnummer" id="street_and_no" name="registration[street_and_no]"/>
 
-                    <label for="street_and_no">Straße und Hausnummer</label>
-                    <input type="text" placeholder="Straße und Hausnummer" id="street_and_no" name="registration[street_and_no]"/>
+                      <label for="zip">PLZ</label>
+                      <input type="text" placeholder="PLZ" id="zip" name="registration[zip]"/>
 
-                    <label for="zip">PLZ</label>
-                    <input type="text" placeholder="PLZ" id="zip" name="registration[zip]"/>
+                      <label for="city">Ort</label>
+                      <input type="text" placeholder="Ort" id="city" name="registration[city]"/>
 
-                    <label for="city">Ort</label>
-                    <input type="text" placeholder="Ort" id="city" name="registration[city]"/>
-
-                    <label for="land">Land</label>
-                    <input type="text" placeholder="Land" id="land" name="registration[land]"/>
-
+                      <label for="land">Land</label>
+                      <input type="text" placeholder="Land" id="land" name="registration[land]"/>
                     </div>
+
                     <div class="grid one-half last">
+                      <label for="email">E-Mail</label>
+                      <input type="text" placeholder="email" id="email" name="registration[email]"/>
 
-                    <label for="email">E-Mail</label>
-                    <input type="text" placeholder="email" id="email" name="registration[email]"/>
+                      <label for="phone">Telefonnummer</label>
+                      <input type="text" placeholder="0123 45678" id="phone" name="registration[phone]"/>
 
-                    <label for="phone">Telefonnummer</label>
-                    <input type="text" placeholder="0123 45678" id="phone" name="registration[phone]"/>
+                      <label for="mobile">Handy-Nummer</label>
+                      <input type="text" placeholder="0123 45678" id="mobile" name="registration[mobile]"/>
 
-                    <label for="mobile">Handy-Nummer</label>
-                    <input type="text" placeholder="0123 45678" id="mobile" name="registration[mobile]"/>
-
-                    <label for="comment">Bemerkung</label>
-                    <input type="text" placeholder="..." id="comment" name="registration[comment]"/>
-
+                      <label for="comment">Bemerkung</label>
+                      <input type="text" placeholder="..." id="comment" name="registration[comment]"/>
                     </div>
 
                     <br/>
