@@ -17,6 +17,9 @@
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
         <?php
           $first_letter = '';
+          $break_point  = $wp_query->post_count / 2;
+          $last_post_pos  = 0;
+          echo '<div class="grid one-half">';
           while ( have_posts() ): the_post(); ?>
           <?php /*get_template_part('content-standard');*/ ?>
           <?php
@@ -27,13 +30,18 @@
               if ($first_letter != '') {
                 echo '</ul>';
               }
+              if ($last_post_pos < $break_point && $wp_query->current_post > $break_point) {
+                echo '</div><div class="grid one-half last">';
+              }
               echo '<h2 class="firstlettername">' . $new_first_letter . '</h2>';
               echo '<ul class="names-list">';
               $first_letter = $new_first_letter;
             }
             echo '<li><a href="' . get_permalink() .'">' . $firstname . ' <strong>' . $lastname .  '</strong></a></li>';
+            $last_post_pos = $wp_query->current_post;
           ?>
-				<?php endwhile; ?>
+        <?php endwhile; ?>
+        </div><!--grids-->
 <?php /* pickup vanilla hueman archive.php v3.2.9, but stuff removed */ ?>
 
 			<?php get_template_part('parts/pagination'); ?>
