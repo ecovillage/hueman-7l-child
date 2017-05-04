@@ -212,3 +212,53 @@ function h7lc_calendar($atts) {
 }
 
 add_shortcode( 'event_calendar', 'h7lc_calendar');
+
+
+function h7lc_calendar_this_year_passed() {
+  ob_start();
+  $pevents = past_events_this_year();
+  // TODO dry it up (extract render_calender_events ?)
+  if ($pevents->have_posts() ) { ?>
+    <ul class="calendar-events">
+      <?php
+      while ( $pevents->have_posts() ) {
+        $pevents->the_post();
+        get_template_part('parts/event_list_line');
+      }
+    echo '</ul>';
+  } else {
+    /* No events before today in this year. */
+  }
+
+  $ret = ob_get_contents();
+  ob_end_clean();
+  wp_reset_query();
+  return $ret;
+}
+
+add_shortcode( 'event_calendar_this_year_past', 'h7lc_calendar_this_year_passed');
+
+function h7lc_calendar_this_year_upcoming() {
+  ob_start();
+  $uevents = upcoming_events_this_year();
+  // TODO dry it up (extract render_calender_events ?)
+  if ($uevents->have_posts() ) { ?>
+    <ul class="calendar-events">
+      <?php
+      while ( $uevents->have_posts() ) {
+        $uevents->the_post();
+        get_template_part('parts/event_list_line');
+      }
+    echo '</ul>';
+  } else {
+    /* No upcoming events this year. */
+  }
+
+  $ret = ob_get_contents();
+  ob_end_clean();
+  wp_reset_query();
+  return $ret;
+}
+
+add_shortcode( 'event_calendar_this_year_upcoming', 'h7lc_calendar_this_year_upcoming');
+
