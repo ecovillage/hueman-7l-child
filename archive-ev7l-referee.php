@@ -15,6 +15,25 @@
 		<?php if ( have_posts() ) : ?>
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
+  <div class="page-image">
+  	<div class="image-container">
+      <img src="/wp-content/uploads/2017/05/Referent_innen-720x340.jpg" class="attachment-thumb-large size-thumb-large wp-post-image" alt="" srcset="/wp-content/uploads/2017/05/Referent_innen-720x340.jpg 720w, /wp-content/uploads/2017/05/Referent_innen-520x245.jpg 520w" sizes="(max-width: 720px) 100vw, 720px" height="340" width="720"/>
+  		<?php
+  			echo '<div class="page-image-text">';
+        /** Leaving vanilla 3.3.4 hueman theme
+          if ( isset($caption) && $caption ) echo '<div class="caption">'.$caption.'</div>';
+         */
+        echo '<div class="caption"><h1>';
+        //echo the_title();
+        echo "Referent*innen";
+        echo '</h1></div>';
+        /** vanilla 3.3.4 hueman theme
+          if ( isset($description) && $description ) echo '<div class="description"><i>'.$description.'</i></div>';
+         */
+  			echo '</div>';
+  		?>
+  	</div>
+  </div><!--/.page-image-->
         <?php
           $first_letter = '';
           $break_point  = $wp_query->post_count / 2;
