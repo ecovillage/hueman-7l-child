@@ -1,6 +1,6 @@
 /*
 Theme Name: siebenlinden.org hueman child theme
-Version: 0.5.1
+Version: 0.5.2
 Description: A child theme of Hueman for siebenlinden.org
 Template: hueman
 Author: Felix Wolfsteller
@@ -89,6 +89,7 @@ body {
 }
 
 /* Left sidebar smaller (280px instead of 340px) */
+/*
 .col-2cl .main-inner { padding-right: -280px; }
 .col-2cl .s1 { margin-right: -280px; }
 
@@ -104,30 +105,26 @@ body {
 
 
 @media only screen and (min-width: 961px) and (max-width: 1200px) {
-  /* 3 column, content right */
   .col-3cl .main-inner { padding-right: 330px; }
   .col-3cl .s1 { margin-right: -330px; }
   .col-3cl.s2-expand .s2 { right: 280px; }
 
-  /* 3 column, content left */
   .col-3cr .main-inner { padding-left: 330px; }
   .col-3cr .s1 { margin-left: -330px; }
   .col-3cr.s2-expand .s2 { left: 280px; }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 960px) {
-  /* s1 expand/collapse */
   .s1-expand .s1 { width: 280px; }
   .s1-expand .s1 .sidebar-content,
   .s1-expand .s1 .post-nav { min-width: 280px; }
-  /* ipad, iphone fix */
   .safari.s1-expand .s1 { min-width: 280px; max-width: 280px; }
 }
 
 .col-2cl .main-inner { background-size: 280px; }
 .col-2cr .main-inner { background-size: 280px; }
 .col-3cm .main-inner { background-size: 280px; }
-
+*/
 /*
 .col-3cm .s1 {
  margin-left: -280px;
