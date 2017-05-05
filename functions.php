@@ -16,12 +16,21 @@ function h7lc_sidebar_submenu() {
   // cropped menu
 }
 
+function h7lc_first_menu_id() {
+  return reset(get_theme_mod( 'nav_menu_locations' ));
+}
+
+function h7lc_first_menus_items() {
+  return wp_get_nav_menu_items( h7lc_first_menu_id() );
+}
+
 // Return an array with the menu item object ids of
 // the current selected and all ancestors (up to 0/the root).
 function h7lc_current_menu_item_ancestors() {
   $current_menu_item_ancestors = array();
   // Identify current menu item
-  $menu_items = wp_get_nav_menu_items( 'top-de' );
+  $menu_items = h7lc_first_menus_items();
+
   // Not perfectly optimized (h7lc_current_menu_item does a menu_items query
   // too), but DRYer.
   $current_menu_item = h7lc_current_menu_item();
@@ -48,7 +57,7 @@ function h7lc_current_menu_item_ancestors() {
 function h7lc_childful_menu_item_ids() {
   $parent_ids = array();
   // Identify current menu item
-  $menu_items = wp_get_nav_menu_items( 'top-de' );
+  $menu_items = h7lc_first_menus_items();
   foreach ( $menu_items as $item ) {
     $parent_ids[] = $item->menu_item_parent;
   }
@@ -66,7 +75,7 @@ function h7lc_childful_menu_item_ids() {
  */
 function h7lc_current_menu_item() {
   // Identify current menu item
-  $menu_items = wp_get_nav_menu_items( 'top-de' );
+  $menu_items = h7lc_first_menus_items();
   // Alternative: get_queried_object.
   $current_menu_item = current( wp_filter_object_list( $menu_items,
     array( 'object_id' => get_queried_object_id() ) ) );

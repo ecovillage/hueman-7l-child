@@ -46,7 +46,7 @@
 
 echo "<ul class=\"child-menu group\">";
 
-$items = wp_get_nav_menu_items( 'top-de' );
+$items = h7lc_first_menus_items();
 
 // Get root items (they dont have children)
 $root_items = array_filter($items, function($k) { return !$k->menu_item_parent; });
