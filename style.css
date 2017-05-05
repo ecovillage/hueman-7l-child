@@ -46,7 +46,7 @@ body {
 
 /* Background in header on home front page */
 .home #header .pad {
-  background: url("http://draft.siebenlinden.org/wp-content/uploads/2016/06/header_bg.jpg");
+  background: url("/wp-content/uploads/2016/06/header_bg.jpg");
 }
 
 /* Right sidebar orangish */

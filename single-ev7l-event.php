@@ -211,7 +211,7 @@
                     <h4>Rücktrittsbedingungen</h4>
                     <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?><br/>
                     <br/>
-                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen und die <a href="http://draft.siebenlinden.org/seminare/agb/">Allgemeinen Geschäftsbedingungen</a></input>
+                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen und die <a href="/seminare/agb/">Allgemeinen Geschäftsbedingungen</a></input>
                     <br/>
                     <br/>
                     <span style="color:red;">
