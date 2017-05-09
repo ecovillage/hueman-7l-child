@@ -408,3 +408,8 @@ li.calendar-event-row {
 .wpcf7 label {
   width: 50%;
 }
+
+/* Make mobile menu background color green. */
+#header .nav-container.mobile-sticky ul {
+  background-color: #c9d30e;
+}
