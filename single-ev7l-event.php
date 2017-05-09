@@ -31,10 +31,14 @@
 
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
               <?php hu_get_template_part('parts/page-image'); ?>
-              <?php $event = $post; ?>
+              <?php
+                $event = $post;
+                $event_fromdate = date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true));
+                $event_todate   = date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true));
+              ?>
               <div class="event-dates">
-                Von <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                bis <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true)); ?>
+                Von <?php echo $event_fromdate; ?>
+                bis <?php echo $event_todate; ?>
               </div>
               <br>
 
@@ -229,7 +233,7 @@
                   <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
                 </div>
                 <script type="text/javascript">
-                    document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?>';
+                    document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?> (<?php echo $event_fromdate.' - '.$event_todate; ?>)';
                 </script>
               <?php
                 }
