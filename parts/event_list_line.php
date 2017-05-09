@@ -13,6 +13,7 @@
       bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
     </div>
     <?php
+      $excerpt = get_the_excerpt($post);
       $referees = referees_by_event($post->ID);
       if ($referees->have_posts()) {
         // TODO transform to array and implode
@@ -30,7 +31,7 @@
       }
       $referees->reset_postdata();
     ?>
-    <?php the_excerpt(); ?>
+    <?php echo $excerpt; ?>
   </div>
 </li>
 
