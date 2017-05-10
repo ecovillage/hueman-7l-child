@@ -35,6 +35,10 @@
                 $event = $post;
                 $event_fromdate = date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true));
                 $event_todate   = date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true));
+                $today_date     = strtotime('today');
+                $event_needs_registration =  get_post_meta($event->ID, 'registration_needed', true);
+                $event_is_future = ev7l_is_after($event->ID, $today_date);
+
               ?>
               <div class="event-dates">
                 Von <?php echo $event_fromdate; ?>
@@ -63,6 +67,7 @@
                 <?php wp_reset_postdata(); ?>
 
               <?php the_content(); ?>
+                <hr/>
                 <div id="event-infos">
                   <h2>Informationen zum Seminar</h2>
                   <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
@@ -74,6 +79,12 @@
                         $participants_please_bring   = get_post_meta($post->ID, 'participants_please_bring', true);
                         $participants_prerequisites  = get_post_meta($post->ID, 'participants_prerequisites', true);
                         ?>
+                  <?php if(!empty($current_infos)) { ?>
+                  <div id="current-info">
+                    <h3>Aktuelle Informationen</h3>
+                    <?php echo $current_infos; ?>
+                  </div>
+                  <?php } ?>
                   <?php if(!empty($arrival)) { ?>
                   <div id="arrival-info">
                     <h3>Anreise</h3>
@@ -104,12 +115,6 @@
                     <?php echo $info_housing; ?>
                   </div>
                   <?php } ?>
-                  <?php if(!empty($current_infos)) { ?>
-                  <div id="current-info">
-                    <h3>Aktuelle Informationen</h3>
-                    <?php echo $current_infos; ?>
-                  </div>
-                  <?php } ?>
                   <?php if(!empty($participants_please_bring)) { ?>
                   <div id="participants-please-bring">
                     <h3>Bitte mitbringen</h3>
@@ -127,6 +132,7 @@
                 <?php
                 $referees = referees_by_event($post->ID);
                 if ( $referees-> have_posts() ) { ?>
+                  <hr/>
                   <div id="referees">
                   <h2>Referent*</h2>
                   <?php
@@ -163,11 +169,18 @@
               ?>
               <br/>
                 <?php
-                  $todaytotime = strtotime('today');
-                  if(get_post_meta($event->ID, 'registration_needed', true) && ev7l_is_after($event->ID, $todaytotime)) { ?>
+                  if($event_needs_registration && $event_is_future) { ?>
 
                 <div id="registration">
+                  <hr/>
                   <h2>Anmeldung</h2>
+
+                  <?php if($event_is_future && !empty($current_infos)) { ?>
+                  <div id="current-info">
+                    <?php echo $current_infos; ?>
+                  </div>
+                  <?php } ?>
+
                   <span style="color:red;">
                     ACHTUNG: siebenlinden.org ist noch ganz frisch.  Solltest du andere Personen mit anmelden wollen, benutze bitte vorerst unsere 'alte' Webseite:
                   </span>
@@ -211,9 +224,10 @@
 
                     <br/>
                     <br class="clear"/>
+                    <br/>
                     <div class="registration-controls">
                     <h4>Rücktrittsbedingungen</h4>
-                    <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?><br/>
+                    <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
                     <br/>
                     <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen und die <a href="/seminare/agb/">Allgemeinen Geschäftsbedingungen</a></input>
                     <br/>
@@ -221,6 +235,7 @@
                     <span style="color:red;">
                       ACHTUNG, zur Zeit wirst Du nach/zur Anmeldung noch auf das alte Portal (http://seminare.siebenlinden.de) weitergeleitet.
                     </span>
+                    <br/>
                     <br/>
 
                     <input type="submit" value="Anmelden"></submit>
