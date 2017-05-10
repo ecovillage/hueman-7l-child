@@ -413,3 +413,8 @@ li.calendar-event-row {
 #header .nav-container.mobile-sticky ul {
   background-color: #c9d30e;
 }
+
+/* Make cancellation condition text smaller */
+.cancel_conditions {
+  font-size: 0.8em;
+}
