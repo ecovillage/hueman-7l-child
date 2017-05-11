@@ -36,9 +36,8 @@
                 $event_fromdate = date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true));
                 $event_todate   = date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true));
                 $today_date     = strtotime('today');
-                $event_needs_registration =  get_post_meta($event->ID, 'registration_needed', true);
+                $event_needs_registration = get_post_meta($event->ID, 'registration_needed', true) == 'true';
                 $event_is_future = ev7l_is_after($event->ID, $today_date);
-
               ?>
               <div class="event-dates">
                 Von <?php echo $event_fromdate; ?>
@@ -79,7 +78,7 @@
                         $participants_please_bring   = get_post_meta($post->ID, 'participants_please_bring', true);
                         $participants_prerequisites  = get_post_meta($post->ID, 'participants_prerequisites', true);
                         ?>
-                  <?php if(!empty($current_infos)) { ?>
+                  <?php if(!empty($current_infos) || trim($current_infos) == '') { ?>
                   <div id="current-info">
                     <h3>Aktuelle Informationen</h3>
                     <?php echo $current_infos; ?>
@@ -252,7 +251,7 @@
                 </script>
               <?php
                 }
-              elseif (ev7l_is_after($event->ID, $todaytotime)) { ?>
+              elseif ($event_is_future) { ?>
                 <b>Keine Anmeldung nötig.</b>
               <?php
                 } else { ?>
