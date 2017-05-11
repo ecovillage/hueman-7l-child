@@ -418,3 +418,8 @@ li.calendar-event-row {
 .cancel_conditions {
   font-size: 0.8em;
 }
+
+/* Dark color on news slider, search results ... */
+.entry.excerpt.entry-summary {
+  color: #222;
+}
