@@ -285,15 +285,6 @@
                   </form>
                 </div> <!-- #registration -->
                 <hr/>
-                <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
-                <a name="question"/>
-                <div id="question">
-                  <h3>Frage zur Veranstaltung stellen</h3>
-                  <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
-                </div>
-                <script type="text/javascript">
-                    document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?> (<?php echo $event_fromdate.' - '.$event_todate; ?>)';
-                </script>
               <?php
                 }
               elseif ($event_is_future) { ?>
@@ -303,7 +294,17 @@
                 <b>Veranstaltung liegt in der Vergangenheit.</b>
               <?php
                 }
-               ?>
+?>
+
+              <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
+              <a name="question"/>
+              <div id="question">
+                <h3>Frage zur Veranstaltung stellen</h3>
+                <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
+              </div>
+              <script type="text/javascript">
+                  document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?> (<?php echo $event_fromdate.' - '.$event_todate; ?>)';
+              </script>
 
 <?php /* Re-entering vanilla hueman */ ?>
 							<nav class="pagination group">
