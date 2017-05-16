@@ -220,6 +220,40 @@
                       <label for="comment">Bemerkung</label>
                       <textarea placeholder="..." id="comment" name="registration[comment]" rows="7"></textarea>
                     </div>
+                    <br class="clear"/>
+                    <br/>
+                    <h5>Übernachtung: Raumwünsche</h5>
+                    <div class="grid one-half last">
+                      <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer"/>
+                      <label for="4_Bett_Zimmer">4-Bett-Zimmer</label>
+                      <br/>
+
+                      <input id='2_Bett_Zimmer' name='room_wish[]' type='checkbox' value='2-Bett-Zimmer'/>
+                      <label for='2_Bett_Zimmer'>2-Bett-Zimmer</label>
+                      <br/>
+
+                      <input id='Einzelzimmer' name='room_wish[]' type='checkbox' value='Einzelzimmer'/>
+                      <label for='Einzelzimmer'>Einzelzimmer</label>
+                      <br/>
+
+                      <input id='H_tte' name='room_wish[]' type='checkbox' value='Hütte'/>
+                      <label for='H_tte'>Hütte</label>
+                    </div>
+
+                    <div class="grid one-half last">
+                      <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt'/>
+                      <label for='Eigenes_Zelt'>Eigenes Zelt</label>
+                      <br/>
+
+                      <input id='Eigenes_Wohnmobil_wagen' name='room_wish[]' type='checkbox' value='Eigenes Wohnmobil/-wagen'/>
+                      <label for='Eigenes_Wohnmobil_wagen'>Eigenes Wohnmobil/-wagen</label>
+                      <br/>
+
+                      <input id='Privat_Selbstorganisiert' name='room_wish[]' type='checkbox' value='Privat / Selbstorganisiert'/>
+                      <label for='Privat_Selbstorganisiert'>Privat / Selbstorganisiert</label>
+                    </div>
+                    <br class="clear"/>
+
 
                     <br/>
                     <br class="clear"/>
