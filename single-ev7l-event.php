@@ -45,6 +45,11 @@
               </div>
               <br>
 
+              <?php /* Or: set_query_var to pass over localish variables. */ ?>
+              <a name="description"/>
+              <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
+              </br>
+
               <?php if(false && get_post_meta($post->ID, 'event_category_id', false)) {
                 ?>
                 In Rubriken:
@@ -67,6 +72,8 @@
 
               <?php the_content(); ?>
                 <hr/>
+                <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
+                <a name="informations"/>
                 <div id="event-infos">
                   <h2>Informationen zum Seminar</h2>
                   <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
@@ -170,6 +177,8 @@
                 <?php
                   if($event_needs_registration && $event_is_future) { ?>
 
+                <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
+                <a name="registration"/>
                 <div id="registration">
                   <hr/>
                   <h2>Anmeldung</h2>
@@ -276,6 +285,8 @@
                   </form>
                 </div> <!-- #registration -->
                 <hr/>
+                <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
+                <a name="question"/>
                 <div id="question">
                   <h3>Frage zur Veranstaltung stellen</h3>
                   <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
