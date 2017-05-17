@@ -5,7 +5,7 @@
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
   <?php /*hu_get_template_part('parts/page-title');*/ ?>
   <div class="page-title pad group">
-    <h2>Ausgewähltes Seminar</h2>
+  <h2><?php echo __("Ausgewähltes Seminar"); ?></h2>
   </div><!--/.page-title-->
 <?php /* Re-entering vanilla hueman */ ?>
 
@@ -40,8 +40,8 @@
                 $event_is_future = ev7l_is_after($event->ID, $today_date);
               ?>
               <div class="event-dates">
-                Von <?php echo $event_fromdate; ?>
-                bis <?php echo $event_todate; ?>
+                <?php echo __("Von");  echo $event_fromdate; ?>
+                <?php echo __("bis");  echo $event_todate; ?>
               </div>
               <br>
 
@@ -75,7 +75,7 @@
                 <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
                 <a name="informations"/>
                 <div id="event-infos">
-                  <h2>Informationen zum Seminar</h2>
+                <h2><?php echo __("Informationen zum Seminar"); ?></h2>
                   <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
                         $arrival       = get_post_meta($post->ID, 'arrival', true);
                         $departure     = get_post_meta($post->ID, 'departure', true);
@@ -87,13 +87,13 @@
                         ?>
                   <?php if(!empty($current_infos) && trim($current_infos) != '') { ?>
                   <div id="current-info">
-                    <h3>Aktuelle Informationen</h3>
+                    <h3><?php echo __("Aktuelle Informationen"); ?></h3>
                     <?php echo $current_infos; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($arrival)) { ?>
                   <div id="arrival-info">
-                    <h3>Anreise</h3>
+                  <h3><?php echo __("Anreise"); ?></h3>
                     <?php echo $arrival; ?>
                   </div>
                   <?php } ?>
