@@ -85,7 +85,7 @@
                         $participants_please_bring   = get_post_meta($post->ID, 'participants_please_bring', true);
                         $participants_prerequisites  = get_post_meta($post->ID, 'participants_prerequisites', true);
                         ?>
-                  <?php if(!empty($current_infos) || trim($current_infos) == '') { ?>
+                  <?php if(!empty($current_infos) && trim($current_infos) != '') { ?>
                   <div id="current-info">
                     <h3>Aktuelle Informationen</h3>
                     <?php echo $current_infos; ?>
