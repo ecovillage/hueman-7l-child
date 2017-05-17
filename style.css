@@ -423,3 +423,7 @@ li.calendar-event-row {
 .entry.excerpt.entry-summary {
   color: #222;
 }
+
+.event-subsection-nav a {
+  font-size: 0.8em;
+}
