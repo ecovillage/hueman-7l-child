@@ -284,7 +284,6 @@
                     </div>
                   </form>
                 </div> <!-- #registration -->
-                <hr/>
               <?php
                 }
               elseif ($event_is_future) { ?>
@@ -295,7 +294,7 @@
               <?php
                 }
 ?>
-
+              <hr/>
               <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
               <a name="question"/>
               <div id="question">
