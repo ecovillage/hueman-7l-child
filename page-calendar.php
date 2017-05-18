@@ -14,11 +14,11 @@
 <?php /* Leaving hueman vanilla 3.2.9 page.php */ ?>
   <div class="page-title pad group">
     <?php if ($eventyear && !$eventmonth) { ?>
-      <h2><div>'.__('Veranstaltungen in', 'hueman-7l-child').'</div>'; <?php echo $eventyear; ?></h2>
+      <h2><?php echo __('Veranstaltungen in', 'hueman-7l-child').' '.$eventyear; ?></h2>
     <?php } elseif ($eventmonth && !$eventyear) { ?>
-      <h2><div>'.__('Veranstaltungen im', 'hueman-7l-child').'</div>'; <?php echo date_i18n('F', $eventmoth); ?> - aktuelles Jahr</h2>
+      <h2><?php echo __('Veranstaltungen im', 'hueman-7l-child'); echo ' '.date_i18n('F', $eventmoth); ?> - aktuelles Jahr</h2>
     <?php } elseif ($eventmonth && $eventyear) { ?>
-      <h2><div>'.__('Veranstaltungen im', 'hueman-7l-child').'</div>'; <?php echo date_i18n('F', $eventmonth); ?> <?php echo $eventyear ; ?></h2>
+      <h2><?php echo __('Veranstaltungen im', 'hueman-7l-child').' '.date_i18n('F', $eventmonth).' '.$eventyear ; ?></h2>
     <?php } else { ?>
       <h2>- <?php the_title(); ?></h2>
     <?php } ?>
@@ -67,9 +67,9 @@
                     get_template_part('parts/event_list_line');
                   }
                 echo '</ul>';
-              } else { ?>
-                __('Keine Veranstaltungen im gewählten Zeitraum', 'hueman-7l-child'); 
-            <?php } ?>
+              } else { 
+                echo __('Keine Veranstaltungen im gewählten Zeitraum', 'hueman-7l-child');
+              } ?>
   <?php wp_reset_postdata(); ?>
 
           <?php
@@ -79,7 +79,7 @@
           ?>
           <?php /*
           <!-- pass in the $params array and the URL -->
-          <a href="<?php echo add_query_arg($params, '/calendar'); ?>"> __('Aktuelles Jahr', 'hueman-7l-child'); (<?php echo date('Y'); ?>)</a>
+          <a href="<?php echo add_query_arg($params, '/calendar'); ?>"><?php echo  __('Aktuelles Jahr', 'hueman-7l-child'); ?> (<?php echo date('Y'); ?>)</a>
           */ ?>
           <?php
             $params = array('eventmonth' => '11', 'eventyear' => '2016');

@@ -48,7 +48,7 @@
                 }
                 echo "</ul>";
             } else {
-              echo "Keine entsprechenden Veranstaltungen in der Zukunft";
+              echo __("Keine entsprechenden Veranstaltungen in der Zukunft");
             }
             /* Restore original Post data */
             wp_reset_postdata();

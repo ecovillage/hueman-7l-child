@@ -15,7 +15,7 @@
   <?php if(get_post_type() == "ev7l-referee") {
     echo "Referent*";
   } elseif(get_post_type() == "ev7l-event-category") {
-    echo "Veranstaltungsrubrik";
+    echo __("Veranstaltungsrubrik", "hueman-7l-child");
   } elseif(get_post_type() == "ev7l-event") { ?>
     Veranstaltung Von <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true)); ?>
     bis <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true)); ?>
