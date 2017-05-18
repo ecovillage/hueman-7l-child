@@ -48,7 +48,7 @@
                 }
                 echo "</ul>";
             } else {
-              echo __("Keine entsprechenden Veranstaltungen in der Zukunft");
+              echo __("Keine entsprechenden Veranstaltungen in der Zukunft", "hueman-7l-child");
             }
             /* Restore original Post data */
             wp_reset_postdata();
@@ -61,7 +61,7 @@
               if ( $events->have_posts() ) {
               ?>
                 <div class="past-events">
-                  <h2>Seminare in der Vergangenheit</h2>
+                <h2><?php echo __("Seminare in der Vergangenheit", "hueman-7l-child"); ?></h2>
                   <table>
                     <?php
                     // Loop vars to find month changes.

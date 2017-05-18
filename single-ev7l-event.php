@@ -144,7 +144,7 @@
                 if ( $referees-> have_posts() ) { ?>
                   <hr/>
                   <div id="referees">
-                  <h2>Referent*</h2>
+                  <h2><?php echo __("Referent*"); ?></h2>
                   <?php
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
