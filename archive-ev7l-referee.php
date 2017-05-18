@@ -25,7 +25,7 @@
          */
         echo '<div class="caption"><h1>';
         //echo the_title();
-        echo "Referent*innen";
+        echo '<div>'.__('Referent*innen', 'hueman-7l-chil').'</div>';
         echo '</h1></div>';
         /** vanilla 3.3.4 hueman theme
           if ( isset($description) && $description ) echo '<div class="description"><i>'.$description.'</i></div>';
