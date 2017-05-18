@@ -82,6 +82,7 @@
                         $costs_participation = get_post_meta($post->ID, 'costs_participation', true);
                         $costs_catering      = get_post_meta($post->ID, 'costs_catering', true);
                         $info_housing        = get_post_meta($post->ID, 'info_housing', true);
+                        $other_infos         = get_post_meta($post->ID, 'other_infos', true);
                         $participants_please_bring   = get_post_meta($post->ID, 'participants_please_bring', true);
                         $participants_prerequisites  = get_post_meta($post->ID, 'participants_prerequisites', true);
                         ?>
@@ -133,6 +134,9 @@
                     <?php echo $participants_prerequisites; ?>
                   </div>
                   <?php } ?>
+                  <?php if(!empty($other_infos)) {
+                    echo $other_infos;
+                  } ?>
                 </div> <!-- #event-infos -->
 
                 <?php
