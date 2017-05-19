@@ -4,7 +4,7 @@
 	<div class="sidebar s1 collapsed" data-position="<?php echo hu_get_sidebar_position( 's1' ); ?>" data-layout="<?php echo $layout ?>" data-sb-id="s1">
 
 
-		<a class="sidebar-toggle" title="<?php __('Expand Sidebar','hueman-7l-child'); ?>"><i class="fa icon-sidebar-toggle"></i></a>
+		<a class="sidebar-toggle" title="<?php _e('Expand Sidebar','hueman'); ?>"><i class="fa icon-sidebar-toggle"></i></a>
 
 		<div class="sidebar-content">
 
@@ -16,9 +16,9 @@
               <?php if ( ! hu_is_customizing() && is_user_logged_in() && current_user_can( 'edit_theme_options' ) && is_super_admin() ) : ?>
                   <?php
                     printf( '<p style="text-transform:none;font-size: 0.8em;">%1$s. <a style="color: white;text-decoration:underline;" href="%2$s" title="%3$s">%3$s &raquo;</a></p>',
-                        __('You can set your social links here from the live customizer', 'hueman-7l-child'),
+                        __('You can set your social links here from the live customizer', 'hueman'),
                         admin_url( 'customize.php?autofocus[section]=social_links_sec' ),
-                        __('Customize now', 'hueman-7l-child')
+                        __('Customize now', 'hueman')
                     );
                   ?>
               <?php elseif ( ! is_user_logged_in() ) : ?>

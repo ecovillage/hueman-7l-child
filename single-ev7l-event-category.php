@@ -48,7 +48,11 @@
                 }
                 echo "</ul>";
             } else {
+<<<<<<< HEAD
               echo <div>'.__('Keine entsprechenden Veranstaltungen in der Zukunft', 'hueman-7l-child').'</div>';
+=======
+              echo __("Keine entsprechenden Veranstaltungen in der Zukunft", "hueman-7l-child");
+>>>>>>> 1cf4664b9fd15310700c55b397e83db57e991ed7
             }
             /* Restore original Post data */
             wp_reset_postdata();
@@ -61,7 +65,11 @@
               if ( $events->have_posts() ) {
               ?>
                 <div class="past-events">
+<<<<<<< HEAD
                   <h2><div>'.__('Seminare in der Vergangenheit', 'hueman-7l-child').'</div>'; </h2>
+=======
+                <h2><?php echo __("Seminare in der Vergangenheit", "hueman-7l-child"); ?></h2>
+>>>>>>> 1cf4664b9fd15310700c55b397e83db57e991ed7
                   <table>
                     <?php
                     // Loop vars to find month changes.

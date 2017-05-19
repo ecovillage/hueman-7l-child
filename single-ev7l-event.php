@@ -144,7 +144,11 @@
                 if ( $referees-> have_posts() ) { ?>
                   <hr/>
                   <div id="referees">
+<<<<<<< HEAD
                   <h2><?php echo __('Referent*', 'hueman-7l-child'); ?></h2>
+=======
+                  <h2><?php echo __("Referent*"); ?></h2>
+>>>>>>> 1cf4664b9fd15310700c55b397e83db57e991ed7
                   <?php
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
