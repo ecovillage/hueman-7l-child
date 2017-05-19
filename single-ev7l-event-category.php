@@ -48,7 +48,7 @@
                 }
                 echo "</ul>";
             } else {
-              echo "Keine entsprechenden Veranstaltungen in der Zukunft";
+              echo <div>'.__('Keine entsprechenden Veranstaltungen in der Zukunft', 'hueman-7l-child').'</div>';
             }
             /* Restore original Post data */
             wp_reset_postdata();
@@ -61,7 +61,7 @@
               if ( $events->have_posts() ) {
               ?>
                 <div class="past-events">
-                  <h2>Seminare in der Vergangenheit</h2>
+                  <h2><div>'.__('Seminare in der Vergangenheit', 'hueman-7l-child').'</div>'; </h2>
                   <table>
                     <?php
                     // Loop vars to find month changes.
@@ -115,7 +115,8 @@
                   if ( function_exists('wp_pagenavi') )
                     wp_pagenavi( array( 'type' => 'multipart' ) );
                   else
-                    wp_link_pages(array('before'=>'<div class="post-pages">'.__('Pages:','hueman'),'after'=>'</div>'));
+                    wp_link_pages(array('before'=>'<div 
+class="post-pages">'.__('Pages:','hueman-7l-child'),'after'=>'</div>'));
                 ?>
               </nav><!--/.pagination-->
 						</div>
@@ -136,7 +137,8 @@
 
 <?php /* vanilla hueman single.php v3.2.9:
 
-		<?php the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>'); ?>
+		<?php the_tags('<p 
+class="post-tags"><span>'.__('Tags:','hueman-7l-child').'</span> ','','</p>'); ?>
 
 		<?php if ( ( hu_is_checked( 'author-bio' ) ) && get_the_author_meta( 'description' ) ): ?>
 			<div class="author-bio">

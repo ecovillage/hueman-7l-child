@@ -5,7 +5,7 @@
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
   <?php /*hu_get_template_part('parts/page-title');*/ ?>
   <div class="page-title pad group">
-  <h2><?php echo __("Ausgewähltes Seminar"); ?></h2>
+  <h2><?php echo __('Ausgewähltes Seminar', 'hueman-7l-child'); ?></h2>
   </div><!--/.page-title-->
 <?php /* Re-entering vanilla hueman */ ?>
 
@@ -40,8 +40,8 @@
                 $event_is_future = ev7l_is_after($event->ID, $today_date);
               ?>
               <div class="event-dates">
-                <?php echo __("Von");  echo $event_fromdate; ?>
-                <?php echo __("bis");  echo $event_todate; ?>
+                <?php echo __('Von', 'hueman-7l-child');  echo $event_fromdate; ?>
+                <?php echo __('bis', 'hueman-7l-child');  echo $event_todate; ?>
               </div>
               <br>
 
@@ -75,7 +75,7 @@
                 <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
                 <a name="informations"/>
                 <div id="event-infos">
-                <h2><?php echo __("Informationen zum Seminar"); ?></h2>
+                <h2><?php echo __('Informationen zum Seminar', 'hueman-7l-child'); ?></h2>
                   <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
                         $arrival       = get_post_meta($post->ID, 'arrival', true);
                         $departure     = get_post_meta($post->ID, 'departure', true);
@@ -88,49 +88,49 @@
                         ?>
                   <?php if(!empty($current_infos) && trim($current_infos) != '') { ?>
                   <div id="current-info">
-                    <h3><?php echo __("Aktuelle Informationen"); ?></h3>
+                    <h3><?php echo __('Aktuelle Informationen', 'hueman-7l-child'); ?></h3>
                     <?php echo $current_infos; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($arrival)) { ?>
                   <div id="arrival-info">
-                  <h3><?php echo __("Anreise"); ?></h3>
+                  <h3><?php echo __('Anreise', 'hueman-7l-child'); ?></h3>
                     <?php echo $arrival; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($departure)) { ?>
                   <div id="departure-info">
-                    <h3>Abreise</h3>
+                    <h3><?php echo __('Abreise', 'hueman-7l-child'); ?></h3>
                     <?php echo $departure; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($costs_participation)) { ?>
                   <div id="costs-participation">
-                    <h3>Seminarkosten</h3>
+                    <h3><?php echo __('Seminarkosten', 'hueman-7l-child'); ?></h3>
                     <?php echo $costs_participation; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($costs_catering)) { ?>
                   <div id="costs-catering">
-                    <h3>Biovollverpflegung</h3>
+                    <h3><?php echo __('Biovollverpflegung', 'hueman-7l-child'); ?></h3>
                     <?php echo $costs_catering; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($info_housing)) { ?>
                   <div id="info-housing">
-                    <h3>Unterkunft</h3>
+                    <h3><?php echo __('Unterkunft', 'hueman-7l-child'); ?></h3>
                     <?php echo $info_housing; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($participants_please_bring)) { ?>
                   <div id="participants-please-bring">
-                    <h3>Bitte mitbringen</h3>
+                    <h3><?php echo __('Bitte mitbringen', 'hueman-7l-child'); ?></h3>
                     <?php echo $participants_please_bring; ?>
                   </div>
                   <?php } ?>
                   <?php if(!empty($participants_prerequisites)) { ?>
                   <div id="participants-prerequisites">
-                    <h3>Voraussetzungen für Teilnehmer*</h3>
+                    <h3><?php echo __('Voraussetzungen für Teilnehmer*', 'hueman-7l-child'); ?></h3>
                     <?php echo $participants_prerequisites; ?>
                   </div>
                   <?php } ?>
@@ -144,7 +144,7 @@
                 if ( $referees-> have_posts() ) { ?>
                   <hr/>
                   <div id="referees">
-                  <h2>Referent*</h2>
+                  <h2><?php echo __('Referent*', 'hueman-7l-child'); ?></h2>
                   <?php
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
@@ -185,7 +185,7 @@
                 <a name="registration"/>
                 <div id="registration">
                   <hr/>
-                  <h2>Anmeldung</h2>
+                  <h2><?php echo __('Anmeldung', 'hueman-7l-child'); ?></h2>
 
                   <?php if($event_is_future && !empty($current_infos)) { ?>
                   <div id="current-info">
@@ -194,7 +194,7 @@
                   <?php } ?>
 
                   <span style="color:red;">
-                    ACHTUNG: siebenlinden.org ist noch ganz frisch.  Solltest du andere Personen mit anmelden wollen, benutze bitte vorerst unsere 'alte' Webseite:
+                  	<?php echo  __('ACHTUNG: siebenlinden.org ist noch ganz frisch.  Solltest du andere Personen mit anmelden wollen, benutze bitte vorerst unsere 'alte' Webseite:', 'hueman-7l-child'); ?>
                   </span>
                   <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen über alte Webseite hier möglich.</a>
                   <form id="registration_form" action="http://seminare.siebenlinden.de/seminar/register" charset="UTF-8" method="POST">
@@ -272,14 +272,14 @@
                     <br class="clear"/>
                     <br/>
                     <div class="registration-controls">
-                    <h4>Rücktrittsbedingungen</h4>
+                    <h4><?php echo __('Rücktrittsbedingungen', 'hueman-7l-child'); ?></h4>
                     <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
                     <br/>
                     <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen und die <a href="/seminare/agb/">Allgemeinen Geschäftsbedingungen</a></input>
                     <br/>
                     <br/>
                     <span style="color:red;">
-                      ACHTUNG, zur Zeit wirst Du nach/zur Anmeldung noch auf das alte Portal (http://seminare.siebenlinden.de) weitergeleitet.
+                      <?php echo __('ACHTUNG, zur Zeit wirst Du nach/zur Anmeldung noch auf das alte Portal (http://seminare.siebenlinden.de) weitergeleitet.', 'hueman-7l-child'); ?>
                     </span>
                     <br/>
                     <br/>
@@ -291,10 +291,10 @@
               <?php
                 }
               elseif ($event_is_future) { ?>
-                <b>Keine Anmeldung nötig.</b>
+                <b><?php echo __('Keine Anmeldung nötig.', 'hueman-7l-child'); ?></b>
               <?php
                 } else { ?>
-                <b>Veranstaltung liegt in der Vergangenheit.</b>
+                <b><?php echo __('Veranstaltung liegt in der Vergangenheit.', 'heuman-7l-child'); ?></b>
               <?php
                 }
 ?>
@@ -302,7 +302,7 @@
               <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
               <a name="question"/>
               <div id="question">
-                <h3>Frage zur Veranstaltung stellen</h3>
+                <h3><?php echo __('Frage zur Veranstaltung stellen', 'hueman-7l-child'); ?> </h3>
                 <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
               </div>
               <script type="text/javascript">
