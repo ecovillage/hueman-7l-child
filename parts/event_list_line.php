@@ -30,10 +30,7 @@
         echo ")</div>";
       }
       $referees->reset_postdata();
-      //wp_reset_postdata();
-      //wp_reset_query();
     ?>
-    <?php /*$post = $event; echo get_the_excerpt($event->ID);*/ ?>
     <?php echo $excerpt; ?>
   </div>
 </li>

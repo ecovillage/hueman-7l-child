@@ -303,7 +303,6 @@ h2.firstlettername {
 
 h2.breadcrumbs {
   color: #989F30;
-  font-size: 20px;
 }
 
 #event-infos h2 {
@@ -329,21 +328,9 @@ h2.breadcrumbs {
 }
 
 .child-menu a:hover {
-  color: #f29400;
+  color: #b5bd0d;
 }
 
-
-/*
-ul.tab-calendar-events {
-  margin: 0 0 15px 0px;
-}
-
-ul.tab-calendar-events .tab-item-thumbnail {
-  width: 100px;
-  margin-left: -124px;
-  //float: left;
-}
-*/
 
 /* Black highlight of left child menus current page. */
 .sidebar-content .child-menu .current_page_item > a {

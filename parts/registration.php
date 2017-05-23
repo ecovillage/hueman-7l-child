@@ -94,9 +94,6 @@ $registration = array(
   'l_seminar' => $event_uuid,
 );
 # Missing fields: uuid, rooms, donation, further participants
-#
-    $filename = "registration.txt";
-    file_put_contents($filename, json_encode($registration));
 
 if (true) {
   if (!$submitted) {
@@ -125,9 +122,7 @@ if (true) {
   }
 }
 ?>
-<?php  var_dump($_POST);  ?>
-<br/> RW: <br/>
-<?php  var_dump($_POST['room_wish']);  ?>
+<?php /* var_dump($_POST); */ ?>
 
   <div id="registration">
     <?php if (!$success) { ?>
