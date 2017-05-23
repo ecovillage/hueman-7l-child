@@ -54,14 +54,6 @@ Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'bet
 
 Overwritten from vanilla hueman (3.3.4) - do not category if about in a 'betrieb' post (over)view.
 
-### category-betriebe.php
-
-Archive for Betriebe.
-
-
-### single.php
-
-With special hook, for "Betriebe" posts. (if ... no date, author)
 
 ### style.css
 
@@ -104,21 +96,14 @@ Header -> Header Menu -> no default
 Header -> Design -> no tagline
 Content -> Front page: static
 
-"page_nav" (next/previous post) abschalten
-
 Footer -> Credit Text
 
 Blog design and content not available in all versions.
 
 ## Release
 
-change version, git tag push
-
-
-## Lessons learned, decisions taken
-
-how to attach/put thumb/ featured image (for hueman theme).
-the post query where has id ...
-where document the interface?
+  - Change version in style.css and commit
+  - git tag -a VERSION -m VERSION
+  - git push && git push --tags
 
 
