@@ -54,6 +54,7 @@ Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'bet
 
 Overwritten from vanilla hueman (3.3.4) - do not category if about in a 'betrieb' post (over)view.
 
+
 ### style.css
 
 Main css overrides and new definitions.
@@ -88,12 +89,21 @@ Global Settings -> Identity -> no tagline
 Global Settings -> General Design -> Sidebar Padding for Widgets: 20px
 Global Settings -> General Design -> Primary color #c9d30e
 Global Settings -> General Design -> Secondary color #f29400
-Global Settings -> General Design -> Topbar Background : #c9d30e
-Global Settings -> General Design -> Header Background : #ffffff
+Global Settings -> General Design -> Topbar Background : #cad133
+Global Settings -> General Design -> Header Background : #f5f5f5
 Comments -> Posts and Pages
 Header -> Header Menu -> no default
 Header -> Design -> no tagline
 Content -> Front page: static
+
 Footer -> Credit Text
 
 Blog design and content not available in all versions.
+
+## Release
+
+  - Change version in style.css and commit
+  - git tag -a VERSION -m VERSION
+  - git push && git push --tags
+
+

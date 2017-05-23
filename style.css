@@ -331,6 +331,7 @@ h2.breadcrumbs {
   color: #b5bd0d;
 }
 
+
 /* Black highlight of left child menus current page. */
 .sidebar-content .child-menu .current_page_item > a {
   color: black;
@@ -382,6 +383,10 @@ h2.breadcrumbs {
 /* Let event list look wider on start page */
 .home .ev7l_event_list {
   margin-left: 0px;
+}
+
+.two-fourth {
+  width: 45.2%;
 }
 
 .post-list h2.post-title {

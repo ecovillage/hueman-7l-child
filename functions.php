@@ -1,6 +1,7 @@
 <?php
 /* Wrote my awesome functions below */
 
+load_theme_textdomain('hueman-7l-child');
 
 // Return the current URL.  Please improve my worldview by pointing me to
 // the actual implementation in wordpress core if you find it.
@@ -23,6 +24,7 @@ function h7lc_first_menu_id() {
 function h7lc_first_menus_items() {
   return wp_get_nav_menu_items( h7lc_first_menu_id() );
 }
+
 
 // Return an array with the menu item object ids of
 // the current selected and all ancestors (up to 0/the root).
@@ -101,6 +103,7 @@ function h7lc_current_menu_item() {
 
   return $current_menu_item;
 }
+
 
   /* TODO This needs more precision, we do not always need the flexslider js, but
    * for pages that use the featured posts feature ... */
@@ -209,6 +212,7 @@ function h7lc_calendar($atts) {
         get_template_part('parts/event_list_line');
       }
     echo '</ul>';
+    $events->reset_postdata();
   } else { ?>
     Keine Veranstaltungen im gewählten Zeitraum
   <?php
@@ -216,6 +220,7 @@ function h7lc_calendar($atts) {
 
   $ret = ob_get_contents();
   ob_end_clean();
+  //wp_reset_postdata();
   wp_reset_query();
   return $ret;
 }

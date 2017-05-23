@@ -3,7 +3,7 @@
   <?php if ( has_post_thumbnail() ): ?>
     <?php hu_the_post_thumbnail('thumb-medium'); ?>
   <?php else: ?>
-    <?php hu_the_post_thumbnail('thumbnail'); ?>
+    <?php /*hu_the_post_thumbnail('thumbnail');*/ ?>
   <?php endif; /* placeholder would be cool */ ?>
   </div>
   <div class="grid two-third last">
