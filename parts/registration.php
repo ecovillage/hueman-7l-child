@@ -109,12 +109,12 @@ if (true) {
     <?php if (!$success) { ?>
 
     <hr/>
-    <h2>__("Anmeldung")</h2>
+    <h2><?php echo __("Anmeldung"); ?></h2>
     <br/>
     <br/>
 
     <span style="color:red;">
-      <?php echo __("Bei technischen Problemen benuzte bitte unser "); ?>
+      <?php echo __("Bei technischen Problemen benutze bitte unser "); ?>
       <a href="http://seminare.siebenlinden.de/seminar/1ee1ff4c-6a9d-11e6-9c78-78e7d1f4cba4"> Anmeldungen über alte Webseite hier möglich.</a>
     </span>
     <br/>
