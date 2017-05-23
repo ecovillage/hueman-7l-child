@@ -28,13 +28,14 @@ function send_mail_to_host($registration) {
   $subject = 'Registration';
   $headers = 'From: '. $registration['email'] . "\r\n" .
     'Reply-To: ' . $registration['email'] . "\r\n";
+  // Need a kind of template here
   $sent = wp_mail($to, $subject, strip_tags($registration['comments']), $headers);
-  if($sent) {
-    registration_form_success($msg_message_sent); //message sent!
-  }
-  else {
-    registration_form_error($msg_message_unsent); //message wasn't sent
-  }
+  #if($sent) {
+  #  registration_form_success($msg_message_sent); //message sent!
+  #}
+  #else {
+  #  registration_form_error($msg_message_not_sent); //message wasn't sent
+  #}
   return $sent;
 }
 
@@ -93,6 +94,9 @@ $registration = array(
   'l_seminar' => $event_uuid,
 );
 # Missing fields: uuid, rooms, donation, further participants
+#
+    $filename = "registration.txt";
+    file_put_contents($filename, json_encode($registration));
 
 if (true) {
   if (!$submitted) {
@@ -121,7 +125,9 @@ if (true) {
   }
 }
 ?>
-<?php /*var_dump($_POST); */ ?>
+<?php  var_dump($_POST);  ?>
+<br/> RW: <br/>
+<?php  var_dump($_POST['room_wish']);  ?>
 
   <div id="registration">
     <?php if (!$success) { ?>

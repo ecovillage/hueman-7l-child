@@ -45,6 +45,9 @@
               */
             if ($eventyear && !$eventmonth) {
               $events = events_in_year($eventyear);
+              // TODO now we also want to split upcoming and past ....
+              // there is ev7l functions for this already, but this should only apply to
+              // the current year!
               //echo 'Year only';
             } elseif ($eventmonth && !$eventyear) {
               $events = events_in_year_month(date('Y'), $eventmonth);

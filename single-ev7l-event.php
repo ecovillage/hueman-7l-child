@@ -27,10 +27,7 @@
 
 					<div class="<?php echo implode( ' ', apply_filters( 'hu_single_entry_class', array('entry','themeform') ) ) ?>">
             <div class="entry-inner">
-             <h1><?php echo the_title(); ?></h1>
-
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
-              <?php hu_get_template_part('parts/page-image'); ?>
               <?php
                 $event = $post;
                 $event_uuid     =  get_post_meta($event->ID, 'uuid', true);
@@ -40,6 +37,23 @@
                 $event_needs_registration = get_post_meta($event->ID, 'registration_needed', true) == 'true';
                 $event_is_future = ev7l_is_after($event->ID, $today_date);
               ?>
+
+              <?php if (!empty($_POST)) { ?>
+                <div style="background: #ddd; margin-left: -10px; margin-right: -10px; padding-bottom: 20px; padding-left: 10px; padding-right: 10px;">
+                  <?php include(locate_template('parts/registration.php')); ?>
+                </div>
+              <?php } ?>
+
+             <h1><?php echo the_title(); ?></h1>
+
+              <?php hu_get_template_part('parts/page-image'); ?>
+
+              <?php if (empty($_POST)) { ?>
+                <hr/>
+                <a name="registration"/>
+                <?php include(locate_template('parts/registration.php')); ?>
+              <?php } ?>
+
               <div class="event-dates">
                 <?php echo __('Von', 'hueman-7l-child');  echo $event_fromdate; ?>
                 <?php echo __('bis', 'hueman-7l-child');  echo $event_todate; ?>
@@ -145,11 +159,7 @@
                 if ( $referees-> have_posts() ) { ?>
                   <hr/>
                   <div id="referees">
-<<<<<<< HEAD
                   <h2><?php echo __('Referent*', 'hueman-7l-child'); ?></h2>
-=======
-                  <h2><?php echo __("Referent*"); ?></h2>
->>>>>>> 1cf4664b9fd15310700c55b397e83db57e991ed7
                   <?php
                   while ( $referees->have_posts() ) {
                     $referees->the_post();
@@ -189,109 +199,7 @@
                 <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
                 <a name="registration"/>
                 <div id="registration">
-                  <hr/>
-                  <h2><?php echo __('Anmeldung', 'hueman-7l-child'); ?></h2>
-
-                  <?php if($event_is_future && !empty($current_infos)) { ?>
-                  <div id="current-info">
-                    <?php echo $current_infos; ?>
-                  </div>
-                  <?php } ?>
-
-                  <span style="color:red;">
-                  	<?php echo  __('ACHTUNG: siebenlinden.org ist noch ganz frisch.  Solltest du andere Personen mit anmelden wollen, benutze bitte vorerst unsere 'alte' Webseite:', 'hueman-7l-child'); ?>
-                  </span>
-                  <a href="http://seminare.siebenlinden.de/seminar/<?php echo get_post_meta($event->ID, 'uuid', true); ?>"> Anmeldungen über alte Webseite hier möglich.</a>
-                  <form id="registration_form" action="http://seminare.siebenlinden.de/seminar/register" charset="UTF-8" method="POST">
-                    <input type="hidden" name="seminar_id" value="<?php echo get_post_meta($event->ID, 'uuid', true) ?>"/>
-
-                    <div class="grid one-half">
-                      <label for="firstname">Vorname</label>
-                      <input type="text" placeholder="Vorname" id="firstname" name="registration[firstname]"/>
-
-                      <label for="lastname">Nachname</label>
-                      <input type="text" placeholder="Nachname" id="lastname" name="registration[lastname]"/>
-
-                      <label for="street_and_no">Straße und Hausnummer</label>
-                      <input type="text" placeholder="Straße und Hausnummer" id="street_and_no" name="registration[street_and_no]"/>
-
-                      <label for="zip">PLZ</label>
-                      <input type="text" placeholder="PLZ" id="zip" name="registration[zip]"/>
-
-                      <label for="city">Ort</label>
-                      <input type="text" placeholder="Ort" id="city" name="registration[city]"/>
-
-                      <label for="land">Land</label>
-                      <input type="text" placeholder="Land" id="land" name="registration[land]"/>
-                    </div>
-
-                    <div class="grid one-half last">
-                      <label for="email">E-Mail</label>
-                      <input type="text" placeholder="email" id="email" name="registration[email]"/>
-
-                      <label for="phone">Telefonnummer</label>
-                      <input type="text" placeholder="0123 45678" id="phone" name="registration[phone]"/>
-
-                      <label for="mobile">Handy-Nummer</label>
-                      <input type="text" placeholder="0123 45678" id="mobile" name="registration[mobile]"/>
-
-                      <label for="comment">Bemerkung</label>
-                      <textarea placeholder="..." id="comment" name="registration[comment]" rows="7"></textarea>
-                    </div>
-                    <br class="clear"/>
-                    <br/>
-                    <h5>Übernachtung: Raumwünsche</h5>
-                    <div class="grid one-half last">
-                      <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer"/>
-                      <label for="4_Bett_Zimmer">4-Bett-Zimmer</label>
-                      <br/>
-
-                      <input id='2_Bett_Zimmer' name='room_wish[]' type='checkbox' value='2-Bett-Zimmer'/>
-                      <label for='2_Bett_Zimmer'>2-Bett-Zimmer</label>
-                      <br/>
-
-                      <input id='Einzelzimmer' name='room_wish[]' type='checkbox' value='Einzelzimmer'/>
-                      <label for='Einzelzimmer'>Einzelzimmer</label>
-                      <br/>
-
-                      <input id='H_tte' name='room_wish[]' type='checkbox' value='Hütte'/>
-                      <label for='H_tte'>Hütte</label>
-                    </div>
-
-                    <div class="grid one-half last">
-                      <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt'/>
-                      <label for='Eigenes_Zelt'>Eigenes Zelt</label>
-                      <br/>
-
-                      <input id='Eigenes_Wohnmobil_wagen' name='room_wish[]' type='checkbox' value='Eigenes Wohnmobil/-wagen'/>
-                      <label for='Eigenes_Wohnmobil_wagen'>Eigenes Wohnmobil/-wagen</label>
-                      <br/>
-
-                      <input id='Privat_Selbstorganisiert' name='room_wish[]' type='checkbox' value='Privat / Selbstorganisiert'/>
-                      <label for='Privat_Selbstorganisiert'>Privat / Selbstorganisiert</label>
-                    </div>
-                    <br class="clear"/>
-
-
-                    <br/>
-                    <br class="clear"/>
-                    <br/>
-                    <div class="registration-controls">
-                    <h4><?php echo __('Rücktrittsbedingungen', 'hueman-7l-child'); ?></h4>
-                    <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
-                    <br/>
-                    <input type="checkbox" id="accept_terms" name="registration[accept_terms]">Ich akzeptiere die Rücktrittsbedingungen und die <a href="/seminare/agb/">Allgemeinen Geschäftsbedingungen</a></input>
-                    <br/>
-                    <br/>
-                    <span style="color:red;">
-                      <?php echo __('ACHTUNG, zur Zeit wirst Du nach/zur Anmeldung noch auf das alte Portal (http://seminare.siebenlinden.de) weitergeleitet.', 'hueman-7l-child'); ?>
-                    </span>
-                    <br/>
-                    <br/>
-
-                    <input type="submit" value="Anmelden"></submit>
-                    </div>
-                  </form>
+                  ...
                 </div> <!-- #registration -->
               <?php
                 }

@@ -85,6 +85,9 @@ foreach ( $root_items as $root_item ) {
         // (then the child li has page_item page-item-1859 page_item_has_children current_page_ancestor current_page_parent
         // and the grandchild + current_page_item
         echo "<ul class=\"children\">";
+          echo "<li class=\"page_item\">";
+          echo "  <a>ll 74</a>";
+          echo "</li>";
         $child_id = $child->ID;
         $grand_children = array_filter($items, function($k) use (&$child_id) {
           return $k->menu_item_parent == $child_id;
@@ -105,7 +108,59 @@ foreach ( $root_items as $root_item ) {
   }
 }
 echo "</ul>";
+
+/*
+echo h7lc_current_url();
+echo "<hr/>";
+echo var_export( h7lc_current_menu_item());
+echo var_dump( h7lc_current_menu_item());
+echo "<hr/>";
+echo var_export( h7lc_current_menu_item_ancestors());
+echo var_dump( h7lc_current_menu_item_ancestors());
+ */
 ?>
+
+<?php if(false) { ?>
+<br/>
+<?php echo h7lc_current_url(); ?>
+<br/>
+<?php echo add_query_arg( $wp->query_string, '', home_url( $wp->request ) ); ?>
+<br/>
+<?php echo "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>
+<br/>
+CURL:
+<?php echo home_url(add_query_arg(array(),$wp->request));?>
+<br/>
+QOID:
+<?php echo get_queried_object_id(); ?>
+<br/>
+PARENTIDS:
+<?php echo var_export($parent_ids); ?>
+<br/>
+<?php echo count(wp_get_nav_menu_items('top-de')); ?>
+<pre>
+<br/>
+MenuItem Ancestors:
+<?php echo var_export($current_menu_item_ancestors); ?>
+<br/>
+Current MenuItem:
+<?php echo var_export($current_menu_item); ?>
+<br/>
+Queried Object:
+<?php echo var_export(get_queried_object()); ?>
+<br/>
+Current MenuItem:
+<?php echo var_dump($current_menu_item); ?>
+<br/>
+CMI->mip:
+<?php echo var_dump($current_menu_item->menu_item_parent); ?>
+<br/>
+<br/>
+<br/>
+<br/>
+<?php echo var_export(wp_get_nav_menu_items( 'top-de' )); ?>
+</pre>
+<?php } ?>
 <!--
 <ul class="child-menu group">
   <li class="page_item page-item-2 page_item_has_children">
