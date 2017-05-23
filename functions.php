@@ -1,7 +1,9 @@
 <?php
-/* Wrote my awesome functions below */
-
-load_theme_textdomain('hueman-7l-child');
+// Load translation files from your child theme instead of the parent theme
+function load_hueman_7l_child_theme_locale() {
+  load_child_theme_textdomain( 'hueman-7l-child', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'load_hueman_7l_child_theme_locale' );
 
 // Return the current URL.  Please improve my worldview by pointing me to
 // the actual implementation in wordpress core if you find it.
