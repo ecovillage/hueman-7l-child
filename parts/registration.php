@@ -58,6 +58,10 @@ function echo_fa_warning_if_unposted($key) {
   }
 }
 
+function echo_checked_room($roomname) {
+  echo (isset($_POST['room_wish']) && in_array($roomname, $_POST['room_wish']) ? 'checked="checked"' : '');
+}
+
 // User provided content
 $firstname     = post_index_or_null('firstname');
 $lastname      = post_index_or_null('lastname');
@@ -71,6 +75,7 @@ $mobile        = post_index_or_null('mobile');
 $comment       = post_index_or_null('comment');
 $accept_tos    = post_index_or_null('accept_tos');
 $submitted     = post_index_or_null('submitted');
+$rooms         = post_index_or_null('room_wish');
 
 #$registration[] = array(
 $registration = array(
@@ -125,7 +130,6 @@ if (true) {
     <h2><?php echo __("Anmeldung"); ?></h2>
     <div id="response"><?php echo $response; ?></div>
     <br/>
-
 
     <span style="color:red;">
       <?php echo __("Bei technischen Problemen benutze bitte unser "); ?>
@@ -189,32 +193,32 @@ if (true) {
 
       <h5><?php echo __('Übernachtung: Raumwünsche'); ?></h5>
       <div class="grid one-half last">
-        <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer"/>
+        <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer" <?php echo_checked_room("4-Bett-Zimmer"); ?>/>
         <label for="4_Bett_Zimmer">4-Bett-Zimmer</label>
         <br/>
 
-        <input id='2_Bett_Zimmer' name='room_wish[]' type='checkbox' value='2-Bett-Zimmer'/>
+        <input id='2_Bett_Zimmer' name='room_wish[]' type='checkbox' value='2-Bett-Zimmer' <?php echo_checked_room("2-Bett-Zimmer"); ?>/>
         <label for='2_Bett_Zimmer'>2-Bett-Zimmer</label>
         <br/>
 
-        <input id='Einzelzimmer' name='room_wish[]' type='checkbox' value='Einzelzimmer'/>
+        <input id='Einzelzimmer' name='room_wish[]' type='checkbox' value='Einzelzimmer' <?php echo_checked_room("Einzelzimmer"); ?>/>
         <label for='Einzelzimmer'>Einzelzimmer</label>
         <br/>
 
-        <input id='H_tte' name='room_wish[]' type='checkbox' value='Hütte'/>
+        <input id='H_tte' name='room_wish[]' type='checkbox' value='Hütte' <?php echo_checked_room("Hütte"); ?>/>
         <label for='H_tte'>Hütte</label>
       </div>
 
       <div class="grid one-half last">
-        <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt'/>
+      <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt' <?php echo_checked_room("Eigenes Zelt"); ?>/>
         <label for='Eigenes_Zelt'>Eigenes Zelt</label>
         <br/>
 
-        <input id='Eigenes_Wohnmobil_wagen' name='room_wish[]' type='checkbox' value='Eigenes Wohnmobil/-wagen'/>
+        <input id='Eigenes_Wohnmobil_wagen' name='room_wish[]' type='checkbox' value='Eigenes Wohnmobil/-wagen' <?php echo_checked_room("Eigenes Wohnmobil/-wagen"); ?>/>
         <label for='Eigenes_Wohnmobil_wagen'>Eigenes Wohnmobil/-wagen</label>
         <br/>
 
-        <input id='Privat_Selbstorganisiert' name='room_wish[]' type='checkbox' value='Privat / Selbstorganisiert'/>
+        <input id='Privat_Selbstorganisiert' name='room_wish[]' type='checkbox' value='Privat / Selbstorganisiert' <?php echo_checked_room("Privat / Selbstorganisiert"); ?>/>
         <label for='Privat_Selbstorganisiert'>Privat / Selbstorganisiert</label>
       </div>
       <br class="clear"/>
