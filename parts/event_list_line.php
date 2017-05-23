@@ -25,7 +25,7 @@
           <?php
             // In all its madness, this is proposed by official documentation:
             // https://codex.wordpress.org/Function_Reference/have_posts#Note
-            if ($referees->current_post + 1 < $referees->post_count) { echo ' und '; }
+            if ($referees->current_post + 1 < $referees->post_count) { echo _(' und ', 'hueman-7l-child'); }
         }
         echo ")</div>";
       }
