@@ -4,7 +4,7 @@
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
   <div class="page-title pad group">
-    <h2>Referent* - <?php the_title(); ?></h2>
+    <h2><?php echo __('Referent*', 'hueman-7l-child'); ?> - <?php the_title(); ?></h2>
   </div><!--/.page-title-->
 <?php /* continue vanilla hueman archive.php v3.2.9 */ ?>
 
@@ -79,7 +79,7 @@
                       echo "</ul>";
                     }
                     else {
-                      echo "Derzeit keine Veranstalungen in naher Zukunft geplant.";
+                      echo __("Derzeit keine Veranstalungen in naher Zukunft geplant.",'hueman-7l-child');
                     }
                       /* Restore original Post data */
                       wp_reset_postdata();
@@ -91,7 +91,7 @@
 
                   if ( $events->have_posts() ) {
                     echo '<div class="past-events">';
-                    echo '<h2>Seminare in der Vergangenheit</h2>';
+                    echo '<h2>__('Seminare in der Vergangenheit', 'hueman-7l-child');</h2>';
                     echo '<table>';
 
                     // Loop vars to find month changes.
