@@ -33,6 +33,7 @@
               <?php hu_get_template_part('parts/page-image'); ?>
               <?php
                 $event = $post;
+                $event_uuid     =  get_post_meta($event->ID, 'uuid', true);
                 $event_fromdate = date_i18n(__('d.M. Y'), get_post_meta($post->ID, 'fromdate', true));
                 $event_todate   = date_i18n(__('d.M. Y'), get_post_meta($post->ID, 'todate', true));
                 $today_date     = strtotime('today');

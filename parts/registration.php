@@ -52,6 +52,12 @@ function post_index_or_null($key) {
   return (isset($_POST[$key])) ? $_POST[$key] : false;
 };
 
+function echo_fa_warning_if_unposted($key) {
+  if (!isset($_POST[$key]) || empty($_POST[$key])) {
+    echo '<i class="fa fa-warning"></i>';
+  }
+}
+
 // User provided content
 $firstname     = post_index_or_null('firstname');
 $lastname      = post_index_or_null('lastname');
@@ -80,7 +86,7 @@ $registration = array(
   'room_wishes' => array(),
   'comments'  => $comment,
   'country'   => $country,
-  'l_seminar' => '1'
+  'l_seminar' => $event_uuid,
 );
 # Missing fields: uuid, rooms, donation, further participants
 
@@ -94,73 +100,87 @@ if (true) {
   elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     registration_form_error($msg_email_invalid);
   }
-  elseif(!$firstname && !$lastname) {
+  elseif(!$firstname || !$lastname || !$street_and_no || !$zip || !$city) {
     registration_form_error($msg_missing_info);
   }
   else {
-    # send mail
+    $filename = "registration.txt";
+    if (!file_put_contents($filename, json_encode($registration))) {
+      registration_form_error($msg_technical_error);
+    }
+    elseif (send_mail_to_participant($registration) && send_mail_to_host($registration)) {
+      #registration_form_success("validation passed");
+      registration_form_success($msg_registered);
+    } else {
+      registration_form_error($msg_message_not_sent);
+    }
   }
 }
 ?>
+<?php /*var_dump($_POST); */ ?>
 
   <div id="registration">
-    <div id="response"><?php echo $response; ?></div>
-
     <?php if (!$success) { ?>
 
-    <hr/>
     <h2><?php echo __("Anmeldung"); ?></h2>
+    <div id="response"><?php echo $response; ?></div>
     <br/>
-    <br/>
+
 
     <span style="color:red;">
       <?php echo __("Bei technischen Problemen benutze bitte unser "); ?>
-      <a href="http://seminare.siebenlinden.de/seminar/1ee1ff4c-6a9d-11e6-9c78-78e7d1f4cba4"> Anmeldungen über alte Webseite hier möglich.</a>
+<a href="http://seminare.siebenlinden.de/seminar/<?php echo $event_uuid; ?>"><?php echo __('Anmeldesystem der alten Webseite.'); ?></a>
     </span>
     <br/>
     <form id="registration_form" action="<?php the_permalink(); ?>" charset="UTF-8" method="POST">
-      <input type="hidden" name="seminar_id" value="1ee1ff4c-6a9d-11e6-9c78-78e7d1f4cba4"/>
+      <input type="hidden" name="seminar_id" value="$event_uuid"/>
 
       <div class="grid one-half">
-      <label for="firstname"><?php echo __("Vorname"); ?></label>
-      <input type="text" placeholder="<?php echo __('Vorname'); ?>" id="firstname" name="firstname"
+        <?php echo_fa_warning_if_unposted("firstname"); ?>
+        <label for="firstname"><?php echo __("Vorname"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Vorname'); ?>" id="firstname" name="firstname"
           value="<?php echo esc_attr($firstname); ?>"/>
 
-          <label for="lastname"><?php echo __('Nachname'); ?></label>
-          <input type="text" placeholder="<?php echo __('Nachname'); ?>" id="lastname" name="lastname"
+        <?php echo_fa_warning_if_unposted("lastname"); ?>
+        <label for="lastname"><?php echo __('Nachname'); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Nachname'); ?>" id="lastname" name="lastname"
           value="<?php echo esc_attr($lastname); ?>"/>
 
-          <label for="street_and_no"><?php echo __('Straße und Hausnummer'); ?></label>
-          <input type="text" placeholder="<?php echo __('Straße und Hausnummer'); ?>" id="street_and_no" name="street_and_no"
+        <?php echo_fa_warning_if_unposted("street_and_no"); ?>
+        <label for="street_and_no"><?php echo __('Straße und Hausnummer'); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Straße und Hausnummer'); ?>" id="street_and_no" name="street_and_no"
           value="<?php echo esc_attr($street_and_no); ?>"/>
 
-          <label for="zip"><?php echo __('PLZ'); ?></label>
-          <input type="text" placeholder="<?php echo __('PLZ'); ?>" id="zip" name="zip"
-          value="<?php echo esc_attr($zip); ?>"/>
+        <?php echo_fa_warning_if_unposted("zip"); ?>
+        <label for="zip"><?php echo __('PLZ'); ?>*</label>
+        <input type="text" placeholder="<?php echo __('PLZ'); ?>" id="zip" name="zip"
+         value="<?php echo esc_attr($zip); ?>"/>
 
-          <label for="city"><?php echo __('Ort'); ?></label>
-          <input type="text" placeholder="<?php echo __('Ort'); ?>" id="city" name="city"
+        <?php echo_fa_warning_if_unposted("city"); ?>
+        <label for="city"><?php echo __('Ort'); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Ort'); ?>" id="city" name="city"
           value="<?php echo esc_attr($city); ?>"/>
 
-          <label for="land"><?php echo __('Land'); ?></label>
-          <input type="text" placeholder="<?php echo __('Land'); ?>" id="country" name="country"
+        <label for="land"><?php echo __('Land'); ?></label>
+        <input type="text" placeholder="<?php echo __('Land'); ?>" id="country" name="country"
           value="<?php echo esc_attr($country); ?>"/>
       </div>
 
       <div class="grid one-half last">
-      <label for="email"><?php echo __('E-Mail'); ?></label>
-      <input type="text" placeholder="<?php echo __('email'); ?>" id="email" name="email"
+        <?php echo_fa_warning_if_unposted("email"); ?>
+        <label for="email"><?php echo __('E-Mail'); ?>*</label>
+        <input type="text" placeholder="<?php echo __('email'); ?>" id="email" name="email"
           value="<?php echo esc_attr($email); ?>"/>
 
-          <label for="phone"><?php echo __('Telefonnummer'); ?></label>
+        <label for="phone"><?php echo __('Telefonnummer'); ?></label>
         <input type="text" placeholder="0123 45678" id="phone" name="phone"
           value="<?php echo esc_attr($phone); ?>"/>
 
-          <label for="mobile"><?php echo __('Handy-Nummer'); ?></label>
+        <label for="mobile"><?php echo __('Handy-Nummer'); ?></label>
         <input type="text" placeholder="0123 45678" id="mobile" name="mobile"
           value="<?php echo esc_attr($mobile); ?>"/>
 
-          <label for="comment"><?php echo __('Bemerkung'); ?></label>
+        <label for="comment"><?php echo __('Bemerkung'); ?></label>
         <textarea placeholder="..." id="comment" name="comment" rows="7"></textarea>
       </div>
 
@@ -205,9 +225,10 @@ if (true) {
       <br/>
       <div class="registration-controls">
       <h4><?php echo __('Rücktrittsbedingungen'); ?></h4>
-      <span class="cancel_conditions">Bei Rücktritt bis 28 Tage vor Seminarbeginn: keine Rücktrittsgebühr. Bei Rücktritt 28-14 Tage vor Seminarbeginn: 50 Eur Rücktrittsgebühr pro Person. Bei Rücktritt ab dem 14. Tag vor Seminarbeginn ist der volle Teilnahmebeitrag inkl. Unterkunftskosten zu zahlen. Bei Rücktritt ab 7 Tage vor Seminarbeginn oder Nichtteilnahme ohne Abmeldung ist der volle Teilnahmebeitrag inkl. Unterkunfts- und Verpflegungskosten zu zahlen.</span><br/>
+      <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
       <br/>
-      <input type="checkbox" id="accept_tos" name="accept_tos"><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die '); ?><a href="/seminare/agb/"><?php echo __('Allgemeinen Geschäftsbedingungen'); ?></a></input>
+      <?php echo_fa_warning_if_unposted("accept_tos"); ?>
+      <input type="checkbox" id="accept_tos" name="accept_tos" <?php echo ($accept_tos ? 'checked="checked"' : '' ); ?>><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die '); ?><a href="/seminare/agb/"><?php echo __('Allgemeinen Geschäftsbedingungen'); ?></a></input>
       <br/>
       <br/>
 
@@ -215,7 +236,9 @@ if (true) {
       <input type="submit" value="<?php echo __('Anmelden'); ?>"></submit>
       </div>
     </form>
-   <?php } /* !$success */ ?>
+   <?php } /* !$success */ else { ?>
+    <div id="response"><?php echo $response; ?></div>
+   <?php } /* $success */ ?>
 
   </div> <!-- #registration -->
 
