@@ -6,8 +6,10 @@ $success  = false;
 $msg_missing_info   = __("Please provide all information");
 $msg_email_invalid  = __("Please provide a valid email adress");
 $msg_message_sent   = __("Message was sent..... if ... ");
-$msg_message_sent   = __("Message was not sent..... if ... ");
+$msg_message_not_sent = __("Message was not sent..... if ... ");
 $msg_need_tos       = __("You need to accept the tos and cancellation conditions");
+$msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...");
+$msg_technical_error= __("There was a real technical error with your registration. Please contact ....");
 
 function registration_form_success($message) {
   global $response;
@@ -37,8 +39,15 @@ function send_mail_to_host($registration) {
 }
 
 function send_mail_to_participant($registration) {
+  $to = $registration['email'];
+  $subject = 'Registration';
+  $headers = 'From: seminar-registrierung@siebenlinden.org'. "\r\n" .
+    'Reply-To: bildungsreferat@siebenlinden.de' . "\r\n";
+  $sent = wp_mail($to, $subject, strip_tags($registration['comments']), $headers);
+  return $sent;
 }
 
+// Access field in $_POST if it is set, return false otherwise.
 function post_index_or_null($key) {
   return (isset($_POST[$key])) ? $_POST[$key] : false;
 };
@@ -73,29 +82,25 @@ $registration = array(
   'country'   => $country,
   'l_seminar' => '1'
 );
-# Missing fields: rooms, tos, donation, further participants
+# Missing fields: uuid, rooms, donation, further participants
 
-if (false) {
-  if (!$accept_tos) {
+if (true) {
+  if (!$submitted) {
+    // Pseudo-spam protection
+  }
+  elseif (!$accept_tos) {
     registration_form_error($msg_need_tos);
   }
-
-  // validate (mail - adress, name, tos
-  if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     registration_form_error($msg_email_invalid);
+  }
+  elseif(!$firstname && !$lastname) {
+    registration_form_error($msg_missing_info);
   }
   else {
     # send mail
   }
 }
-
-// Pseudo spam protection
-if ($submitted) {
-  file_put_contents("registration.txt", json_encode($registration));
-  // mail to participant, mail to host
-}
-
-registration_form_error("Debug: ".var_export($registration));
 ?>
 
   <div id="registration">
