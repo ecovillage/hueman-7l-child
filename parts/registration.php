@@ -90,7 +90,7 @@ if (false) {
 }
 
 // Pseudo spam protection
-if ($_POST['submitted']) {
+if ($submitted) {
   file_put_contents("registration.txt", json_encode($registration));
   // mail to participant, mail to host
 }
