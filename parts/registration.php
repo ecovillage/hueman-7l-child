@@ -39,18 +39,23 @@ function send_mail_to_host($registration) {
 function send_mail_to_participant($registration) {
 }
 
+function post_index_or_null($key) {
+  return (isset($_POST[$key])) ? $_POST[$key] : false;
+};
+
 // User provided content
-$firstname     = $_POST['firstname'];
-$lastname      = $_POST['lastname'];
-$street_and_no = $_POST['street_and_no'];
-$zip           = $_POST['zip'];
-$city          = $_POST['city'];
-$country       = $_POST['country'];
-$email         = $_POST['email'];
-$phone         = $_POST['phone'];
-$mobile        = $_POST['mobile'];
-$comment       = $_POST['comment'];
-$accept_tos    = $_POST['accept_tos'];
+$firstname     = post_index_or_null('firstname');
+$lastname      = post_index_or_null('lastname');
+$street_and_no = post_index_or_null('street_and_no');
+$zip           = post_index_or_null('zip');
+$city          = post_index_or_null('city');
+$country       = post_index_or_null('country');
+$email         = post_index_or_null('email');
+$phone         = post_index_or_null('phone');
+$mobile        = post_index_or_null('mobile');
+$comment       = post_index_or_null('comment');
+$accept_tos    = post_index_or_null('accept_tos');
+$submitted     = post_index_or_null('submitted');
 
 #$registration[] = array(
 $registration = array(
