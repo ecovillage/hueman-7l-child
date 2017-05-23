@@ -25,19 +25,6 @@ function h7lc_first_menus_items() {
   return wp_get_nav_menu_items( h7lc_first_menu_id() );
 }
 
-// get_nav_menus get_nav_menu_locations (to avoid top-de lock)
-// 
-
-  //$locations = get_theme_mod('nav_menu_locations');
-  // current() or reset() + key()
-  //get_nav_menu_locations()
-  //
-  //-> theme_location == topbar
-//  $theme_location = 'topbar';
-//  if ( ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
-//    $menu = get_term( $locations[$theme_location], 'nav_menu' ); # alternative: $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-//    $menu_items = wp_get_nav_menu_items($menu->term_id);
-//  }
 
 // Return an array with the menu item object ids of
 // the current selected and all ancestors (up to 0/the root).
@@ -53,7 +40,6 @@ function h7lc_current_menu_item_ancestors() {
   // If current page not in the menu, freak out a bit, TODO but show main menu.
   // Also, this might mean we look at an archive
   if (!is_object($current_menu_item)) {
-    // empty array
     return $current_menu_item_ancestors;
   }
 
@@ -118,83 +104,6 @@ function h7lc_current_menu_item() {
   return $current_menu_item;
 }
 
-function h7lc_class_if_in($class_string, $element, $haystack) {
-  if (in_array($element, $haystack)) {
-    return $class_string;
-  } else {
-    return "";
-  }
-}
-
-// Returns "current_page_ancestor" if id in page_ancestors, '' otherwise.
-function h7lc_current_page_ancestor_class($id, $page_ancestors) {
-  return h7lc_class_if_in("current_page_ancestor", $id, $page_ancestors);
-}
-
-// Returns "page_item_has_children" if id in parent_ids, '' otherwise
-function h7lc_page_item_has_children_class($id, $parent_ids) {
-  return h7lc_class_if_in("page_item_has_children", $id, $parent_ids);
-}
-
-
-function hueman_7l_child_filter_the_title( $title, $id = null) {
-  // if !in_the_loop ...
-    return 'teitel';
-    if ( basename(get_page_template()) == 'page-calendar.php' ) {
-      return 'Custom Title';
-    }
-    return $title;
-  }
-  /* deprecated? */
-  //add_filter( 'the_title', 'hueman_7l_child_filter_the_title', 20, 2);
-  //add_filter( 'wp_title', 'hueman_7l_child_filter_the_title',  20, 2);
-
-  /* overwrite hu_related_posts() to fetch from same post_type (marked as "single change in child theme"*/
-  function hu_related_posts() {
-    wp_reset_postdata();
-    global $post;
-
-    // Define shared post arguments
-    $args = array(
-      'no_found_rows'       => true,
-      'update_post_meta_cache'  => false,
-      'update_post_term_cache'  => false,
-      'ignore_sticky_posts'   => 1,
-      'orderby'         => 'rand',
-      'post_type'         => $post->post_type,
-      // single change in child theme:
-      'post__not_in'        => array($post->ID),
-      'posts_per_page'      => 3
-    );
-    // Related by categories
-    if ( hu_get_option('related-posts') == 'categories' ) {
-
-      $cats = get_post_meta($post->ID, 'related-cat', true);
-
-      if ( !$cats ) {
-        $cats = wp_get_post_categories($post->ID, array('fields'=>'ids'));
-        $args['category__in'] = $cats;
-      } else {
-        $args['cat'] = $cats;
-      }
-    }
-    // Related by tags
-    if ( hu_get_option('related-posts') == 'tags' ) {
-
-      $tags = get_post_meta($post->ID, 'related-tag', true);
-
-      if ( !$tags ) {
-        $tags = wp_get_post_tags($post->ID, array('fields'=>'ids'));
-        $args['tag__in'] = $tags;
-      } else {
-        $args['tag_slug__in'] = explode(',', $tags);
-      }
-      if ( !$tags ) { $break = true; }
-    }
-
-    $query = !isset($break)?new WP_Query($args):new WP_Query;
-    return $query;
-  }
 
   /* TODO This needs more precision, we do not always need the flexslider js, but
    * for pages that use the featured posts feature ... */
@@ -216,7 +125,6 @@ add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
 /** Load featured_custom partial to render news as a flexslider. */
 function h7lc_shortcode_featured_flexslider() {
   ob_start();
-  // TODO extract a parameter (category_name/slug)
   get_template_part('parts/featured_custom');
   $ret = ob_get_contents();
   ob_end_clean();
@@ -312,10 +220,8 @@ function h7lc_calendar($atts) {
 
   $ret = ob_get_contents();
   ob_end_clean();
-  wp_reset_postdata();
-//  wp_reset_query();
-      //wp_reset_postdata();
-      //wp_reset_query();
+  //wp_reset_postdata();
+  wp_reset_query();
   return $ret;
 }
 
