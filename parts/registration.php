@@ -3,13 +3,13 @@
 $response = __("");
 $success  = false;
 
-$msg_missing_info   = __("Please provide all information");
-$msg_email_invalid  = __("Please provide a valid email adress");
-$msg_message_sent   = __("Message was sent..... if ... ");
-$msg_message_not_sent = __("Message was not sent..... if ... ");
-$msg_need_tos       = __("You need to accept the tos and cancellation conditions");
-$msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...");
-$msg_technical_error= __("There was a real technical error with your registration. Please contact ....");
+$msg_missing_info   = __("Please provide all information", "hueman-7l-child");
+$msg_email_invalid  = __("Please provide a valid email adress", "hueman-7l-child");
+$msg_message_sent   = __("Message was sent..... if ... ", "hueman-7l-child");
+$msg_message_not_sent = __("Message was not sent..... if ... ", "hueman-7l-child");
+$msg_need_tos       = __("You need to accept the tos and cancellation conditions", "hueman-7l-child");
+$msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...", "hueman-7l-child");
+$msg_technical_error= __("There was a real technical error with your registration. Please contact ....", "hueman-7l-child");
 
 function registration_form_success($message) {
   global $response;
@@ -132,13 +132,13 @@ if (true) {
   <div id="registration">
     <?php if (!$success) { ?>
 
-    <h2><?php echo __("Anmeldung"); ?></h2>
+    <h2><?php echo __("Anmeldung", "hueman-7l-child"); ?></h2>
     <div id="response"><?php echo $response; ?></div>
     <br/>
 
     <span style="color:red;">
-      <?php echo __("Bei technischen Problemen benutze bitte unser "); ?>
-<a href="http://seminare.siebenlinden.de/seminar/<?php echo $event_uuid; ?>"><?php echo __('Anmeldesystem der alten Webseite.'); ?></a>
+      <?php echo __("Bei technischen Problemen benutze bitte unser ", "hueman-7l-child"); ?>
+<a href="http://seminare.siebenlinden.de/seminar/<?php echo $event_uuid; ?>"><?php echo __('Anmeldesystem der alten Webseite.', "hueman-7l-child"); ?></a>
     </span>
     <br/>
     <form id="registration_form" action="<?php the_permalink(); ?>" charset="UTF-8" method="POST">
@@ -146,57 +146,57 @@ if (true) {
 
       <div class="grid one-half">
         <?php echo_fa_warning_if_unposted("firstname"); ?>
-        <label for="firstname"><?php echo __("Vorname"); ?>*</label>
-        <input type="text" placeholder="<?php echo __('Vorname'); ?>" id="firstname" name="firstname"
+        <label for="firstname"><?php echo __("Vorname", "hueman-7l-child"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Vorname', "hueman-7l-child"); ?>" id="firstname" name="firstname"
           value="<?php echo esc_attr($firstname); ?>"/>
 
         <?php echo_fa_warning_if_unposted("lastname"); ?>
-        <label for="lastname"><?php echo __('Nachname'); ?>*</label>
-        <input type="text" placeholder="<?php echo __('Nachname'); ?>" id="lastname" name="lastname"
+        <label for="lastname"><?php echo __('Nachname', "hueman-7l-child"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Nachname', "hueman-7l-child"); ?>" id="lastname" name="lastname"
           value="<?php echo esc_attr($lastname); ?>"/>
 
         <?php echo_fa_warning_if_unposted("street_and_no"); ?>
-        <label for="street_and_no"><?php echo __('Straße und Hausnummer'); ?>*</label>
-        <input type="text" placeholder="<?php echo __('Straße und Hausnummer'); ?>" id="street_and_no" name="street_and_no"
+        <label for="street_and_no"><?php echo __('Straße und Hausnummer', "hueman-7l-child"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Straße und Hausnummer', "hueman-7l-child"); ?>" id="street_and_no" name="street_and_no"
           value="<?php echo esc_attr($street_and_no); ?>"/>
 
         <?php echo_fa_warning_if_unposted("zip"); ?>
-        <label for="zip"><?php echo __('PLZ'); ?>*</label>
-        <input type="text" placeholder="<?php echo __('PLZ'); ?>" id="zip" name="zip"
+        <label for="zip"><?php echo __('PLZ', "hueman-7l-child"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('PLZ', "hueman-7l-child"); ?>" id="zip" name="zip"
          value="<?php echo esc_attr($zip); ?>"/>
 
         <?php echo_fa_warning_if_unposted("city"); ?>
-        <label for="city"><?php echo __('Ort'); ?>*</label>
-        <input type="text" placeholder="<?php echo __('Ort'); ?>" id="city" name="city"
+        <label for="city"><?php echo __('Ort', "hueman-7l-child"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('Ort', "hueman-7l-child"); ?>" id="city" name="city"
           value="<?php echo esc_attr($city); ?>"/>
 
-        <label for="land"><?php echo __('Land'); ?></label>
-        <input type="text" placeholder="<?php echo __('Land'); ?>" id="country" name="country"
+        <label for="land"><?php echo __('Land', "hueman-7l-child"); ?></label>
+        <input type="text" placeholder="<?php echo __('Land', "hueman-7l-child"); ?>" id="country" name="country"
           value="<?php echo esc_attr($country); ?>"/>
       </div>
 
       <div class="grid one-half last">
         <?php echo_fa_warning_if_unposted("email"); ?>
-        <label for="email"><?php echo __('E-Mail'); ?>*</label>
-        <input type="text" placeholder="<?php echo __('email'); ?>" id="email" name="email"
+        <label for="email"><?php echo __('E-Mail', "hueman-7l-child"); ?>*</label>
+        <input type="text" placeholder="<?php echo __('email', "hueman-7l-child"); ?>" id="email" name="email"
           value="<?php echo esc_attr($email); ?>"/>
 
-        <label for="phone"><?php echo __('Telefonnummer'); ?></label>
+        <label for="phone"><?php echo __('Telefonnummer', "hueman-7l-child"); ?></label>
         <input type="text" placeholder="0123 45678" id="phone" name="phone"
           value="<?php echo esc_attr($phone); ?>"/>
 
-        <label for="mobile"><?php echo __('Handy-Nummer'); ?></label>
+        <label for="mobile"><?php echo __('Handy-Nummer', "hueman-7l-child"); ?></label>
         <input type="text" placeholder="0123 45678" id="mobile" name="mobile"
           value="<?php echo esc_attr($mobile); ?>"/>
 
-        <label for="comment"><?php echo __('Bemerkung'); ?></label>
+        <label for="comment"><?php echo __('Bemerkung', "hueman-7l-child"); ?></label>
         <textarea placeholder="..." id="comment" name="comment" rows="7"></textarea>
       </div>
 
       <br class="clear"/>
       <br/>
 
-      <h5><?php echo __('Übernachtung: Raumwünsche'); ?></h5>
+      <h5><?php echo __('Übernachtung: Raumwünsche', "hueman-7l-child"); ?></h5>
       <div class="grid one-half last">
         <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer" <?php echo_checked_room("4-Bett-Zimmer"); ?>/>
         <label for="4_Bett_Zimmer">4-Bett-Zimmer</label>
@@ -233,16 +233,16 @@ if (true) {
       <br class="clear"/>
       <br/>
       <div class="registration-controls">
-      <h4><?php echo __('Rücktrittsbedingungen'); ?></h4>
+      <h4><?php echo __('Rücktrittsbedingungen', "hueman-7l-child"); ?></h4>
       <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
       <br/>
       <?php echo_fa_warning_if_unposted("accept_tos"); ?>
-      <input type="checkbox" id="accept_tos" name="accept_tos" <?php echo ($accept_tos ? 'checked="checked"' : '' ); ?>><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die '); ?><a href="/seminare/agb/"><?php echo __('Allgemeinen Geschäftsbedingungen'); ?></a></input>
+      <input type="checkbox" id="accept_tos" name="accept_tos" <?php echo ($accept_tos ? 'checked="checked"' : '' ); ?>><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die ', "hueman-7l-child"); ?><a href="/seminare/agb/"><?php echo __('Allgemeinen Geschäftsbedingungen', "hueman-7l-child"); ?></a></input>
       <br/>
       <br/>
 
       <input type="hidden" name="submitted" value="1">
-      <input type="submit" value="<?php echo __('Anmelden'); ?>"></submit>
+      <input type="submit" value="<?php echo __('Anmelden', "hueman-7l-child"); ?>"></submit>
       </div>
     </form>
    <?php } /* !$success */ else { ?>
