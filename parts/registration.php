@@ -79,7 +79,6 @@ $rooms         = post_index_or_null('room_wish');
 
 #$registration[] = array(
 $registration = array(
-  # 'uuid'     => ran(),
   'firstname' => $firstname,
   'lastname'  => $lastname,
   'place'     => $city,
@@ -88,7 +87,7 @@ $registration = array(
   'telephone' => $phone,
   'email'     => $email,
   'address'   => $street_and_no,
-  'room_wishes' => array(),
+  'room_wishes' => $rooms,
   'comments'  => $comment,
   'country'   => $country,
   'l_seminar' => $event_uuid,
@@ -210,7 +209,7 @@ if (true) {
       </div>
 
       <div class="grid one-half last">
-      <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt' <?php echo_checked_room("Eigenes Zelt"); ?>/>
+        <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt' <?php echo_checked_room("Eigenes Zelt"); ?>/>
         <label for='Eigenes_Zelt'>Eigenes Zelt</label>
         <br/>
 
