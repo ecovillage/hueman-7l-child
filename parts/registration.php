@@ -1,6 +1,6 @@
 <?php
 
-$response = __("");
+$response = "";
 $success  = false;
 
 $msg_missing_info   = __("Please provide all information", "hueman-7l-child");
@@ -54,7 +54,7 @@ function post_index_or_null($key) {
 };
 
 function echo_fa_warning_if_unposted($key) {
-  if (!isset($_POST[$key]) || empty($_POST[$key])) {
+  if (!empty($_POST) && (!isset($_POST[$key]) || empty($_POST[$key]))) {
     echo '<i class="fa fa-warning"></i>';
   }
 }
@@ -80,18 +80,18 @@ $rooms         = post_index_or_null('room_wish');
 
 #$registration[] = array(
 $registration = array(
-  'firstname' => $firstname,
-  'lastname'  => $lastname,
-  'place'     => $city,
-  'zip'       => $zip,
-  'cellphone' => $mobile,
-  'telephone' => $phone,
-  'email'     => $email,
-  'address'   => $street_and_no,
+  'firstname'   => $firstname,
+  'lastname'    => $lastname,
+  'place'       => $city,
+  'zip'         => $zip,
+  'cellphone'   => $mobile,
+  'telephone'   => $phone,
+  'email'       => $email,
+  'address'     => $street_and_no,
   'room_wishes' => $rooms,
-  'comments'  => $comment,
-  'country'   => $country,
-  'l_seminar' => $event_uuid,
+  'comments'    => $comment,
+  'country'     => $country,
+  'l_seminar'   => $event_uuid,
 );
 # Missing fields: uuid, rooms, donation, further participants
 
@@ -226,7 +226,6 @@ if (true) {
 
       <br/>
       <br class="clear"/>
-      <br/>
       <div class="registration-controls">
       <h4><?php echo __('Rücktrittsbedingungen', "hueman-7l-child"); ?></h4>
       <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
