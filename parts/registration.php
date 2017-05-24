@@ -191,6 +191,43 @@ if (true) {
       <br class="clear"/>
       <br/>
 
+      <script type="text/javascript">
+        function addParticipantInputs() {
+          var inputRow = document.getElementById('another-participant-template').cloneNode(true);
+          inputRow.style.display = '';
+          document.getElementById('further-participants').appendChild(inputRow);
+        }
+      </script>
+
+      <div id="further-participants">
+        <div id="another-participant-template" style="display:none;">
+          <div class="grid one-third">
+            <label for="firstnames"><?php echo __("Vorname", "hueman-7l-child"); ?>*</label>
+            <input type="text" placeholder="<?php echo __('Vorname', "hueman-7l-child"); ?>" id="firstnames[]" name="firstnames[]"
+              value="<?php /*echo esc_attr($firstname);*/ ?>"/>
+          </div>
+
+          <div class="grid one-third">
+            <label for="lastnames"><?php echo __('Nachname', "hueman-7l-child"); ?>*</label>
+            <input type="text" placeholder="<?php echo __('Nachname', "hueman-7l-child"); ?>" id="lastnames[]" name="lastnames[]"
+              value="<?php /*echo esc_attr($lastname);*/ ?>"/>
+          </div>
+
+          <div class="grid one-third last">
+            <label for="ages"><?php echo __("Alter", "hueman-7l-child"); ?>*</label>
+            <input type="text" placeholder="<?php echo __('Alter', "hueman-7l-child"); ?>" id="ages[]" name="ages[]"
+              value="<?php /*echo esc_attr($age);*/ ?>"/>
+          </div>
+        </div>
+
+        <h5><?php echo __('Weitere Teilnehmer*', "hueman-7l-child"); ?></h5>
+        <button type="button" onClick="addParticipantInputs();"><i class="fa fa-plus"></i><?php echo __("Hinzufügen"); ?></button>
+      </div>
+
+      <br class="clear"/>
+      <br/>
+
+
       <h5><?php echo __('Übernachtung: Raumwünsche', "hueman-7l-child"); ?></h5>
       <div class="grid one-half last">
         <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer" <?php echo_checked_room("4-Bett-Zimmer"); ?>/>
