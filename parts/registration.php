@@ -229,7 +229,7 @@ if (true) {
 
 
       <h5><?php echo __('Übernachtung: Raumwünsche', "hueman-7l-child"); ?></h5>
-      <div class="grid one-half last">
+      <div class="grid one-half">
         <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer" <?php echo_checked_room("4-Bett-Zimmer"); ?>/>
         <label for="4_Bett_Zimmer">4-Bett-Zimmer</label>
         <br/>
