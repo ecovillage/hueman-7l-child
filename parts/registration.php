@@ -11,6 +11,7 @@ $msg_need_tos       = __("You need to accept the tos and cancellation conditions
 $msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...", "hueman-7l-child");
 $msg_technical_error= __("There was a real technical error with your registration. Please contact ....", "hueman-7l-child");
 
+/* Sets a sucessfull registration message. */
 function registration_form_success($message) {
   global $response;
   $response = '<div class="success">'.$message.'</div>';
@@ -18,11 +19,13 @@ function registration_form_success($message) {
   $success  = true;
 };
 
+/* Sets a registration failure message. */
 function registration_form_error($message) {
   global $response;
   $response = '<div class="error">'.$message.'</div>';
 };
 
+/* Send an email to the host, return true if success. */
 function send_mail_to_host($registration) {
   $to = 'bildungsreferat@siebenlinden.de';
   $subject = 'Registration';
@@ -39,6 +42,7 @@ function send_mail_to_host($registration) {
   return $sent;
 }
 
+/* Send an email to the participant, return true if success. */
 function send_mail_to_participant($registration) {
   $to = $registration['email'];
   $subject = 'Registration';
