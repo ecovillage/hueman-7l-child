@@ -30,7 +30,7 @@
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
               <?php
                 $event = $post;
-                $event_uuid     =  get_post_meta($event->ID, 'uuid', true);
+                $event_uuid     = get_post_meta($event->ID, 'uuid', true);
                 $event_fromdate = date_i18n(__('d.M. Y'), get_post_meta($post->ID, 'fromdate', true));
                 $event_todate   = date_i18n(__('d.M. Y'), get_post_meta($post->ID, 'todate', true));
                 $today_date     = strtotime('today');
@@ -47,12 +47,6 @@
              <h1><?php echo the_title(); ?></h1>
 
               <?php hu_get_template_part('parts/page-image'); ?>
-
-              <?php if (empty($_POST)) { ?>
-                <hr/>
-                <a name="registration"/>
-                <?php include(locate_template('parts/registration.php')); ?>
-              <?php } ?>
 
               <div class="event-dates">
                 <?php echo __('Von', 'hueman-7l-child');  echo $event_fromdate; ?>
@@ -197,10 +191,11 @@
                   if($event_needs_registration && $event_is_future) { ?>
 
                 <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
-                <a name="registration"/>
-                <div id="registration">
-                  ...
-                </div> <!-- #registration -->
+                <?php if (empty($_POST)) { ?>
+                  <hr/>
+                  <a name="registration"/>
+                  <?php include(locate_template('parts/registration.php')); ?>
+                <?php } ?>
               <?php
                 }
               elseif ($event_is_future) { ?>
