@@ -278,3 +278,10 @@ function h7lc_calendar_this_year_upcoming() {
 
 add_shortcode( 'event_calendar_this_year_upcoming', 'h7lc_calendar_this_year_upcoming');
 
+
+function h7cl_load_code() {
+  // This takes into account parent and child themes as well
+  // alternative: require_once( get_stylesheet_directory() . '/inc/custom.php' );
+  locate_template( array( 'inc/h7lc_settings.php' ), true, true );
+}
+add_action( 'after_setup_theme', 'h7cl_load_code');
