@@ -432,3 +432,6 @@ li.calendar-event-row {
 .event-subsection-nav a {
   font-size: 0.8em;
 }
+
+/* Make button["button"]s look like button["submit"]s. */
+.themeform button[type="submit"] { background: #16cfc1; color: #fff; padding: 8px 14px; font-weight: 600; display: inline-block; border: none; cursor: pointer; -webkit-border-radius: 3px; border-radius: 3px; }
