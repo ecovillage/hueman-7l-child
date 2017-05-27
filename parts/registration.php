@@ -57,12 +57,14 @@ function post_index_or_null($key) {
   return (isset($_POST[$key])) ? $_POST[$key] : false;
 };
 
+/* Echos <i> with fa-warning if given key not in posted inputs. */
 function echo_fa_warning_if_unposted($key) {
   if (!empty($_POST) && (!isset($_POST[$key]) || empty($_POST[$key]))) {
     echo '<i class="fa fa-warning"></i>';
   }
 }
 
+/* Echos checked='checked' if room found in posted room choices. */
 function echo_checked_room($roomname) {
   echo (isset($_POST['room_wish']) && in_array($roomname, $_POST['room_wish']) ? 'checked="checked"' : '');
 }
