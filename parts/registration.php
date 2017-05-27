@@ -27,7 +27,7 @@ function registration_form_error($message) {
 
 /* Send an email to the host, return true if success. */
 function send_mail_to_host($registration) {
-  $to = 'bildungsreferat@siebenlinden.de';
+  $to = get_option('h7lc_host_mail_field');
   $subject = 'Registration';
   $headers = 'From: '. $registration['email'] . "\r\n" .
     'Reply-To: ' . $registration['email'] . "\r\n";
@@ -109,7 +109,7 @@ function set_participants(&$registration, $firstname, $lastname, $firstnames, $l
   $registration['children'] = $children;
 }
 
-/* Writes a JSON file to be picked up by legacy software. */
+/* Writes a JSON file to be picked up by legacy software. Returns false if fails. */
 function write_registration_json_file($registration) {
   # Need to split out childe adults, youths and respective _nums
   $registration_structure = array();
@@ -122,10 +122,12 @@ function write_registration_json_file($registration) {
   #  = WP_PLUGIN_DIR."
 
   $filename = "registration_slorg_".rand()."-".rand().".txt";
-  error_log('writing '.$filename.':'. file_put_contents($filename, json_encode($registration_structure)));
+  $write_result = file_put_contents($filename, json_encode($registration_structure));
 
-  # return
-  # if (!file_put_contents($filename, json_encode($registration))) {
+  error_log('writing '.$filename.':'. $write_result);
+  error_log('content: '.json_encode($registration_structure));
+
+  return $write_result;
 }
 
 // User provided content
@@ -161,11 +163,14 @@ $registration = array(
   'country'     => $country,
   'l_seminar'   => $event_uuid,
 );
-# Missing fields: uuid, rooms, donation, further participants
+# Missing fields: uuid, donation
+
+set_participants($registration, $firstname, $lastname, $firstnames, $lastnames, $ages);
 
 if (true) {
   if (!$submitted) {
     // Pseudo-spam protection
+    error_log("spam event registration detected");
   }
   elseif (!$accept_tos) {
     registration_form_error($msg_need_tos);
@@ -177,15 +182,25 @@ if (true) {
     registration_form_error($msg_missing_info);
   }
   else {
-    $filename = "registration.txt";
-    if (!file_put_contents($filename, json_encode($registration))) {
+    if (!write_registration_json_file($registration)) {
+      error_log("error in writing registration file");
       registration_form_error($msg_technical_error);
     }
-    elseif (send_mail_to_participant($registration) && send_mail_to_host($registration)) {
-      #registration_form_success("validation passed");
-      registration_form_success($msg_registered);
+    elseif (send_mail_to_participant($registration)) {
+      error_log("sent mail to participant");
+
+      if (send_mail_to_host($registration)) {
+        #registration_form_success("validation passed");
+        error_log("sent mail to host");
+        registration_form_success($msg_registered);
+      }
+      else {
+        error_log("failed to send mail to host");
+        registration_form_error("host mail failed");
+      }
     } else {
-      registration_form_error($msg_message_not_sent);
+        error_log("failed to send mail to participant");
+        registration_form_error("participant mail failed");
     }
   }
 }
