@@ -69,6 +69,65 @@ function echo_checked_room($roomname) {
   echo (isset($_POST['room_wish']) && in_array($roomname, $_POST['room_wish']) ? 'checked="checked"' : '');
 }
 
+/* Modifies registration such that it includes participant information. */
+function set_participants(&$registration, $firstname, $lastname, $firstnames, $lastnames, $ages) {
+  $children = array();
+  $youths   = array();
+  $adults   = array();
+  $adults[] = $registration["firstname"].' '.$registration['lastname'];
+  # Rules:
+  #   > 18: adult
+  #   > 12: youth
+  #       : child
+  $min_length = min(count($lastnames), count($firstnames), count($ages));
+
+  //Alternative: foreach
+  for($i = 0; $i < $min_length; $i++) {
+    $age       = $ages[$i];
+    $firstname = $firstnames[$i];
+    $lastname  = $lastnames[$i];
+    if (!(empty($age) && empty($firstname) && empty($lastname))) {
+      if(empty($lastname)) {
+        $lastname = $registration["lastname"];
+      }
+      if ($age > 18) {
+        $adults[] = $firstname.' '.$lastname;
+      } elseif ($age > 12) {
+        $youths[] = $firstname.' '.$lastname;
+      } else {
+        $children[] = $firstname.' '.$lastname;
+      }
+    }
+  }
+
+  $registration['num_children'] = count($children);
+  $registration['num_youth']    = count($youths);
+  $registration['num_adults']   = count($adults);
+
+  $registration['adults']   = $adults;
+  $registration['youth']    = $youths;
+  $registration['children'] = $children;
+}
+
+/* Writes a JSON file to be picked up by legacy software. */
+function write_registration_json_file($registration) {
+  # Need to split out childe adults, youths and respective _nums
+  $registration_structure = array();
+  $registration_structure['g_value'] = $registration;
+  $g_meta = array();
+  $g_meta['g_type'] = 'slseminar_booking_request';
+  $registration_structure['g_meta'] = $g_meta;
+
+  # .plugin_dir_path( __FILE__ ) .
+  #  = WP_PLUGIN_DIR."
+
+  $filename = "registration_slorg_".rand()."-".rand().".txt";
+  error_log('writing '.$filename.':'. file_put_contents($filename, json_encode($registration_structure)));
+
+  # return
+  # if (!file_put_contents($filename, json_encode($registration))) {
+}
+
 // User provided content
 $firstname     = post_index_or_null('firstname');
 $lastname      = post_index_or_null('lastname');
@@ -83,6 +142,9 @@ $comment       = post_index_or_null('comment');
 $accept_tos    = post_index_or_null('accept_tos');
 $submitted     = post_index_or_null('submitted');
 $rooms         = post_index_or_null('room_wish');
+$lastnames     = post_index_or_null('lastnames');
+$firstnames    = post_index_or_null('firstnames');
+$ages          = post_index_or_null('ages');
 
 #$registration[] = array(
 $registration = array(
