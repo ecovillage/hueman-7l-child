@@ -435,3 +435,20 @@ li.calendar-event-row {
 
 /* Make button["button"]s look like button["submit"]s. */
 .themeform button[type="submit"] { background: #16cfc1; color: #fff; padding: 8px 14px; font-weight: 600; display: inline-block; border: none; cursor: pointer; -webkit-border-radius: 3px; border-radius: 3px; }
+
+/* Registration response messages. */
+#response .success::before{
+  font-family: "FontAwesome";
+  content: "\f164 ";
+}
+#response .success {
+  background: green;
+}
+
+#response .error::before{
+  font-family: "FontAwesome";
+  content: "\f071 ";
+}
+#response .error {
+  background: red;
+}
