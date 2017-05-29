@@ -27,28 +27,40 @@ function registration_form_error($message) {
 
 /* Send an email to the host, return true if success. */
 function send_mail_to_host($registration) {
-  $to = get_option('h7lc_host_mail_field');
-  $subject = 'Registration';
+  $to = get_option('h7lc_host_mailnotify_field');
+  $subject = __('A Registration', 'hueman-7l-child');
   $headers = 'From: '. $registration['email'] . "\r\n" .
     'Reply-To: ' . $registration['email'] . "\r\n";
-  // Need a kind of template here
-  $sent = wp_mail($to, $subject, strip_tags($registration['comments']), $headers);
-  #if($sent) {
-  #  registration_form_success($msg_message_sent); //message sent!
-  #}
-  #else {
-  #  registration_form_error($msg_message_not_sent); //message wasn't sent
-  #}
+
+
+  // Mail template
+  ob_start();
+  get_template_part('includes/mails/registration_host');
+  $body = ob_get_contents();
+  ob_end_clean();
+  error_log("mail to host send: ".$body);
+
+  $sent = wp_mail($to, $subject, $body, $headers);
+
+  error_log("mail to host send: ".$body);
   return $sent;
 }
 
 /* Send an email to the participant, return true if success. */
 function send_mail_to_participant($registration) {
   $to = $registration['email'];
-  $subject = 'Registration';
-  $headers = 'From: seminar-registrierung@siebenlinden.org'. "\r\n" .
-    'Reply-To: bildungsreferat@siebenlinden.de' . "\r\n";
-  $sent = wp_mail($to, $subject, strip_tags($registration['comments']), $headers);
+  $subject = __('Registration', 'hueman-7l-child');
+
+  ob_start();
+  get_template_part('includes/mails/registration_participant');
+  $body = ob_get_contents();
+  ob_end_clean();
+
+  $headers = array('From: '.get_option('h7lc_host_mailfrom_field'), 'Reply-To: '.get_option('h7lc_host_mailreplyto_field'));
+  $sent = wp_mail($to, $subject, $body, $headers);
+
+  error_log('Send mail to participant: '.$sent);
+
   return $sent;
 }
 
@@ -164,6 +176,9 @@ $registration = array(
   'l_seminar'   => $event_uuid,
 );
 # Missing fields: uuid, donation
+
+global $registration;
+global $event_uuid;
 
 set_participants($registration, $firstname, $lastname, $firstnames, $lastnames, $ages);
 
