@@ -29,18 +29,33 @@ function h7lc_options() {
 <?php
 }
 
-function h7lc_host_mail_field_display() {
+/* The mail field */
+function h7lc_host_mailfrom_field_display() {
 ?>
-  <input type="text" name="h7lc_host_mail_field" id="h7lc_host_mail_field" value="<?php echo get_option('h7lc_host_mail_field'); ?>" />
+  <input type="text" name="h7lc_host_mailfrom_field" id="h7lc_host_mailfrom_field" value="<?php echo get_option('h7lc_host_mailfrom_field'); ?>" size="30"/>
 <?php
 }
 
+/* The mail field */
+function h7lc_host_mailreplyto_field_display() {
+?>
+  <input type="text" name="h7lc_host_mailreplyto_field" id="h7lc_host_mailreplyto_field" value="<?php echo get_option('h7lc_host_mailreplyto_field'); ?>" size="30"/>
+<?php
+}
+
+/* The mail field */
+function h7lc_host_mailnotify_field_display() {
+?>
+  <input type="text" name="h7lc_host_mailnotify_field" id="h7lc_host_mailnotify_field" value="<?php echo get_option('h7lc_host_mailnotify_field'); ?>" size="30"/>
+<?php
+}
+
+/* Callback for section description */
 function h7lc_settings_section_callback() {
   echo __("Setting Section", 'hueman-7l-child');
 }
 
 function h7lc_settings_init() {
-  add_option('h7lc_host_mail_field');
   add_settings_section(
     'h7lc_registration_settings', // id
     __( 'Registration', 'hueman-7l-child' ),
@@ -48,12 +63,28 @@ function h7lc_settings_init() {
     'h7lc_registration_settings'
   );
   add_settings_field(
-    'h7lc_host_mail_field', // id
-    __('email adress of host', 'hueman-7l-child'), // title
-    'h7lc_host_mail_field_display', // callback
+    'h7lc_host_mailnotify_field', // id
+    __('email adress of host to notify on new registration', 'hueman-7l-child'), // title
+    'h7lc_host_mailnotify_field_display', // callback
     'h7lc_registration_settings', // page
     'h7lc_registration_settings' // section
   );
-  register_setting('h7lc_registration_settings', 'h7lc_host_mail_field');
+  add_settings_field(
+    'h7lc_host_mailreplyto_field', // id
+    __('email adress of host to reply to', 'hueman-7l-child'), // title
+    'h7lc_host_mailreplyto_field_display', // callback
+    'h7lc_registration_settings', // page
+    'h7lc_registration_settings' // section
+  );
+  add_settings_field(
+    'h7lc_host_mailfrom_field', // id
+    __('email adress of host in the from field', 'hueman-7l-child'), // title
+    'h7lc_host_mailfrom_field_display', // callback
+    'h7lc_registration_settings', // page
+    'h7lc_registration_settings' // section
+  );
+  register_setting('h7lc_registration_settings', 'h7lc_host_mailfrom_field');
+  register_setting('h7lc_registration_settings', 'h7lc_host_mailreplyto_field');
+  register_setting('h7lc_registration_settings', 'h7lc_host_mailnotify_field');
 }
 
