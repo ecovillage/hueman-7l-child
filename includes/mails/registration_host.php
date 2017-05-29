@@ -10,7 +10,7 @@ Anmeldung für "<?php echo the_title(); ?>" vom <?php echo $event_fromdate; ?> b
 Anschrift:
 
 <?php echo $registration['firstname'].' '.$registration['lastname']; ?> 
-<?php echo $registration['street_and_no']; ?> 
+<?php echo $registration['address']; ?> 
 <?php echo $registration['zip'].' '.$registration['place']; ?> 
 <?php echo $registration['country']; ?> 
 
@@ -20,9 +20,9 @@ Handy:   <?php echo $registration['cellphone']; ?>
 
 
 Personen:
-<?php foreach($registration["adults"] as $person) {
+<php foreach($registration["adults"] as $person) {
   #  echo $person[... ... age]
-?>
+>
 
 <?php echo $registration['firstname'].' '.$registration['lastname']; ?>
 
