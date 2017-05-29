@@ -25,7 +25,7 @@
             </a>
           </div>
           <div class="post-item-inner group">
-            <p class="post-item-category"><a href="" rel="category tag">Veranstaltung</a>
+            <p class="post-item-category"><a href="" rel="category tag"><?php echo __('Veranstaltung', 'hueman-7l-child'); ?></a>
             </p>
             <p class="post-item-title">
               <a href="<?php echo get_permalink($post->ID); ?>" rel="bookmark" title="<?php echo get_the_title($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
