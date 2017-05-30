@@ -1,7 +1,7 @@
 <?php if ($event_needs_registration && $event_is_future) { ?>
 <div class="event-subsection-nav">
   <div class="grid one-fifth">
-    <a href="#description"><?php echo _('Beschreibung', 'hueman-7l-child'); ?></a>
+    <a href="#description"><?php echo __('Beschreibung', 'hueman-7l-child'); ?></a>
   </div>
   <div class="grid one-fifth">
     <a href="#referees"><?php echo __('Referent*', 'hueman-7l-child'); ?></a>

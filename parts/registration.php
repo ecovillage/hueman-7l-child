@@ -5,8 +5,8 @@ $success  = false;
 
 $msg_missing_info   = __("Please provide all information", "hueman-7l-child");
 $msg_email_invalid  = __("Please provide a valid email adress", "hueman-7l-child");
-$msg_message_sent   = __("Message was sent..... if ... ", "hueman-7l-child");
-$msg_message_not_sent = __("Message was not sent..... if ... ", "hueman-7l-child");
+$msg_message_sent   = __("Message was sent. If you do not receive a confirmation mail in the next minutes please get in touch!", "hueman-7l-child");
+$msg_message_not_sent = __("Message was not sent due to a technical error!", "hueman-7l-child");
 $msg_need_tos       = __("You need to accept the tos and cancellation conditions", "hueman-7l-child");
 $msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...", "hueman-7l-child");
 $msg_technical_error= __("There was a real technical error with your registration. Please contact ....", "hueman-7l-child");
@@ -27,8 +27,13 @@ function registration_form_error($message) {
 
 /* Send an email to the host, return true if success. */
 function send_mail_to_host($registration) {
+global $event_todate;
+global $event_fromdate;
+
   $to = get_option('h7lc_host_mailnotify_field');
-  $subject = __('A Registration', 'hueman-7l-child');
+  $subject = __('Registration for ', 'hueman-7l-child');
+  $subject = $subject.get_the_title().' ('.$event_fromdate.' - '.$event_todate.')';
+
   $headers = 'From: '. $registration['email'] . "\r\n" .
     'Reply-To: ' . $registration['email'] . "\r\n";
 
@@ -48,8 +53,12 @@ function send_mail_to_host($registration) {
 
 /* Send an email to the participant, return true if success. */
 function send_mail_to_participant($registration) {
+  global $event_todate;
+  global $event_fromdate;
+
   $to = $registration['email'];
-  $subject = __('Registration', 'hueman-7l-child');
+  # or $event->post_title;
+  $subject = __('Anmeldung zum Seminar ', 'hueman-7l-child').get_the_title().' ('.$event_fromdate.' - '.$event_todate.')';
 
   ob_start();
   get_template_part('includes/mails/registration_participant');
@@ -133,11 +142,10 @@ function write_registration_json_file($registration) {
   # .plugin_dir_path( __FILE__ ) .
   #  = WP_PLUGIN_DIR."
 
-  $filename = "registration_slorg_".rand()."-".rand().".txt";
+  $filename = "registrations/registration_slorg_".rand()."-".rand().".txt";
   $write_result = file_put_contents($filename, json_encode($registration_structure));
 
   error_log('writing '.$filename.':'. $write_result);
-  error_log('content: '.json_encode($registration_structure));
 
   return $write_result;
 }

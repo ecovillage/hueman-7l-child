@@ -39,7 +39,7 @@
               ?>
 
               <?php if (!empty($_POST)) { ?>
-                <div style="background: #ddd; margin-left: -10px; margin-right: -10px; padding-bottom: 20px; padding-left: 10px; padding-right: 10px;">
+                <div id="registration-wrap">
                   <?php include(locate_template('parts/registration.php')); ?>
                 </div>
               <?php } ?>

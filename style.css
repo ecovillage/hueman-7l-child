@@ -434,21 +434,41 @@ li.calendar-event-row {
 }
 
 /* Make button["button"]s look like button["submit"]s. */
-.themeform button[type="submit"] { background: #16cfc1; color: #fff; padding: 8px 14px; font-weight: 600; display: inline-block; border: none; cursor: pointer; -webkit-border-radius: 3px; border-radius: 3px; }
+.themeform button[type="button"] { background: #16cfc1; color: #fff; padding: 8px 14px; font-weight: 600; display: inline-block; border: none; cursor: pointer; -webkit-border-radius: 3px; border-radius: 3px; }
 
 /* Registration response messages. */
 #response .success::before{
   font-family: "FontAwesome";
   content: "\f164 ";
+  padding-right: 5px;
+  padding-left: 5px;
 }
 #response .success {
-  background: green;
+  background: #82b965;
 }
 
 #response .error::before{
   font-family: "FontAwesome";
   content: "\f071 ";
+  padding-right: 5px;
+  padding-left: 5px;
 }
 #response .error {
-  background: red;
+  background: #cd483c;
+}
+
+#registration-wrap {
+  background: #ddd;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#registration .success, .error {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
