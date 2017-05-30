@@ -191,7 +191,7 @@ global $event_uuid;
 set_participants($registration, $firstname, $lastname, $firstnames, $lastnames, $ages);
 
 if (true) {
-  if (!$submitted) {
+  if (!$submitted || (!empty($_POST) && !empty($_POST['url']))) {
     // Pseudo-spam protection
     error_log("spam event registration detected");
   }
@@ -366,6 +366,8 @@ if (true) {
       </div>
       <br class="clear"/>
 
+      <label id='urllabel' for='url'>Hier bitte nichts reinschreiben! / Please do not enter anything here:</label>
+      <input type="text" id="url" name="url"/>
 
       <br/>
       <br class="clear"/>

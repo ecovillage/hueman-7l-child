@@ -456,6 +456,12 @@ li.calendar-event-row {
 #response .error {
   background: #cd483c;
 }
+#url {
+  display: none;
+}
+#urllabel {
+  display: none;
+}
 
 #registration-wrap {
   background: #ddd;
