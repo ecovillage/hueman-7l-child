@@ -63,7 +63,13 @@ Main css overrides and new definitions.
 
 Enough emptiness for everybody.  Now, things start to happen here.
 
-#### Define some shortcodes
+### parts/registration.php
+
+Registration form, mailer and logic, integrated into legacy system.
+
+## About registrations
+
+Will be put in pseudo-randomly named files (for legacy database, json import) in the `registrations` subdirectory of your wordpress home base.  You should put a `.htaccess` file there and instruct your webserver to not let anybody come close to that data.
 
 ##### [featured_news]
 
