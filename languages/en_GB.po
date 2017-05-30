@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman\n"
-"POT-Creation-Date: 2017-05-23 18:03+0100\n"
-"PO-Revision-Date: 2017-05-23 19:52+0100\n"
+"POT-Creation-Date: 2017-05-30 20:25+0100\n"
+"PO-Revision-Date: 2017-05-30 20:25+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: Ecovillage Sieben Linden\n"
 "Language: English\n"
@@ -17,7 +17,9 @@ msgstr ""
 "child\n"
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:7
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:162
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:156
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:7
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:25
 msgid "Referent*"
 msgstr "Referee"
 
@@ -26,7 +28,7 @@ msgid "Derzeit keine Veranstalungen in naher Zukunft geplant."
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:133
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:232
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:227
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/vanilla-single.php:28
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/notsingle.php:29
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/tmpl/single-tmpl.php:34
@@ -34,7 +36,7 @@ msgid "Pages:"
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:149
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:248
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:243
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/vanilla-single.php:44
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/notsingle.php:45
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/tmpl/single-tmpl.php:50
@@ -50,59 +52,59 @@ msgstr "Chosen Event"
 msgid "d.M. Y"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:58
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:52
 msgid "Von"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:59
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:53
 msgid "bis"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:93
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:87
 msgid "Informationen zum Seminar"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:106
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:100
 msgid "Aktuelle Informationen"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:112
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:106
 msgid "Anreise"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:118
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:112
 msgid "Abreise"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:124
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:118
 msgid "Seminarkosten"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:130
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:124
 msgid "Biovollverpflegung"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:136
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:130
 msgid "Unterkunft"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:142
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:136
 msgid "Bitte mitbringen"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:148
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:142
 msgid "Voraussetzungen für Teilnehmer*"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:207
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:202
 msgid "Keine Anmeldung nötig."
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:210
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:205
 msgid "Veranstaltung liegt in der Vergangenheit."
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:218
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:213
 msgid "Frage zur Veranstaltung stellen"
 msgstr ""
 
@@ -137,6 +139,35 @@ msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/page-calendar.php:71
 msgid "Keine Veranstaltungen im gewählten Zeitraum"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:7
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:8
+msgid "Event Registration Settings"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:20
+msgid "7 Linden Hueman Child: Registration Options"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:57
+msgid "Setting Section"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:66
+msgid "Registration"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:72
+msgid "email adress of host to notify on new registration"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:79
+msgid "email adress of host to reply to"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/inc/h7lc_settings.php:86
+msgid "email adress of host in the from field"
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/functions/init-front.php:101
@@ -221,119 +252,172 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_row_without_referee.php:23
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_line.php:28
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_row.php:21
+msgid " und "
+msgstr ""
+
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/post-list-author-date.php:18
 msgid "Veranstaltungsrubrik"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:6
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_alx.php:28
+msgid "Veranstaltung"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:4
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:22
+msgid "Beschreibung"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:10
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:28
+msgid "Informationen"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:13
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:254
+msgid "Anmeldung"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:16
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:31
+msgid "Frage stellen"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:15
 msgid "Please provide all information"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:7
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:16
 msgid "Please provide a valid email adress"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:8
-msgid "Message was sent..... if ... "
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:17
+msgid ""
+"Message was sent. If you do not receive a confirmation mail in the next "
+"minutes please get in touch!"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:9
-msgid "Message was not sent..... if ... "
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:18
+msgid "Message was not sent due to a technical error!"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:10
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:19
 msgid "You need to accept the tos and cancellation conditions"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:11
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:20
 msgid ""
 "Registration received. You should receive a mail within the next minutes. If "
 "not ..."
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:12
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:21
 msgid ""
 "There was a real technical error with your registration. Please contact ...."
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:130
-msgid "Anmeldung"
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:43
+msgid "Registration for "
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:135
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:72
+msgid "Anmeldung zum Seminar "
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:259
 msgid "Bei technischen Problemen benutze bitte unser "
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:136
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:260
 msgid "Anmeldesystem der alten Webseite."
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:144
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:145
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:268
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:269
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:329
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:330
 msgid "Vorname"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:149
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:150
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:273
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:274
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:335
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:336
 msgid "Nachname"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:154
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:155
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:278
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:279
 msgid "Straße und Hausnummer"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:159
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:160
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:283
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:284
 msgid "PLZ"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:164
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:165
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:288
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:289
 msgid "Ort"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:168
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:169
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:292
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:293
 msgid "Land"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:175
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:299
 msgid "E-Mail"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:176
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:300
 msgid "email"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:179
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:303
 msgid "Telefonnummer"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:183
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:307
 msgid "Handy-Nummer"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:187
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:311
 msgid "Bemerkung"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:194
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:341
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:342
+msgid "Alter"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:347
+msgid "Weitere Teilnehmer*"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:348
+msgid "Hinzufügen"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:355
 msgid "Übernachtung: Raumwünsche"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:231
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:393
 msgid "Rücktrittsbedingungen"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:235
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:397
 msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:235
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:397
 msgid "Allgemeinen Geschäftsbedingungen"
 msgstr ""
 
-#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:240
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/registration.php:402
 msgid "Anmelden"
 msgstr ""
