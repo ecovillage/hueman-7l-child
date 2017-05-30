@@ -20,11 +20,19 @@ Handy:   <?php echo $registration['cellphone']; ?>
 
 
 Personen:
-<php foreach($registration["adults"] as $person) {
-  #  echo $person[... ... age]
->
+<?php foreach($registration["adults"] as $person) {
+  echo $person."\n";
+}
+?>
+<?php foreach($registration["youth"] as $person) {
+  echo $person."\n";
+}
+?>
+<?php foreach($registration["children"] as $person) {
+  echo $person."\n";
+}
+?>
 
-<?php echo $registration['firstname'].' '.$registration['lastname']; ?>
 
 
 Wünsche zur Unterkunft:
