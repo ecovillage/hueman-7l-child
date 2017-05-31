@@ -70,8 +70,8 @@
                       while ( $events->have_posts() ) {
                         $events->the_post();
                         $base_referee_id = $post->ID;
-                        if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                          $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                        if ($monthyear != date_i18n(__('F Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true))) {
+                          $monthyear = date_i18n(__('F Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true));
                           echo '</ul><h2>'.$monthyear.'</h2><ul class="referee-events">';
                         }
                         get_template_part('parts/event_list_line');
@@ -99,15 +99,15 @@
 
                     while ( $events->have_posts() ) {
                       $events->the_post();
-                      if ($monthyear != date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true))) {
-                        $monthyear = date_i18n('F Y', get_post_meta($post->ID, 'fromdate', true));
+                      if ($monthyear != date_i18n(__('F Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true))) {
+                        $monthyear = date_i18n(__('F Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true));
                         echo "</table><h2 class='month-section'>".$monthyear."</h2><table>";
                       }
                       ?>
                         <tr>
                           <td class="datecol">
-                            <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-                            - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
+                            <?php echo date_i18n(__('D d.m.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
+                            - <?php echo date_i18n(__('D d.m.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
                           </td>
                           <td class="eventcol">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

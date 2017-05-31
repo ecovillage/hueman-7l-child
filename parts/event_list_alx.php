@@ -10,7 +10,7 @@
     while ( $upcoming_events->have_posts() ) {
       $upcoming_events->the_post();
       // New month?
-      $start_month = date_i18n('F', get_post_meta($post->ID, 'fromdate', true));
+      $start_month = date_i18n(__('F', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true));
       if ($month != $start_month) {
         $month = $start_month;
         echo '</ul>';
@@ -31,9 +31,9 @@
               <a href="<?php echo get_permalink($post->ID); ?>" rel="bookmark" title="<?php echo get_the_title($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
             </p>
             <p class="post-item-date">
-              <?php echo date_i18n('D, d.m', get_post_meta($post->ID, 'fromdate', true)); ?>
+              <?php echo date_i18n(__('D, d.m', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
               -
-              <?php echo date_i18n('D, d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
+              <?php echo date_i18n(__('D, d.m.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
             </p>
           </div>
         </li>

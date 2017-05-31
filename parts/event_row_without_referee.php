@@ -1,7 +1,7 @@
 <tr>
   <td class="datecol">
-    <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-    - <?php echo date_i18n('d.m.Y', get_post_meta($post->ID, 'todate', true)); ?>
+    <?php echo date_i18n(__('D d.m.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
+    - <?php echo date_i18n(__('D d.m.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
   </td>
   <td class="eventcol">
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

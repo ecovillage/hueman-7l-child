@@ -17,8 +17,8 @@
   } elseif(get_post_type() == "ev7l-event-category") {
     echo __("Veranstaltungsrubrik", "hueman-7l-child");
   } elseif(get_post_type() == "ev7l-event") { ?>
-    Veranstaltung Von <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-    bis <?php echo date_i18n('d.M. Y', get_post_meta($post->ID, 'todate', true)); ?>
+    <?php echo __("Veranstaltung von ", 'hueman-7l-child'); ?><?php echo date_i18n(__('D d.M. Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
+    <?php echo __("bis", 'hueman-7l-child'); ?> <?php echo date_i18n(__('D d.M. Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
   <?php } else { ?>
     <time class="published updated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time( get_option('date_format') ); ?></time>
   <?php } ?>

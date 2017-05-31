@@ -9,8 +9,8 @@
   <div class="grid two-third last">
     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
     <div class="event-dates-small">
-      von <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
-      bis <?php echo date_i18n('d.M.Y', get_post_meta($post->ID, 'todate', true)); ?>
+      <?php echo __("von", "hueman-7l-child"); ?> <?php echo date_i18n(__('D d.M.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
+      <?php echo __("bis", "hueman-7l-child"); ?> <?php echo date_i18n(__('D d.M.Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
     </div>
     <?php
       $excerpt = get_the_excerpt($post);
