@@ -4,6 +4,8 @@ A [hueman child theme](http://presscustomizr.com/hueman/) for the wordpress inst
 
 Authored by Felix Wolfsteller, Copyright 2016, 2017, released under the GPLv3+.
 
+i18n work by Götz Hendrik Wiegand.
+
 Works together with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
 
 The original and awesome Presscustomizr hueman theme source can also be [found at github](https://github.com/presscustomizr/hueman).
