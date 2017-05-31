@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2017-05-30 20:25+0100\n"
-"PO-Revision-Date: 2017-05-30 20:26+0100\n"
+"POT-Creation-Date: 2017-05-31 07:26+0100\n"
+"PO-Revision-Date: 2017-05-31 07:26+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -23,8 +23,29 @@ msgstr ""
 msgid "Referent*"
 msgstr ""
 
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:73
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:74
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:102
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:103
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event-category.php:42
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event-category.php:72
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event-category.php:73
+msgid "F Y"
+msgstr ""
+
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:82
 msgid "Derzeit keine Veranstalungen in naher Zukunft geplant."
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:109
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:110
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event-category.php:79
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event-category.php:80
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_row_without_referee.php:3
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_row_without_referee.php:4
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_row.php:3
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_row.php:4
+msgid "D d.m.Y"
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-referee.php:133
@@ -49,7 +70,9 @@ msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:34
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:35
-msgid "d.M. Y"
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/post-list-author-date.php:20
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/post-list-author-date.php:21
+msgid "D d.M. Y"
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:52
@@ -57,6 +80,8 @@ msgid "Von"
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/single-ev7l-event.php:53
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_line.php:13
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/post-list-author-date.php:21
 msgid "bis"
 msgstr ""
 
@@ -263,12 +288,37 @@ msgstr ""
 msgid " und "
 msgstr ""
 
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_line.php:12
+msgid "von"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_line.php:12
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_line.php:13
+msgid "D d.M.Y"
+msgstr ""
+
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/post-list-author-date.php:18
 msgid "Veranstaltungsrubrik"
 msgstr ""
 
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/post-list-author-date.php:20
+msgid "Veranstaltung von "
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_alx.php:13
+msgid "F"
+msgstr ""
+
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_alx.php:28
 msgid "Veranstaltung"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_alx.php:34
+msgid "D, d.m"
+msgstr ""
+
+#: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/event_list_alx.php:36
+msgid "D, d.m.Y"
 msgstr ""
 
 #: /media/felix/data/projects/fk/wordpress/hueman-7l-child/parts/single-ev7l-event-nav.php:4
