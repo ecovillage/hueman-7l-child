@@ -55,7 +55,7 @@
               <br>
 
               <?php /* Or: set_query_var to pass over localish variables. */ ?>
-              <a name="description"/>
+              <a name="description"></a>
               <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
               </br>
 
@@ -82,7 +82,7 @@
               <?php the_content(); ?>
                 <hr/>
                 <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
-                <a name="informations"/>
+                <a name="informations"></a>
                 <div id="event-infos">
                 <h2><?php echo __('Informationen zum Seminar', 'hueman-7l-child'); ?></h2>
                   <?php $current_infos = get_post_meta($post->ID, 'current_infos', true);
@@ -193,7 +193,7 @@
                 <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
                 <?php if (empty($_POST)) { ?>
                   <hr/>
-                  <a name="registration"/>
+                  <a name="registration"></a>
                   <?php include(locate_template('parts/registration.php')); ?>
                 <?php } ?>
               <?php
@@ -208,7 +208,7 @@
 ?>
               <hr/>
               <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
-              <a name="question"/>
+              <a name="question"></a>
               <div id="question">
                 <h3><?php echo __('Frage zur Veranstaltung stellen', 'hueman-7l-child'); ?> </h3>
                 <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
