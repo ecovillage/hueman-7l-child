@@ -480,3 +480,9 @@ li.calendar-event-row {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+/* Put infos in non-green. */
+#event-infos {
+  color: #444;
+  /* weight */
+}
