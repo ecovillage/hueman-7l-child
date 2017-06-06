@@ -49,8 +49,8 @@
               <?php hu_get_template_part('parts/page-image'); ?>
 
               <div class="event-dates">
-                <?php echo __('Von', 'hueman-7l-child');  echo $event_fromdate; ?>
-                <?php echo __('bis', 'hueman-7l-child');  echo $event_todate; ?>
+                <?php echo __('Von', 'hueman-7l-child');  echo ' '.$event_fromdate; ?>
+                <?php echo __('bis', 'hueman-7l-child');  echo ' '.$event_todate; ?>
               </div>
               <br>
 
