@@ -182,6 +182,7 @@ $registration = array(
   'comments'    => $comment,
   'country'     => $country,
   'l_seminar'   => $event_uuid,
+  'timestamp'   => date_i18n_('Ymd H:i'),
 );
 # Missing fields: uuid, donation
 
