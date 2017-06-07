@@ -91,7 +91,7 @@
 
                   if ( $events->have_posts() ) {
                     echo '<div class="past-events">';
-                    echo '<h2>__('Seminare in der Vergangenheit', 'hueman-7l-child');</h2>';
+                    echo '<h2>'.__("Seminare in der Vergangenheit", "hueman-7l-child").'</h2>';
                     echo '<table>';
 
                     // Loop vars to find month changes.
