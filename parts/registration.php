@@ -301,7 +301,7 @@ if ($submitted && !empty($_POST)) {
           value="<?php echo esc_attr($mobile); ?>"/>
 
         <label for="comment"><?php echo __('Bemerkung', "hueman-7l-child"); ?></label>
-        <textarea placeholder="..." id="comment" name="comment" rows="7"></textarea>
+        <textarea placeholder="..." id="comment" name="comment" rows="7"><?php echo esc_attr($comment); ?></textarea>
       </div>
 
       <br class="clear"/>
