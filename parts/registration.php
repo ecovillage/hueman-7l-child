@@ -200,8 +200,8 @@ global $event_uuid;
 
 set_participants($registration, $firstname, $lastname, $firstnames, $lastnames, $ages);
 
-if (true) {
-  if (!$submitted || (!empty($_POST) && !empty($_POST['url']))) {
+if ($submitted && !empty($_POST)) {
+  if (!empty($_POST['url'])) {
     // Pseudo-spam protection
     error_log("spam event registration detected");
   }
