@@ -18,18 +18,19 @@ e-Mail:  <?php echo $registration['email']; ?>
 Telefon: <?php echo $registration['telephone']; ?> 
 Handy:   <?php echo $registration['cellphone']; ?> 
 
+<?php $ages = $registration["participant_data"]; ?>
 
 Personen:
 <?php foreach($registration["adults"] as $person) {
-  echo $person."\n";
+  echo $person." (Alter: ".$ages[$person].")\n";
 }
 ?>
 <?php foreach($registration["youth"] as $person) {
-  echo $person."\n";
+  echo $person." (Alter: ".$ages[$person].")\n";
 }
 ?>
 <?php foreach($registration["children"] as $person) {
-  echo $person."\n";
+  echo $person." (Alter: ".$ages[$person].")\n";
 }
 ?>
 

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Display a form that let users enter information to apply for an event participation.
+ */
 
 $response = "";
 $success  = false;
@@ -95,14 +98,18 @@ function set_participants(&$registration, $firstname, $lastname, $firstnames, $l
   $children = array();
   $youths   = array();
   $adults   = array();
+
   $adults[] = $registration["firstname"].' '.$registration['lastname'];
+
+  $registration['participant_data'][] = array();
+  $registration['participant_data'][$adults[0]] = '';
+
+  $min_length = min(count($lastnames), count($firstnames), count($ages));
+
   # Rules:
   #   > 18: adult
   #   > 12: youth
   #       : child
-  $min_length = min(count($lastnames), count($firstnames), count($ages));
-
-  //Alternative: foreach
   for($i = 0; $i < $min_length; $i++) {
     $age       = $ages[$i];
     $firstname = $firstnames[$i];
@@ -111,13 +118,15 @@ function set_participants(&$registration, $firstname, $lastname, $firstnames, $l
       if(empty($lastname)) {
         $lastname = $registration["lastname"];
       }
+      $fullname = $firstname.' '.$lastname;
       if ($age > 18) {
-        $adults[] = $firstname.' '.$lastname;
+        $adults[] = $fullname;
       } elseif ($age > 12) {
-        $youths[] = $firstname.' '.$lastname;
+        $youths[] = $fullname;
       } else {
-        $children[] = $firstname.' '.$lastname;
+        $children[] = $fullname;
       }
+      $registration['participant_data'][$fullname] = $age;
     }
   }
 
