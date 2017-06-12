@@ -30,8 +30,8 @@ function registration_form_error($message) {
 
 /* Send an email to the host, return true if success. */
 function send_mail_to_host($registration) {
-global $event_todate;
-global $event_fromdate;
+  global $event_todate;
+  global $event_fromdate;
 
   $to = get_option('h7lc_host_mailnotify_field');
   $subject = __('Registration for ', 'hueman-7l-child');
