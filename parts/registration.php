@@ -176,6 +176,8 @@ $rooms         = post_index_or_null('room_wish');
 $lastnames     = post_index_or_null('lastnames');
 $firstnames    = post_index_or_null('firstnames');
 $ages          = post_index_or_null('ages');
+$donation      = post_index_or_null('donation');
+$donateamount  = post_index_or_null('donateamount');
 
 #$registration[] = array(
 $registration = array(
@@ -192,6 +194,8 @@ $registration = array(
   'country'     => $country,
   'l_seminar'   => $event_uuid,
   'timestamp'   => date_i18n('Ymd H:i'),
+  'donation'    => $donation,
+  'donateamount'=> $donateamount,
 );
 # Missing fields: uuid, donation
 
@@ -381,6 +385,22 @@ if ($submitted && !empty($_POST)) {
 
       <br/>
       <br class="clear"/>
+      <div class="donation">
+        <h4><?php echo __('Spenden', "hueman-7l-child"); ?></h4>
+        <?php echo __("Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten folgen Betrag als Spende für das neue <a href='https://siebenlinden.org/de/aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"); ?>
+        <select type="select" id="donation" name="donation">
+          <option name="donate0"     <?php selected($donation, "donate0"); ?> value="donate0"><?php echo __("Ich möchte oder kann nicht spenden"); ?></option>
+          <option name="donate10"    <?php selected($donation, "donate10"); ?> value="donate10"><?php echo __("10€"); ?></option>
+          <option name="donate20"    <?php selected($donation, "donate20"); ?> value="donate20"><?php echo __("20€"); ?></option>
+          <option name="donate50"    <?php selected($donation, "donate50"); ?> value="donate50"><?php echo __("50€"); ?></option>
+<?php /* wp: selected( $options['foo'], 1 );*/ ?>
+          <option name="donateother" <?php selected($donation, "donateother"); ?> value="donate50"><?php echo __("anderer Betrag"); ?></option>
+        </select>
+        <input type="text" id="donateamount" name="donateamount" size="4" placeholder="<?php echo __('... anderer Betrag'); ?>" value="<?php echo esc_attr($donateamount); ?>"/>
+        <br/>
+        <br/>
+        <br class="clear"/>
+      </div>
       <div class="registration-controls">
       <h4><?php echo __('Rücktrittsbedingungen', "hueman-7l-child"); ?></h4>
       <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>

@@ -61,6 +61,10 @@ Folgende Rücktrittsbedingungen wurden akzeptiert:
 
 <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?>
 
+<?php if (!empty($registration['donation'] || !empty($registration['donateamount'])) { ?>
+  Du hast angegeben, Dich am Bau des Seminarzentrums mit einer Spende beteiligen zu wollen, das freut uns sehr!
+<?php } ?>
+
 
 Bei Fragen kontaktiere uns gerne unter oben genannter E-Mail Adresse oder rufe uns an!
 
