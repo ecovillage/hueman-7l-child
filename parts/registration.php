@@ -341,6 +341,28 @@ if ($submitted && !empty($_POST)) {
         </div>
 
         <h5><?php echo __('Weitere Teilnehmer*', "hueman-7l-child"); ?></h5>
+        <?php if(!empty($registration['participant_data'])) { ?>
+          <?php echo var_export($firstnames); ?>
+          <?php for($i = 1; $i < count($lastnames); $i++) { ?>
+            <div class="grid one-third">
+              <label for="firstnames"><?php echo __("Vorname", "hueman-7l-child"); ?>*</label>
+              <input type="text" placeholder="<?php echo __('Vorname', "hueman-7l-child"); ?>" id="firstnames[]" name="firstnames[]"
+                value="<?php echo esc_attr($firstnames[$i]); ?>"/>
+            </div>
+
+            <div class="grid one-third">
+              <label for="lastnames"><?php echo __('Nachname', "hueman-7l-child"); ?>*</label>
+              <input type="text" placeholder="<?php echo __('Nachname', "hueman-7l-child"); ?>" id="lastnames[]" name="lastnames[]"
+                value="<?php echo esc_attr($lastnames[$i]); ?>"/>
+            </div>
+
+            <div class="grid one-third last">
+              <label for="ages"><?php echo __("Alter", "hueman-7l-child"); ?>*</label>
+              <input type="text" placeholder="<?php echo __('Alter', "hueman-7l-child"); ?>" id="ages[]" name="ages[]"
+                value="<?php echo esc_attr($ages[$i]); ?>"/>
+            </div>
+          <?php } ?>
+        <?php } ?>
         <button type="button" onClick="addParticipantInputs();"><i class="fa fa-plus"></i><?php echo __("Hinzufügen"); ?></button>
       </div>
 
