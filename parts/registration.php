@@ -363,7 +363,7 @@ if ($submitted && !empty($_POST)) {
             </div>
           <?php } ?>
         <?php } ?>
-        <button type="button" onClick="addParticipantInputs();"><i class="fa fa-plus"></i><?php echo __("Hinzufügen"); ?></button>
+        <button type="button" onClick="addParticipantInputs();"><i class="fa fa-plus"></i><?php echo __("Hinzufügen", 'hueman-7l-child'); ?></button>
       </div>
 
       <br class="clear"/>
@@ -409,16 +409,16 @@ if ($submitted && !empty($_POST)) {
       <br class="clear"/>
       <div class="donation">
         <h4><?php echo __('Spenden', "hueman-7l-child"); ?></h4>
-        <?php echo __("Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten folgen Betrag als Spende für das neue <a href='https://siebenlinden.org/de/aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"); ?>
+        <?php echo __("Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten folgen Betrag als Spende für das neue <a href='https://siebenlinden.org/de/aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:", 'hueman-7l-child'); ?>
         <select type="select" id="donation" name="donation">
-          <option name="donate0"     <?php selected($donation, "donate0"); ?> value="donate0"><?php echo __("Ich möchte oder kann nicht spenden"); ?></option>
-          <option name="donate10"    <?php selected($donation, "donate10"); ?> value="donate10"><?php echo __("10€"); ?></option>
-          <option name="donate20"    <?php selected($donation, "donate20"); ?> value="donate20"><?php echo __("20€"); ?></option>
-          <option name="donate50"    <?php selected($donation, "donate50"); ?> value="donate50"><?php echo __("50€"); ?></option>
+          <option name="donate0"     <?php selected($donation, "donate0"); ?> value="donate0"><?php echo __("Ich möchte oder kann nicht spenden", 'hueman-7l-child'); ?></option>
+          <option name="donate10"    <?php selected($donation, "donate10"); ?> value="donate10"><?php echo __("10€", 'hueman-7l-child'); ?></option>
+          <option name="donate20"    <?php selected($donation, "donate20"); ?> value="donate20"><?php echo __("20€", 'hueman-7l-child'); ?></option>
+          <option name="donate50"    <?php selected($donation, "donate50"); ?> value="donate50"><?php echo __("50€", 'hueman-7l-child'); ?></option>
 <?php /* wp: selected( $options['foo'], 1 );*/ ?>
-          <option name="donateother" <?php selected($donation, "donateother"); ?> value="donate50"><?php echo __("anderer Betrag"); ?></option>
+          <option name="donateother" <?php selected($donation, "donateother"); ?> value="donate50"><?php echo __("anderer Betrag", 'hueman-7l-child'); ?></option>
         </select>
-        <input type="text" id="donateamount" name="donateamount" size="4" placeholder="<?php echo __('... anderer Betrag'); ?>" value="<?php echo esc_attr($donateamount); ?>"/>
+        <input type="text" id="donateamount" name="donateamount" size="4" placeholder="<?php echo __('... anderer Betrag', 'hueman-7l-child'); ?>" value="<?php echo esc_attr($donateamount); ?>"/>
         <br/>
         <br/>
         <br class="clear"/>
