@@ -486,3 +486,7 @@ li.calendar-event-row {
   color: #444;
   /* weight */
 }
+
+#donation, #donateamount {
+  display: inline-block;
+}
