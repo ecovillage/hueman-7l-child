@@ -342,7 +342,6 @@ if ($submitted && !empty($_POST)) {
 
         <h5><?php echo __('Weitere Teilnehmer*', "hueman-7l-child"); ?></h5>
         <?php if(!empty($registration['participant_data'])) { ?>
-          <?php echo var_export($firstnames); ?>
           <?php for($i = 1; $i < count($lastnames); $i++) { ?>
             <div class="grid one-third">
               <label for="firstnames"><?php echo __("Vorname", "hueman-7l-child"); ?>*</label>
