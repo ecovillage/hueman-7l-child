@@ -45,7 +45,7 @@ Bemerkungen:
 
 <?php echo $registration['comments']; ?>
 
-<?php if (!empty($registration['donation'] || !empty($registration['donateamount'])) { ?>
+<?php if (!empty($registration['donation'] || !empty($registration['donateamount']))) { ?>
   Spende:
   
   Ja (<?php echo $registration['donation'].' / '.$registration['donateamount']; ?>)!
