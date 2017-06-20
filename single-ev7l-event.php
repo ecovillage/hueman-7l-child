@@ -131,7 +131,7 @@
                     <?php echo $info_housing; ?>
                   </div>
                   <?php } ?>
-                  <?php if(!empty($participants_please_bring)) { ?>
+                  <?php /*if(!empty($participants_please_bring)) { ?>
                   <div id="participants-please-bring">
                     <h3><?php echo __('Bitte mitbringen', 'hueman-7l-child'); ?></h3>
                     <?php echo $participants_please_bring; ?>
@@ -142,7 +142,7 @@
                     <h3><?php echo __('Voraussetzungen für Teilnehmer*', 'hueman-7l-child'); ?></h3>
                     <?php echo $participants_prerequisites; ?>
                   </div>
-                  <?php } ?>
+                  <?php } */?>
                   <?php if(!empty($other_infos)) {
                     echo $other_infos;
                   } ?>
