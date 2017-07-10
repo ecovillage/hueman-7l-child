@@ -54,7 +54,12 @@ Die Anmeldung wurde für folgende Personen vorgenommen:
 
 Mit folgenden Wünschen bezüglich der Unterkunft:
 
-<?php echo implode(', ', $registration['room_wishes']); ?>
+<?php if (!empty($registration['room_wishes'])) {
+  echo implode(', ', $registration['room_wishes']);
+} else {
+  echo "(Keine)";
+}
+?>
 
 
 Folgende Rücktrittsbedingungen wurden akzeptiert:

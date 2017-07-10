@@ -38,7 +38,12 @@ Personen:
 
 Wünsche zur Unterkunft:
 
-<?php echo implode(', ', $registration['room_wishes']); ?>
+<?php if (!empty($registration['room_wishes'])) {
+  echo implode(', ', $registration['room_wishes']);
+} else {
+  echo "(Keine)";
+}
+?>
 
 
 Bemerkungen:
