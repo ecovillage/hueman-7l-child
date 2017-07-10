@@ -9,7 +9,7 @@
 
 Dies ist eine automatisch generierte E-Mail.
 
-Eine persönliche Anmeldebestätigung mit Informationen zu Anreise, Unterkunft, Bezahlung usw. folgt per E-Mail in den nächsten Tagen. Sollte innerhalb einer Woche keine Rückmeldung aus dem Bildungsreferat kommen, bitte folgende E-Mailadresse oder Telefonnummer kontaktieren:
+Eine persönliche Antwort aus dem Bildungsreferat mit Informationen zu Anreise, Unterkunft, Bezahlung usw. folgt per E-Mail in den nächsten Tagen. Sollte innerhalb einer Woche keine Rückmeldung aus dem Bildungsreferat kommen, bitte folgende E-Mailadresse oder Telefonnummer kontaktieren:
 
 E-Mail: bildungsreferat@siebenlinden.de
 
@@ -61,7 +61,7 @@ Folgende Rücktrittsbedingungen wurden akzeptiert:
 
 <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?>
 
-<?php if (!empty($registration['donation'] || !empty($registration['donateamount']))) { ?>
+<?php if (!empty($registration['donation']) || !empty($registration['donateamount'])) { ?>
   Du hast angegeben, Dich am Bau des Seminarzentrums mit einer Spende beteiligen zu wollen, das freut uns sehr!
 <?php } ?>
 
