@@ -197,7 +197,6 @@ $registration = array(
   'donation'    => $donation,
   'donateamount'=> $donateamount,
 );
-# Missing fields: uuid, donation
 
 global $registration;
 global $event_uuid;
