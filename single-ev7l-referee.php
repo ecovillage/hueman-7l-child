@@ -79,7 +79,7 @@
                       echo "</ul>";
                     }
                     else {
-                      echo __("Derzeit keine Veranstalungen in naher Zukunft geplant.",'hueman-7l-child');
+                      echo __("Derzeit keine Veranstaltungen in naher Zukunft geplant.",'hueman-7l-child');
                     }
                       /* Restore original Post data */
                       wp_reset_postdata();
