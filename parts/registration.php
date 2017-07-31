@@ -169,7 +169,7 @@ $country       = post_index_or_null('country');
 $email         = post_index_or_null('email');
 $phone         = post_index_or_null('phone');
 $mobile        = post_index_or_null('mobile');
-$comment       = post_index_or_null('comment');
+$comment       = post_index_or_null('participant_comment');
 $accept_tos    = post_index_or_null('accept_tos');
 $submitted     = post_index_or_null('submitted');
 $rooms         = post_index_or_null('room_wish');
@@ -303,8 +303,8 @@ if ($submitted && !empty($_POST)) {
         <input type="text" placeholder="0123 45678" id="mobile" name="mobile"
           value="<?php echo esc_attr($mobile); ?>"/>
 
-        <label for="comment"><?php echo __('Bemerkung', "hueman-7l-child"); ?></label>
-        <textarea placeholder="..." id="comment" name="comment" rows="7"><?php echo esc_attr($comment); ?></textarea>
+        <label for="participant_comment"><?php echo __('Bemerkung', "hueman-7l-child"); ?></label>
+        <textarea placeholder="..." id="participant_comment" name="participant_comment" rows="7"><?php echo esc_attr($comment); ?></textarea>
       </div>
 
       <br class="clear"/>
