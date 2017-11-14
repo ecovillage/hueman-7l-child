@@ -133,9 +133,9 @@ function h7lc_shortcode_featured_flexslider() {
   return $ret;
 }
 
-add_shortcode( 'featured_news', 'h7lc_shortcode_featured_flexslider' );
+add_shortcode('featured_news', 'h7lc_shortcode_featured_flexslider' );
 
-// Shortcode to output the next 10 events in our style.
+/* Shortcode to output the next 10 events in our style. */
 function h7lc_shortcode_upcoming_events() {
   ob_start();
 
@@ -152,7 +152,7 @@ function h7lc_shortcode_upcoming_events() {
   return $ret;
 }
 
-add_shortcode( 'upcoming_events', 'h7lc_shortcode_upcoming_events' );
+add_shortcode('upcoming_events', 'h7lc_shortcode_upcoming_events');
 
 // Parameters in attr: 'parent_name' is the title of page whose
 // children will be listed.
@@ -182,7 +182,7 @@ function h7lc_shortcode_pages_list($atts) {
   return $ret;
 }
 
-add_shortcode( 'pages_list', 'h7lc_shortcode_pages_list' );
+add_shortcode('pages_list', 'h7lc_shortcode_pages_list');
 
 
 /* Show a calender, built out of ul#calendar_events and parts/event_list_line
@@ -227,7 +227,7 @@ function h7lc_calendar($atts) {
   return $ret;
 }
 
-add_shortcode( 'event_calendar', 'h7lc_calendar');
+add_shortcode('event_calendar', 'h7lc_calendar');
 
 
 function h7lc_calendar_this_year_passed() {
@@ -252,7 +252,7 @@ function h7lc_calendar_this_year_passed() {
   return $ret;
 }
 
-add_shortcode( 'event_calendar_this_year_past', 'h7lc_calendar_this_year_passed');
+add_shortcode('event_calendar_this_year_past', 'h7lc_calendar_this_year_passed');
 
 function h7lc_calendar_this_year_upcoming() {
   ob_start();
