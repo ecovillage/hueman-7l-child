@@ -192,7 +192,7 @@ add_shortcode('pages_list', 'h7lc_shortcode_pages_list');
 function h7lc_calendar($atts) {
   /* Fill with defaults. Use 'month' => date('m') to have the month populated. */
   $a = shortcode_atts(array('year' => date('Y')), $atts );
-  $eventyear = $a['year'];
+  $eventyear  = $a['year'];
   $eventmonth = $a['month'];
   if ($eventyear && !$eventmonth) {
     $events = events_in_year($eventyear);
