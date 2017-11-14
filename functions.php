@@ -216,9 +216,8 @@ function h7lc_calendar($atts) {
       }
     echo '</ul>';
     $events->reset_postdata();
-  } else { ?>
-    Keine Veranstaltungen im gewählten Zeitraum
-  <?php
+  } else {
+    echo __("Keine Veranstaltungen im gewählten Zeitraum");
   }
 
   $ret = ob_get_contents();
