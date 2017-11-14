@@ -75,6 +75,9 @@ Registration form, mailer and logic, integrated into legacy system.
   - upcoming_events
   - pages_list
   - event_calendar
+    use like
+    `[event_calendar]`. Optional arguments are `year(="2019")` and `month(="11")`.
+    Will render an unsorted list, with elements in `parts/event_list_line`.
   - event_calendar_this_year_past
   - event_calendar_this_year_upcoming
 
