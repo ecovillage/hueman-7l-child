@@ -69,6 +69,17 @@ Enough emptiness for everybody.  Now, things start to happen here.
 
 Registration form, mailer and logic, integrated into legacy system.
 
+## Provided shortcodes
+
+  - featured_news
+  - upcoming_events
+  - pages_list
+  - event_calendar
+  - event_calendar_this_year_past
+  - event_calendar_this_year_upcoming
+
+... to be explained
+
 ## About registrations
 
 Will be put in pseudo-randomly named files (for legacy database, json import) in the `registrations` subdirectory of your wordpress home base.  You should put a `.htaccess` file there and instruct your webserver to not let anybody come close to that data.
