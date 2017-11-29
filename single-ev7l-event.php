@@ -33,7 +33,7 @@
                 $event_uuid     = get_post_meta($event->ID, 'uuid', true);
                 $event_fromdate = date_i18n(__('D d. M. Y'), get_post_meta($post->ID, 'fromdate', true));
                 $event_todate   = date_i18n(__('D d. M. Y'), get_post_meta($post->ID, 'todate', true));
-                $today_date     = strtotime('today');
+                $today_date     = strtotime('today 23:59');
                 $event_needs_registration = get_post_meta($event->ID, 'registration_needed', true) == 'true';
                 $event_is_future = ev7l_is_after($event->ID, $today_date);
               ?>
