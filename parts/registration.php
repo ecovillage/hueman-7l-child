@@ -250,10 +250,6 @@ if ($submitted && !empty($_POST)) {
     <div id="response"><?php echo $response; ?></div>
     <br/>
 
-    <span style="color:red;">
-      <?php echo __("Bei technischen Problemen benutze bitte unser ", "hueman-7l-child"); ?>
-<a href="http://seminare.siebenlinden.de/seminar/<?php echo $event_uuid; ?>"> <?php echo __('Anmeldesystem der alten Webseite.', "hueman-7l-child"); ?></a>
-    </span>
     <br/>
     <form id="registration_form" action="<?php the_permalink(); ?>" charset="UTF-8" method="POST">
       <input type="hidden" name="seminar_id" value="$event_uuid"/>
