@@ -192,7 +192,7 @@ msgid ""
 "minutes please get in touch!"
 msgstr ""
 "Eine Bestätigungs-E-Mail wurde versandt. Sollte sie nicht angekommen sein, "
-"bitte bildungsreferat@siebenlinden.de kontaktieren!"
+"bitte bildungsreferat@siebenlinden.org kontaktieren!"
 
 #: ../parts/registration.php:12
 msgid "Message was not sent due to a technical error!"
@@ -209,14 +209,14 @@ msgid ""
 msgstr ""
 "Anmeldung erhalten. Du solltest in den nächsten Minuten eine automatische E-"
 "Mail-Antwort erhalten. Falls nicht wende Dich bitte an "
-"bildungsreferat@siebenlinden.de"
+"bildungsreferat@siebenlinden.org"
 
 #: ../parts/registration.php:15
 msgid ""
 "There was a real technical error with your registration. Please contact ...."
 msgstr ""
 "Ein böser technischer Fehler ist aufgetreten. Bitte kontaktiere "
-"bildungsreferat@siebenlinden.de !"
+"bildungsreferat@siebenlinden.org !"
 
 #: ../parts/registration.php:37
 msgid "Registration for "

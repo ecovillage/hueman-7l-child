@@ -11,7 +11,7 @@ Dies ist eine automatisch generierte E-Mail.
 
 Eine persönliche Antwort aus dem Bildungsreferat mit Informationen zu Anreise, Unterkunft, Bezahlung usw. folgt per E-Mail in den nächsten Tagen. Sollte innerhalb einer Woche keine Rückmeldung aus dem Bildungsreferat kommen, bitte folgende E-Mailadresse oder Telefonnummer kontaktieren:
 
-E-Mail: bildungsreferat@siebenlinden.de
+E-Mail: bildungsreferat@siebenlinden.org
 
 Tel. 039000-51236
 
