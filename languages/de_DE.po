@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2017-07-22 12:38+0100\n"
-"PO-Revision-Date: 2017-07-22 12:39+0100\n"
+"POT-Creation-Date: 2018-01-09 12:38+0100\n"
+"PO-Revision-Date: 2018-01-09 12:38+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -44,9 +44,9 @@ msgid "Ausgewähltes Seminar"
 msgstr ""
 
 #: ../single-ev7l-event.php:34 ../single-ev7l-event.php:35
-#: ../parts/post-list-author-date.php:20 ../parts/post-list-author-date.php:21
-msgid "D d.M. Y"
-msgstr ""
+#, fuzzy
+msgid "D d. M. Y"
+msgstr "D d. M. Y"
 
 #: ../single-ev7l-event.php:52
 msgid "Von"
