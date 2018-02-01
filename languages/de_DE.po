@@ -23,8 +23,8 @@ msgstr ""
 msgid "F Y"
 msgstr ""
 
-#: ../single-ev7l-event-category.php:51
-msgid "Keine entsprechenden Veranstaltungen in der Zukunft"
+#: ../single-ev7l-referee.php:87
+msgid "Derzeit keine Veranstaltungen in naher Zukunft geplant."
 msgstr ""
 
 #: ../single-ev7l-event-category.php:64 ../single-ev7l-referee.php:94
