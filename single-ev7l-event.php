@@ -199,7 +199,7 @@
               <?php
                 }
               elseif ($event_is_future) { ?>
-                <b><?php echo __('Keine Anmeldung nötig.', 'hueman-7l-child'); ?></b>
+                <!--b><?php echo __('Keine Anmeldung nötig.', 'hueman-7l-child'); ?></b-->
               <?php
                 } else { ?>
                 <b><?php echo __('Veranstaltung liegt in der Vergangenheit.', 'heuman-7l-child'); ?></b>
