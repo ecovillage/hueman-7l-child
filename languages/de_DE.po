@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2018-01-09 12:38+0100\n"
-"PO-Revision-Date: 2018-01-09 12:38+0100\n"
+"POT-Creation-Date: 2018-02-01 13:35+0100\n"
+"PO-Revision-Date: 2018-02-01 13:35+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -16,27 +16,42 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
+#: ../single-ev7l-referee.php:7 ../single-ev7l-event.php:156
+#: ../parts/single-ev7l-event-nav.php:7 ../parts/single-ev7l-event-nav.php:25
+msgid "Referent*"
+msgstr ""
+
+#: ../single-ev7l-referee.php:78 ../single-ev7l-referee.php:79
+#: ../single-ev7l-referee.php:107 ../single-ev7l-referee.php:108
 #: ../single-ev7l-event-category.php:42 ../single-ev7l-event-category.php:72
-#: ../single-ev7l-event-category.php:73 ../single-ev7l-referee.php:73
-#: ../single-ev7l-referee.php:74 ../single-ev7l-referee.php:102
-#: ../single-ev7l-referee.php:103
+#: ../single-ev7l-event-category.php:73
 msgid "F Y"
 msgstr ""
 
 #: ../single-ev7l-referee.php:87
 msgid "Derzeit keine Veranstaltungen in naher Zukunft geplant."
-msgstr ""
+msgstr "Derzeit keine Veranstaltungen in naher Zukunft geplant."
 
-#: ../single-ev7l-event-category.php:64 ../single-ev7l-referee.php:94
+#: ../single-ev7l-referee.php:99 ../single-ev7l-event-category.php:64
 msgid "Seminare in der Vergangenheit"
 msgstr "Seminare in der Vergangenheit"
 
+#: ../single-ev7l-referee.php:114 ../single-ev7l-referee.php:115
 #: ../single-ev7l-event-category.php:79 ../single-ev7l-event-category.php:80
-#: ../single-ev7l-referee.php:109 ../single-ev7l-referee.php:110
 #: ../parts/event_row_without_referee.php:3
 #: ../parts/event_row_without_referee.php:4 ../parts/event_row.php:3
 #: ../parts/event_row.php:4
 msgid "D d.m.Y"
+msgstr ""
+
+#: ../single-ev7l-referee.php:138 ../single-ev7l-event.php:227
+#: ../tmpl/single-tmpl.php:34
+msgid "Pages:"
+msgstr ""
+
+#: ../single-ev7l-referee.php:154 ../single-ev7l-event.php:243
+#: ../tmpl/single-tmpl.php:50
+msgid "Tags:"
 msgstr ""
 
 #: ../single-ev7l-event.php:8
@@ -85,11 +100,6 @@ msgstr ""
 msgid "Unterkunft"
 msgstr ""
 
-#: ../single-ev7l-event.php:156 ../single-ev7l-referee.php:7
-#: ../parts/single-ev7l-event-nav.php:7 ../parts/single-ev7l-event-nav.php:25
-msgid "Referent*"
-msgstr ""
-
 #: ../single-ev7l-event.php:202
 msgid "Keine Anmeldung nötig."
 msgstr ""
@@ -102,45 +112,71 @@ msgstr ""
 msgid "Frage zur Veranstaltung stellen"
 msgstr ""
 
-#: ../single-ev7l-event.php:224
-msgid "Mitfahrgelegenheiten"
+#: ../sidebar.php:19
+msgid "You can set your social links here from the live customizer"
 msgstr ""
 
-#: ../single-ev7l-event.php:225
-msgid "Mitfahrgelegenheiten via"
+#: ../sidebar.php:21
+msgid "Customize now"
 msgstr ""
 
-#: ../single-ev7l-event.php:227
-msgid "Auf der Seite"
-msgstr ""
-
-#: ../single-ev7l-event.php:228
-msgid "Anfahrt"
-msgstr ""
-
-#: ../single-ev7l-event.php:229
-msgid ""
-"findest Du Informationen wie Du auch mit Bus und Bahn (oder Rad, zu "
-"Fuß, ...) anreisen kannst."
-
-#: ../single-ev7l-event.php:227 ../single-ev7l-referee.php:133
-#: ../tmpl/single-tmpl.php:34
-msgid "Pages:"
-msgstr ""
-
-#: ../single-ev7l-event.php:243 ../single-ev7l-referee.php:149
-#: ../tmpl/single-tmpl.php:50
-msgid "Tags:"
-msgstr ""
-
-#: ../single-ev7l-referee.php:82
-msgid "Derzeit keine Veranstaltungen in naher Zukunft geplant."
 #: ../single-ev7l-event-category.php:51
+#, fuzzy
 msgid "Keine entsprechenden Veranstaltungen in der Zukunft"
+msgstr "Derzeit keine Veranstaltungen in naher Zukunft geplant."
+
+#: ../functions.php:221 ../page-calendar.php:71
+msgid "Keine Veranstaltungen im gewählten Zeitraum"
 msgstr ""
 
-#: ../functions.php:222 ../page-calendar.php:71
-msgid "Keine Veranstaltungen im gewählten Zeitraum"
+#: ../archive-ev7l-referee.php:28
+msgid "Referent*innen"
+msgstr ""
+
+#: ../page-calendar.php:17
+msgid "Veranstaltungen in"
+msgstr ""
+
+#: ../page-calendar.php:19 ../page-calendar.php:21
+msgid "Veranstaltungen im"
+msgstr ""
+
+#: ../inc/h7lc_settings.php:7 ../inc/h7lc_settings.php:8
+msgid "Event Registration Settings"
+msgstr "Einstellungen zur Anmeldung"
+
+#: ../inc/h7lc_settings.php:20
+msgid "7 Linden Hueman Child: Registration Options"
+msgstr "7 Linden Hueman Child Theme: Einstellungen zur Anmeldung"
+
+#: ../inc/h7lc_settings.php:55
+msgid "Setting Section"
+msgstr "Mails zur Anmeldung"
+
+#: ../inc/h7lc_settings.php:61
+msgid "Registration"
+msgstr "Anmeldung"
+
+#: ../inc/h7lc_settings.php:67
+msgid "email adress of host to notify on new registration"
+msgstr ""
+"E-Mail Adresse zur Benachrichtigung des Veranstalters bei neuen Anmeldungen"
+
+#: ../inc/h7lc_settings.php:74
+msgid "email adress of host to reply to"
+msgstr ""
+"E-Mail Adresse des Veranstalters, die den TN* als ANTWORT-Adresse ihrer "
+"Anmeldungsbestätigung geschickt wird"
+
+#: ../inc/h7lc_settings.php:81
+msgid "email adress of host in the from field"
+msgstr ""
+"E-Mail Adresse des Veranstalters, die als Absende-Adresse der "
+"Anmeldebestätigung angegeben ist"
+
+#: ../parts/event_row_without_referee.php:23 ../parts/event_list_line.php:28
+#: ../parts/event_row.php:21
+msgid " und "
 msgstr ""
 
 #: ../parts/event_list_line.php:12
@@ -160,6 +196,7 @@ msgid "Veranstaltung von "
 msgstr ""
 
 #: ../parts/post-list-author-date.php:20 ../parts/post-list-author-date.php:21
+#, fuzzy
 msgid "D d.M. Y"
 msgstr "D d. M. Y"
 
@@ -187,7 +224,7 @@ msgstr ""
 msgid "Informationen"
 msgstr ""
 
-#: ../parts/single-ev7l-event-nav.php:13 ../parts/registration.php:260
+#: ../parts/single-ev7l-event-nav.php:13 ../parts/registration.php:249
 msgid "Anmeldung"
 msgstr ""
 
@@ -195,15 +232,15 @@ msgstr ""
 msgid "Frage stellen"
 msgstr ""
 
-#: ../parts/registration.php:11
+#: ../parts/registration.php:9
 msgid "Please provide all information"
 msgstr "Bitte alle Informationen angeben!"
 
-#: ../parts/registration.php:12
+#: ../parts/registration.php:10
 msgid "Please provide a valid email adress"
 msgstr "Bitte eine gültige E-Mail-Adresse angeben!"
 
-#: ../parts/registration.php:13
+#: ../parts/registration.php:11
 msgid ""
 "Message was sent. If you do not receive a confirmation mail in the next "
 "minutes please get in touch!"
@@ -211,15 +248,15 @@ msgstr ""
 "Eine Bestätigungs-E-Mail wurde versandt. Sollte sie nicht angekommen sein, "
 "bitte bildungsreferat@siebenlinden.org kontaktieren!"
 
-#: ../parts/registration.php:14
+#: ../parts/registration.php:12
 msgid "Message was not sent due to a technical error!"
 msgstr "Mail-Versand fehlgeschlagen!"
 
-#: ../parts/registration.php:15
+#: ../parts/registration.php:13
 msgid "You need to accept the tos and cancellation conditions"
 msgstr "Die Teilnahmebedingungen und AGB müssen akzeptiert werden"
 
-#: ../parts/registration.php:16
+#: ../parts/registration.php:14
 msgid ""
 "Registration received. You should receive a mail within the next minutes. If "
 "not ..."
@@ -228,243 +265,139 @@ msgstr ""
 "Mail-Antwort erhalten. Falls nicht wende Dich bitte an "
 "bildungsreferat@siebenlinden.org"
 
-#: ../parts/registration.php:17
+#: ../parts/registration.php:15
 msgid ""
 "There was a real technical error with your registration. Please contact ...."
 msgstr ""
 "Ein böser technischer Fehler ist aufgetreten. Bitte kontaktiere "
 "bildungsreferat@siebenlinden.org !"
 
-#: ../parts/registration.php:40
+#: ../parts/registration.php:37
 msgid "Registration for "
 msgstr "Anmeldung für"
 
-#: ../parts/registration.php:69
+#: ../parts/registration.php:64
 msgid "Anmeldung zum Seminar "
 msgstr ""
 
-#: ../parts/registration.php:270 ../parts/registration.php:271
-#: ../parts/registration.php:331 ../parts/registration.php:332
-#: ../parts/registration.php:353 ../parts/registration.php:354
+#: ../parts/registration.php:259 ../parts/registration.php:260
+#: ../parts/registration.php:320 ../parts/registration.php:321
+#: ../parts/registration.php:342 ../parts/registration.php:343
 msgid "Vorname"
 msgstr ""
 
-#: ../parts/registration.php:275 ../parts/registration.php:276
-#: ../parts/registration.php:337 ../parts/registration.php:338
-#: ../parts/registration.php:359 ../parts/registration.php:360
+#: ../parts/registration.php:264 ../parts/registration.php:265
+#: ../parts/registration.php:326 ../parts/registration.php:327
+#: ../parts/registration.php:348 ../parts/registration.php:349
 msgid "Nachname"
 msgstr ""
 
-#: ../parts/registration.php:280 ../parts/registration.php:281
+#: ../parts/registration.php:269 ../parts/registration.php:270
 msgid "Straße und Hausnummer"
 msgstr ""
 
-#: ../parts/registration.php:285 ../parts/registration.php:286
+#: ../parts/registration.php:274 ../parts/registration.php:275
 msgid "PLZ"
 msgstr ""
 
-#: ../parts/registration.php:290 ../parts/registration.php:291
+#: ../parts/registration.php:279 ../parts/registration.php:280
 msgid "Ort"
-msgstr ""
-
-#: ../parts/registration.php:294 ../parts/registration.php:295
-msgid "Land"
-msgstr ""
-
-#: ../parts/registration.php:301
-msgid "E-Mail"
-msgstr ""
-
-#: ../parts/registration.php:302
-msgid "email"
-msgstr ""
-
-#: ../parts/registration.php:305
-msgid "Telefonnummer"
-msgstr ""
-
-#: ../parts/registration.php:309
-msgid "Handy-Nummer"
-msgstr ""
-
-#: ../parts/registration.php:313
-msgid "Bemerkung"
-msgstr ""
-
-#: ../parts/registration.php:343 ../parts/registration.php:344
-#: ../parts/registration.php:365 ../parts/registration.php:366
-msgid "Alter"
-msgstr ""
-
-#: ../parts/registration.php:349
-msgid "Weitere Teilnehmer*"
-msgstr ""
-
-#: ../parts/registration.php:371
-msgid "Hinzufügen"
-msgstr ""
-
-#: ../parts/registration.php:378
-msgid "Übernachtung: Raumwünsche"
-msgstr ""
-
-#: ../parts/registration.php:416
-msgid "Spenden"
-msgstr ""
-
-#: ../parts/registration.php:417
-#: ../parts/registration.php:249 ../parts/single-ev7l-event-nav.php:13
-msgid "Anmeldung"
-msgstr ""
-
-#: ../parts/registration.php:254
-msgid "Bei technischen Problemen benutze bitte unser "
-msgstr "Bei technischen Problemen benutze bitte unser "
-
-#: ../parts/registration.php:255
-msgid "Anmeldesystem der alten Webseite."
-msgstr "Anmeldesystem der alten Webseite"
-
-#: ../parts/registration.php:263 ../parts/registration.php:264
-#: ../parts/registration.php:324 ../parts/registration.php:325
-#: ../parts/registration.php:346 ../parts/registration.php:347
-msgid "Vorname"
-msgstr ""
-
-#: ../parts/registration.php:268 ../parts/registration.php:269
-#: ../parts/registration.php:330 ../parts/registration.php:331
-#: ../parts/registration.php:352 ../parts/registration.php:353
-msgid "Nachname"
-msgstr ""
-
-#: ../parts/registration.php:273 ../parts/registration.php:274
-msgid "Straße und Hausnummer"
-msgstr ""
-
-#: ../parts/registration.php:278 ../parts/registration.php:279
-msgid "PLZ"
 msgstr ""
 
 #: ../parts/registration.php:283 ../parts/registration.php:284
-msgid "Ort"
-msgstr ""
-
-#: ../parts/registration.php:287 ../parts/registration.php:288
 msgid "Land"
 msgstr ""
 
-#: ../parts/registration.php:294
+#: ../parts/registration.php:290
 msgid "E-Mail"
 msgstr ""
 
-#: ../parts/registration.php:295
+#: ../parts/registration.php:291
 msgid "email"
 msgstr ""
 
-#: ../parts/registration.php:298
+#: ../parts/registration.php:294
 msgid "Telefonnummer"
 msgstr ""
 
-#: ../parts/registration.php:302
+#: ../parts/registration.php:298
 msgid "Handy-Nummer"
 msgstr ""
 
-#: ../parts/registration.php:306
+#: ../parts/registration.php:302
 msgid "Bemerkung"
 msgstr ""
 
-#: ../parts/registration.php:336 ../parts/registration.php:337
-#: ../parts/registration.php:358 ../parts/registration.php:359
+#: ../parts/registration.php:332 ../parts/registration.php:333
+#: ../parts/registration.php:354 ../parts/registration.php:355
 msgid "Alter"
 msgstr ""
 
-#: ../parts/registration.php:342
+#: ../parts/registration.php:338
 msgid "Weitere Teilnehmer*"
 msgstr ""
 
-#: ../parts/registration.php:364
+#: ../parts/registration.php:360
 msgid "Hinzufügen"
 msgstr ""
 
-#: ../parts/registration.php:371
+#: ../parts/registration.php:367
 msgid "Übernachtung: Raumwünsche"
 msgstr ""
 
-#: ../parts/registration.php:409
+#: ../parts/registration.php:405
 msgid "Spenden"
 msgstr ""
 
-#: ../parts/registration.php:419
+#: ../parts/registration.php:406
+msgid ""
+"Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten "
+"folgen Betrag als Spende für das neue <a href='https://siebenlinden.org/de/"
+"aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"
+msgstr ""
+
+#: ../parts/registration.php:408
 msgid "Ich möchte oder kann nicht spenden"
 msgstr ""
 
-#: ../parts/registration.php:420
+#: ../parts/registration.php:409
 msgid "10€"
 msgstr ""
 
-#: ../parts/registration.php:421
+#: ../parts/registration.php:410
 msgid "20€"
 msgstr ""
 
-#: ../parts/registration.php:422
+#: ../parts/registration.php:411
 msgid "50€"
-msgstr ""
-
-#: ../parts/registration.php:424
-msgid "anderer Betrag"
-msgstr ""
-
-#: ../parts/registration.php:426
-msgid "... anderer Betrag"
-msgstr ""
-
-#: ../parts/registration.php:432
-msgid "Rücktrittsbedingungen"
-msgstr ""
-
-#: ../parts/registration.php:436
-msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
-msgstr ""
-
-#: ../parts/registration.php:436
-msgid "Allgemeinen Geschäftsbedingungen"
-msgstr ""
-
-#: ../parts/registration.php:441
-#: ../parts/registration.php:412
-msgid "Ich möchte oder kann nicht spenden"
 msgstr ""
 
 #: ../parts/registration.php:413
-msgid "10€"
-msgstr ""
-
-#: ../parts/registration.php:414
-msgid "20€"
-msgstr ""
-
-#: ../parts/registration.php:415
-msgid "50€"
-msgstr ""
-
-#: ../parts/registration.php:417
 msgid "anderer Betrag"
 msgstr ""
 
-#: ../parts/registration.php:419
+#: ../parts/registration.php:415
 msgid "... anderer Betrag"
 msgstr ""
 
-#: ../parts/registration.php:425
+#: ../parts/registration.php:421
 msgid "Rücktrittsbedingungen"
 msgstr ""
 
-#: ../parts/registration.php:429
+#: ../parts/registration.php:425
 msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
 msgstr ""
 
-#: ../parts/registration.php:429
+#: ../parts/registration.php:425
 msgid "Allgemeinen Geschäftsbedingungen"
 msgstr ""
 
-#: ../parts/registration.php:434
+#: ../parts/registration.php:430
+msgid "Anmelden"
+msgstr ""
+
+#~ msgid "Bei technischen Problemen benutze bitte unser "
+#~ msgstr "Bei technischen Problemen benutze bitte unser "
+
+#~ msgid "Anmeldesystem der alten Webseite."
+#~ msgstr "Anmeldesystem der alten Webseite"
