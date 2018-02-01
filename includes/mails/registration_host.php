@@ -49,6 +49,10 @@ Wünsche zur Unterkunft:
 Bemerkungen:
 
 <?php echo $registration['comments']; ?>
+<?php
+  $filename = "registrations/comment-".rand()."-".rand().".txt";
+  $write_result = file_put_contents($filename, $registration['comments']);
+?>
 
 <?php if ((!empty($registration['donation']) && $registration['donation'] != 'donate0') || !empty($registration['donateamount'])) { ?>
   Spende:

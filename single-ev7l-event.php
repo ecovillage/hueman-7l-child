@@ -217,6 +217,23 @@
                   document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?> (<?php echo $event_fromdate.' - '.$event_todate; ?>)';
               </script>
 
+              <hr/>
+              <?php include(locate_template('parts/single-ev7l-event-nav.php')); ?>
+              <a name="rides"></a>
+              <div id="rides">
+                <h3><?php echo __('Mitfahrgelegenheiten', 'hueman-7l-child'); ?> </h3>
+                <?php echo __('Mitfahrgelegenheiten via', 'hueman-7l-child'); ?>
+                <a href="https://bessermitfahren.de" target="__blank">bessermitfahren.de</a> .
+                <?php echo __('Auf der Seite', 'hueman-7l-child'); ?>
+                <a href=""><?php echo __('Anfahrt', 'hueman-7l-child'); ?></a>
+                <?php echo __('findest Du Informationen wie Du auch mit Bus und Bahn (oder Rad, zu Fuß, ...) anreisen kannst.', 'hueman-7l-child'); ?>
+                <br/>
+                <br/>
+
+                <?php $bmf_event_date = date_i18n('d.m.Y', get_post_meta($post->ID, 'fromdate', true)); ?>
+                <?php echo do_shortcode('[bmf_list to="Poppau" date="'.$bmf_event_date.'"]'); ?>
+              </div>
+
 <?php /* Re-entering vanilla hueman */ ?>
 							<nav class="pagination group">
                 <?php

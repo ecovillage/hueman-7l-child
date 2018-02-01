@@ -50,12 +50,17 @@ function h7lc_host_mailnotify_field_display() {
 <?php
 }
 
+// TODO other section for contac form id!
+
 /* Callback for section description */
 function h7lc_settings_section_callback() {
   echo __("Setting Section", 'hueman-7l-child');
 }
 
 function h7lc_settings_init() {
+  //add_option('h7lc_host_mailfrom_field');
+  //add_option('h7lc_host_mailreplyto_field');
+  //add_option('h7lc_host_mailnotify_field');
   add_settings_section(
     'h7lc_registration_settings', // id
     __( 'Registration', 'hueman-7l-child' ),
