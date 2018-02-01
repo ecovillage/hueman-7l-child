@@ -6,8 +6,6 @@
 $response = "";
 $success  = false;
 
-// If settings not set die?
-
 $msg_missing_info   = __("Please provide all information", "hueman-7l-child");
 $msg_email_invalid  = __("Please provide a valid email adress", "hueman-7l-child");
 $msg_message_sent   = __("Message was sent. If you do not receive a confirmation mail in the next minutes please get in touch!", "hueman-7l-child");
@@ -36,15 +34,12 @@ function send_mail_to_host($registration) {
   global $event_fromdate;
 
   $to = get_option('h7lc_host_mailnotify_field');
-  //iconv ( 'utf-8', 'ISO-8859-2'
   $subject = __('Registration for ', 'hueman-7l-child');
   $subject = $subject.get_the_title().' ('.$event_fromdate.' - '.$event_todate.')';
 
   $headers = 'From: '. $registration['email'] . "\r\n" .
     'Reply-To: ' . $registration['email'] . "\r\n";
 
-    #host_mail_subject: Anmeldung für 
-    #subject "#{I18n.t('registration.host_mail_subject')} #{seminar.name} (#{I18n.l(seminar.date_from, :format => :short)} - #{I18n.l(seminar.date_to, :format => :short)})"
 
   // Mail template
   ob_start();
@@ -67,12 +62,6 @@ function send_mail_to_participant($registration) {
   $to = $registration['email'];
   # or $event->post_title;
   $subject = __('Anmeldung zum Seminar ', 'hueman-7l-child').get_the_title().' ('.$event_fromdate.' - '.$event_todate.')';
-    #subject "#{I18n.t('registration.confirm_mail_subject')} #{seminar.name}"
-    #confirm_mail_subject: Anmeldung zum Seminar
-  #$subject = __('Registration', 'hueman-7l-child');
-  #$headers = array('Reply-To: Bildungsreferat Sieben Linden <bildungsreferat@siebenlinden.de>');
-    #';#'From: seminar-anmeldung@siebenlinden.org'. "\r\n" .
-  #'Reply-To: bildungsreferat@siebenlinden.de' . "\r\n";
 
   ob_start();
   get_template_part('includes/mails/registration_participant');
@@ -233,7 +222,7 @@ if ($submitted && !empty($_POST)) {
       error_log("error in writing registration file");
       registration_form_error($msg_technical_error);
     }
-    elseif (send_mail_to_host($registration) && false && send_mail_to_participant($registration)) {
+    elseif (send_mail_to_participant($registration)) {
       error_log("sent mail to participant");
 
       if (send_mail_to_host($registration)) {

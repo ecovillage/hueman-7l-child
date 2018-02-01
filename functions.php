@@ -4,7 +4,6 @@ function load_hueman_7l_child_theme_locale() {
   load_child_theme_textdomain( 'hueman-7l-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'load_hueman_7l_child_theme_locale' );
-#load_theme_textdomain('hueman-7l-child');
 
 // Return the current URL.  Please improve my worldview by pointing me to
 // the actual implementation in wordpress core if you find it.
@@ -277,30 +276,8 @@ function h7lc_calendar_this_year_upcoming() {
   wp_reset_query();
   return $ret;
 }
-add_shortcode('event_calendar_this_year_upcoming', 'h7lc_calendar_this_year_upcoming');
 
-/*
-add_filter('plugin_action_links', 'myplugin_plugin_action_links', 10, 2);
-
-function myplugin_plugin_action_links($links, $file) {
-      static $this_plugin;
-
-          if (!$this_plugin) {
-                    $this_plugin = plugin_basename(__FILE__);
-                        }
-
-          if ($file == $this_plugin) {
-                    // The "page" query string value must be equal to the slug
-            //         // of the Settings admin page we defined earlier, which in
-            //                 // this case equals "myplugin-settings".
-            //                         $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=myplugin-settings">Settings</a>';
-            //                                 array_unshift($links, $settings_link);
-            //                                     }
-            //
-            //                                         return $links;
-            //                                         }
-            //                                         */
-
+add_shortcode( 'event_calendar_this_year_upcoming', 'h7lc_calendar_this_year_upcoming');
 
 
 function h7cl_load_code() {

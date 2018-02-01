@@ -1,6 +1,6 @@
 /*
 Theme Name: siebenlinden.org hueman child theme
-Version: 0.8.2
+Version: 0.8.1
 Description: A child theme of Hueman for siebenlinden.org
 Template: hueman
 Author: Felix Wolfsteller
@@ -486,12 +486,6 @@ li.calendar-event-row {
   color: #444;
   /* weight */
 }
-
-/* Make bessermitfahren code block invisible
-#code {
-  display: none;
-}
-*/
 
 #donation, #donateamount {
   display: inline-block;
