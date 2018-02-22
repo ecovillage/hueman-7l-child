@@ -66,9 +66,9 @@ Folgende Rücktrittsbedingungen wurden akzeptiert:
 
 <?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?>
 
-<?php 
- // Auswertung der vom Seminargast eingegebenen Spendenangaben.
- // Die Mail geht an den Seminargast
+<?php
+ // Evaluation of donation-related values entered by user.
+ // Mail will be sent to user (guest).
  switch ($registration['donation']) {
    case "donate10":
      $valDonation = 10;
@@ -86,18 +86,18 @@ Folgende Rücktrittsbedingungen wurden akzeptiert:
    default:
      $valDonation = 0;
  }// end switch
-if (preg_match ("/^([0-9]+)$/", $valDonation) && $valDonation > 0 && 
+ if (preg_match ("/^([0-9]+)$/", $valDonation) && $valDonation > 0 &&
     preg_match ("/^([0-9]+)$/", $registration['donateamount']) && $registration['donateamount'] > 0 &&
     $valDonation != $registration['donateamount']){
-  // In diesem Fall wurde eine Spende im linken Feld angewählt und im rechten Feld ein anderer gültiger Betrag angegeben, was überprüft werden muss. ?>
+  // Select value (left) and entered value (free text, right) do not match ?>
 
 Du hast angegeben, Dich am Bau des Seminarzentrums mit einer Spende über  <?php echo $valDonation;?>.- oder <?php echo $registration['donateamount']; ?>.- Euro beteiligen zu wollen, das freut uns sehr!
 <?php } else if (preg_match ("/^([0-9]+)$/", $valDonation) && $valDonation == 0 && preg_match ("/^([0-9]+)$/", $registration['donateamount']) && $registration['donateamount'] > 0){
-  // In diesem Fall wurde keine Spende im linken Feld angewählt und im rechten Feld ein gültiger Betrag angegeben, was überprüft werden muss.?>
+  // Nothing selected in left select field, but value found in right free text field. Needs check. ?>
 
 Du hast angegeben, Dich am Bau des Seminarzentrums mit einer Spende über <?php echo $registration['donateamount']; ?>.- Euro beteiligen zu wollen, das freut uns sehr!
 <?php } else if (preg_match ("/^([0-9]+)$/", $valDonation) && $valDonation > 0) {
-  // Hier wurde plausibel eine Spende ausgewählt ?>
+  // Proper donation was selected ?>
 
 Du hast angegeben, Dich am Bau des Seminarzentrums mit einer Spende über <?php echo $valDonation;?>.- Euro beteiligen zu wollen, das freut uns sehr!
 <?php } ?>
