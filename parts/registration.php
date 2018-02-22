@@ -218,8 +218,7 @@ if ($submitted && !empty($_POST)) {
     registration_form_error($msg_missing_info);
   }
   else {
-    // disabled for debugging 
-    if (false && !write_registration_json_file($registration)) {
+    if (!write_registration_json_file($registration)) {
       error_log("error in writing registration file");
       registration_form_error($msg_technical_error);
     }
