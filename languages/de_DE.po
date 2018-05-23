@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2018-05-23 15:31+0100\n"
-"PO-Revision-Date: 2018-05-23 15:32+0100\n"
+"POT-Creation-Date: 2018-05-24 00:07+0100\n"
+"PO-Revision-Date: 2018-05-24 00:07+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -405,7 +405,15 @@ msgid "Datenschutzerklärung"
 msgstr ""
 
 #: ../parts/registration.php:431
-msgid "gelesen und stimme ihr zu"
+msgid "und die"
+msgstr ""
+
+#: ../parts/registration.php:431
+msgid "Datenschutzerklärung bzgl. Veranstaltungsanmeldungen"
+msgstr ""
+
+#: ../parts/registration.php:431
+msgid "gelesen und stimme diesen zu"
 msgstr ""
 
 #: ../parts/registration.php:436
