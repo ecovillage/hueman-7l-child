@@ -122,6 +122,10 @@ Footer -> Credit Text
 
 Blog design and content not available in all versions.
 
+## Update translations
+
+Graphical: Use poedit.
+
 ## Release
 
   - Change version in style.css and commit
