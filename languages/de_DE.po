@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2018-02-01 13:35+0100\n"
-"PO-Revision-Date: 2018-02-01 13:35+0100\n"
+"POT-Creation-Date: 2018-05-23 15:31+0100\n"
+"PO-Revision-Date: 2018-05-23 15:32+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Informationen"
 msgstr ""
 
-#: ../parts/single-ev7l-event-nav.php:13 ../parts/registration.php:249
+#: ../parts/single-ev7l-event-nav.php:13 ../parts/registration.php:253
 msgid "Anmeldung"
 msgstr ""
 
@@ -253,8 +253,12 @@ msgid "Message was not sent due to a technical error!"
 msgstr "Mail-Versand fehlgeschlagen!"
 
 #: ../parts/registration.php:13
-msgid "You need to accept the tos and cancellation conditions"
-msgstr "Die Teilnahmebedingungen und AGB müssen akzeptiert werden"
+msgid ""
+"You need to accept the privacy statement, terms of service and cancellation "
+"conditions"
+msgstr ""
+"Die Teilnahmebedingungen, Datenschutzerklärung und AGB müssen gelesen und "
+"akzeptiert werden"
 
 #: ../parts/registration.php:14
 msgid ""
@@ -280,119 +284,131 @@ msgstr "Anmeldung für"
 msgid "Anmeldung zum Seminar "
 msgstr ""
 
-#: ../parts/registration.php:259 ../parts/registration.php:260
-#: ../parts/registration.php:320 ../parts/registration.php:321
-#: ../parts/registration.php:342 ../parts/registration.php:343
+#: ../parts/registration.php:263 ../parts/registration.php:264
+#: ../parts/registration.php:324 ../parts/registration.php:325
+#: ../parts/registration.php:346 ../parts/registration.php:347
 msgid "Vorname"
 msgstr ""
 
-#: ../parts/registration.php:264 ../parts/registration.php:265
-#: ../parts/registration.php:326 ../parts/registration.php:327
-#: ../parts/registration.php:348 ../parts/registration.php:349
+#: ../parts/registration.php:268 ../parts/registration.php:269
+#: ../parts/registration.php:330 ../parts/registration.php:331
+#: ../parts/registration.php:352 ../parts/registration.php:353
 msgid "Nachname"
 msgstr ""
 
-#: ../parts/registration.php:269 ../parts/registration.php:270
+#: ../parts/registration.php:273 ../parts/registration.php:274
 msgid "Straße und Hausnummer"
 msgstr ""
 
-#: ../parts/registration.php:274 ../parts/registration.php:275
+#: ../parts/registration.php:278 ../parts/registration.php:279
 msgid "PLZ"
 msgstr ""
 
-#: ../parts/registration.php:279 ../parts/registration.php:280
+#: ../parts/registration.php:283 ../parts/registration.php:284
 msgid "Ort"
 msgstr ""
 
-#: ../parts/registration.php:283 ../parts/registration.php:284
+#: ../parts/registration.php:287 ../parts/registration.php:288
 msgid "Land"
 msgstr ""
 
-#: ../parts/registration.php:290
+#: ../parts/registration.php:294
 msgid "E-Mail"
 msgstr ""
 
-#: ../parts/registration.php:291
+#: ../parts/registration.php:295
 msgid "email"
 msgstr ""
 
-#: ../parts/registration.php:294
+#: ../parts/registration.php:298
 msgid "Telefonnummer"
 msgstr ""
 
-#: ../parts/registration.php:298
+#: ../parts/registration.php:302
 msgid "Handy-Nummer"
 msgstr ""
 
-#: ../parts/registration.php:302
+#: ../parts/registration.php:306
 msgid "Bemerkung"
 msgstr ""
 
-#: ../parts/registration.php:332 ../parts/registration.php:333
-#: ../parts/registration.php:354 ../parts/registration.php:355
+#: ../parts/registration.php:336 ../parts/registration.php:337
+#: ../parts/registration.php:358 ../parts/registration.php:359
 msgid "Alter"
 msgstr ""
 
-#: ../parts/registration.php:338
+#: ../parts/registration.php:342
 msgid "Weitere Teilnehmer*"
 msgstr ""
 
-#: ../parts/registration.php:360
+#: ../parts/registration.php:364
 msgid "Hinzufügen"
 msgstr ""
 
-#: ../parts/registration.php:367
+#: ../parts/registration.php:371
 msgid "Übernachtung: Raumwünsche"
 msgstr ""
 
-#: ../parts/registration.php:405
+#: ../parts/registration.php:409
 msgid "Spenden"
 msgstr ""
 
-#: ../parts/registration.php:406
+#: ../parts/registration.php:410
 msgid ""
 "Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten "
-"folgen Betrag als Spende für das neue <a href='https://siebenlinden.org/de/"
-"aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"
+"folgenden Betrag als Spende für das neue <a href='https://siebenlinden.org/"
+"de/aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"
 msgstr ""
 
-#: ../parts/registration.php:408
+#: ../parts/registration.php:412
 msgid "Ich möchte oder kann nicht spenden"
 msgstr ""
 
-#: ../parts/registration.php:409
+#: ../parts/registration.php:413
 msgid "10€"
 msgstr ""
 
-#: ../parts/registration.php:410
+#: ../parts/registration.php:414
 msgid "20€"
 msgstr ""
 
-#: ../parts/registration.php:411
+#: ../parts/registration.php:415
 msgid "50€"
 msgstr ""
 
-#: ../parts/registration.php:413
+#: ../parts/registration.php:416
 msgid "anderer Betrag"
 msgstr ""
 
-#: ../parts/registration.php:415
-msgid "... anderer Betrag"
+#: ../parts/registration.php:418
+msgid "... andere Zahl eingeben"
 msgstr ""
 
-#: ../parts/registration.php:421
+#: ../parts/registration.php:424
 msgid "Rücktrittsbedingungen"
 msgstr ""
 
-#: ../parts/registration.php:425
+#: ../parts/registration.php:428
 msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
 msgstr ""
 
-#: ../parts/registration.php:425
+#: ../parts/registration.php:428
 msgid "Allgemeinen Geschäftsbedingungen"
 msgstr ""
 
-#: ../parts/registration.php:430
+#: ../parts/registration.php:431
+msgid "Ich habe die "
+msgstr ""
+
+#: ../parts/registration.php:431
+msgid "Datenschutzerklärung"
+msgstr ""
+
+#: ../parts/registration.php:431
+msgid "gelesen und stimme ihr zu"
+msgstr ""
+
+#: ../parts/registration.php:436
 msgid "Anmelden"
 msgstr ""
 
