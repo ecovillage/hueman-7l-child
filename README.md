@@ -126,6 +126,9 @@ Blog design and content not available in all versions.
 
 Graphical: Use poedit.
 
+For you:
+  - to update the compiled catalog: `msgfmt catalog.po -o catalog.mo` (for ubuntu/debian: in gettext package).
+
 ## Release
 
   - Change version in style.css and commit
