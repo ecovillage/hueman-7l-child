@@ -263,8 +263,6 @@ if ($submitted && !empty($_POST)) {
     <?php if (!$success) { ?>
 
     <h2><?php echo __("Anmeldung", "hueman-7l-child"); ?></h2>
-    <?php print_r($_POST); ?>
-    <?php echo $event_uuid; ?>
     <div id="response"><?php echo $response; ?></div>
     <br/>
 
