@@ -281,6 +281,19 @@ add_shortcode( 'event_calendar_this_year_upcoming', 'h7lc_calendar_this_year_upc
 
 function h7lc_show_registration_form($atts) {
   $a = shortcode_atts(array('eventuuid' => 0), $atts);
+
+  // TODO: move the meta-data-extraction into
+  // registration functions.
+  $events = event_by_uuid($a['eventuuid']);
+  $event  = $events->posts[0];
+
+  global $event_fromdate;
+  global $event_todate;
+  $event_fromdate = date_i18n(__('D d. M. Y'), get_post_meta($event->ID, 'fromdate', true));
+  $event_todate   = date_i18n(__('D d. M. Y'), get_post_meta($event->ID, 'todate', true));
+
+  //wp_reset_postdata();
+
   ob_start();
   global $event_uuid;
   $event_uuid = $a['eventuuid'];
