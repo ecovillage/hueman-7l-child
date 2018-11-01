@@ -68,6 +68,15 @@ function send_mail_to_participant($registration) {
   $body = ob_get_contents();
   ob_end_clean();
 
+  // Mail debug code
+  //add_action( 'wp_mail_failed', 'onMailError', 10, 1 );
+  //function onMailError( $wp_error ) {
+  //    echo "<pre>";
+  //    error_log('Mail error'.print_r($wp_error));
+  //    print_r($wp_error);
+  //    echo "</pre>";
+  //}
+
   $headers = array('From: '.get_option('h7lc_host_mailfrom_field'), 'Reply-To: '.get_option('h7lc_host_mailreplyto_field'));
   $sent = wp_mail($to, $subject, $body, $headers);
 
