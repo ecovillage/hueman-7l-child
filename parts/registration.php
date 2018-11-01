@@ -3,6 +3,8 @@
  * Display a form that let users enter information to apply for an event participation.
  */
 
+global $response;
+
 $response = "";
 $success  = false;
 
@@ -14,6 +16,7 @@ $msg_need_tos       = __("You need to accept the privacy statement, terms of ser
 $msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...", "hueman-7l-child");
 $msg_technical_error= __("There was a real technical error with your registration. Please contact ....", "hueman-7l-child");
 
+// TODO: rework a lot of globals here.
 /* Sets a sucessfull registration message. */
 function registration_form_success($message) {
   global $response;
@@ -190,6 +193,9 @@ $donation      = post_index_or_null('donation');
 $donateamount  = post_index_or_null('donateamount');
 
 #$registration[] = array(
+global $event_uuid;
+global $registration;
+
 $registration = array(
   'firstname'   => $firstname,
   'lastname'    => $lastname,
@@ -207,9 +213,6 @@ $registration = array(
   'donation'    => $donation,
   'donateamount'=> $donateamount,
 );
-
-global $registration;
-global $event_uuid;
 
 set_participants($registration, $firstname, $lastname, $firstnames, $lastnames, $ages);
 
