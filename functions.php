@@ -279,6 +279,18 @@ function h7lc_calendar_this_year_upcoming() {
 
 add_shortcode( 'event_calendar_this_year_upcoming', 'h7lc_calendar_this_year_upcoming');
 
+function h7lc_show_registration_form($atts) {
+  $a = shortcode_atts(array('eventuuid' => 0), $atts);
+  ob_start();
+  global $event_uuid;
+  $event_uuid = $a['eventuuid'];
+  get_template_part('parts/registration');
+  $ret = ob_get_contents();
+  ob_end_clean();
+  return $ret;
+}
+
+add_shortcode( 'event_registration_form', 'h7lc_show_registration_form');
 
 function h7cl_load_code() {
   // This takes into account parent and child themes as well

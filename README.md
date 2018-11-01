@@ -80,6 +80,7 @@ Registration form, mailer and logic, integrated into legacy system.
     Will render an unsorted list, with elements in `parts/event_list_line`.
   - event_calendar_this_year_past
   - event_calendar_this_year_upcoming
+  - event_registration_form (eventuuid)
 
 ... to be explained
 
