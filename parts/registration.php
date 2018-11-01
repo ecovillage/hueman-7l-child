@@ -260,12 +260,14 @@ if ($submitted && !empty($_POST)) {
     <?php if (!$success) { ?>
 
     <h2><?php echo __("Anmeldung", "hueman-7l-child"); ?></h2>
+    <?php print_r($_POST); ?>
+    <?php echo $event_uuid; ?>
     <div id="response"><?php echo $response; ?></div>
     <br/>
 
     <br/>
     <form id="registration_form" action="<?php the_permalink(); ?>" charset="UTF-8" method="POST">
-      <input type="hidden" name="seminar_id" value="$event_uuid"/>
+    <input type="hidden" name="seminar_id" value="<?php echo $event_uuid; ?>"/>
 
       <div class="grid one-half">
         <?php echo_fa_warning_if_unposted("firstname"); ?>
