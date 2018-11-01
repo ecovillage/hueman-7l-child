@@ -195,7 +195,14 @@
                 <?php if (empty($_POST)) { ?>
                   <hr/>
                   <a name="registration"></a>
-                  <?php include(locate_template('parts/registration.php')); ?>
+                  <?php if (!empty($event_registration_link)) { ?>
+                    <a href="<?php echo $event_registration_link; ?>"><h2><?php echo __("Link zu ggfs. externer Anmeldung"); ?></h2></a>
+                    <small>(<a href="<?php echo $event_registration_link; ?>"><?php echo $event_registration_link; ?></a>)</small>
+                  <?php
+                  } else {
+                    include(locate_template('parts/registration.php'));
+                  }
+                  ?>
                 <?php } ?>
               <?php
                 }
