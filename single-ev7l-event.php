@@ -36,6 +36,7 @@
                 $today_date     = strtotime('today 23:59');
                 $event_needs_registration = get_post_meta($event->ID, 'registration_needed', true) == 'true';
                 $event_is_future = ev7l_is_after($event->ID, $today_date);
+                $event_registration_link = get_post_meta($event->ID, 'registration_link', true);
               ?>
 
               <?php if (!empty($_POST)) { ?>
