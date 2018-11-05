@@ -172,7 +172,7 @@
                         </div>
                       </div>
                     <?php else: ?>
-                      <a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                      <h3><a class="referee-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <div class="referee-qualification">
                         <?php echo get_post_meta($event->ID, 'referee_'.$post->ID.'_qualification', true); ?>
                       </div>
