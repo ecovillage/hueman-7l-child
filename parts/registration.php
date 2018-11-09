@@ -38,7 +38,7 @@ function send_mail_to_host($registration) {
 
   $to = get_option('h7lc_host_mailnotify_field');
   $subject = __('Registration for ', 'hueman-7l-child');
-  $subject = $subject.get_the_title().' ('.$event_fromdate.' - '.$event_todate.')';
+  $subject = $subject.$registration['event_name'].' ('.$event_fromdate.' - '.$event_todate.')';
 
   $headers = 'From: '. $registration['email'] . "\r\n" .
     'Reply-To: ' . $registration['email'] . "\r\n";
@@ -64,7 +64,7 @@ function send_mail_to_participant($registration) {
 
   $to = $registration['email'];
   # or $event->post_title;
-  $subject = __('Anmeldung zum Seminar ', 'hueman-7l-child').get_the_title().' ('.$event_fromdate.' - '.$event_todate.')';
+  $subject = __('Anmeldung zum Seminar ', 'hueman-7l-child').$registration['event_name'].' ('.$event_fromdate.' - '.$event_todate.')';
 
   ob_start();
   get_template_part('includes/mails/registration_participant');
@@ -196,7 +196,11 @@ $donateamount  = post_index_or_null('donateamount');
 global $event_uuid;
 global $registration;
 
+$events = event_by_uuid($event_uuid);
+$event  = $events->posts[0];
+
 $registration = array(
+  'event_name'  => get_the_title($event),
   'firstname'   => $firstname,
   'lastname'    => $lastname,
   'place'       => $city,
