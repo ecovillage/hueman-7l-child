@@ -10,10 +10,10 @@
 Dies ist eine automatisch generierte E-Mail.
 
 <?php
-  notice = get_option('h7lc_host_mail_temporary_notice_field');
-  if(!empty(notice)) {
+  $notice = get_option('h7lc_host_mail_temporary_notice_field');
+  if (!empty($notice)) {
     echo "Folgende aktuelle Hinweise liegen vor:\n";
-    echo notice;
+    echo $notice;
     echo "\n";
   }
 ?>
