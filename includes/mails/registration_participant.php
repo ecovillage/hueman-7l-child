@@ -5,7 +5,7 @@
   global $event_fromdate;
   global $event_todate;
 ?>
-  Danke für die Anmeldung für das Seminar "<?php echo the_title(); ?>" vom <?php echo $event_fromdate; ?> bis zum <?php echo $event_todate; ?> im Ökodorf Sieben Linden!
+  Danke für die Anmeldung für das Seminar "<?php echo $registration['event_name']; ?>" vom <?php echo $event_fromdate; ?> bis zum <?php echo $event_todate; ?> im Ökodorf Sieben Linden!
 
 Dies ist eine automatisch generierte E-Mail.
 

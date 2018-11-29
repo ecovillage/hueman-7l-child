@@ -5,7 +5,7 @@
   global $event_fromdate;
   global $event_todate;
 ?>
-Anmeldung für "<?php echo the_title(); ?>" vom <?php echo $event_fromdate; ?> bis zum <?php echo $event_todate; ?>
+Anmeldung für "<?php echo $registration['event_name']; ?>" vom <?php echo $event_fromdate; ?> bis zum <?php echo $event_todate; ?>
 
 Anschrift:
 
