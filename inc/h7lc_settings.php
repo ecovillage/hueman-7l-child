@@ -29,21 +29,21 @@ function h7lc_options() {
 <?php
 }
 
-/* The mail field */
+/* The mail-from field */
 function h7lc_host_mailfrom_field_display() {
 ?>
   <input type="text" name="h7lc_host_mailfrom_field" id="h7lc_host_mailfrom_field" value="<?php echo get_option('h7lc_host_mailfrom_field'); ?>" size="30"/>
 <?php
 }
 
-/* The mail field */
+/* The mail-replyto field */
 function h7lc_host_mailreplyto_field_display() {
 ?>
   <input type="text" name="h7lc_host_mailreplyto_field" id="h7lc_host_mailreplyto_field" value="<?php echo get_option('h7lc_host_mailreplyto_field'); ?>" size="30"/>
 <?php
 }
 
-/* The mail field */
+/* The whogetsnotified-mail field */
 function h7lc_host_mailnotify_field_display() {
 ?>
   <input type="text" name="h7lc_host_mailnotify_field" id="h7lc_host_mailnotify_field" value="<?php echo get_option('h7lc_host_mailnotify_field'); ?>" size="30"/>
