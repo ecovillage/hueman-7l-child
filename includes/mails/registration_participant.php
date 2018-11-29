@@ -9,6 +9,15 @@
 
 Dies ist eine automatisch generierte E-Mail.
 
+<?php
+  notice = get_option('h7lc_host_mail_temporary_notice_field');
+  if(!empty(notice)) {
+    echo "Folgende aktuelle Hinweise liegen vor:\n";
+    echo notice;
+    echo "\n";
+  }
+?>
+
 Eine persönliche Antwort aus dem Bildungsreferat mit Informationen zu Anreise, Unterkunft, Bezahlung usw. folgt per E-Mail in den nächsten Tagen. Sollte innerhalb einer Woche keine Rückmeldung aus dem Bildungsreferat kommen, bitte folgende E-Mailadresse oder Telefonnummer kontaktieren:
 
 E-Mail: bildungsreferat@siebenlinden.org

@@ -50,6 +50,13 @@ function h7lc_host_mailnotify_field_display() {
 <?php
 }
 
+/* The temporary notice field */
+function h7lc_host_mail_temporary_notice_field_display() {
+?>
+  <input type="text" name="h7lc_host_mail_temporary_notice_field" id="h7lc_host_mail_temporary_notice_field" value="<?php echo get_option('h7lc_host_mail_temporary_notice_field'); ?>" size="30"/>
+<?php
+}
+
 /* Callback for section description */
 function h7lc_settings_section_callback() {
   echo __("Setting Section", 'hueman-7l-child');
@@ -83,8 +90,16 @@ function h7lc_settings_init() {
     'h7lc_registration_settings', // page
     'h7lc_registration_settings' // section
   );
+  add_settings_field(
+    'h7lc_host_mail_temporary_notice_field', // id
+    __('temporary notice in the registration mail', 'hueman-7l-child'), // title
+    'h7lc_host_mail_temporary_notice_field_display', // callback
+    'h7lc_registration_settings', // page
+    'h7lc_registration_settings' // section
+  );
   register_setting('h7lc_registration_settings', 'h7lc_host_mailfrom_field');
   register_setting('h7lc_registration_settings', 'h7lc_host_mailreplyto_field');
   register_setting('h7lc_registration_settings', 'h7lc_host_mailnotify_field');
+  register_setting('h7lc_registration_settings', 'h7lc_host_mail_temporary_notice_field');
 }
 
