@@ -92,7 +92,7 @@ function h7lc_settings_init() {
   );
   add_settings_field(
     'h7lc_host_mail_temporary_notice_field', // id
-    __('temporary notice in the registration mail', 'hueman-7l-child'), // title
+    __('Temporary notice for participants in the registration mail', 'hueman-7l-child'), // title
     'h7lc_host_mail_temporary_notice_field_display', // callback
     'h7lc_registration_settings', // page
     'h7lc_registration_settings' // section
