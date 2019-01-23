@@ -370,7 +370,7 @@ if ($submitted && !empty($_POST)) {
 
         <h5><?php echo __('Weitere Teilnehmer*', "hueman-7l-child"); ?></h5>
         <?php if(!empty($registration['participant_data'])) { ?>
-          <?php for($i = 1; $i < $registration['num_adults']); $i++) { ?>
+          <?php for($i = 1; $i < $registration['num_adults']; $i++) { ?>
             <div class="grid one-third">
               <label for="firstnames"><?php echo __("Vorname", "hueman-7l-child"); ?>*</label>
               <input type="text" placeholder="<?php echo __('Vorname', "hueman-7l-child"); ?>" id="firstnames[]" name="firstnames[]"
