@@ -118,6 +118,14 @@ function set_participants(&$registration, $firstname, $lastname, $firstnames, $l
 
   // Guard the count() call.
   if ((!$lastnames || !is_array($lastnames)) || (!$firstnames || !is_array($firstnames)) || (!$ages || !is_array($ages))) {
+    $registration['num_children'] = 0;
+    $registration['num_youth']    = 0;
+    $registration['num_adults']   = 0;
+
+    $registration['adults']   = array();
+    $registration['youth']    = array();
+    $registration['children'] = array();
+
     return;
   }
 
@@ -362,7 +370,7 @@ if ($submitted && !empty($_POST)) {
 
         <h5><?php echo __('Weitere Teilnehmer*', "hueman-7l-child"); ?></h5>
         <?php if(!empty($registration['participant_data'])) { ?>
-          <?php for($i = 1; $i < count($lastnames); $i++) { ?>
+          <?php for($i = 1; $i < $registration['num_adults']); $i++) { ?>
             <div class="grid one-third">
               <label for="firstnames"><?php echo __("Vorname", "hueman-7l-child"); ?>*</label>
               <input type="text" placeholder="<?php echo __('Vorname', "hueman-7l-child"); ?>" id="firstnames[]" name="firstnames[]"
