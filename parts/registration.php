@@ -116,6 +116,11 @@ function set_participants(&$registration, $firstname, $lastname, $firstnames, $l
   $registration['participant_data'][] = array();
   $registration['participant_data'][$adults[0]] = '';
 
+  // Guard the count() call.
+  if ((!$lastnames || !is_array($lastnames)) || (!$firstnames || !is_array($firstnames)) || (!$ages || !is_array($ages))) {
+    return;
+  }
+
   $min_length = min(count($lastnames), count($firstnames), count($ages));
 
   # Rules:
