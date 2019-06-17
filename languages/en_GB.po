@@ -230,29 +230,29 @@ msgstr ""
 #: ../parts/registration.php:324 ../parts/registration.php:325
 #: ../parts/registration.php:346 ../parts/registration.php:347
 msgid "Vorname"
-msgstr ""
+msgstr "First name"
 
 #: ../parts/registration.php:268 ../parts/registration.php:269
 #: ../parts/registration.php:330 ../parts/registration.php:331
 #: ../parts/registration.php:352 ../parts/registration.php:353
 msgid "Nachname"
-msgstr ""
+msgstr "Last Name"
 
 #: ../parts/registration.php:273 ../parts/registration.php:274
 msgid "Straße und Hausnummer"
-msgstr ""
+msgstr "Street and Number"
 
 #: ../parts/registration.php:278 ../parts/registration.php:279
 msgid "PLZ"
-msgstr ""
+msgstr "ZIP"
 
 #: ../parts/registration.php:283 ../parts/registration.php:284
 msgid "Ort"
-msgstr ""
+msgstr "Place"
 
 #: ../parts/registration.php:287 ../parts/registration.php:288
 msgid "Land"
-msgstr ""
+msgstr "Country"
 
 #: ../parts/registration.php:294
 msgid "E-Mail"
@@ -264,47 +264,47 @@ msgstr ""
 
 #: ../parts/registration.php:298
 msgid "Telefonnummer"
-msgstr ""
+msgstr "Telephone Number"
 
 #: ../parts/registration.php:302
 msgid "Handy-Nummer"
-msgstr ""
+msgstr "Mobile Number"
 
 #: ../parts/registration.php:306
 msgid "Bemerkung"
-msgstr ""
+msgstr "Comment"
 
 #: ../parts/registration.php:336 ../parts/registration.php:337
 #: ../parts/registration.php:358 ../parts/registration.php:359
 msgid "Alter"
-msgstr ""
+msgstr "Age"
 
 #: ../parts/registration.php:342
 msgid "Weitere Teilnehmer*"
-msgstr ""
+msgstr "Further participants"
 
 #: ../parts/registration.php:364
 msgid "Hinzufügen"
-msgstr ""
+msgstr "Add"
 
 #: ../parts/registration.php:371
 msgid "Übernachtung: Raumwünsche"
-msgstr ""
+msgstr "Accomodation: wishes"
 
 #: ../parts/registration.php:409
 msgid "Spenden"
-msgstr ""
+msgstr "Donations"
 
 #: ../parts/registration.php:410
 msgid ""
 "Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten "
 "folgen Betrag als Spende für das neue <a href='https://siebenlinden.org/de/"
 "aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"
-msgstr ""
+msgstr "I want to support the ecovillage and donate (additionally to the other fees) following amount as a donation for the new <a href='https://siebenlinden.org/de/aktuelle-projekte/seminarzentrum/'>Seminarcenter</a>:"
 
 #: ../parts/registration.php:412
 msgid "Ich möchte oder kann nicht spenden"
-msgstr ""
+msgstr "I cannot or do not want to donate"
 
 #: ../parts/registration.php:413
 msgid "10€"
@@ -320,43 +320,43 @@ msgstr ""
 
 #: ../parts/registration.php:417
 msgid "anderer Betrag"
-msgstr ""
+msgstr "other amount"
 
 #: ../parts/registration.php:419
 msgid "... anderer Betrag"
-msgstr ""
+msgstr "... other amount"
 
 #: ../parts/registration.php:425
 msgid "Rücktrittsbedingungen"
-msgstr ""
+msgstr "Conditions for cancellation"
 
 #: ../parts/registration.php:429
 msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
-msgstr ""
+msgstr "I accept the conditions for cancellation and the "
 
 #: ../parts/registration.php:429
 msgid "Allgemeinen Geschäftsbedingungen"
-msgstr ""
+msgstr "General Terms and Conditions"
 
 #: ../parts/registration.php:434
 msgid "Anmelden"
-msgstr ""
+msgstr "Register"
 
 #: ../parts/single-ev7l-event-nav.php:4 ../parts/single-ev7l-event-nav.php:22
 msgid "Beschreibung"
-msgstr ""
+msgstr "Description"
 
 #: ../parts/single-ev7l-event-nav.php:10 ../parts/single-ev7l-event-nav.php:28
 msgid "Informationen"
-msgstr ""
+msgstr "Information"
 
 #: ../parts/single-ev7l-event-nav.php:16 ../parts/single-ev7l-event-nav.php:31
 msgid "Frage stellen"
-msgstr ""
+msgstr "Ask a Question"
 
 #: ../parts/event_list_line.php:12
 msgid "von"
-msgstr ""
+msgstr "from"
 
 #: ../parts/event_list_line.php:12 ../parts/event_list_line.php:13
 msgid "D d.M.Y"
@@ -368,7 +368,7 @@ msgstr ""
 
 #: ../parts/post-list-author-date.php:20
 msgid "Veranstaltung von "
-msgstr ""
+msgstr "Event from"
 
 #: ../parts/event_list_alx.php:13
 msgid "F"
@@ -376,7 +376,7 @@ msgstr ""
 
 #: ../parts/event_list_alx.php:28
 msgid "Veranstaltung"
-msgstr ""
+msgstr "Event"
 
 #: ../parts/event_list_alx.php:34
 msgid "D, d.m"

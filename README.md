@@ -125,7 +125,9 @@ Blog design and content not available in all versions.
 
 ## Update translations
 
-Graphical: Use poedit.
+Most texts are translatable (for translations, look in the `languages` folder).
+
+Graphically: Use poedit.
 
 For you:
   - to update the compiled catalog: `msgfmt catalog.po -o catalog.mo` (for ubuntu/debian: in gettext package).
