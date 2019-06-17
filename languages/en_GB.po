@@ -315,7 +315,7 @@ msgstr "General Terms and Conditions"
 
 #: ../parts/registration.php:460
 msgid "Ich habe die "
-msgstr "I have read the"
+msgstr "I have read the "
 
 #: ../parts/registration.php:460
 msgid "Datenschutzerklärung"

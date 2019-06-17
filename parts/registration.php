@@ -400,32 +400,32 @@ if ($submitted && !empty($_POST)) {
       <h5><?php echo __('Übernachtung: Raumwünsche', "hueman-7l-child"); ?></h5>
       <div class="grid one-half">
         <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer" <?php echo_checked_room("4-Bett-Zimmer"); ?>/>
-        <label for="4_Bett_Zimmer"><?php echo __("4-Bett-Zimmer"); ?></label>
+        <label for="4_Bett_Zimmer"><?php echo __("4-Bett-Zimmer", "hueman-7l-child"); ?></label>
         <br/>
 
         <input id='2_Bett_Zimmer' name='room_wish[]' type='checkbox' value='2-Bett-Zimmer' <?php echo_checked_room("2-Bett-Zimmer"); ?>/>
-        <label for='2_Bett_Zimmer'><?php echo __("2-Bett-Zimmer"); ?></label>
+        <label for='2_Bett_Zimmer'><?php echo __("2-Bett-Zimmer", "hueman-7l-child"); ?></label>
         <br/>
 
         <input id='Einzelzimmer' name='room_wish[]' type='checkbox' value='Einzelzimmer' <?php echo_checked_room("Einzelzimmer"); ?>/>
-        <label for='Einzelzimmer'><?php echo __("Einzelzimmer"); ?></label>
+        <label for='Einzelzimmer'><?php echo __("Einzelzimmer", "hueman-7l-child"); ?></label>
         <br/>
 
         <input id='H_tte' name='room_wish[]' type='checkbox' value='Hütte' <?php echo_checked_room("Hütte"); ?>/>
-        <label for='H_tte'><?php echo __("Hütte"); ?></label>
+        <label for='H_tte'><?php echo __("Hütte", "hueman-7l-child"); ?></label>
       </div>
 
       <div class="grid one-half last">
         <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt' <?php echo_checked_room("Eigenes Zelt"); ?>/>
-        <label for='Eigenes_Zelt'><?php echo __("Eigenes Zelt"); ?></label>
+        <label for='Eigenes_Zelt'><?php echo __("Eigenes Zelt", "hueman-7l-child"); ?></label>
         <br/>
 
         <input id='Eigenes_Wohnmobil_wagen' name='room_wish[]' type='checkbox' value='Eigenes Wohnmobil/-wagen' <?php echo_checked_room("Eigenes Wohnmobil/-wagen"); ?>/>
-        <label for='Eigenes_Wohnmobil_wagen'><?php echo __("Eigenes Wohnmobil/-wagen"); ?></label>
+        <label for='Eigenes_Wohnmobil_wagen'><?php echo __("Eigenes Wohnmobil/-wagen", "hueman-7l-child"); ?></label>
         <br/>
 
         <input id='Privat_Selbstorganisiert' name='room_wish[]' type='checkbox' value='Privat / Selbstorganisiert' <?php echo_checked_room("Privat / Selbstorganisiert"); ?>/>
-        <label for='Privat_Selbstorganisiert'><?php echo __("Privat / Selbstorganisiert"); ?></label>
+        <label for='Privat_Selbstorganisiert'><?php echo __("Privat / Selbstorganisiert", "hueman-7l-child"); ?></label>
       </div>
       <br class="clear"/>
 
@@ -457,7 +457,7 @@ if ($submitted && !empty($_POST)) {
       <input type="checkbox" id="accept_tos" name="accept_tos" <?php echo ($accept_tos ? 'checked="checked"' : '' ); ?>><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die ', "hueman-7l-child"); ?><a href="/seminare/agb/" target="_blank"><?php echo __('Allgemeinen Geschäftsbedingungen', "hueman-7l-child"); ?></a></input>
       <br/>
       <?php echo_fa_warning_if_unposted("accept_ps"); ?>
-      <input type="checkbox" id="accept_ps" name="accept_ps" <?php echo ($accept_ps ? 'checked="checked"' : '' ); ?>><?php echo __('Ich habe die ', "hueman-7l-child"); ?><a href="/datenschutz/" target="_blank"><?php echo __('Datenschutzerklärung', "hueman-7l-child"); ?></a> <?php echo __('und die');?> <a href="/datenschutzerklaerung-anmeldung-zu-veranstaltungen/"><?php echo __('Datenschutzerklärung bzgl. Veranstaltungsanmeldungen');?></a> <?php echo __('gelesen und stimme diesen zu'); ?></input>
+      <input type="checkbox" id="accept_ps" name="accept_ps" <?php echo ($accept_ps ? 'checked="checked"' : '' ); ?>><?php echo __('Ich habe die ', "hueman-7l-child"); ?><a href="/datenschutz/" target="_blank"><?php echo __('Datenschutzerklärung', "hueman-7l-child"); ?></a> <?php echo __('und die', "hueman-7l-child");?> <a href="/datenschutzerklaerung-anmeldung-zu-veranstaltungen/"><?php echo __('Datenschutzerklärung bzgl. Veranstaltungsanmeldungen', "hueman-7l-child");?></a> <?php echo __('gelesen und stimme diesen zu', "hueman-7l-child"); ?></input>
       <br/>
       <br/>
 
