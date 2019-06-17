@@ -127,9 +127,14 @@ Blog design and content not available in all versions.
 
 Most texts are translatable (for translations, look in the `languages` folder).
 
-Graphically: Use poedit.
+### Graphically: Use poedit
+  - (Initial setup) File > Catalog Manager > New : Project Name = hueman-child-7l; Directories = Browse
+  - File > Catalogs Manager > Update all
+  - (edit)
+  - Save and Update
 
-For you:
+
+### For you:
   - to update the compiled catalog: `msgfmt catalog.po -o catalog.mo` (for ubuntu/debian: in gettext package).
 
 ## Release
