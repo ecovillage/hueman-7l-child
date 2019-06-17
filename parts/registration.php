@@ -400,32 +400,32 @@ if ($submitted && !empty($_POST)) {
       <h5><?php echo __('Übernachtung: Raumwünsche', "hueman-7l-child"); ?></h5>
       <div class="grid one-half">
         <input type="checkbox" name="room_wish[]" id="4_Bett_Zimmer" value="4-Bett-Zimmer" <?php echo_checked_room("4-Bett-Zimmer"); ?>/>
-        <label for="4_Bett_Zimmer">4-Bett-Zimmer</label>
+        <label for="4_Bett_Zimmer"><?php echo __("4-Bett-Zimmer"); ?></label>
         <br/>
 
         <input id='2_Bett_Zimmer' name='room_wish[]' type='checkbox' value='2-Bett-Zimmer' <?php echo_checked_room("2-Bett-Zimmer"); ?>/>
-        <label for='2_Bett_Zimmer'>2-Bett-Zimmer</label>
+        <label for='2_Bett_Zimmer'><?php echo __("2-Bett-Zimmer"); ?></label>
         <br/>
 
         <input id='Einzelzimmer' name='room_wish[]' type='checkbox' value='Einzelzimmer' <?php echo_checked_room("Einzelzimmer"); ?>/>
-        <label for='Einzelzimmer'>Einzelzimmer</label>
+        <label for='Einzelzimmer'><?php echo __("Einzelzimmer"); ?></label>
         <br/>
 
         <input id='H_tte' name='room_wish[]' type='checkbox' value='Hütte' <?php echo_checked_room("Hütte"); ?>/>
-        <label for='H_tte'>Hütte</label>
+        <label for='H_tte'><?php echo __("Hütte"); ?></label>
       </div>
 
       <div class="grid one-half last">
         <input id='Eigenes_Zelt' name='room_wish[]' type='checkbox' value='Eigenes Zelt' <?php echo_checked_room("Eigenes Zelt"); ?>/>
-        <label for='Eigenes_Zelt'>Eigenes Zelt</label>
+        <label for='Eigenes_Zelt'><?php echo __("Eigenes Zelt"); ?></label>
         <br/>
 
         <input id='Eigenes_Wohnmobil_wagen' name='room_wish[]' type='checkbox' value='Eigenes Wohnmobil/-wagen' <?php echo_checked_room("Eigenes Wohnmobil/-wagen"); ?>/>
-        <label for='Eigenes_Wohnmobil_wagen'>Eigenes Wohnmobil/-wagen</label>
+        <label for='Eigenes_Wohnmobil_wagen'><?php echo __("Eigenes Wohnmobil/-wagen"); ?></label>
         <br/>
 
         <input id='Privat_Selbstorganisiert' name='room_wish[]' type='checkbox' value='Privat / Selbstorganisiert' <?php echo_checked_room("Privat / Selbstorganisiert"); ?>/>
-        <label for='Privat_Selbstorganisiert'>Privat / Selbstorganisiert</label>
+        <label for='Privat_Selbstorganisiert'><?php echo __("Privat / Selbstorganisiert"); ?></label>
       </div>
       <br class="clear"/>
 
