@@ -124,7 +124,9 @@ function h7lc_current_menu_item() {
 
 add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
 
-/** Load featured_custom partial to render news as a flexslider. */
+/** Load featured_custom partial to render news as a flexslider.
+ * Currently, the categories and encoded languages are hardcoded.
+ * This could be changed in the future by passing in a parameter. */
 function h7lc_shortcode_featured_flexslider() {
   ob_start();
   get_template_part('parts/featured_custom');
