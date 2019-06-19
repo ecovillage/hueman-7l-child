@@ -2,7 +2,7 @@
 
 A [hueman child theme](http://presscustomizr.com/hueman/) for the wordpress installation of the ecovillage Sieben Linden (siebenlinden.org).
 
-Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018 released under the GPLv3+.
+Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018, 2019 released under the GPLv3+.
 
 See a [list of contributors here](https://github.com/ecovillage/hueman-7l-child/graphs/contributors).
 
