@@ -1,8 +1,8 @@
 <?php
 // Query featured entries
-var localized_category_name = 'news';
+$localized_category_name = 'news';
 if ($lang == 'en') {
-  localized_category_name = 'news-en';
+  $localized_category_name = 'news-en';
 }
 
 $featured = new WP_Query(
@@ -11,7 +11,7 @@ $featured = new WP_Query(
     		'update_post_meta_cache' => false,
     		'update_post_term_cache' => false,
         'ignore_sticky_posts'		 => 1,
-        'category_name'          => localized_category_name,
+        'category_name'          => $localized_category_name,
     		'posts_per_page'			   => 7
   	)
 );
