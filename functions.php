@@ -81,20 +81,29 @@ function h7lc_current_menu_item() {
   // Identify current menu item
   $menu_items = h7lc_first_menus_items();
   // Alternative: get_queried_object.
+  // Have a direct match: Current object is found in menu:
   $current_menu_item = current( wp_filter_object_list( $menu_items,
     array( 'object_id' => get_queried_object_id() ) ) );
-  // If not found, check for url match.
-  if ($current_menu_item == false) {
-    $current_menu_item = current( wp_filter_object_list( $menu_items,
-      array( 'url' => h7lc_current_url() ) ) );
-  }
-  if ($current_menu_item == false) {
-    if (get_post_type() == "ev7l-event") {
+  // If its an event, place some sensible default item (language dependent)
+  if ($current_menu_item === false && get_post_type() == "ev7l-event") {
+    if ($lang == "de") {
       $current_menu_item = current( wp_filter_object_list( $menu_items,
         //array( 'object_id' => 1927 ) ) );
         array( 'title' => 'Rund um den Aufenthalt' ) ) );
     }
-    else if (get_post_type() == "ev7l-referee") {
+    else {
+      $current_menu_item = current( wp_filter_object_list( $menu_items,
+        array( 'title' => 'Visit us' ) ) );
+    }
+  }
+  // If not found, check for url match:
+  if ($current_menu_item == false) {
+    $current_menu_item = current( wp_filter_object_list( $menu_items,
+      array( 'url' => h7lc_current_url() ) ) );
+  }
+  // Choose referee overview page.
+  if ($current_menu_item == false) {
+    if (get_post_type() == "ev7l-referee") {
       $current_menu_item = current( wp_filter_object_list( $menu_items,
         array( 'title' => 'Referent*innen' ) ) );
     } else {
