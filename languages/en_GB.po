@@ -20,11 +20,11 @@ msgstr ""
 msgid "Referent*innen"
 msgstr ""
 
-#: ../functions.php:221 ../page-calendar.php:71
+#: ../functions.php:232 ../page-calendar.php:71
 msgid "Keine Veranstaltungen im gewählten Zeitraum"
-msgstr ""
+msgstr "No events in given time time frame"
 
-#: ../functions.php:292 ../functions.php:293 ../single-ev7l-event.php:34
+#: ../functions.php:303 ../functions.php:304 ../single-ev7l-event.php:34
 #: ../single-ev7l-event.php:35
 msgid "D d. M. Y"
 msgstr ""
@@ -96,12 +96,12 @@ msgstr ""
 #: ../parts/event_list_line.php:13 ../parts/post-list-author-date.php:21
 #: ../single-ev7l-event.php:54
 msgid "bis"
-msgstr ""
+msgstr "to"
 
 #: ../parts/event_list_line.php:28 ../parts/event_row.php:21
 #: ../parts/event_row_without_referee.php:23
 msgid " und "
-msgstr ""
+msgstr " and "
 
 #: ../parts/event_row.php:3 ../parts/event_row.php:4
 #: ../parts/event_row_without_referee.php:3
@@ -306,32 +306,31 @@ msgid "Rücktrittsbedingungen"
 msgstr "Conditions for cancellation"
 
 #: ../parts/registration.php:457
-msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
-msgstr "I accept the conditions for cancellation and the "
-
-#: ../parts/registration.php:457
-msgid "Allgemeinen Geschäftsbedingungen"
-msgstr "General Terms and Conditions"
-
-#: ../parts/registration.php:460
-msgid "Ich habe die "
-msgstr "I have read the "
+msgid ""
+"Ich akzeptiere die Rücktrittsbedingungen und die <a href=\"/seminare/agb/\" "
+"target=\"_blank\">Allgemeinen Geschäftsbedingungen</a>"
+msgstr ""
+"I accept the Cancellation conditions and the <a href=\"/en/general-terms-and-"
+"conditions/\" target=\"_blank\">General Terms and conditions</a>"
 
 #: ../parts/registration.php:460
-msgid "Datenschutzerklärung"
-msgstr "privacy terms"
+msgid ""
+"Ich habe die <a href=\"/datenschutz/\" target=\"_blank\"> "
+"Datenschutzerklärung</a> "
+msgstr "I have read the <a href=\"/en/privacy-policy/\"> Privacy policy</a> "
 
 #: ../parts/registration.php:460
-msgid "und die"
-msgstr "and the"
+msgid "und die "
+msgstr "and the "
 
 #: ../parts/registration.php:460
-msgid "Datenschutzerklärung bzgl. Veranstaltungsanmeldungen"
-msgstr "privacy terms regarding registrations for workshops"
-
-#: ../parts/registration.php:460
-msgid "gelesen und stimme diesen zu"
-msgstr "and accept these"
+msgid ""
+"<a href=\"/datenschutzerklaerung-anmeldung-zu-veranstaltungen/"
+"\">Datenschutzerklärung bzgl. Veranstaltungsanmeldungen</a> gelesen und "
+"stimme diesen zu"
+msgstr ""
+"<a href=\"/datenschutzerklaerung-anmeldung-zu-veranstaltungen/\">Privacy "
+"Policy regarding Workshop registrations</a> and agree "
 
 #: ../parts/registration.php:465
 msgid "Anmelden"
@@ -415,7 +414,7 @@ msgstr "Lodging"
 
 #: ../single-ev7l-event.php:199
 msgid "Link zu ggfs. externer Anmeldung"
-msgstr ""
+msgstr "Link to external Registration"
 
 #: ../single-ev7l-event.php:210
 msgid "Keine Anmeldung nötig."
@@ -423,7 +422,7 @@ msgstr "No Registration necessary"
 
 #: ../single-ev7l-event.php:213
 msgid "Veranstaltung liegt in der Vergangenheit."
-msgstr ""
+msgstr "Event is in the past"
 
 #: ../single-ev7l-event.php:221
 msgid "Frage zur Veranstaltung stellen"

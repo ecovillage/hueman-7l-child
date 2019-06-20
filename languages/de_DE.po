@@ -319,31 +319,26 @@ msgid "Rücktrittsbedingungen"
 msgstr ""
 
 #: ../parts/registration.php:457
-msgid "Ich akzeptiere die Rücktrittsbedingungen und die "
-msgstr ""
-
-#: ../parts/registration.php:457
-msgid "Allgemeinen Geschäftsbedingungen"
-msgstr ""
-
-#: ../parts/registration.php:460
-msgid "Ich habe die "
+msgid ""
+"Ich akzeptiere die Rücktrittsbedingungen und die <a href=\"/seminare/agb/\" "
+"target=\"_blank\">Allgemeinen Geschäftsbedingungen"
 msgstr ""
 
 #: ../parts/registration.php:460
-msgid "Datenschutzerklärung"
+msgid ""
+"Ich habe die <a href=\"/datenschutz/\" target=\"_blank\"> "
+"Datenschutzerklärung</a> "
 msgstr ""
 
 #: ../parts/registration.php:460
-msgid "und die"
+msgid "und die "
 msgstr ""
 
 #: ../parts/registration.php:460
-msgid "Datenschutzerklärung bzgl. Veranstaltungsanmeldungen"
-msgstr ""
-
-#: ../parts/registration.php:460
-msgid "gelesen und stimme diesen zu"
+msgid ""
+"<a href=\"/datenschutzerklaerung-anmeldung-zu-veranstaltungen/"
+"\">Datenschutzerklärung bzgl. Veranstaltungsanmeldungen</a> gelesen und "
+"stimme diesen zu"
 msgstr ""
 
 #: ../parts/registration.php:465

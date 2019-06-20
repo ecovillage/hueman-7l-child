@@ -454,10 +454,10 @@ if ($submitted && !empty($_POST)) {
       <span class="cancel_conditions"><?php echo get_post_meta($post->ID, 'cancel_conditions', true); ?></span><br/>
       <br/>
       <?php echo_fa_warning_if_unposted("accept_tos"); ?>
-      <input type="checkbox" id="accept_tos" name="accept_tos" <?php echo ($accept_tos ? 'checked="checked"' : '' ); ?>><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die ', "hueman-7l-child"); ?><a href="/seminare/agb/" target="_blank"><?php echo __('Allgemeinen Geschäftsbedingungen', "hueman-7l-child"); ?></a></input>
+      <input type="checkbox" id="accept_tos" name="accept_tos" <?php echo ($accept_tos ? 'checked="checked"' : '' ); ?>><?php echo __('Ich akzeptiere die Rücktrittsbedingungen und die <a href="/seminare/agb/" target="_blank">Allgemeinen Geschäftsbedingungen</a>', "hueman-7l-child"); ?></input>
       <br/>
       <?php echo_fa_warning_if_unposted("accept_ps"); ?>
-      <input type="checkbox" id="accept_ps" name="accept_ps" <?php echo ($accept_ps ? 'checked="checked"' : '' ); ?>><?php echo __('Ich habe die ', "hueman-7l-child"); ?><a href="/datenschutz/" target="_blank"><?php echo __('Datenschutzerklärung', "hueman-7l-child"); ?></a> <?php echo __('und die', "hueman-7l-child");?> <a href="/datenschutzerklaerung-anmeldung-zu-veranstaltungen/"><?php echo __('Datenschutzerklärung bzgl. Veranstaltungsanmeldungen', "hueman-7l-child");?></a> <?php echo __('gelesen und stimme diesen zu', "hueman-7l-child"); ?></input>
+      <input type="checkbox" id="accept_ps" name="accept_ps" <?php echo ($accept_ps ? 'checked="checked"' : '' ); ?>><?php echo __('Ich habe die <a href="/datenschutz/" target="_blank"> Datenschutzerklärung</a> ', "hueman-7l-child"); echo __('und die ', "hueman-7l-child"); echo __('<a href="/datenschutzerklaerung-anmeldung-zu-veranstaltungen/">Datenschutzerklärung bzgl. Veranstaltungsanmeldungen</a> gelesen und stimme diesen zu', "hueman-7l-child"); ?></input>
       <br/>
       <br/>
 
