@@ -39,6 +39,31 @@
                 $event_registration_link = get_post_meta($event->ID, 'registration_link', true);
               ?>
 
+              <?php /* Structured Data (https://developers.google.com/search/docs/data-types/event)*/ ?>
+
+              <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": "<?php echo the_title(); ?>",
+                "startDate": "<?php echo date_i18n('Y-m-dT18:30', get_post_meta($post->ID, 'todate', true)); ?>",
+                "endDate":   "<?php echo date_i18n('Y-m-dT13:00', get_post_meta($post->ID, 'fromdate', true)); ?>",
+                "location": {
+                  "@type": "Place",
+                  "name": "Ökodorf Sieben Linden",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Sieben Linden 1",
+                    "addressLocality": "Beetzendorf OT Poppau",
+                    "postalCode": "38489",
+                    "addressRegion": "SA",
+                    "addressCountry": "DE"
+                  }
+                }
+              }
+              </script>
+
+
               <?php if (!empty($_POST)) { ?>
                 <div id="registration-wrap">
                   <?php include(locate_template('parts/registration.php')); ?>
