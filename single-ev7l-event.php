@@ -45,7 +45,7 @@
               {
                 "@context": "https://schema.org",
                 "@type": "Event",
-                "name": "<?php echo the_title(); ?>",
+                "name": <?php echo json_encode(the_title()); ?>,
                 "startDate": "<?php echo date_i18n('Y-m-dT18:30', get_post_meta($post->ID, 'todate', true)); ?>",
                 "endDate":   "<?php echo date_i18n('Y-m-dT13:00', get_post_meta($post->ID, 'fromdate', true)); ?>",
                 "location": {
@@ -59,7 +59,15 @@
                     "addressRegion": "SA",
                     "addressCountry": "DE"
                   }
-                }
+                },
+                "description": <?php echo json_encode(the_excerpt()); ?>
+                <?php if ( has_post_thumbnail() ) { ?>
+                  ,
+                  "image": [
+                    "<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); ?>"
+                  ]
+                <?php } ?>
+                 
               }
               </script>
 
