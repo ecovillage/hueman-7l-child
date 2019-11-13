@@ -123,6 +123,17 @@ Footer -> Credit Text
 
 Blog design and content not available in all versions.
 
+## Update to match upstream stable hueman theme
+
+The original Presscustomizr hueman theme ([source](https://github.com/presscustomizr/hueman)) still receives updates (as of late 2019). To integrate changes and fixes, this Child Theme has to be updated every once in a while.
+
+The process is yet unclear and a WIP, relevant scripts might be placed in a runbook at https://github.com/ecovillage/operations .
+
+### WIP doc
+
+The "current" version of the upstream Hueman (the "parent") theme that this child theme is based on needs to be know.
+For now, its placed in `HUEMAN_BASE_VERION`
+
 ## Update translations
 
 Most texts are translatable (for translations, look in the `languages` folder).
