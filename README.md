@@ -134,6 +134,13 @@ The process is yet unclear and a WIP, relevant scripts might be placed in a runb
 The "current" version of the upstream Hueman (the "parent") theme that this child theme is based on needs to be know.
 For now, its placed in `HUEMAN_BASE_VERION`
 
+  * we need to know which files are based of which parent files:
+    * get list of files `git ls-files | sort > FILES`
+  * add a sorted list of files that are included but independent of parent version
+    * (FILES.ignore)
+  * also CSS rules need to be checked
+
+
 ## Update translations
 
 Most texts are translatable (for translations, look in the `languages` folder).
@@ -154,4 +161,4 @@ Most texts are translatable (for translations, look in the `languages` folder).
   - git tag -a VERSION -m VERSION
   - git push && git push --tags
 
-
+That means, the releases are tags in git (typical setup).
