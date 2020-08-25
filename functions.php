@@ -20,7 +20,8 @@ function h7lc_sidebar_submenu() {
 }
 
 function h7lc_first_menu_id() {
-  return reset(get_theme_mod( 'nav_menu_locations' ));
+  $theme_nav_menu_locations = get_theme_mod( 'nav_menu_locations' );
+  return reset($theme_nav_menu_locations);
 }
 
 function h7lc_first_menus_items() {
