@@ -23,12 +23,10 @@ $featured = new WP_Query(
 	<script type="text/javascript">
   // Check if first slider image is loaded, and load flexslider on document ready
   jQuery(function($){
-  var firstImage = $('#flexslider-featured').find('img').filter(':first'),
-    checkforloaded = setInterval(function() {
-      var image = firstImage.get(0);
-      if (image.complete || image.readyState == 'complete' || image.readyState == 4) {
-        clearInterval(checkforloaded);
+    var firstImage = $('#flexslider-featured').find('img').filter(':first');
+    var image = firstImage.get(0);
 
+    image.onload = function() {
         $.when( $('#flexslider-featured').flexslider({
         animation: "slide",
           useCSS: false, // Fix iPad flickering issue
@@ -48,9 +46,7 @@ $featured = new WP_Query(
           _trigger = _.debounce( _trigger, 100 );
           _trigger( $_self );
         } );
-
-      }
-    }, 20);
+    }
   });
 	</script>
 
