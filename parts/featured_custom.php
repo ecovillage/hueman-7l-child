@@ -56,10 +56,18 @@ $featured = new WP_Query(
 
 	<div class="featured flexslider" id="flexslider-featured">
 		<ul class="slides">
-			<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
-      <li>
-				<?php get_template_part('content-featured-custom'); ?>
-			</li>
+      <?php
+        $count = -1;
+        while ( $featured->have_posts() ): $featured->the_post(); $count++;
+        if ($count == 0) {
+      ?>
+        <li style="display: initial;">
+      <?php } else { ?>
+        <li>
+      <?php }
+        get_template_part('content-featured-custom');
+      ?>
+			  </li>
 			<?php endwhile; ?>
 		</ul>
 	</div><!--/.featured-->
