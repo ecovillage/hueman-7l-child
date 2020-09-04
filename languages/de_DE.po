@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2019-06-17 14:15+0200\n"
-"PO-Revision-Date: 2019-06-17 14:15+0200\n"
+"POT-Creation-Date: 2020-09-04 11:57+0200\n"
+"PO-Revision-Date: 2020-09-04 11:57+0200\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -152,10 +152,11 @@ msgstr "Mail-Versand fehlgeschlagen!"
 
 #: ../parts/registration.php:15
 msgid ""
-"You need to accept the privacy statement, terms of service and cancellation "
-"conditions"
+"You need to accept the privacy statement, terms of service, the cancellation "
+"conditions and the hygiene concept"
 msgstr ""
-"Die Teilnahmebedingungen, Datenschutzerklärung und AGB müssen gelesen und "
+"Die Teilnahmebedingungen, die Datenschutzerklärung, das Corona-Hygiene-"
+"Konzept und AGB müssen gelesen und "
 "akzeptiert werden"
 
 #: ../parts/registration.php:16
@@ -174,174 +175,185 @@ msgstr ""
 "Ein böser technischer Fehler ist aufgetreten. Bitte kontaktiere "
 "bildungsreferat@siebenlinden.org !"
 
-#: ../parts/registration.php:40
+#: ../parts/registration.php:41
 msgid "Registration for "
 msgstr "Anmeldung für"
 
-#: ../parts/registration.php:67
+#: ../parts/registration.php:68
 msgid "Anmeldung zum Seminar "
 msgstr ""
 
-#: ../parts/registration.php:282 ../parts/single-ev7l-event-nav.php:13
+#: ../parts/registration.php:289 ../parts/single-ev7l-event-nav.php:13
 msgid "Anmeldung"
 msgstr ""
 
-#: ../parts/registration.php:292 ../parts/registration.php:293
-#: ../parts/registration.php:353 ../parts/registration.php:354
-#: ../parts/registration.php:375 ../parts/registration.php:376
+#: ../parts/registration.php:299 ../parts/registration.php:300
+#: ../parts/registration.php:360 ../parts/registration.php:361
+#: ../parts/registration.php:382 ../parts/registration.php:383
 msgid "Vorname"
 msgstr ""
 
-#: ../parts/registration.php:297 ../parts/registration.php:298
-#: ../parts/registration.php:359 ../parts/registration.php:360
-#: ../parts/registration.php:381 ../parts/registration.php:382
+#: ../parts/registration.php:304 ../parts/registration.php:305
+#: ../parts/registration.php:366 ../parts/registration.php:367
+#: ../parts/registration.php:388 ../parts/registration.php:389
 msgid "Nachname"
 msgstr ""
 
-#: ../parts/registration.php:302 ../parts/registration.php:303
+#: ../parts/registration.php:309 ../parts/registration.php:310
 msgid "Straße und Hausnummer"
 msgstr ""
 
-#: ../parts/registration.php:307 ../parts/registration.php:308
+#: ../parts/registration.php:314 ../parts/registration.php:315
 msgid "PLZ"
 msgstr ""
 
-#: ../parts/registration.php:312 ../parts/registration.php:313
+#: ../parts/registration.php:319 ../parts/registration.php:320
 msgid "Ort"
 msgstr ""
 
-#: ../parts/registration.php:316 ../parts/registration.php:317
+#: ../parts/registration.php:323 ../parts/registration.php:324
 msgid "Land"
 msgstr ""
 
-#: ../parts/registration.php:323
+#: ../parts/registration.php:330
 msgid "E-Mail"
 msgstr ""
 
-#: ../parts/registration.php:324
+#: ../parts/registration.php:331
 msgid "email"
 msgstr ""
 
-#: ../parts/registration.php:327
+#: ../parts/registration.php:334
 msgid "Telefonnummer"
 msgstr ""
 
-#: ../parts/registration.php:331
+#: ../parts/registration.php:338
 msgid "Handy-Nummer"
 msgstr ""
 
-#: ../parts/registration.php:335
+#: ../parts/registration.php:342
 msgid "Bemerkung"
 msgstr ""
 
-#: ../parts/registration.php:365 ../parts/registration.php:366
-#: ../parts/registration.php:387 ../parts/registration.php:388
+#: ../parts/registration.php:372 ../parts/registration.php:373
+#: ../parts/registration.php:394 ../parts/registration.php:395
 msgid "Alter"
 msgstr ""
 
-#: ../parts/registration.php:371
+#: ../parts/registration.php:378
 msgid "Weitere Teilnehmer*"
 msgstr ""
 
-#: ../parts/registration.php:393
+#: ../parts/registration.php:400
 msgid "Hinzufügen"
 msgstr ""
 
-#: ../parts/registration.php:400
+#: ../parts/registration.php:407
 msgid "Übernachtung: Raumwünsche"
 msgstr ""
 
-#: ../parts/registration.php:403
+#: ../parts/registration.php:410
 msgid "4-Bett-Zimmer"
 msgstr ""
 
-#: ../parts/registration.php:407
+#: ../parts/registration.php:414
 msgid "2-Bett-Zimmer"
 msgstr ""
 
-#: ../parts/registration.php:411
+#: ../parts/registration.php:418
 msgid "Einzelzimmer"
 msgstr ""
 
-#: ../parts/registration.php:415
+#: ../parts/registration.php:422
 msgid "Hütte"
 msgstr ""
 
-#: ../parts/registration.php:420
+#: ../parts/registration.php:427
 msgid "Eigenes Zelt"
 msgstr ""
 
-#: ../parts/registration.php:424
+#: ../parts/registration.php:431
 msgid "Eigenes Wohnmobil/-wagen"
 msgstr ""
 
-#: ../parts/registration.php:428
+#: ../parts/registration.php:435
 msgid "Privat / Selbstorganisiert"
 msgstr ""
 
-#: ../parts/registration.php:438
+#: ../parts/registration.php:445
 msgid "Spenden"
 msgstr ""
 
-#: ../parts/registration.php:439
+#: ../parts/registration.php:446
 msgid ""
 "Ich möchte das Ökodorf unterstützen und zusätzlich zu meinen Seminarkosten "
 "folgenden Betrag als Spende für das neue <a href='https://siebenlinden.org/"
 "de/aktuelle-projekte/seminarzentrum/'>Seminarzentrum </a> zahlen:"
 msgstr ""
 
-#: ../parts/registration.php:441
+#: ../parts/registration.php:448
 msgid "Ich möchte oder kann nicht spenden"
 msgstr ""
 
-#: ../parts/registration.php:442
+#: ../parts/registration.php:449
 msgid "10€"
 msgstr ""
 
-#: ../parts/registration.php:443
+#: ../parts/registration.php:450
 msgid "20€"
 msgstr ""
 
-#: ../parts/registration.php:444
+#: ../parts/registration.php:451
 msgid "50€"
 msgstr ""
 
-#: ../parts/registration.php:445
+#: ../parts/registration.php:452
 msgid "anderer Betrag"
 msgstr ""
 
-#: ../parts/registration.php:447
+#: ../parts/registration.php:454
 msgid "... andere Zahl eingeben"
 msgstr ""
 
-#: ../parts/registration.php:453
+#: ../parts/registration.php:460
 msgid "Rücktrittsbedingungen"
 msgstr ""
 
-#: ../parts/registration.php:457
+#: ../parts/registration.php:464
 msgid ""
 "Ich akzeptiere die Rücktrittsbedingungen und die <a href=\"/seminare/agb/\" "
-"target=\"_blank\">Allgemeinen Geschäftsbedingungen"
+"target=\"_blank\">Allgemeinen Geschäftsbedingungen</a>"
 msgstr ""
 
-#: ../parts/registration.php:460
+#: ../parts/registration.php:467
 msgid ""
 "Ich habe die <a href=\"/datenschutz/\" target=\"_blank\"> "
 "Datenschutzerklärung</a> "
 msgstr ""
 
-#: ../parts/registration.php:460
+#: ../parts/registration.php:467
 msgid "und die "
 msgstr ""
 
-#: ../parts/registration.php:460
+#: ../parts/registration.php:467
 msgid ""
 "<a href=\"/datenschutzerklaerung-anmeldung-zu-veranstaltungen/"
 "\">Datenschutzerklärung bzgl. Veranstaltungsanmeldungen</a> gelesen und "
 "stimme diesen zu"
 msgstr ""
 
-#: ../parts/registration.php:465
+#: ../parts/registration.php:469
+msgid ""
+"Ich habe das <a href=\"https://siebenlinden.org/wp-content/uploads/2020/07/"
+"Hygienekonzept-Freundeskreis-%C3%96kodorf-e.V._-Juli-2020_final.pdf\" target="
+"\"_blank\"> Corona-Hygiene-Konzept</a> "
+msgstr ""
+
+#: ../parts/registration.php:469
+msgid "gelesen und akzeptiert."
+msgstr ""
+
+#: ../parts/registration.php:474
 msgid "Anmelden"
 msgstr ""
 

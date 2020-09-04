@@ -12,7 +12,7 @@ $msg_missing_info   = __("Please provide all information", "hueman-7l-child");
 $msg_email_invalid  = __("Please provide a valid email adress", "hueman-7l-child");
 $msg_message_sent   = __("Message was sent. If you do not receive a confirmation mail in the next minutes please get in touch!", "hueman-7l-child");
 $msg_message_not_sent = __("Message was not sent due to a technical error!", "hueman-7l-child");
-$msg_need_tos       = __("You need to accept the privacy statement, terms of service and cancellation conditions", "hueman-7l-child");
+$msg_need_tos       = __("You need to accept the privacy statement, terms of service, the cancellation conditions and the hygiene concept", "hueman-7l-child");
 $msg_registered     = __("Registration received. You should receive a mail within the next minutes. If not ...", "hueman-7l-child");
 $msg_technical_error= __("There was a real technical error with your registration. Please contact ....", "hueman-7l-child");
 
@@ -196,6 +196,7 @@ $phone         = post_index_or_null('phone');
 $mobile        = post_index_or_null('mobile');
 $comment       = post_index_or_null('participant_comment');
 $accept_tos    = post_index_or_null('accept_tos');
+$accept_hc     = post_index_or_null('accept_hc');
 $accept_ps     = post_index_or_null('accept_ps');
 $submitted     = post_index_or_null('submitted');
 $rooms         = post_index_or_null('room_wish');
@@ -242,6 +243,9 @@ if ($submitted && !empty($_POST)) {
     registration_form_error($msg_need_tos);
   }
   elseif (!$accept_ps) {
+    registration_form_error($msg_need_tos);
+  }
+  elseif (!$accept_hc) {
     registration_form_error($msg_need_tos);
   }
   elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -458,6 +462,8 @@ if ($submitted && !empty($_POST)) {
       <br/>
       <?php echo_fa_warning_if_unposted("accept_ps"); ?>
       <input type="checkbox" id="accept_ps" name="accept_ps" <?php echo ($accept_ps ? 'checked="checked"' : '' ); ?>><?php echo __('Ich habe die <a href="/datenschutz/" target="_blank"> Datenschutzerklärung</a> ', "hueman-7l-child"); echo __('und die ', "hueman-7l-child"); echo __('<a href="/datenschutzerklaerung-anmeldung-zu-veranstaltungen/">Datenschutzerklärung bzgl. Veranstaltungsanmeldungen</a> gelesen und stimme diesen zu', "hueman-7l-child"); ?></input>
+      <?php echo_fa_warning_if_unposted("accept_hc"); ?>
+      <input type="checkbox" id="accept_hc" name="accept_hc" <?php echo ($accept_hc ? 'checked="checked"' : '' ); ?>><?php echo __('Ich habe das <a href="https://siebenlinden.org/wp-content/uploads/2020/07/Hygienekonzept-Freundeskreis-%C3%96kodorf-e.V._-Juli-2020_final.pdf" target="_blank"> Corona-Hygiene-Konzept</a> ', "hueman-7l-child"); echo __('gelesen und akzeptiert.', "hueman-7l-child");?> </input>
       <br/>
       <br/>
 
