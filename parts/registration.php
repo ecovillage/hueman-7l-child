@@ -17,6 +17,7 @@ $msg_registered     = __("Registration received. You should receive a mail withi
 $msg_technical_error= __("There was a real technical error with your registration. Please contact ....", "hueman-7l-child");
 
 // TODO: rework a lot of globals here.
+if (!function_exists('registration_form_success')) {
 /* Sets a sucessfull registration message. */
 function registration_form_success($message) {
   global $response;
@@ -183,6 +184,8 @@ function write_registration_json_file($registration) {
 
   return $write_result;
 }
+
+} //end of function_exists redeclaration guard
 
 // User provided content
 $firstname     = post_index_or_null('firstname');
