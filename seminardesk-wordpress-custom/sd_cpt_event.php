@@ -17,6 +17,11 @@ use Inc\Utils\TemplateUtils as Utils;
 
 get_header();
 ?>
+
+<section class="content">
+
+<!-- SeminarDesk original template -->
+
 <main id="site-content" role="main">
     <?php
     if (have_posts()) {
@@ -110,5 +115,13 @@ get_header();
 
 </main><!-- #site-content -->
 
+<!-- End of SeminarDesk original template -->
+
+</section>
+
 <?php
+
+php get_sidebar();
+
 get_footer();
+?>
