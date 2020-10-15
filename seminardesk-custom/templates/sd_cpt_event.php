@@ -149,6 +149,14 @@ get_header();
     wp_reset_query();
     ?>
 
+    <div id="question">
+      <h3><?php echo __('Frage zur Veranstaltung stellen', 'hueman-7l-child'); ?> </h3>
+      <?php echo do_shortcode('[contact-form-7 id="2325" title="Frage zu Veranstaltung"]'); ?>
+    </div>
+    <script type="text/javascript">
+        document.getElementsByClassName("wpcf7-form")[0].elements['your-subject'].value = 'Frage zu Veranstaltung: <?php echo the_title(); ?> (<?php echo $event_fromdate.' - '.$event_todate; ?>)';
+    </script>
+
 </div><!-- #site-content -->
 
 <!-- End of SeminarDesk original template -->
