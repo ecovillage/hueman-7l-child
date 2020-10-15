@@ -3,6 +3,7 @@
  * File originally from
  * https://bitbucket.org/seminardesk/seminardesk-wordpress/src/develop/templates/
  * Original content Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
+ * Modifications Copyright 2020 Freundeskreis Ökodorf e.V.
  */
 ?>
 
@@ -18,11 +19,18 @@ use Inc\Utils\TemplateUtils as Utils;
 get_header();
 ?>
 
-<section class="content">
+<section class="content entry">
+
+<?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
+  <?php /*hu_get_template_part('parts/page-title');*/ ?>
+  <div class="page-title pad group">
+  <h2><?php echo __('Ausgewähltes Seminar', 'hueman-7l-child'); ?></h2>
+  </div><!--/.page-title-->
+<?php /* Re-entering vanilla hueman */ ?>
 
 <!-- SeminarDesk original template -->
 
-<main id="site-content" role="main">
+<div class="pad group">
     <?php
     if (have_posts()) {
         while (have_posts()) {
@@ -30,11 +38,35 @@ get_header();
             ?>
             <header class="entry-header has-text-align-center">
                 <div class="entry-header-inner section-inner medium">
+
+
+    <div class="post-inner group">
+      <?php /* Leaving vanilla theme to include image in standard post format. */ ?>
+        <div class="post-format">
+          <div class="image-container">
+            <?php
+              $url = Utils::get_value_by_language($post->sd_data['headerPictureUrl']);
+              //Utils::get_img_remote( $url, '300', '', $alt = __('remote image failed', 'seminardesk'));
+            ?>
+            <img src="<?php echo $url; ?>" class="attachment-thumb-large size-thumb-large wp-post-image" alt="" loading="lazy" sizes="(max-width: 720px) 100vw, 720px" width="720" height="340">
+
+            <?/*php if ( has_post_thumbnail() ) {
+              hu_the_post_thumbnail('thumb-large', '', false);//no attr, no placeholder
+              $url = Utils::get_value_by_language($post->sd_data['headerPictureUrl']);
+              echo Utils::get_img_remote( $url, '300', '', $alt = __('remote image failed', 'seminardesk'));
+
+              $caption = get_post(get_post_thumbnail_id())->post_excerpt;
+              if ( isset($caption) && $caption ) echo '<div class="image-caption">'.$caption.'</div>';
+            } */ ?>
+          </div> <!-- .image-container -->
+        </div> <!-- .post-format -->
+    </div>
+
+
+
                     <?php 
                     Utils::get_value_by_language( $post->sd_data['title'], 'DE', '<h1 class="archive-title">', '</h1>', true); 
                     echo Utils::get_value_by_language($post->sd_data['subtitle']); 
-                    $url = Utils::get_value_by_language($post->sd_data['headerPictureUrl']);
-                    echo Utils::get_img_remote( $url, '300', '', $alt = __('remote image failed', 'seminardesk'))
                     ?>
                 </div>
             </header>
@@ -72,12 +104,14 @@ get_header();
                         
                         if ( !empty($booking_url) ) {
                             ?>
+<!--
                             <br><p><button class="sd-modal-booking-btn">
                                 <?php 
                                 _e('Booking', 'seminardesk');
                                 ?>
                             </button></p>
                             </p>
+-->
                             <?php
                         }
                     } else {
@@ -113,7 +147,7 @@ get_header();
     wp_reset_query();
     ?>
 
-</main><!-- #site-content -->
+</div><!-- #site-content -->
 
 <!-- End of SeminarDesk original template -->
 
@@ -121,7 +155,7 @@ get_header();
 
 <?php
 
-php get_sidebar();
+get_sidebar();
 
 get_footer();
 ?>
