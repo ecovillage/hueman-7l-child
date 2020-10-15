@@ -19,7 +19,7 @@ use Inc\Utils\TemplateUtils as Utils;
 get_header();
 ?>
 
-<section class="content entry">
+<section class="content">
 
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
   <?php /*hu_get_template_part('parts/page-title');*/ ?>
@@ -30,7 +30,7 @@ get_header();
 
 <!-- SeminarDesk original template -->
 
-<div class="pad group">
+<div class="pad group entry" id="site-content" role="main">
     <?php
     if (have_posts()) {
         while (have_posts()) {
@@ -121,6 +121,7 @@ get_header();
                     }
                     ?>
             </div>
+
             <!-- BEGIN modal content -->
             <div class="sd-modal">
                 <div class="sd-modal-content">
@@ -130,6 +131,7 @@ get_header();
                 </div>
             </div>
             <!-- END modal content -->
+
             <?php
         }
     } else {
