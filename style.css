@@ -490,3 +490,12 @@ li.calendar-event-row {
 #donation, #donateamount {
   display: inline-block;
 }
+
+/* Menu colors when scrolled */
+.is-scrolled .sub-menu {
+  background-color: rgba(201,211,14,0.92) !important;
+}
+
+.is-scrolled #nav-topbar {
+  background-color: rgba(201,211,14,0.92) !important;
+}
