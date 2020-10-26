@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;escp_html_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Referent*innen"
 msgstr ""
 
-#: ../functions.php:221 ../page-calendar.php:71
+#: ../functions.php:236 ../page-calendar.php:71
 msgid "Keine Veranstaltungen im gewählten Zeitraum"
 msgstr ""
 
-#: ../functions.php:292 ../functions.php:293 ../single-ev7l-event.php:34
+#: ../functions.php:307 ../functions.php:308 ../single-ev7l-event.php:34
 #: ../single-ev7l-event.php:35
 #, fuzzy
 msgid "D d. M. Y"
@@ -100,7 +100,7 @@ msgid "D d.M.Y"
 msgstr ""
 
 #: ../parts/event_list_line.php:13 ../parts/post-list-author-date.php:21
-#: ../single-ev7l-event.php:54
+#: ../single-ev7l-event.php:94
 msgid "bis"
 msgstr ""
 
@@ -156,8 +156,7 @@ msgid ""
 "conditions and the hygiene concept"
 msgstr ""
 "Die Teilnahmebedingungen, die Datenschutzerklärung, das Corona-Hygiene-"
-"Konzept und AGB müssen gelesen und "
-"akzeptiert werden"
+"Konzept und AGB müssen gelesen und akzeptiert werden"
 
 #: ../parts/registration.php:16
 msgid ""
@@ -342,19 +341,27 @@ msgid ""
 "stimme diesen zu"
 msgstr ""
 
-#: ../parts/registration.php:469
+#: ../parts/registration.php:470
 msgid ""
 "Ich habe das <a href=\"https://siebenlinden.org/wp-content/uploads/2020/07/"
 "Hygienekonzept-Freundeskreis-%C3%96kodorf-e.V._-Juli-2020_final.pdf\" target="
 "\"_blank\"> Corona-Hygiene-Konzept</a> "
 msgstr ""
 
-#: ../parts/registration.php:469
+#: ../parts/registration.php:470
 msgid "gelesen und akzeptiert."
 msgstr ""
 
-#: ../parts/registration.php:474
+#: ../parts/registration.php:475
 msgid "Anmelden"
+msgstr ""
+
+#: ../parts/single-author-date.php:17
+msgid "Published"
+msgstr ""
+
+#: ../parts/single-author-date.php:18
+msgid "Updated"
 msgstr ""
 
 #: ../parts/single-ev7l-event-nav.php:4 ../parts/single-ev7l-event-nav.php:22
@@ -362,7 +369,7 @@ msgid "Beschreibung"
 msgstr ""
 
 #: ../parts/single-ev7l-event-nav.php:7 ../parts/single-ev7l-event-nav.php:25
-#: ../single-ev7l-event.php:157 ../single-ev7l-referee.php:7
+#: ../single-ev7l-event.php:197 ../single-ev7l-referee.php:7
 msgid "Referent*"
 msgstr ""
 
@@ -374,11 +381,82 @@ msgstr ""
 msgid "Frage stellen"
 msgstr ""
 
-#: ../sidebar.php:19
+#: ../sd_cpt_event.php:15 ../seminardesk-custom/templates/sd_cpt_event.php:27
+#: ../single-ev7l-event.php:8
+msgid "Ausgewähltes Seminar"
+msgstr ""
+
+#: ../sd_cpt_event.php:51 ../seminardesk-custom/templates/sd_txn_dates.php:78
+msgid "remote image failed"
+msgstr "Fehler beim Laden des externen Bildes"
+
+#: ../sd_cpt_event.php:61 ../seminardesk-custom/templates/sd_cpt_event.php:79
+#: ../seminardesk-custom/templates/sd_txn_dates.php:71
+msgid "Facilitator: "
+msgstr "Referent*innen: "
+
+#: ../sd_cpt_event.php:80 ../seminardesk-custom/templates/sd_cpt_event.php:98
+msgid "List of available dates:"
+msgstr ""
+
+#: ../sd_cpt_event.php:91 ../sd_cpt_event.php:108
+#: ../seminardesk-custom/templates/sd_cpt_event.php:110
+#: ../seminardesk-custom/templates/sd_cpt_event.php:129
+msgid "Booking"
+msgstr "Buchung"
+
+#: ../sd_cpt_event.php:99 ../seminardesk-custom/templates/sd_cpt_event.php:119
+msgid "No dates for this event available :("
+msgstr "Keine Termine für diese Veranstaltung"
+
+#: ../sd_cpt_event.php:120 ../seminardesk-custom/templates/sd_cpt_event.php:142
+msgid "<strong>Sorry, event does not exist.</strong>"
+msgstr "<strong>Sorry, Veranstaltung existiert nicht.</strong>"
+
+#: ../sd_cpt_event.php:133 ../seminardesk-custom/templates/sd_cpt_event.php:153
+#: ../single-ev7l-event.php:261
+msgid "Frage zur Veranstaltung stellen"
+msgstr ""
+
+#: ../sd_cpt_event.php:147 ../single-ev7l-event.php:275
+#: ../single-ev7l-referee.php:138 ../tmpl/single-tmpl.php:34
+msgid "Pages:"
+msgstr ""
+
+#: ../sd_cpt_event.php:163 ../single-ev7l-event.php:291
+#: ../single-ev7l-referee.php:154 ../tmpl/single-tmpl.php:50
+msgid "Tags:"
+msgstr ""
+
+#: ../seminardesk-custom/templates/sd_txn_dates.php:70
+msgid "<strong>Date: </strong>"
+msgstr "<strong>Datum: </strong>"
+
+#: ../seminardesk-custom/templates/sd_txn_dates.php:72
+msgid "Price: "
+msgstr "Preis: "
+
+#: ../seminardesk-custom/templates/sd_txn_dates.php:73
+msgid "Venue: "
+msgstr "Ort: "
+
+#: ../seminardesk-custom/templates/sd_txn_dates.php:106
+msgid "Sorry, no events for this date."
+msgstr "Sorry, keine Veranstaltungen in diesem Zeitraum."
+
+#: ../sidebar.php:6
+msgid "Expand Sidebar"
+msgstr ""
+
+#: ../sidebar.php:13
+msgid "Follow:"
+msgstr ""
+
+#: ../sidebar.php:18
 msgid "You can set your social links here from the live customizer"
 msgstr ""
 
-#: ../sidebar.php:21
+#: ../sidebar.php:20
 msgid "Customize now"
 msgstr ""
 
@@ -398,66 +476,48 @@ msgstr "Derzeit keine Veranstaltungen in naher Zukunft geplant."
 msgid "Seminare in der Vergangenheit"
 msgstr "Seminare in der Vergangenheit"
 
-#: ../single-ev7l-event.php:8
-msgid "Ausgewähltes Seminar"
-msgstr ""
-
-#: ../single-ev7l-event.php:53
+#: ../single-ev7l-event.php:93
 msgid "Von"
 msgstr ""
 
-#: ../single-ev7l-event.php:88
+#: ../single-ev7l-event.php:128
 msgid "Informationen zum Seminar"
 msgstr ""
 
-#: ../single-ev7l-event.php:101
+#: ../single-ev7l-event.php:141
 msgid "Aktuelle Informationen"
 msgstr ""
 
-#: ../single-ev7l-event.php:107
+#: ../single-ev7l-event.php:147
 msgid "Anreise"
 msgstr ""
 
-#: ../single-ev7l-event.php:113
+#: ../single-ev7l-event.php:153
 msgid "Abreise"
 msgstr ""
 
-#: ../single-ev7l-event.php:119
+#: ../single-ev7l-event.php:159
 msgid "Seminarkosten"
 msgstr ""
 
-#: ../single-ev7l-event.php:125
+#: ../single-ev7l-event.php:165
 msgid "Biovollverpflegung"
 msgstr ""
 
-#: ../single-ev7l-event.php:131
+#: ../single-ev7l-event.php:171
 msgid "Unterkunft"
 msgstr ""
 
-#: ../single-ev7l-event.php:199
+#: ../single-ev7l-event.php:239
 msgid "Link zu ggfs. externer Anmeldung"
 msgstr ""
 
-#: ../single-ev7l-event.php:210
+#: ../single-ev7l-event.php:250
 msgid "Keine Anmeldung nötig."
 msgstr ""
 
-#: ../single-ev7l-event.php:213
+#: ../single-ev7l-event.php:253
 msgid "Veranstaltung liegt in der Vergangenheit."
-msgstr ""
-
-#: ../single-ev7l-event.php:221
-msgid "Frage zur Veranstaltung stellen"
-msgstr ""
-
-#: ../single-ev7l-event.php:235 ../single-ev7l-referee.php:138
-#: ../tmpl/single-tmpl.php:34
-msgid "Pages:"
-msgstr ""
-
-#: ../single-ev7l-event.php:251 ../single-ev7l-referee.php:154
-#: ../tmpl/single-tmpl.php:50
-msgid "Tags:"
 msgstr ""
 
 #: ../single-ev7l-referee.php:87
