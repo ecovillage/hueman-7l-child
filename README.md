@@ -155,6 +155,13 @@ Most texts are translatable (for translations, look in the `languages` folder).
 ### For you:
   - to update the compiled catalog: `msgfmt catalog.po -o catalog.mo` (for ubuntu/debian: in gettext package).
 
+
+### Resources
+
+#### Looking for the Hierarchy?
+
+[wphierarchy](https://wphierarchy.com/) comes in handy sometimes.
+
 ## Release
 
   - Change version in style.css and commit

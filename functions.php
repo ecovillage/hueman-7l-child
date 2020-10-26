@@ -87,6 +87,9 @@ function h7lc_current_menu_item() {
     array( 'object_id' => get_queried_object_id() ) ) );
   // If its an event, place some sensible default item (language dependent)
   if ($current_menu_item === false && get_post_type() == "ev7l-event") {
+    // FIXME get_locale? (in some conditions, lang is not defined),
+    //   * alt: pll_current_language, get_bloginfo('language')
+
     if ($lang == "de") {
       $current_menu_item = current( wp_filter_object_list( $menu_items,
         //array( 'object_id' => 1927 ) ) );
@@ -309,6 +312,7 @@ function h7lc_show_registration_form($atts) {
   ob_start();
   global $event_uuid;
   $event_uuid = $a['eventuuid'];
+  # TODO: include might avoid redeclaration of functions (instead of get_tem...)
   get_template_part('parts/registration');
   $ret = ob_get_contents();
   ob_end_clean();
