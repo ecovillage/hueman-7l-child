@@ -397,7 +397,7 @@ msgstr "Referent*innen: "
 
 #: ../sd_cpt_event.php:80 ../seminardesk-custom/templates/sd_cpt_event.php:98
 msgid "List of available dates:"
-msgstr ""
+msgstr "Verfügbare Termine:"
 
 #: ../sd_cpt_event.php:91 ../sd_cpt_event.php:108
 #: ../seminardesk-custom/templates/sd_cpt_event.php:110

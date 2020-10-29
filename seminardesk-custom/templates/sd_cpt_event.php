@@ -104,14 +104,14 @@ get_header();
                         
                         if ( !empty($booking_url) ) {
                             ?>
-<!--
+
                             <br><p><button class="sd-modal-booking-btn">
                                 <?php 
                                 _e('Booking', 'seminardesk');
                                 ?>
                             </button></p>
                             </p>
--->
+
                             <?php
                         }
                     } else {
