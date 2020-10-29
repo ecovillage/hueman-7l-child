@@ -47,7 +47,7 @@ css styles for single template of CPT sd_cpt_event
 }
 .sd-modal-booking{
     z-index: -1;
-    padding-top: 3em;
+    padding-top: 5em;
     position: absolute;
     top: 50%;
     left: 50%;
