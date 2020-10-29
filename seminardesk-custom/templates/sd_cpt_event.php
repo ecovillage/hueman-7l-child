@@ -76,7 +76,7 @@ get_header();
                     $facilitators = Utils::get_facilitators($post->sd_data['facilitators']);
                     if ($facilitators) {
                         echo '<strong>';
-                        _e('Facilitator: ', 'seminardesk');
+                        _e('Facilitator: ', 'hueman-7l-child');
                         echo '</strong>';
                         echo $facilitators;
                     }
@@ -95,7 +95,7 @@ get_header();
                         ?>
                         <h4>
                             <?php 
-                            _e('List of available dates:', 'seminardesk');
+                            _e('List of available dates:', 'hueman-7l-child');
                             ?>
                         </h4>
                         <p>
@@ -107,7 +107,7 @@ get_header();
 
                             <br><p><button class="sd-modal-booking-btn">
                                 <?php 
-                                _e('Booking', 'seminardesk');
+                                _e('Booking', 'hueman-7l-child');
                                 ?>
                             </button></p>
                             </p>
@@ -116,7 +116,7 @@ get_header();
                         }
                     } else {
                         echo '<h4>';
-                        _e('No dates for this event available :(', 'seminardesk');
+                        _e('No dates for this event available :(', 'hueman-7l-child');
                         echo '</h4>';
                     }
                     ?>
@@ -126,7 +126,7 @@ get_header();
             <div class="sd-modal">
                 <div class="sd-modal-content">
                     <span class="sd-modal-close-btn">&times;</span>
-                    <h4 class="sd-modal-title"><?php _e('Booking', 'seminardesk');?></h4>
+                    <h4 class="sd-modal-title"><?php _e('Booking', 'hueman-7l-child');?></h4>
                     <iframe class="sd-modal-booking" src="<?php echo $booking_url ?>/embed" title="Seminardesk Booking"></iframe>
                 </div>
             </div>
@@ -139,7 +139,7 @@ get_header();
         <div class="entry-header-inner section-inner small has-text-align-center">
             <h5>
                 <?php
-                _e('<strong>Sorry, event does not exist.</strong>', 'seminardesk');
+                _e('<strong>Sorry, event does not exist.</strong>', 'hueman-7l-child');
                 ?>
             </h5>
             <br>
