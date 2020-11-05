@@ -21,7 +21,17 @@ $timestamp_today = strtotime(wp_date('Y-m-d')); // current time
 
 get_header();
 ?>
-<main id="site-content" role="main">
+
+<section class="content">
+
+<?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
+  <div class="page-title pad group">
+    <h2><?php echo __('Referent*', 'hueman-7l-child'); ?> - <?php the_title(); ?></h2>
+  </div><!--/.page-title-->
+<?php /* continue vanilla hueman archive.php v3.2.9 */ ?>
+
+
+<div class="pad group entry" id="site-content" role="main">
     <?php
     if (have_posts()) {
         while (have_posts()) {
@@ -253,7 +263,13 @@ get_header();
     }
     ?>
 
-</main><!-- #site-content -->
+</div><!-- #site-content -->
+
+<!-- End of SeminarDesk original template -->
+
+</section>
 
 <?php
+get_sidebar();
+
 get_footer();
