@@ -33,9 +33,10 @@ function h7lc_first_menus_items() {
 // the current selected and all ancestors (up to 0/the root).
 function h7lc_current_menu_item_ancestors() {
   $current_menu_item_ancestors = array();
-  // Identify current menu item
+  // All menu items
   $menu_items = h7lc_first_menus_items();
 
+  // Identify current menu item
   // Not perfectly optimized (h7lc_current_menu_item does a menu_items query
   // too), but DRYer.
   $current_menu_item = h7lc_current_menu_item();
@@ -73,8 +74,8 @@ function h7lc_childful_menu_item_ids() {
  * Get the menu_item object of the currently shown page/post.
  * If no menu item refers to the current posts object_id,
  * try a url match.  If that also fails, check whether we are
- * looking at a single ev7l-event (which are not all listed in the
- * menu).  If so, let the current menu item be a fixed one.
+ * looking at a single ev7l-event or sd_cpt_event (which are not all listed in
+ * any  menu).  If so, let the current menu item be a fixed one.
  *
  * If no one is found, default to the top page.
  */
@@ -91,7 +92,7 @@ function h7lc_current_menu_item() {
     // FIXME get_locale? (in some conditions, lang is not defined),
     //   * alt: pll_current_language, get_bloginfo('language')
 
-    if ($lang == "de") {
+    if ( $lang == "de" || get_locale() == "de_DE" ) {
       $current_menu_item = current( wp_filter_object_list( $menu_items,
         //array( 'object_id' => 1927 ) ) );
         array( 'title' => 'Rund um den Aufenthalt' ) ) );
