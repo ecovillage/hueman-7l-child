@@ -50,91 +50,9 @@ get_header();
                 $about = Utils::get_value_by_language( $post->sd_data['about'] );
                 echo !empty($about) ? '<p>' . $about . '</p>' : null;     
 
-                /**
-                 * Example to list events with upcoming event dates with this facilitator using custom queries
-                 */
-
-                // custom query to retrieve all events with this facilitator
-                $query_events = new WP_Query( array(
-                    'post_type'         => 'sd_cpt_event',
-                    'post_status'       => 'publish',
-                    'posts_per_page'    => '-1',
-                    'tax_query'         => array( 
-                        array(
-                            'taxonomy'          => 'sd_txn_facilitators',
-                            'field'             => 'name',
-                            'terms'             => $post->sd_facilitator_id,
-                            'include_children'  => false,
-                        )
-                    ),
-                ) );
-                // loop through events with this facilitator
-                echo '<strong><p style="margin:1em 0em 1em">Events with ' . get_the_title() . ': </p></strong>';
-                if ( $query_events->have_posts() ) {
-                    while ( $query_events->have_posts() ) {
-                        $query_events->the_post();
-                        ?>
-                        <div style="margin:1em" >
-                            <?php
-                            $url = Utils::get_value_by_language($post->sd_data['headerPictureUrl']) ?? null;
-                            echo Utils::get_img_remote( $url, '300', '', 'remote image failed' );
-                            ?>
-                            <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>">
-                                <?php
-                                Utils::get_value_by_language( $post->sd_data['title'], 'DE', '', '<br>', true); 
-                                ?>
-                            </a>
-                            <?php
-                            echo Utils::get_value_by_language($post->sd_data['subtitle']);
-                            // custom query to retrieve all upcoming event dates for this event 
-                            $wp_event_id = $post->ID;
-                            $query_date_up = new WP_Query( array(
-                                'post_type'         => 'sd_cpt_date',
-                                'post_status'       => 'publish',
-                                'posts_per_page'    => '-1',
-                                'meta_key'          => 'sd_date_begin',
-                                'orderby'           => 'meta_value_num',
-                                'order'             => 'ASC',
-                                'meta_query'       => array(
-                                    array(
-                                        'key'       => 'wp_event_id',
-                                        'value'     => $wp_event_id,
-                                    ),
-                                    array(
-                                        'key'       => 'sd_date_begin',
-                                        'value'     => $timestamp_today*1000, //in ms
-                                        'type'      => 'numeric',
-                                        'compare'   => '>=',
-                                    ),
-                                )
-                            ) );
-                            ?>
-                            <div style="margin:0.5em;">
-                                <?php
-                                // loop through upcoming event dates for this event
-                                if ( $query_date_up->have_posts() ) {
-                                    __e('Upcoming Event Dates for this Event:<br>', 'hueman-7l-child');
-                                        while ( $query_date_up->have_posts() ) {
-                                            $query_date_up->the_post();
-                                            Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '<br>', true);
-                                        }
-                                        ?>
-                                    <?php
-                                }else{
-                                    __e('Sorry. No upcoming event dates for this event :(', 'hueman-7l-child');
-                                }
-                            ?>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                } else {
-                    __e('<p>Sorry. At the moment this facilitator has no events registered with us</p>', 'hueman-7l-child');
-                }
-                wp_reset_query();
 
                 /**
-                 * example to list upcoming event dates with this facilitator using custom query 
+                 * list upcoming event dates with this facilitator using custom query 
                  */
 
                 // retrieve all event ids with this facilitator 
@@ -174,6 +92,7 @@ get_header();
                     )
                 ));
                 // loop through upcoming event dates with this facilitator
+
                 echo '<strong><p style="margin:1em 0em 1em">';
                 __e('Upcoming Event Dates with ', 'hueman-7l-child');
                 echo get_the_title();
