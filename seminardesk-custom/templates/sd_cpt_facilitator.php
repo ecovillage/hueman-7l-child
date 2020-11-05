@@ -113,7 +113,7 @@ get_header();
                                 <?php
                                 // loop through upcoming event dates for this event
                                 if ( $query_date_up->have_posts() ) {
-                                    echo 'Upcoming Event Dates for this Event:<br>';
+                                    __e('Upcoming Event Dates for this Event:<br>', 'hueman-7l-child');
                                         while ( $query_date_up->have_posts() ) {
                                             $query_date_up->the_post();
                                             Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '<br>', true);
@@ -121,7 +121,7 @@ get_header();
                                         ?>
                                     <?php
                                 }else{
-                                    echo 'Sorry. No upcoming event dates for this event :(';
+                                    __e('Sorry. No upcoming event dates for this event :(', 'hueman-7l-child');
                                 }
                             ?>
                             </div>
@@ -129,7 +129,7 @@ get_header();
                         <?php
                     }
                 } else {
-                    echo '<p>Sorry. At the moment this facilitator has no events registered with us</p>';
+                    __e('<p>Sorry. At the moment this facilitator has no events registered with us</p>', 'hueman-7l-child');
                 }
                 wp_reset_query();
 
@@ -174,7 +174,10 @@ get_header();
                     )
                 ));
                 // loop through upcoming event dates with this facilitator
-                echo '<strong><p style="margin:1em 0em 1em">Upcoming Event Dates with ' . get_the_title() . ': </p></strong>';
+                echo '<strong><p style="margin:1em 0em 1em">';
+                __e('Upcoming Event Dates with ', 'hueman-7l-child');
+                echo get_the_title();
+                echo ': </p></strong>';
                 if ( $query_upcoming->have_posts() && !empty( $wp_event_ids ) ){
                     while ( $query_upcoming->have_posts() ) {
                         $query_upcoming->the_post();
@@ -200,7 +203,7 @@ get_header();
                         <?php
                     }
                 } else {
-                    echo '<p>Sorry. No upcoming event dates with this facilitator</p>';
+                    __e('<p>Sorry. No upcoming event dates with this facilitator</p>', 'hueman-7l-child');
                 }        
                 wp_reset_query();
 
@@ -226,7 +229,9 @@ get_header();
                     )
                 ));
                 // loop through past event dates with this facilitator
-                echo '</p><strong><p style="margin:1em 0em 1em">Past Event Dates with ' . get_the_title() . ': </p></strong>';
+                echo '</p><strong><p style="margin:1em 0em 1em">';
+                __e('Past Event Dates with ', 'hueman-7l-child');
+                echo get_the_title() . ': </p></strong>';
                 if ( $query_past->have_posts() && !empty( $wp_event_ids ) ){
                     while ( $query_past->have_posts() ) {
                         $query_past->the_post();
@@ -238,14 +243,14 @@ get_header();
                                 ?>
                                 <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>">
                                     <?php
-                                    Utils::get_value_by_language(     $post_event->sd_data['title'], 'DE', '', '', true); 
+                                    Utils::get_value_by_language( $post_event->sd_data['title'], 'DE', '', '', true ); 
                                     ?>
                                 </a>
                             </div>
                         <?php
                     }
                 } else {
-                    echo '<p>Sorry, no past event dates with this facilitator</p>';
+                    __e('<p>Sorry, no past event dates with this facilitator</p>', 'hueman-7l-child');
                 } 
                 wp_reset_query();
                 ?>
@@ -256,7 +261,7 @@ get_header();
     } else {
         ?>
         <div class="entry-header-inner section-inner small has-text-align-center">
-            <h5><strong>Sorry, facilitator does not exist.</strong></h5>
+            <h5><strong><?php __e('Sorry, facilitator does not exist.', 'hueman-7l-child'); ?></strong></h5>
             <br>
         </div>
         <?php
