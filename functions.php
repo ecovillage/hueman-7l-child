@@ -86,7 +86,8 @@ function h7lc_current_menu_item() {
   $current_menu_item = current( wp_filter_object_list( $menu_items,
     array( 'object_id' => get_queried_object_id() ) ) );
   // If its an event, place some sensible default item (language dependent)
-  if ($current_menu_item === false && get_post_type() == "ev7l-event") {
+
+  if ($current_menu_item === false && get_post_type() == "ev7l-event" || get_post_type() == 'sd_cpt_event') {
     // FIXME get_locale? (in some conditions, lang is not defined),
     //   * alt: pll_current_language, get_bloginfo('language')
 
