@@ -1,4 +1,13 @@
 <?php
+/*
+ * File originally from
+ * https://bitbucket.org/seminardesk/seminardesk-wordpress/src/develop/templates/
+ * Original content Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
+ * Modifications Copyright 2020 Freundeskreis Ökodorf e.V.
+ */
+?>
+
+<?php
 /**
  * The template for single post of CPT sd_cpt_facilitator
  * 

@@ -87,6 +87,38 @@ get_header();
                     echo Utils::get_value_by_language($post->sd_data['description']);
                     ?>
                 </p>
+<?php
+                    $infoDatesPrices  = Utils::get_value_by_language($post->sd_data['infoDatesPrices']);
+                    $infoBoardLodging = Utils::get_value_by_language($post->sd_data['infoBoardLodging']);
+                    $infoMisc         = Utils::get_value_by_language($post->sd_data['infoMisc']);
+                    $contactPersons   = Utils::get_value_by_language($post->sd_data['contactPersons']);
+
+                    if ($infoDatesPrices) {
+                      echo '<br><strong>';
+                      _e('Hinweise Termine und Preise: ', 'hueman-7l-child');
+                      echo '</strong>';
+                      echo $infoDatesPrices;
+                    }
+                    if ($infoBoardLodging) {
+                      echo '<br><strong>';
+                      _e('Hinweise zu Unterkunft und Verpflegung: ', 'hueman-7l-child');
+                      echo '</strong>';
+                      echo $infoBoardLodging;
+                    }
+                    if ($infoMisc) {
+                      echo '<br><strong>';
+                      _e('Hinweise: ', 'hueman-7l-child');
+                      echo '</strong>';
+                      echo $infoMisc;
+                    }
+                    if ($contactPersons) {
+                      echo '<br><strong>';
+                      _e('KontaktPersonen: ', 'hueman-7l-child');
+                      echo '</strong>';
+                      echo $contactPersons;
+                    }
+?>
+
                 <?php
                     // get list of all dates for this event
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id );
