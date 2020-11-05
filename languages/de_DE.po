@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2020-10-29 11:21+0100\n"
-"PO-Revision-Date: 2020-10-29 11:22+0100\n"
+"POT-Creation-Date: 2020-11-05 16:26+0100\n"
+"PO-Revision-Date: 2020-11-05 16:28+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;escp_html_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;escp_html_e;__e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Referent*innen"
 msgstr ""
 
-#: ../functions.php:236 ../page-calendar.php:71
+#: ../functions.php:238 ../page-calendar.php:71
 msgid "Keine Veranstaltungen im gewählten Zeitraum"
 msgstr ""
 
-#: ../functions.php:307 ../functions.php:308 ../single-ev7l-event.php:34
+#: ../functions.php:309 ../functions.php:310 ../single-ev7l-event.php:34
 #: ../single-ev7l-event.php:35
 #, fuzzy
 msgid "D d. M. Y"
@@ -373,6 +373,7 @@ msgid "Beschreibung"
 msgstr ""
 
 #: ../parts/single-ev7l-event-nav.php:7 ../parts/single-ev7l-event-nav.php:25
+#: ../seminardesk-custom/templates/sd_cpt_facilitator.php:29
 #: ../single-ev7l-event.php:197 ../single-ev7l-referee.php:7
 msgid "Referent*"
 msgstr ""
@@ -385,7 +386,7 @@ msgstr ""
 msgid "Frage stellen"
 msgstr ""
 
-#: ../sd_cpt_event.php:15 ../seminardesk-custom/templates/sd_cpt_event.php:27
+#: ../sd_cpt_event.php:15 ../seminardesk-custom/templates/sd_cpt_event.php:29
 #: ../single-ev7l-event.php:8
 msgid "Ausgewähltes Seminar"
 msgstr ""
@@ -394,30 +395,30 @@ msgstr ""
 msgid "remote image failed"
 msgstr "Fehler beim Laden des externen Bildes"
 
-#: ../sd_cpt_event.php:61 ../seminardesk-custom/templates/sd_cpt_event.php:79
+#: ../sd_cpt_event.php:61 ../seminardesk-custom/templates/sd_cpt_event.php:81
 #: ../seminardesk-custom/templates/sd_txn_dates.php:71
 msgid "Facilitator: "
 msgstr "Referent*innen: "
 
-#: ../sd_cpt_event.php:80 ../seminardesk-custom/templates/sd_cpt_event.php:98
+#: ../sd_cpt_event.php:80 ../seminardesk-custom/templates/sd_cpt_event.php:133
 msgid "List of available dates:"
 msgstr "Verfügbare Termine:"
 
 #: ../sd_cpt_event.php:91 ../sd_cpt_event.php:108
-#: ../seminardesk-custom/templates/sd_cpt_event.php:110
-#: ../seminardesk-custom/templates/sd_cpt_event.php:129
+#: ../seminardesk-custom/templates/sd_cpt_event.php:145
+#: ../seminardesk-custom/templates/sd_cpt_event.php:164
 msgid "Booking"
 msgstr "Buchung"
 
-#: ../sd_cpt_event.php:99 ../seminardesk-custom/templates/sd_cpt_event.php:119
+#: ../sd_cpt_event.php:99 ../seminardesk-custom/templates/sd_cpt_event.php:154
 msgid "No dates for this event available :("
 msgstr "Keine Termine für diese Veranstaltung"
 
-#: ../sd_cpt_event.php:120 ../seminardesk-custom/templates/sd_cpt_event.php:142
+#: ../sd_cpt_event.php:120 ../seminardesk-custom/templates/sd_cpt_event.php:177
 msgid "<strong>Sorry, event does not exist.</strong>"
 msgstr "<strong>Sorry, Veranstaltung existiert nicht.</strong>"
 
-#: ../sd_cpt_event.php:133 ../seminardesk-custom/templates/sd_cpt_event.php:153
+#: ../sd_cpt_event.php:133 ../seminardesk-custom/templates/sd_cpt_event.php:188
 #: ../single-ev7l-event.php:261
 msgid "Frage zur Veranstaltung stellen"
 msgstr ""
@@ -431,6 +432,45 @@ msgstr ""
 #: ../single-ev7l-referee.php:154 ../tmpl/single-tmpl.php:50
 msgid "Tags:"
 msgstr ""
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:100
+msgid "Hinweise Termine und Preise: "
+msgstr ""
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:106
+msgid "Hinweise zu Unterkunft und Verpflegung: "
+msgstr ""
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:112
+msgid "Hinweise: "
+msgstr ""
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:118
+msgid "KontaktPersonen: "
+msgstr ""
+
+#: ../seminardesk-custom/templates/sd_cpt_facilitator.php:97
+msgid "Upcoming Event Dates with "
+msgstr "Zukünftige Veranstaltungen mit "
+
+#: ../seminardesk-custom/templates/sd_cpt_facilitator.php:125
+msgid "<p>Sorry. No upcoming event dates with this facilitator</p>"
+msgstr "<p>Sorry, keine Termine in der Zukunft</p>"
+
+#: ../seminardesk-custom/templates/sd_cpt_facilitator.php:152
+msgid "Past Event Dates with "
+msgstr "Veranstaltungen in der Vergangenheit mit "
+
+#: ../seminardesk-custom/templates/sd_cpt_facilitator.php:172
+msgid "<p>Sorry, no past event dates with this facilitator</p>"
+msgstr ""
+"<p>Keine Veranstaltungen in der Vergangenheit mit diese*r Referent*in</p>"
+
+#: ../seminardesk-custom/templates/sd_cpt_facilitator.php:183
+#, fuzzy
+#| msgid "<strong>Sorry, event does not exist.</strong>"
+msgid "Sorry, facilitator does not exist."
+msgstr "<strong>Sorry, Veranstaltung existiert nicht.</strong>"
 
 #: ../seminardesk-custom/templates/sd_txn_dates.php:70
 msgid "<strong>Date: </strong>"
