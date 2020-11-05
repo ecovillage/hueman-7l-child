@@ -94,7 +94,7 @@ get_header();
                 // loop through upcoming event dates with this facilitator
 
                 echo '<strong><p style="margin:1em 0em 1em">';
-                __e('Upcoming Event Dates with ', 'hueman-7l-child');
+                echo __('Upcoming Event Dates with ', 'hueman-7l-child');
                 echo get_the_title();
                 echo ': </p></strong>';
                 if ( $query_upcoming->have_posts() && !empty( $wp_event_ids ) ){
@@ -122,7 +122,7 @@ get_header();
                         <?php
                     }
                 } else {
-                    __e('<p>Sorry. No upcoming event dates with this facilitator</p>', 'hueman-7l-child');
+                    echo __('<p>Sorry. No upcoming event dates with this facilitator</p>', 'hueman-7l-child');
                 }        
                 wp_reset_query();
 
@@ -149,7 +149,7 @@ get_header();
                 ));
                 // loop through past event dates with this facilitator
                 echo '</p><strong><p style="margin:1em 0em 1em">';
-                __e('Past Event Dates with ', 'hueman-7l-child');
+                echo __('Past Event Dates with ', 'hueman-7l-child');
                 echo get_the_title() . ': </p></strong>';
                 if ( $query_past->have_posts() && !empty( $wp_event_ids ) ){
                     while ( $query_past->have_posts() ) {
@@ -169,7 +169,7 @@ get_header();
                         <?php
                     }
                 } else {
-                    __e('<p>Sorry, no past event dates with this facilitator</p>', 'hueman-7l-child');
+                    echo __('<p>Sorry, no past event dates with this facilitator</p>', 'hueman-7l-child');
                 } 
                 wp_reset_query();
                 ?>
@@ -180,7 +180,7 @@ get_header();
     } else {
         ?>
         <div class="entry-header-inner section-inner small has-text-align-center">
-            <h5><strong><?php __e('Sorry, facilitator does not exist.', 'hueman-7l-child'); ?></strong></h5>
+            <h5><strong><?php echo __('Sorry, facilitator does not exist.', 'hueman-7l-child'); ?></strong></h5>
             <br>
         </div>
         <?php
