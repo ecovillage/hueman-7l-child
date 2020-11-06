@@ -123,6 +123,7 @@ get_header();
                     // get list of all dates for this event
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id );
                     $booking_url = esc_url( Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ?? null ) );
+                    $settings = $post->sd_data['settings'];
                     if ( $booking_list ){
                         ?>
                         <h4>
@@ -134,7 +135,7 @@ get_header();
                         <?php
                         echo $booking_list;
                         
-                        if ( !empty($booking_url) ) {
+                        if ( !empty($booking_url) && $settings['registrationAvailable'] === true ) {
                             ?>
 
                             <br><p><button class="sd-modal-booking-btn">
