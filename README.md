@@ -24,6 +24,12 @@ View of a single event.
 
 View list of events (this could become the calendar).
 
+### sd-facilitators-list.php
+
+A template to be used (create a page with this template) to show alphabetically
+sorted referees. Because seminardesk-wordpress plugin overrides archive
+generation.
+
 ### single-ev7l-event-category.php
 
 View of a single event category (listing events).
