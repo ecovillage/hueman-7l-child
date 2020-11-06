@@ -1,4 +1,13 @@
 <?php
+/*
+ * File originally from
+ * https://bitbucket.org/seminardesk/seminardesk-wordpress/src/develop/templates/
+ * Original content Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
+ * Modifications Copyright 2020 Freundeskreis Ökodorf e.V.
+ */
+?>
+
+<?php
 /**
  * The template for taxonomy sd_txn_labels by term labelGroup or label.
  * 
@@ -16,7 +25,19 @@ $term_meta = get_term_meta( $term->term_id, 'sd_data' )[0] ?? null;
 get_header();
 
 ?>
-<main id="site-content" role="main">
+
+<section class="content">
+
+<?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
+  <?php /*hu_get_template_part('parts/page-title');*/ ?>
+  <div class="page-title pad group">
+  <h2><?php echo __('Ausgewähltes Seminar', 'hueman-7l-child'); ?></h2>
+  </div><!--/.page-title-->
+<?php /* Re-entering vanilla hueman */ ?>
+
+<!-- SeminarDesk original template -->
+
+<div class="pad group entry" id="site-content" role="main">
 
     <header class="archive-header has-text-align-center header-footer-group">
         <div class="archive-header-inner section-inner medium">
@@ -249,7 +270,15 @@ get_header();
     } 
 ?>
 
-</main><!-- #site-content -->
+</div><!-- #site-content -->
+
+<!-- End of SeminarDesk original template -->
+
+</section>
 
 <?php
+
+get_sidebar();
+
 get_footer();
+?>
