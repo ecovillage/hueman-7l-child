@@ -3,6 +3,7 @@
 Template Name: Liste der Referent*innen (SDHC7L)
 */
 ?>
+
 <?php get_header(); ?>
 <?php
 $custom_query = new WP_Query(
@@ -10,10 +11,12 @@ $custom_query = new WP_Query(
     'post_type'     => 'sd_cpt_facilitator',
     'post_status'   => 'publish',
     'meta_key'      => 'sd_facilitator_id',
-    'posts_per_page' => 6000,
-    'orderby'       => 'meta_value',
-    'meta_key'      => 'sd_facilitator_lastname',
-    'order'         => 'ASC',
+    'posts_per_page' => 6000, //nopaging => true
+
+    //'orderby'       => 'meta_value',
+    //'meta_key'      => 'sd_facilitator_lastname',
+    //'order'         => 'ASC',
+
     //'meta_query'    => array(
     //    'key'       => 'sd_facilitator_id',
     //    'value'     => $facilitator['id'],
@@ -22,6 +25,7 @@ $custom_query = new WP_Query(
     //),
   )
 );
+
 ?>
 
 <section class="content">
@@ -36,7 +40,7 @@ $custom_query = new WP_Query(
 			</div>
 		<?php endif; ?>
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( $custom_query->have_posts() ) : ?>
 
 <?php /* end of vanilla hueman archive.php v3.2.9 */ ?>
   <div class="page-image">
@@ -60,10 +64,10 @@ $custom_query = new WP_Query(
   </div><!--/.page-image-->
         <?php
           $first_letter = '';
-          $break_point  = $wp_query->post_count / 2;
+          $break_point  = $custom_query->post_count / 2;
           $last_post_pos  = 0;
           echo '<div class="grid one-half">';
-          while ( have_posts() ): the_post(); ?>
+          while ( $custom_query->have_posts() ): the_post(); ?>
           <?php /*get_template_part('content-standard');*/ ?>
           <?php
             $firstname = get_post_meta($post->ID, 'firstname', true);
@@ -73,7 +77,7 @@ $custom_query = new WP_Query(
               if ($first_letter != '') {
                 echo '</ul>';
               }
-              if ($last_post_pos < $break_point && $wp_query->current_post > $break_point) {
+              if ($last_post_pos < $break_point && $custom_query->current_post > $break_point) {
                 echo '</div><div class="grid one-half last">';
               }
               echo '<h2 class="firstlettername">' . $new_first_letter . '</h2>';
@@ -81,7 +85,7 @@ $custom_query = new WP_Query(
               $first_letter = $new_first_letter;
             }
             echo '<li><a href="' . get_permalink() .'">' . $firstname . ' <strong>' . $lastname .  '</strong></a></li>';
-            $last_post_pos = $wp_query->current_post;
+            $last_post_pos = $custom_query->current_post;
           ?>
         <?php endwhile; ?>
         </div><!--grids-->
