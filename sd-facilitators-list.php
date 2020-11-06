@@ -6,26 +6,21 @@ Template Name: Liste der Referent*innen (SDHC7L)
 
 <?php get_header(); ?>
 <?php
+
 $custom_query = new WP_Query(
   array(
     'post_type'     => 'sd_cpt_facilitator',
     'post_status'   => 'publish',
     'meta_key'      => 'sd_facilitator_id',
     'posts_per_page' => 6000, //nopaging => true
-
-    //'orderby'       => 'meta_value',
-    //'meta_key'      => 'sd_facilitator_lastname',
-    //'order'         => 'ASC',
-
-    //'meta_query'    => array(
-    //    'key'       => 'sd_facilitator_id',
-    //    'value'     => $facilitator['id'],
-    //    'type'      => 'numeric',
-    //    'compare'   => '=',
-    //),
   )
 );
 
+$facilitator_list = $custom_query->posts; // alt: get_posts(Q)
+
+usort( $facilitator_list, function ( $f1, $f2 ) {
+  return strtolower( $f1->sd_data['lastName'] ) <=> strtolower( $f2->sd_data['lastName'] );
+});
 ?>
 
 <section class="content">
@@ -66,28 +61,34 @@ $custom_query = new WP_Query(
           $first_letter = '';
           $break_point  = $custom_query->post_count / 2;
           $last_post_pos  = 0;
+          $index        = 0; // TODO this cannot be right
           echo '<div class="grid one-half">';
-          while ( $custom_query->have_posts() ): the_post(); ?>
+
+          foreach( $facilitator_list as $facilitator ) {
+          ?>
+
           <?php /*get_template_part('content-standard');*/ ?>
           <?php
-            $firstname = get_post_meta($post->ID, 'firstname', true);
-            $lastname  = get_post_meta($post->ID, 'lastname',  true);
+            $firstname = $facilitator->sd_data['firstName'];
+            $lastname  = $facilitator->sd_data['lastName'];
             $new_first_letter = substr($lastname, 0, 1);
             if ( $new_first_letter != $first_letter) {
               if ($first_letter != '') {
                 echo '</ul>';
               }
-              if ($last_post_pos < $break_point && $custom_query->current_post > $break_point) {
+              if ($last_post_pos < $break_point && $index > $break_point) {
                 echo '</div><div class="grid one-half last">';
               }
               echo '<h2 class="firstlettername">' . $new_first_letter . '</h2>';
               echo '<ul class="names-list">';
               $first_letter = $new_first_letter;
             }
-            echo '<li><a href="' . get_permalink() .'">' . $firstname . ' <strong>' . $lastname .  '</strong></a></li>';
-            $last_post_pos = $custom_query->current_post;
+            $index += 1;
+            echo '<li><a href="' . get_post_permalink( $facilitator ) .'">' . $firstname . ' <strong>' . $lastname .  '</strong></a></li>';
+            $last_post_pos = $index;
+
           ?>
-        <?php endwhile; ?>
+        <?php } ?>
         </div><!--grids-->
 <?php /* pickup vanilla hueman archive.php v3.2.9, but stuff removed */ ?>
 
