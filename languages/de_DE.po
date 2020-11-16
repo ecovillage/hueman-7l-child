@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2020-11-05 16:26+0100\n"
-"PO-Revision-Date: 2020-11-05 16:28+0100\n"
+"POT-Creation-Date: 2020-11-16 08:54+0100\n"
+"PO-Revision-Date: 2020-11-16 08:55+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -10,7 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;escp_html_e;__e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;escp_html_e;__e;"
+"esc_html_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -447,7 +448,23 @@ msgstr ""
 
 #: ../seminardesk-custom/templates/sd_cpt_event.php:118
 msgid "KontaktPersonen: "
-msgstr ""
+msgstr "Kontakt-Personen:"
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:127
+msgid "Booking Available"
+msgstr "Buchbar"
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:128
+msgid "Fully Booked"
+msgstr "Ausgebucht"
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:129
+msgid "Limited Booking"
+msgstr "Begrenzt buchbar"
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:130
+msgid "Waiting List"
+msgstr "Warteliste"
 
 #: ../seminardesk-custom/templates/sd_cpt_facilitator.php:97
 msgid "Upcoming Event Dates with "
@@ -467,10 +484,8 @@ msgstr ""
 "<p>Keine Veranstaltungen in der Vergangenheit mit diese*r Referent*in</p>"
 
 #: ../seminardesk-custom/templates/sd_cpt_facilitator.php:183
-#, fuzzy
-#| msgid "<strong>Sorry, event does not exist.</strong>"
 msgid "Sorry, facilitator does not exist."
-msgstr "<strong>Sorry, Veranstaltung existiert nicht.</strong>"
+msgstr "<strong>Sorry, Referent*in existiert nicht.</strong>"
 
 #: ../seminardesk-custom/templates/sd_txn_dates.php:70
 msgid "<strong>Date: </strong>"
@@ -484,7 +499,11 @@ msgstr "Preis: "
 msgid "Venue: "
 msgstr "Ort: "
 
-#: ../seminardesk-custom/templates/sd_txn_dates.php:106
+#: ../seminardesk-custom/templates/sd_txn_dates.php:88
+msgid "More"
+msgstr "Mehr erfahren"
+
+#: ../seminardesk-custom/templates/sd_txn_dates.php:107
 msgid "Sorry, no events for this date."
 msgstr "Sorry, keine Veranstaltungen in diesem Zeitraum."
 
