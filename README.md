@@ -152,6 +152,7 @@ For now, its placed in `HUEMAN_BASE_VERION`
 Most texts are translatable (for translations, look in the `languages` folder).
 
 ### Graphically: Use poedit
+  - `poedit`
   - (Initial setup) File > Catalog Manager > New : Project Name = hueman-child-7l; Directories = Browse
   - File > Catalogs Manager > Update all
   - (edit)
@@ -160,6 +161,7 @@ Most texts are translatable (for translations, look in the `languages` folder).
 
 ### For you:
   - to update the compiled catalog: `msgfmt catalog.po -o catalog.mo` (for ubuntu/debian: in gettext package).
+  - in the concrete example: `msgfmt de_DE.po -o de_DE.mo`
 
 
 ### Resources
