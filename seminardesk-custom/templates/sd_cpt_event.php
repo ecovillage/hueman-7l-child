@@ -122,10 +122,10 @@ get_header();
                 <?php
                     // get list of all dates for this event
                     $status_lib = array(
-                        'available'     => 'Booking Available',
-                        'fully_booked'  => 'Fully Booked',
-                        'limited'       => 'Limited Booking',
-                        'wait_list'     => 'Waiting List',
+                        'available'     => _e('Booking Available'),
+                        'fully_booked'  => _e('Fully Booked'),
+                        'limited'       => _e('Limited Booking'),
+                        'wait_list'     => _e('Waiting List'),
                     );
 
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id, $status_lib );
