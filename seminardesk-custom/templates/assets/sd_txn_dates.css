@@ -9,8 +9,9 @@ css styles for template of taxonomy sd_txn_dates
 .sd-event-container {
 	display: grid;
 	  grid-template-areas:
-		'props 	props 	props 	image'
-		'teaser teaser 	teaser 	teaser';  
+		'props 	image'
+		'teaser teaser';
+    grid-template-columns: auto 220px;
 	margin: 0 1em 0 1em;
 }
 .sd-event-container img {
