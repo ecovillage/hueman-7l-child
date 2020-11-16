@@ -92,7 +92,7 @@ function h7lc_current_menu_item() {
     // FIXME get_locale? (in some conditions, lang is not defined),
     //   * alt: pll_current_language, get_bloginfo('language')
 
-    if ( $lang == "de" || get_locale() == "de_DE" ) {
+    if ( get_locale() == 'de_DE' || $lang == "de" ) {
       $current_menu_item = current( wp_filter_object_list( $menu_items,
         //array( 'object_id' => 1927 ) ) );
         array( 'title' => 'Rund um den Aufenthalt' ) ) );
