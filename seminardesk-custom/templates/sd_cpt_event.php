@@ -72,16 +72,44 @@ get_header();
             </header>
             <div class="post-meta-wrapper post-meta-single post-meta-single-top">
                 <p>
-                    <?php
+                  <?php
+                    $additionalFields = $post->sd_data['additionalFields'];
+                    // TODO and not empty
+                    if ( isset($additionalFields)
+                      && isset($additionalFields['Qualifikation Referent*in'])
+                      && !empty($additionalFields['Qualifikation Referent*in']) ) {
+                      echo $additionalFields['Qualifikation Referent*in'];
+                    }
+                  ?>
+                </p>
+
+                <p>
+                  <?php
+                    // $is_empty = array_filter($playerlist, 'strlen') == [];
                     $facilitators = Utils::get_facilitators($post->sd_data['facilitators']);
                     if ($facilitators) {
                         echo '<strong>';
-                        _e('Facilitator: ', 'hueman-7l-child');
+                        _e( 'More about the facilitators: ', 'hueman-7l-child' );
                         echo '</strong>';
                         echo $facilitators;
                     }
-                    ?>
+                  ?>
                 </p>
+
+                <p>
+                  <?php
+                    // $is_empty = array_filter($playerlist, 'strlen') == [];
+                    if ( isset($additionalFields)
+                      && isset($additionalFields['Vorraussetzung für Teilnahme'])
+                      && !empty($additionalFields['Vorraussetzung für Teilnahme']) ) {
+                      echo '<strong>';
+						          _e( "Voraussetzungen für Teilnahme:" );
+                      echo '</strong>';
+						          echo $additionalFields['Vorraussetzung für Teilnahme'];
+                    }
+                  ?>
+                </p>
+
                 <p>
                     <?php
                     echo Utils::get_value_by_language($post->sd_data['description']);
@@ -93,27 +121,27 @@ get_header();
                     $infoMisc         = Utils::get_value_by_language($post->sd_data['infoMisc']);
                     $contactPersons   = Utils::get_value_by_language($post->sd_data['contactPersons']);
 
-                    if ($infoDatesPrices) {
+                    if ( $infoDatesPrices ) {
                       echo '<br><strong>';
-                      _e('Hinweise Termine und Preise: ', 'hueman-7l-child');
+                      _e( 'Hinweise zu Terminen und Preisen: ', 'hueman-7l-child' );
                       echo '</strong>';
                       echo $infoDatesPrices;
                     }
-                    if ($infoBoardLodging) {
+                    if ( $infoBoardLodging ) {
                       echo '<br><strong>';
-                      _e('Hinweise zu Unterkunft und Verpflegung: ', 'hueman-7l-child');
+                      _e( 'Hinweise zu Unterkunft und Verpflegung: ', 'hueman-7l-child' );
                       echo '</strong>';
                       echo $infoBoardLodging;
                     }
-                    if ($infoMisc) {
+                    if ( $infoMisc ) {
                       echo '<br><strong>';
-                      _e('Hinweise: ', 'hueman-7l-child');
+                      _e( 'Hinweise: ', 'hueman-7l-child' );
                       echo '</strong>';
                       echo $infoMisc;
                     }
-                    if ($contactPersons) {
+                    if ( $contactPersons ) {
                       echo '<br><strong>';
-                      _e('KontaktPersonen: ', 'hueman-7l-child');
+                      _e( 'KontaktPersonen: ', 'hueman-7l-child' );
                       echo '</strong>';
                       echo $contactPersons;
                     }
@@ -122,20 +150,20 @@ get_header();
                 <?php
                     // get list of all dates for this event
                     $status_lib = array(
-                        'available'     => _e('Booking Available'),
-                        'fully_booked'  => _e('Fully Booked'),
-                        'limited'       => _e('Limited Booking'),
-                        'wait_list'     => _e('Waiting List'),
+                        'available'     => _e( 'Booking Available' ),
+                        'fully_booked'  => _e( 'Fully Booked' ),
+                        'limited'       => _e( 'Limited Booking' ),
+                        'wait_list'     => _e( 'Waiting List' ),
                     );
 
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id, $status_lib );
                     $booking_url = esc_url( Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ?? null ) );
 
-                    if ( $booking_list ){
+                    if ( $booking_list ) {
                         ?>
                         <h4>
                             <?php 
-                            _e('List of available dates:', 'hueman-7l-child');
+                            _e( 'List of available dates:', 'hueman-7l-child' );
                             ?>
                         </h4>
                         <p>
@@ -147,7 +175,7 @@ get_header();
 
                             <br><p><button class="sd-modal-booking-btn">
                                 <?php 
-                                _e('Booking', 'hueman-7l-child');
+                                _e( 'Booking', 'hueman-7l-child' );
                                 ?>
                             </button></p>
                             </p>
