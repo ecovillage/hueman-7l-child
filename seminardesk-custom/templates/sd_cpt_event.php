@@ -177,7 +177,12 @@ get_header();
                               _e( 'List of available dates:', 'hueman-7l-child' );
                             }
                             else {
-                              _e( 'Booking:', 'hueman-7l-child' );
+                              if ( !empty($booking_url) && $post->sd_data['registrationAvailable'] === true ) {
+                                _e( 'Booking:', 'hueman-7l-child' );
+                              }
+                              else {
+                                _e( 'Date:', 'hueman-7l-child' );
+                              }
                             }
                             ?>
                         </h3>
