@@ -87,7 +87,7 @@ class SDTemplateUtils {
   }
 
   public static function get_dates_str( $date ) {
-    if ( $event ) {
+    if ( $date ) {
       return Utils::get_date( $date->sd_date_begin, $date->sd_date_end );
     }
     else {

@@ -170,6 +170,7 @@ get_header();
 
                     if ( $only_date || $booking_list ) {
                         ?>
+                        <br>
                         <h3>
                             <?php 
                             if ( ! $only_date ) {
