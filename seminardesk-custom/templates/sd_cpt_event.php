@@ -5,6 +5,11 @@
  * Original content Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
  * Modifications Copyright 2020 Freundeskreis Ökodorf e.V.
  */
+
+require_once( get_stylsheet_directory() . '/includes/SDTemplateUtils.php' )
+use SDTemplateUtils as SDUtils;
+
+$first_date = SDUtils::get_first_upcoming_date( $post->sd_event_id );
 ?>
 
 <?php
@@ -71,20 +76,28 @@ get_header();
                 </div>
             </header>
             <div class="sd-event-post-main">
-                <p>
+
+            <?php /* get first dates dates as str (see Utils/TemplateUtils) */ ?>
+
+                <p name="event-description">
+                  <?php
+                    if ( $first_date ) {
+                      echo Utils::get_date( $first_date->sd_date_begin,  $first_date->sd_date_end );
+                    }
+
+                    echo Utils::get_value_by_language($post->sd_data['description']);
+                  ?>
+                </p>
+
                   <?php
                     $additionalFields = $post->sd_data['additionalFields'];
                     // TODO and not empty
                     if ( isset($additionalFields)
                       && isset($additionalFields['Qualifikation Referent*in'])
                       && !empty($additionalFields['Qualifikation Referent*in']) ) {
-                      echo $additionalFields['Qualifikation Referent*in'];
+                      echo '<p name="referee-qualification">' . $additionalFields['Qualifikation Referent*in'] . '</p>';
                     }
-                  ?>
-                </p>
 
-                <p>
-                  <?php
                     // $is_empty = array_filter($playerlist, 'strlen') == [];
                     $facilitators = Utils::get_facilitators($post->sd_data['facilitators']);
                     if ($facilitators) {
@@ -93,29 +106,18 @@ get_header();
                         echo '</strong>';
                         echo $facilitators;
                     }
-                  ?>
-                </p>
 
-                <p>
-                  <?php
                     // $is_empty = array_filter($playerlist, 'strlen') == [];
                     if ( isset($additionalFields)
                       && isset($additionalFields['Vorraussetzung für Teilnahme'])
                       && !empty($additionalFields['Vorraussetzung für Teilnahme']) ) {
+                      echo '<p name="participation-requirements">';
                       echo '<h3>';
 						          _e( "Voraussetzungen für Teilnahme:" );
                       echo '</h3>';
 						          echo $additionalFields['Vorraussetzung für Teilnahme'];
+                      echo '</p>';
                     }
-                  ?>
-                </p>
-
-                <p>
-                    <?php
-                    echo Utils::get_value_by_language($post->sd_data['description']);
-                    ?>
-                </p>
-<?php
 
                     $infoDatesPrices  = Utils::get_value_by_language($post->sd_data['infoDatesPrices']);
                     $infoBoardLodging = Utils::get_value_by_language($post->sd_data['infoBoardLodging']);
@@ -151,16 +153,16 @@ get_header();
                 <?php
                     // get list of all dates for this event
                     $status_lib = array(
-                        'available'     => _e( 'Booking Available' ),
-                        'fully_booked'  => _e( 'Fully Booked' ),
-                        'limited'       => _e( 'Limited Booking' ),
-                        'wait_list'     => _e( 'Waiting List' ),
+                        'available'     => __( 'Booking Available', 'hueman-7l-child' ),
+                        'fully_booked'  => __( 'Fully Booked', 'hueman-7l-child' ),
+                        'limited'       => __( 'Limited Booking', 'hueman-7l-child' ),
+                        'wait_list'     => __( 'Waiting List', 'hueman-7l-child' ),
                     );
 
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id, $status_lib );
                     $booking_url = esc_url( Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ?? null ) );
 
-                    if ( $booking_list ) {
+                    if ( $first_date || $booking_list ) {
                         ?>
                         <h4>
                             <?php 
@@ -169,7 +171,11 @@ get_header();
                         </h4>
                         <p>
                         <?php
-                        echo $booking_list;
+                        if ( $first_date ) {
+                          echo SDUtils::date_props_html( $first_date );
+                        } else {
+                          echo $booking_list;
+                        }
                         
                         if ( !empty($booking_url) && $post->sd_data['registrationAvailable'] === true ) {
                             ?>

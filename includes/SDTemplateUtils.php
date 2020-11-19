@@ -1,5 +1,7 @@
 <?php
-namespace Includes;
+//namespace includes;
+
+use Inc\Utils\TemplateUtils as Utils;
 
 class SDTemplateUtils {
 
@@ -30,14 +32,46 @@ class SDTemplateUtils {
       )
     );
 
-
     $date_posts = $custom_query->get_posts();
 
     if ( $custom_query->have_posts() ) {
       return $date_posts[0];
     }
 
-    return "get_first_date test";
+    return NULL;
+  }
+
+  public static function date_props_html( $date ) {
+    if ( ! $date ) {
+      return NULL;
+    }
+
+    $date_str = Utils::get_date( $date->sd_date_begin,  $date->sd_date_end );
+    // rtrim() or wp_strip_all_tags...
+    $title_str = wp_strip_all_tags( $date->post_title ) . ': ';
+    $price_str = wp_strip_all_tags( Utils::get_value_by_language( $date->sd_data['priceInfo'] ) );
+
+    $venue_props = $date->sd_data['venue'];
+    $venue = Utils::get_venue( $venue_props );
+
+    $date_props = array();
+    array_push( $date_props, $date_str, $price_str, $venue );
+    $date_props = array_filter( $date_props ); // remove all empty values from array
+    $date_html = $title . implode( ', ', $date_props );
+
+    $status = $date->sd_data['status'];
+
+    if ( $status == 'fully_booked' || $status == 'wait_list') {
+      $status_translated = array(
+        'available'     => __( 'Booking Available', 'hueman-7l-child' ),
+        'fully_booked'  => __( 'Fully Booked', 'hueman-7l-child' ),
+        'limited'       => __( 'Limited Booking', 'hueman-7l-child' ),
+        'wait_list'     => __( 'Waiting List', 'hueman-7l-child' ),
+      );
+      $date_html = $date_html . '<span class="event-status-'. $status . '">' . $status_translated[$status] . "</span>";
+    }
+
+    return $date_html;
   }
 }
 
