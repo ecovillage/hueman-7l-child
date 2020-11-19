@@ -4,6 +4,10 @@ css styles for single template of CPT sd_cpt_event
 @package SeminardeskPlugin
  */
 
+.sd-event-post-main h4 {
+  font-size: 1.3em;
+}
+
  /* BEGIN modal popup box */
  .sd-modal {
     position: fixed;

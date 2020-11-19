@@ -70,7 +70,7 @@ get_header();
                     ?>
                 </div>
             </header>
-            <div class="post-meta-wrapper post-meta-single post-meta-single-top">
+            <div class="sd-event-post-main">
                 <p>
                   <?php
                     $additionalFields = $post->sd_data['additionalFields'];
@@ -102,9 +102,9 @@ get_header();
                     if ( isset($additionalFields)
                       && isset($additionalFields['Vorraussetzung für Teilnahme'])
                       && !empty($additionalFields['Vorraussetzung für Teilnahme']) ) {
-                      echo '<strong>';
+                      echo '<h3>';
 						          _e( "Voraussetzungen für Teilnahme:" );
-                      echo '</strong>';
+                      echo '</h3>';
 						          echo $additionalFields['Vorraussetzung für Teilnahme'];
                     }
                   ?>
@@ -116,33 +116,34 @@ get_header();
                     ?>
                 </p>
 <?php
+
                     $infoDatesPrices  = Utils::get_value_by_language($post->sd_data['infoDatesPrices']);
                     $infoBoardLodging = Utils::get_value_by_language($post->sd_data['infoBoardLodging']);
                     $infoMisc         = Utils::get_value_by_language($post->sd_data['infoMisc']);
                     $contactPersons   = Utils::get_value_by_language($post->sd_data['contactPersons']);
 
                     if ( $infoDatesPrices ) {
-                      echo '<br><strong>';
+                      echo '<br><h3>';
                       _e( 'Hinweise zu Terminen und Preisen: ', 'hueman-7l-child' );
-                      echo '</strong>';
+                      echo '</h3>';
                       echo $infoDatesPrices;
                     }
                     if ( $infoBoardLodging ) {
-                      echo '<br><strong>';
+                      echo '<br><h3>';
                       _e( 'Hinweise zu Unterkunft und Verpflegung: ', 'hueman-7l-child' );
-                      echo '</strong>';
+                      echo '</h3>';
                       echo $infoBoardLodging;
                     }
                     if ( $infoMisc ) {
-                      echo '<br><strong>';
+                      echo '<br><h3>';
                       _e( 'Hinweise: ', 'hueman-7l-child' );
-                      echo '</strong>';
+                      echo '</h3>';
                       echo $infoMisc;
                     }
                     if ( $contactPersons ) {
-                      echo '<br><strong>';
+                      echo '<br><h3>';
                       _e( 'KontaktPersonen: ', 'hueman-7l-child' );
-                      echo '</strong>';
+                      echo '</h3>';
                       echo $contactPersons;
                     }
 ?>
