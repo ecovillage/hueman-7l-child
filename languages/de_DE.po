@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2020-11-16 08:54+0100\n"
-"PO-Revision-Date: 2020-11-16 08:55+0100\n"
+"POT-Creation-Date: 2020-11-19 08:48+0100\n"
+"PO-Revision-Date: 2020-11-19 08:51+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -427,18 +427,26 @@ msgstr ""
 #: ../sd_cpt_event.php:147 ../single-ev7l-event.php:275
 #: ../single-ev7l-referee.php:138 ../tmpl/single-tmpl.php:34
 msgid "Pages:"
-msgstr ""
+msgstr "Seiten: "
 
 #: ../sd_cpt_event.php:163 ../single-ev7l-event.php:291
 #: ../single-ev7l-referee.php:154 ../tmpl/single-tmpl.php:50
 msgid "Tags:"
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:100
-msgid "Hinweise Termine und Preise: "
+#: ../seminardesk-custom/templates/sd_cpt_event.php:94
+msgid "More about the facilitators: "
+msgstr "Mehr über die Referent*innen: "
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:108
+msgid "Voraussetzungen für Teilnahme:"
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:106
+#: ../seminardesk-custom/templates/sd_cpt_event.php:129
+msgid "Hinweise zu Terminen und Preisen: "
+msgstr ""
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:135
 msgid "Hinweise zu Unterkunft und Verpflegung: "
 msgstr ""
 
@@ -513,7 +521,7 @@ msgstr ""
 
 #: ../sidebar.php:13
 msgid "Follow:"
-msgstr ""
+msgstr "Folgen:"
 
 #: ../sidebar.php:18
 msgid "You can set your social links here from the live customizer"
