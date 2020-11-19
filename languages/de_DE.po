@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2020-11-19 08:48+0100\n"
-"PO-Revision-Date: 2020-11-19 08:51+0100\n"
+"POT-Creation-Date: 2020-11-19 17:33+0100\n"
+"PO-Revision-Date: 2020-11-19 17:34+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: ../archive-ev7l-referee.php:28
+#: ../archive-ev7l-referee.php:28 ../sd-facilitators-list.php:52
 msgid "Referent*innen"
 msgstr ""
 
@@ -67,6 +67,26 @@ msgstr ""
 #: ../inc/h7lc_settings.php:95
 msgid "Temporary notice for participants in the registration mail"
 msgstr ""
+
+#: ../includes/SDTemplateUtils.php:72
+#: ../seminardesk-custom/templates/sd_cpt_event.php:162
+msgid "Booking Available"
+msgstr "Buchbar"
+
+#: ../includes/SDTemplateUtils.php:73
+#: ../seminardesk-custom/templates/sd_cpt_event.php:163
+msgid "Fully Booked"
+msgstr "Ausgebucht"
+
+#: ../includes/SDTemplateUtils.php:74
+#: ../seminardesk-custom/templates/sd_cpt_event.php:164
+msgid "Limited Booking"
+msgstr "Begrenzt buchbar"
+
+#: ../includes/SDTemplateUtils.php:75
+#: ../seminardesk-custom/templates/sd_cpt_event.php:165
+msgid "Waiting List"
+msgstr "Warteliste"
 
 #: ../page-calendar.php:17
 msgid "Veranstaltungen in"
@@ -387,39 +407,39 @@ msgstr ""
 msgid "Frage stellen"
 msgstr ""
 
-#: ../sd_cpt_event.php:15 ../seminardesk-custom/templates/sd_cpt_event.php:29
+#: ../sd_cpt_event.php:15 ../seminardesk-custom/templates/sd_cpt_event.php:34
+#: ../seminardesk-custom/templates/sd_txn_labels.php:34
 #: ../single-ev7l-event.php:8
 msgid "Ausgewähltes Seminar"
 msgstr ""
 
-#: ../sd_cpt_event.php:51 ../seminardesk-custom/templates/sd_txn_dates.php:78
+#: ../sd_cpt_event.php:51 ../seminardesk-custom/templates/sd_txn_dates.php:86
 msgid "remote image failed"
 msgstr "Fehler beim Laden des externen Bildes"
 
-#: ../sd_cpt_event.php:61 ../seminardesk-custom/templates/sd_cpt_event.php:81
-#: ../seminardesk-custom/templates/sd_txn_dates.php:71
+#: ../sd_cpt_event.php:61 ../seminardesk-custom/templates/sd_txn_dates.php:72
 msgid "Facilitator: "
 msgstr "Referent*innen: "
 
-#: ../sd_cpt_event.php:80 ../seminardesk-custom/templates/sd_cpt_event.php:133
+#: ../sd_cpt_event.php:80 ../seminardesk-custom/templates/sd_cpt_event.php:176
 msgid "List of available dates:"
 msgstr "Verfügbare Termine:"
 
 #: ../sd_cpt_event.php:91 ../sd_cpt_event.php:108
-#: ../seminardesk-custom/templates/sd_cpt_event.php:145
-#: ../seminardesk-custom/templates/sd_cpt_event.php:164
+#: ../seminardesk-custom/templates/sd_cpt_event.php:196
+#: ../seminardesk-custom/templates/sd_cpt_event.php:215
 msgid "Booking"
 msgstr "Buchung"
 
-#: ../sd_cpt_event.php:99 ../seminardesk-custom/templates/sd_cpt_event.php:154
+#: ../sd_cpt_event.php:99 ../seminardesk-custom/templates/sd_cpt_event.php:205
 msgid "No dates for this event available :("
 msgstr "Keine Termine für diese Veranstaltung"
 
-#: ../sd_cpt_event.php:120 ../seminardesk-custom/templates/sd_cpt_event.php:177
+#: ../sd_cpt_event.php:120 ../seminardesk-custom/templates/sd_cpt_event.php:228
 msgid "<strong>Sorry, event does not exist.</strong>"
 msgstr "<strong>Sorry, Veranstaltung existiert nicht.</strong>"
 
-#: ../sd_cpt_event.php:133 ../seminardesk-custom/templates/sd_cpt_event.php:188
+#: ../sd_cpt_event.php:133 ../seminardesk-custom/templates/sd_cpt_event.php:239
 #: ../single-ev7l-event.php:261
 msgid "Frage zur Veranstaltung stellen"
 msgstr ""
@@ -434,45 +454,33 @@ msgstr "Seiten: "
 msgid "Tags:"
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:94
+#: ../seminardesk-custom/templates/sd_cpt_event.php:111
 msgid "More about the facilitators: "
 msgstr "Mehr über die Referent*innen: "
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:108
+#: ../seminardesk-custom/templates/sd_cpt_event.php:122
 msgid "Voraussetzungen für Teilnahme:"
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:129
+#: ../seminardesk-custom/templates/sd_cpt_event.php:135
 msgid "Hinweise zu Terminen und Preisen: "
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:135
+#: ../seminardesk-custom/templates/sd_cpt_event.php:141
 msgid "Hinweise zu Unterkunft und Verpflegung: "
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:112
+#: ../seminardesk-custom/templates/sd_cpt_event.php:147
 msgid "Hinweise: "
 msgstr ""
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:118
+#: ../seminardesk-custom/templates/sd_cpt_event.php:153
 msgid "KontaktPersonen: "
 msgstr "Kontakt-Personen:"
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:127
-msgid "Booking Available"
-msgstr "Buchbar"
-
-#: ../seminardesk-custom/templates/sd_cpt_event.php:128
-msgid "Fully Booked"
-msgstr "Ausgebucht"
-
-#: ../seminardesk-custom/templates/sd_cpt_event.php:129
-msgid "Limited Booking"
-msgstr "Begrenzt buchbar"
-
-#: ../seminardesk-custom/templates/sd_cpt_event.php:130
-msgid "Waiting List"
-msgstr "Warteliste"
+#: ../seminardesk-custom/templates/sd_cpt_event.php:179
+msgid "Booking:"
+msgstr "Buchung:"
 
 #: ../seminardesk-custom/templates/sd_cpt_facilitator.php:97
 msgid "Upcoming Event Dates with "
@@ -495,23 +503,23 @@ msgstr ""
 msgid "Sorry, facilitator does not exist."
 msgstr "<strong>Sorry, Referent*in existiert nicht.</strong>"
 
-#: ../seminardesk-custom/templates/sd_txn_dates.php:70
+#: ../seminardesk-custom/templates/sd_txn_dates.php:71
 msgid "<strong>Date: </strong>"
 msgstr "<strong>Datum: </strong>"
 
-#: ../seminardesk-custom/templates/sd_txn_dates.php:72
+#: ../seminardesk-custom/templates/sd_txn_dates.php:80
 msgid "Price: "
 msgstr "Preis: "
 
-#: ../seminardesk-custom/templates/sd_txn_dates.php:73
+#: ../seminardesk-custom/templates/sd_txn_dates.php:81
 msgid "Venue: "
 msgstr "Ort: "
 
-#: ../seminardesk-custom/templates/sd_txn_dates.php:88
+#: ../seminardesk-custom/templates/sd_txn_dates.php:95
 msgid "More"
 msgstr "Mehr erfahren"
 
-#: ../seminardesk-custom/templates/sd_txn_dates.php:107
+#: ../seminardesk-custom/templates/sd_txn_dates.php:114
 msgid "Sorry, no events for this date."
 msgstr "Sorry, keine Veranstaltungen in diesem Zeitraum."
 
