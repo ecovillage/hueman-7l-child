@@ -5,7 +5,7 @@ use Inc\Utils\TemplateUtils as Utils;
 
 class SDTemplateUtils {
 
-  public static function get_first_upcoming_date( $event_id ) {
+  public static function get_upcoming_dates_query( $event_id ) {
     $custom_query = new WP_Query(
       array(
         'post_type'     => 'sd_cpt_date',
@@ -31,6 +31,12 @@ class SDTemplateUtils {
         ),
       )
     );
+
+    return $custom_query();
+  }
+
+  public static function get_first_upcoming_date( $event_id ) {
+    $custom_query = self::get_upcoming_dates_query( $event_id );
 
     $date_posts = $custom_query->get_posts();
 
@@ -72,6 +78,21 @@ class SDTemplateUtils {
     }
 
     return $date_html;
+  }
+
+  public static function get_date_count( $event_id ) {
+    $custom_query = self::get_upcoming_dates_query( $event_id );
+
+    return $custom_query->post_count;
+  }
+
+  public static function get_dates_str( $date ) {
+    if ( $event ) {
+      return Utils::get_date( $date->sd_date_begin, $date->sd_date_end );
+    }
+    else {
+      return NULL;
+    }
   }
 }
 

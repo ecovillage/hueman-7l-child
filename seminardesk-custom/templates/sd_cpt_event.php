@@ -9,7 +9,9 @@
 require_once( get_stylsheet_directory() . '/includes/SDTemplateUtils.php' );
 use SDTemplateUtils as SDUtils;
 
-$first_date = SDUtils::get_first_upcoming_date( $post->sd_event_id );
+if (SDUtils::get_date_count( $post->sd_event_id ) == 1) {
+  $only_date = SDUtils::get_first_upcoming_date( $post->sd_event_id );
+}
 ?>
 
 <?php
@@ -80,9 +82,9 @@ get_header();
             <?php /* get first dates dates as str (see Utils/TemplateUtils) */ ?>
 
                 <?php
-                    if ( $first_date ) {
+                    if ( isset( $only_date ) ) {
                       echo '<p name="event-dates">';
-                      echo Utils::get_date( $first_date->sd_date_begin,  $first_date->sd_date_end );
+                      echo SDUtils::get_dates_str( $only_date );
                       echo '</p>';
                     }
                 ?>
