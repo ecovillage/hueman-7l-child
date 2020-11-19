@@ -79,12 +79,16 @@ get_header();
 
             <?php /* get first dates dates as str (see Utils/TemplateUtils) */ ?>
 
+                <?php
+                    if ( $first_date ) {
+                      echo '<p name="event-dates">';
+                      echo Utils::get_date( $first_date->sd_date_begin,  $first_date->sd_date_end );
+                      echo '</p>';
+                    }
+                ?>
+
                 <p name="event-description">
                   <?php
-                    if ( $first_date ) {
-                      echo Utils::get_date( $first_date->sd_date_begin,  $first_date->sd_date_end );
-                    }
-
                     echo Utils::get_value_by_language($post->sd_data['description']);
                   ?>
                 </p>
