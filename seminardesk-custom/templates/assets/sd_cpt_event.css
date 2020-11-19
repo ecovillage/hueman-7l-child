@@ -31,6 +31,7 @@ css styles for single template of CPT sd_cpt_event
   border-radius: 3px;
   color: white;
   font-size: 0.875em;
+  cursor: pointer;
 }
 .sd-modal-content {
     position: absolute;
