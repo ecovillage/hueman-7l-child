@@ -32,7 +32,7 @@ class SDTemplateUtils {
       )
     );
 
-    return $custom_query();
+    return $custom_query;
   }
 
   public static function get_first_upcoming_date( $event_id ) {

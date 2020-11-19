@@ -6,7 +6,7 @@
  * Modifications Copyright 2020 Freundeskreis Ökodorf e.V.
  */
 
-require_once( get_stylsheet_directory() . '/includes/SDTemplateUtils.php' );
+require_once( get_stylesheet_directory() . '/includes/SDTemplateUtils.php' );
 use SDTemplateUtils as SDUtils;
 
 if (SDUtils::get_date_count( $post->sd_event_id ) == 1) {
