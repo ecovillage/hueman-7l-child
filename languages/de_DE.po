@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hueman-7l-child\n"
-"POT-Creation-Date: 2020-11-19 17:33+0100\n"
-"PO-Revision-Date: 2020-11-19 17:34+0100\n"
+"POT-Creation-Date: 2020-11-19 18:00+0100\n"
+"PO-Revision-Date: 2020-11-19 18:01+0100\n"
 "Last-Translator: Felix Wolfsteller <felix.wolfsteller@gmail.com>\n"
 "Language-Team: ecovillage sieben linden\n"
 "Language: Deutsch\n"
@@ -478,9 +478,13 @@ msgstr ""
 msgid "KontaktPersonen: "
 msgstr "Kontakt-Personen:"
 
-#: ../seminardesk-custom/templates/sd_cpt_event.php:179
+#: ../seminardesk-custom/templates/sd_cpt_event.php:181
 msgid "Booking:"
 msgstr "Buchung:"
+
+#: ../seminardesk-custom/templates/sd_cpt_event.php:185
+msgid "Date:"
+msgstr "Termin:"
 
 #: ../seminardesk-custom/templates/sd_cpt_facilitator.php:97
 msgid "Upcoming Event Dates with "
