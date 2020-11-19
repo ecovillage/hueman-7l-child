@@ -168,17 +168,22 @@ get_header();
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id, $status_lib );
                     $booking_url = esc_url( Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ?? null ) );
 
-                    if ( $first_date || $booking_list ) {
+                    if ( $only_date || $booking_list ) {
                         ?>
-                        <h4>
+                        <h3>
                             <?php 
-                            _e( 'List of available dates:', 'hueman-7l-child' );
+                            if ( ! $only_date ) {
+                              _e( 'List of available dates:', 'hueman-7l-child' );
+                            }
+                            else {
+                              _e( 'Booking:', 'hueman-7l-child' );
+                            }
                             ?>
-                        </h4>
+                        </h3>
                         <p>
                         <?php
-                        if ( $first_date ) {
-                          echo SDUtils::date_props_html( $first_date );
+                        if ( $only_date ) {
+                          echo SDUtils::date_props_html( $only_date );
                         } else {
                           echo $booking_list;
                         }
