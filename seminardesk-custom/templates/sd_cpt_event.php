@@ -6,7 +6,7 @@
  * Modifications Copyright 2020 Freundeskreis Ökodorf e.V.
  */
 
-require_once( get_stylsheet_directory() . '/includes/SDTemplateUtils.php' )
+require_once( get_stylsheet_directory() . '/includes/SDTemplateUtils.php' );
 use SDTemplateUtils as SDUtils;
 
 $first_date = SDUtils::get_first_upcoming_date( $post->sd_event_id );
