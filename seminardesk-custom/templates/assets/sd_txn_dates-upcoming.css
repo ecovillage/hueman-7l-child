@@ -5,7 +5,6 @@ css styles for template of taxonomy sd_txn_dates
 */
 
 .sd-event {
-  margin-bottom: 2em;
 }
 .sd-event-container {
 	display: grid;
@@ -28,6 +27,12 @@ css styles for template of taxonomy sd_txn_dates
 }
 .sd-event-title h3{
 	font-size: 1.5em;
+	font-weight: 600;
+	margin: 2em 0 0.5em;
+	padding-bottom: 15px;
+}
+.sd-event-title h4{
+	font-size: 1.3em;
 	font-weight: 600;
 	margin: 2em 0 0.5em;
 	padding-bottom: 15px;
