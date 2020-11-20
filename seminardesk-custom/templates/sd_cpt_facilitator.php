@@ -93,10 +93,10 @@ get_header();
                 ));
                 // loop through upcoming event dates with this facilitator
 
-                echo '<strong><p style="margin:1em 0em 1em">';
+                echo '<h3>';
                 echo __('Upcoming Event Dates with ', 'hueman-7l-child');
                 echo get_the_title();
-                echo ': </p></strong>';
+                echo ': </h3>';
                 if ( $query_upcoming->have_posts() && !empty( $wp_event_ids ) ){
                     while ( $query_upcoming->have_posts() ) {
                         $query_upcoming->the_post();
@@ -148,9 +148,9 @@ get_header();
                     )
                 ));
                 // loop through past event dates with this facilitator
-                echo '</p><strong><p style="margin:1em 0em 1em">';
+                echo '</p><h3>';
                 echo __('Past Event Dates with ', 'hueman-7l-child');
-                echo get_the_title() . ': </p></strong>';
+                echo get_the_title() . ': </h3>';
                 if ( $query_past->have_posts() && !empty( $wp_event_ids ) ){
                     while ( $query_past->have_posts() ) {
                         $query_past->the_post();
