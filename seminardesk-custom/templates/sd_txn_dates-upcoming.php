@@ -18,13 +18,19 @@ use Inc\Utils\TemplateUtils as Utils;
 
 get_header();
 ?>
-<main id="site-content" role="main">
-    
-    <header class="archive-header has-text-align-center header-footer-group">
-        <div class="archive-header-inner section-inner medium">
-                <h1 class="archive-title">Upcoming Event Dates</h1>
-        </div><!-- .archive-header-inner -->
-    </header><!-- .archive-header -->
+
+<section class="content">
+
+<?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
+  <?php /*hu_get_template_part('parts/page-title');*/ ?>
+  <div class="page-title pad group">
+  <h2><?php _e( 'Upcoming Event Dates', 'hueman-7l-child' ); ?></h2>
+  </div><!--/.page-title-->
+<?php /* Re-entering vanilla hueman */ ?>
+
+<!-- SeminarDesk original template -->
+
+<div class="pad group entry" id="site-content" role="main">
     
     <?php
     $term_set = '';
@@ -61,7 +67,7 @@ get_header();
                 if ( $post_event_status === 'publish' ){
                     ?>
                     <a href="<?php echo get_permalink($post->wp_event_id); ?>">
-                        More ...
+                      <?php _e( 'More', 'hueman-7l-child' ); ?>
                     </a>
                     <?php
                 } 
@@ -84,7 +90,7 @@ get_header();
         ?>
         <div class="entry-header-inner section-inner small has-text-align-center">
             <h5>
-                <strong>Sorry, no upcoming event dates available.</strong>
+              <strong><?php _e( 'Sorry, no upcoming event dates available.', 'hueman-7l-child' ); ?></strong>
             </h5>
             <br>
         </div>
@@ -94,9 +100,15 @@ get_header();
     wp_reset_query();
 	?>
 
-</main><!-- #site-content -->
+</div><!-- #site-content -->
+
+<!-- End of SeminarDesk original template -->
+
+</section>
 
 <?php
+
+get_sidebar();
+
 get_footer();
-
-
+?>
