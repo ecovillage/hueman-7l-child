@@ -68,7 +68,7 @@ get_header();
                   <div class="sd-event-props">
                     <?php
                       Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '<div class="sd-event-date">' . __( '<strong>Date: </strong>', 'hueman-7l-child' ), '</div>', true);
-                      Utils::get_facilitators( $post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>' . __('Facilitator:', 'hueman-7l-child') . '</strong>', '</div>', true );
+                      Utils::get_facilitators( $post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>' . __('Facilitator: ', 'hueman-7l-child') . '</strong>', '</div>', true );
                       echo Utils::get_value_by_language( $post->sd_data['priceInfo'], 'DE', '<div class="sd-event-price"><strong>' . __('Price: ', 'hueman-7l-child') . '</strong>', '</div>' );
                       Utils::get_venue( $post->sd_data['venue'], '<div class="sd-event-venue"><strong>' . __('Venue: ', 'hueman-7l-child') . '</strong>', '</p>', true);
                     ?>
