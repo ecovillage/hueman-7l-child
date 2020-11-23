@@ -60,6 +60,7 @@ class SDTemplateUtils {
     $venue_props = $date->sd_data['venue'];
     $venue = Utils::get_venue( $venue_props );
 
+    $title = wp_strip_all_tags( $date->post_title ) . ': ';
     $date_props = array();
     array_push( $date_props, $date_str, $price_str, $venue );
     $date_props = array_filter( $date_props ); // remove all empty values from array
