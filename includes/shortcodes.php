@@ -6,6 +6,7 @@ function h7lc_sd_show_upcoming() {
   global $upcoming_dates;
 
   $limit = 15;
+  $timestamp_today = strtotime( wp_date('Y-m-d') ); // current time
 
   // custom query to retrieve upcoming event dates.
   $upcoming_dates = new WP_Query( array(
