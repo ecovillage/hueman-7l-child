@@ -237,7 +237,7 @@ get_header();
                     <div class="entry-header-inner section-inner small">
                         <a href="<?php echo esc_url(get_permalink()); ?>">
                             <?php 
-                            the_title( '<p><h1 class="archive-title">', '</h1></p>' );
+                            the_title( '<h1 class="archive-title">', '</h1>' );
                             ?>
                         </a>
                         <?php
@@ -250,7 +250,7 @@ get_header();
                         }
                         $img_url = Utils::get_value_by_language($sd_data['headerPictureUrl'] ?? $sd_data['pictureUrl'] ?? null);
                         echo Utils::get_img_remote( $img_url, '150', '', 'remote image failed', '<p>', '</p>' );
-                        echo '<p>' . Utils::get_value_by_language( $sd_data['teaser'] ?? $sd_data['description'] ?? null ) . '</p>';
+                        echo '<div>' . Utils::get_value_by_language( $sd_data['teaser'] ?? $sd_data['description'] ?? null ) . '</div>';
                         ?>
                     </div>
                     <?php  
