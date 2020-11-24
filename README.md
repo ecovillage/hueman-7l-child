@@ -6,7 +6,13 @@ Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018, 2019, 2020 released u
 
 See a [list of contributors here](https://github.com/ecovillage/hueman-7l-child/graphs/contributors).
 
-Works together with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
+The ecovillage hosts a range of educational seminars and events, prior to 2021
+these were managed using a self built application, where event data was pushed
+to wordpress and handled with the with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
+
+In 2020 the decision was done to switch to a proprietary, non-visionary
+un-community ( :( ) solution, which
+uses a different plugin.
 
 The original and awesome Presscustomizr hueman theme source can also be [found at github](https://github.com/presscustomizr/hueman).
 
@@ -75,6 +81,18 @@ Enough emptiness for everybody.  Now, things start to happen here.
 
 Registration form, mailer and logic, integrated into legacy system.
 
+## seminardesk-custom/*
+
+Template files overridden from plugin for proprietary event booking solution.
+
+## includes/SDTemplateUtils.php
+
+Helpers for the proprietary solution.
+
+## includes/shortcodes.php
+
+Helpers for the proprietary solution.
+
 ## Provided shortcodes
 
   - featured_news
@@ -92,6 +110,7 @@ Registration form, mailer and logic, integrated into legacy system.
 
 ## About registrations
 
+### Prior to 2021
 Will be put in pseudo-randomly named files (for legacy database, json import) in the `registrations` subdirectory of your wordpress home base.  You should put a `.htaccess` file there and instruct your webserver to not let anybody come close to that data.
 
 ##### [featured_news]
