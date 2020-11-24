@@ -2,11 +2,9 @@
   global $upcoming_dates;
 
   if ( $upcoming_dates->have_posts() ) {
-    echo '<div class="widget widget_ev7l_event_list_widget">';
     // move separate uls into loop
-    //
-    // TODO all uls need no margin, the widget div can be removed
-    echo '<ul class="ev7l_event_list alx-posts group thumbs-enabled">';
+
+    echo '<ul class="ev7l_event_list alx-posts group thumbs-enabled" style="margin: 0;">';
 
     $month = -1;
     $year = -1;
@@ -22,7 +20,7 @@
         $month = $start_month;
         echo '</ul>';
         echo '<h2 class="event-list-month-name">' . $month . '</h2>';
-        echo '<ul class="ev7l_event_list alx-posts group thumbs-enabled">';
+        echo '<ul class="ev7l_event_list alx-posts group thumbs-enabled" style="margin: 0;">';
       }
       ?>
         <li>
@@ -47,7 +45,6 @@
      <?php
     } // while $upcoming_dates->have_posts()
     echo '</ul>';
-    echo '</div>';
 
     wp_reset_postdata();
   } // if $upcoming_dates->have_posts()
