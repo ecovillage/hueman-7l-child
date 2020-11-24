@@ -49,9 +49,9 @@ body {
   background: url("/wp-content/uploads/2016/06/header_bg.jpg");
 }
 
-/* Right sidebar orangish */
+/* Right sidebar (formerly orangish) */
 .s2 {
-  background-color: #fceacc;
+  background-color: #fff;
 }
 
 /* Highlight current position in menu in darker green */
