@@ -11,7 +11,7 @@ css styles for single template of CPT sd_cpt_event
  /* BEGIN modal popup box */
  .sd-modal {
     position: fixed;
-    padding-top: 100px;
+    /* padding-top: 100px; */
     left: 0;
     top: 0;
     z-index: 10;
@@ -40,6 +40,7 @@ css styles for single template of CPT sd_cpt_event
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 1rem 1.5rem;
+    padding-top: 0;
     height: 80%;
     width: 80%;
     background-color: rgb(235, 231, 231);
