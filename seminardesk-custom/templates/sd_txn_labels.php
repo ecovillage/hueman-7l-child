@@ -22,6 +22,8 @@ $txn = get_taxonomy(get_query_var( 'taxonomy' ));
 $term = get_queried_object();
 $term_meta = get_term_meta( $term->term_id, 'sd_data' )[0] ?? null;
 
+$title = $term->description . ' (' . $term_meta['abbreviation'] . ')';
+
 get_header();
 
 ?>
@@ -31,7 +33,7 @@ get_header();
 <?php /* Leaving vanilla hueman 3.2.9 single.php */ ?>
   <?php /*hu_get_template_part('parts/page-title');*/ ?>
   <div class="page-title pad group">
-  <h2><?php echo __('Ausgewähltes Seminar', 'hueman-7l-child'); ?></h2>
+  <h2><?php echo $title; ?></h2>
   </div><!--/.page-title-->
 <?php /* Re-entering vanilla hueman */ ?>
 
