@@ -16,7 +16,7 @@
       $upcoming_dates->the_post();
 
       // New month?
-      $start_month = date_i18n( __('F', 'hueman-7l-child'), $post->sd_date_begin );
+      $start_month = date_i18n( __('F', 'hueman-7l-child'), $post->sd_date_begin / 1000);
       // wp_date( 'D. d.m.Y', $only_date->sd_date_begin/1000);
       if ( $month != $start_month ) {
         $month = $start_month;
@@ -42,9 +42,9 @@
               <a href="<?php echo $event_url; ?>" rel="bookmark" title="<?php echo get_the_title( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
             </p>
             <p class="post-item-date">
-              <?php echo date_i18n(__('D, d.m', 'hueman-7l-child'), $post->sd_date_begin); ?>
+              <?php echo date_i18n(__('D, d.m', 'hueman-7l-child'), $post->sd_date_begin / 1000); ?>
               -
-              <?php echo date_i18n(__('D, d.m.Y', 'hueman-7l-child'), $post->sd_date_end); ?>
+              <?php echo date_i18n(__('D, d.m.Y', 'hueman-7l-child'), $post->sd_date_end / 1000); ?>
             </p>
           </div><!-- post-item-inner group -->
         </li>
