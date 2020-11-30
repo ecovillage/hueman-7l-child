@@ -103,21 +103,29 @@ get_header();
                         $post_event = get_post( $post->wp_event_id );
                         ?>
                         <div style="margin:1em">
-                            <?php 
-                            Utils::get_img_remote( Utils::get_value_by_language( $post_event->sd_data['teaserPictureUrl'] ?? null ), '300', '', $alt = "remote image load failed", '<p>', '</p>', true );
-                            Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', ': ', true);
-                            ?>
-                            <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>">
-                                <?php
+                          <h4>
+                            <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>" class="event-title-link">
+                              <?php
                                 Utils::get_value_by_language( $post_event->sd_data['title'], 'DE', '', '', true); 
-                                ?>
+                              ?>
                             </a>
-                            <p>
-                                <?php
+                            <?php
+                              Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '', true);
+                            ?>
+                          </h4>
+                          <div class="facilitator-event-tease">
+                            <div class="facilitator-event-tease-img">
+                              <?php 
+                                Utils::get_img_remote( Utils::get_value_by_language( $post_event->sd_data['teaserPictureUrl'] ?? null ), '300', '', $alt = "remote image load failed", '', '', true );
+                              ?>
+                            </div>
+                            <div class="facilitator-event-tease-text">
+                              <?php
                                 echo wp_strip_all_tags( Utils::get_value_by_language( $post_event->sd_data['teaser'], 'DE',  '<p>', '</p>', false ) );
-                                ?>
-                            </p>
-                            <hr style="width:60%;margin:0em auto 2em">
+                              ?>
+                            </div>
+                          </div>
+                          <hr style="width:60%;margin:0em auto 2em">
                         </div>
                         <?php
                     }
