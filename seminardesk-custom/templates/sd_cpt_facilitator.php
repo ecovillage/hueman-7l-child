@@ -44,7 +44,7 @@ get_header();
                     ?>
                 </div>
             </header>
-            <div class="post-meta-wrapper post-meta-single post-meta-single-top">
+            <div class="post-meta-wrapper post-meta-single post-meta-single-top sd-facilitator-post">
                 <?php
                 echo !empty( $post->sd_data['pictureUrl'] ) ? '<p>' . Utils::get_img_remote($post->sd_data['pictureUrl'], '100') . '</p>' : null;
                 $about = Utils::get_value_by_language( $post->sd_data['about'] );
