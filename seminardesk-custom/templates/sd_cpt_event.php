@@ -83,9 +83,9 @@ get_header();
 
                 <?php
                     if ( isset( $only_date ) ) {
-                      echo '<p name="event-dates">';
+                      echo '<br><div class="sd-event-dates">';
                       echo SDUtils::get_dates_str( $only_date );
-                      echo '</p>';
+                      echo '</div></p>';
                     }
                 ?>
 
@@ -136,23 +136,25 @@ get_header();
                       echo '<br><h3>';
                       _e( 'Hinweise zu Terminen und Preisen: ', 'hueman-7l-child' );
                       echo '</h3>';
-                      echo '<p class="sd-info-field">';
+                      echo '<div class="sd-info-field">';
                       echo $infoDatesPrices;
-                      echo '</p>';
+                      echo '</div>';
                     }
                     if ( $infoBoardLodging ) {
                       echo '<br><h3>';
                       _e( 'Hinweise zu Unterkunft und Verpflegung: ', 'hueman-7l-child' );
                       echo '</h3>';
-                      echo '<p class="sd-info-field">';
+                      echo '<div class="sd-info-field">';
                       echo $infoBoardLodging;
-                      echo '</p>';
+                      echo '</div>';
                     }
                     if ( $infoMisc ) {
                       echo '<br><h3>';
                       _e( 'Hinweise: ', 'hueman-7l-child' );
                       echo '</h3>';
+                      echo '<div class="sd-info-field">';
                       echo $infoMisc;
+                      echo '</div>';
                     }
                     if ( $contactPersons ) {
                       echo '<br><h3>';
@@ -209,6 +211,8 @@ get_header();
                                 ?>
                             </button></p>
                             </p>
+
+                            <hr>
 
                             <?php
                         }

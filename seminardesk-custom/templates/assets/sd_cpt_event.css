@@ -9,11 +9,11 @@ css styles for single template of CPT sd_cpt_event
 }
 
 .sd-info-field h4 {
-  font-size: 1.0em;
-  font-weight: bold;
+  font-size: 1.0em !important;
+  font-weight: bold !important;
 }
 
-.event-dates {
+.sd-event-dates {
   font-weight: bold;
 }
 
