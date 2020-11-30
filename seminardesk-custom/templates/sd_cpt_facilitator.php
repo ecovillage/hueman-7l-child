@@ -102,21 +102,23 @@ get_header();
                         $query_upcoming->the_post();
                         $post_event = get_post( $post->wp_event_id );
                         ?>
-                        <div style="margin:1em">
-                          <h4>
-                            <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>" class="event-title-link">
-                              <?php
-                                Utils::get_value_by_language( $post_event->sd_data['title'], 'DE', '', '', true); 
-                              ?>
-                            </a>
-                            <?php
-                              Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '', true);
+                        <div class="event-block" style="margin:1em">
+                          <div class="facilitator-event-tease-img">
+                            <?php 
+                              Utils::get_img_remote( Utils::get_value_by_language( $post_event->sd_data['teaserPictureUrl'] ?? null ), '300', '', $alt = "remote image load failed", '', '', true );
                             ?>
-                          </h4>
+                          </div>
                           <div class="facilitator-event-tease">
-                            <div class="facilitator-event-tease-img">
-                              <?php 
-                                Utils::get_img_remote( Utils::get_value_by_language( $post_event->sd_data['teaserPictureUrl'] ?? null ), '300', '', $alt = "remote image load failed", '', '', true );
+                            <h3>
+                              <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>" class="event-title-link">
+                                <?php
+                                  Utils::get_value_by_language( $post_event->sd_data['title'], 'DE', '', '', true); 
+                                ?>
+                              </a>
+                            </h3>
+                            <div class="event-block-date">
+                              <?php
+                                Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '', true);
                               ?>
                             </div>
                             <div class="facilitator-event-tease-text">
@@ -124,8 +126,8 @@ get_header();
                                 echo wp_strip_all_tags( Utils::get_value_by_language( $post_event->sd_data['teaser'], 'DE',  '<p>', '</p>', false ) );
                               ?>
                             </div>
+                            <hr style="width:60%;margin:0em auto 2em">
                           </div>
-                          <hr style="width:60%;margin:0em auto 2em">
                         </div>
                         <?php
                     }

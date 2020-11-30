@@ -7,14 +7,30 @@ css styles for single template of CPT sd_cpt_event
   width: 150px;
   border-radius: 50%;
   object-fit: cover;
+  float: right;
 }
 
 .event-title-link {
-  font-weight: bold;
+  font-weight: bold !important;
   color: #989F30;
+}
+
+.event-block .facilitator-event-tease h3 {
+  font-size: 1em;
+  margin-bottom: 0px;
+}
+
+.event-block-date {
+  margin-bottom: 1em;
 }
 
 .facilitator-event-tease-img {
   float: left;
   margin-right: 1em;
+}
+
+.facilitator-event-tease-img img {
+  border-radius: 0%;
+  height: 100%;
+  width: 100%;
 }
