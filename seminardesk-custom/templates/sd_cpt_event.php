@@ -43,7 +43,7 @@ get_header();
         while (have_posts()) {
             the_post();
             ?>
-            <header class="entry-header has-text-align-center">
+            <header class="entry-header">
                 <div class="entry-header-inner section-inner medium">
 
 
@@ -73,7 +73,7 @@ get_header();
 
                     <?php 
                     Utils::get_value_by_language( $post->sd_data['title'], 'DE', '<h1 class="archive-title">', '</h1>', true); 
-                    echo Utils::get_value_by_language($post->sd_data['subtitle']); 
+                    echo Utils::get_value_by_language($post->sd_data['subtitle'], 'DE', '<div class="event-subtitle">','</div>');
                     ?>
                 </div>
             </header>
@@ -113,6 +113,8 @@ get_header();
                         echo $facilitators;
                     }
 
+                    echo "<hr>";
+
                     // $is_empty = array_filter($playerlist, 'strlen') == [];
                     if ( isset($additionalFields)
                       && isset($additionalFields['Vorraussetzung für Teilnahme'])
@@ -134,13 +136,17 @@ get_header();
                       echo '<br><h3>';
                       _e( 'Hinweise zu Terminen und Preisen: ', 'hueman-7l-child' );
                       echo '</h3>';
+                      echo '<p class="sd-info-field">';
                       echo $infoDatesPrices;
+                      echo '</p>';
                     }
                     if ( $infoBoardLodging ) {
                       echo '<br><h3>';
                       _e( 'Hinweise zu Unterkunft und Verpflegung: ', 'hueman-7l-child' );
                       echo '</h3>';
+                      echo '<p class="sd-info-field">';
                       echo $infoBoardLodging;
+                      echo '</p>';
                     }
                     if ( $infoMisc ) {
                       echo '<br><h3>';

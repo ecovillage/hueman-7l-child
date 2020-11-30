@@ -8,6 +8,19 @@ css styles for single template of CPT sd_cpt_event
   font-size: 1.3em;
 }
 
+.sd-info-field h4 {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
+.event-dates {
+  font-weight: bold;
+}
+
+.event-subtitle {
+  font-size: 1.25em;
+}
+
  /* BEGIN modal popup box */
  .sd-modal {
     position: fixed;
