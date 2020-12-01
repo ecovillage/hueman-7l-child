@@ -37,7 +37,7 @@ get_header();
         while (have_posts()) {
             the_post();
             ?>
-            <header class="entry-header has-text-align-center">
+            <header class="entry-header">
                 <div class="entry-header-inner section-inner medium">
                     <?php 
                     the_title( '<h1 class="archive-title">', '</h1>' );
