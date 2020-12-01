@@ -84,7 +84,7 @@ get_header();
                         ),
                     );
                     $wp_query->meta_query->queries = $meta_query;
-                    $wp_query->query_vars['meta_query'] = $wp_query->meta_query->queries;
+                    set_query_var( 'meta_query', $wp_query->meta_query->queries);
                     $wp_query->get_posts();
                     if (have_posts()) {
                         while (have_posts()) {
@@ -99,12 +99,12 @@ get_header();
                                     ?>
                                     <a href="<?php echo esc_url(get_permalink($post_event)); ?>">
                                         <?php 
-                                        the_title( '<p><h1 class="archive-title">', '</h1></p>' );
+                                        the_title( '<p><h2 class="archive-title">', '</h2></p>' );
                                         ?>
                                     </a>
                                     <?php
                                 } else {
-                                    the_title( '<p><h1 class="archive-title">', '</h1></p>' );
+                                    the_title( '<p><h2 class="archive-title">', '</h2></p>' );
                                 }
                                 Utils::get_date( $post->sd_date_begin, $post->sd_date_end, '<div class="sd-event-date"><strong>Date: </strong>', '</div>', true);
                                 Utils::get_facilitators($post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>Facilitator: </strong>', '</div>', true);
@@ -144,7 +144,8 @@ get_header();
                         ),
                     );
                     $wp_query->meta_query->queries = $meta_query;
-                    $wp_query->query_vars['meta_query'] = $wp_query->meta_query->queries;
+                    set_query_var( 'meta_query', $wp_query->meta_query->queries );
+                    $wp_query->get_posts();
                     if (have_posts()) {
                         while (have_posts()) {
                             the_post();
@@ -154,12 +155,12 @@ get_header();
                                 ?>
                                 <a href="<?php echo esc_url(get_permalink($post_event)); ?>">
                                     <?php 
-                                    the_title( '<p><h1 class="archive-title">', '</h1></p>' );
+                                    the_title( '<p><h2 class="archive-title">', '</h2></p>' );
                                     ?>
                                 </a>
                                 <?php
                             } else {
-                                the_title( '<p><h1 class="archive-title">', '</h1></p>' );
+                                the_title( '<p><h2 class="archive-title">', '</h2></p>' );
                             }
                             Utils::get_date( $post->sd_date_begin, $post->sd_date_end, '<div class="sd-event-date"><strong>Date: </strong>', '</div>', true);
                             Utils::get_facilitators($post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>Facilitator: </strong>', '</div>', true);
@@ -226,7 +227,7 @@ get_header();
             }
             break;
         /**
-         * template part - sd_cpt_label (labelGroup/label), label, sd_cpt_events
+         * template part - sd_cpt_label (labelGroup/label), sd_cpt_events
          */
         default:
             if (have_posts()) {
@@ -234,25 +235,38 @@ get_header();
                     the_post();
                     $sd_data = $post->sd_data;
                     ?>
+                    <div class="sd-event">
                     <div class="entry-header-inner section-inner small">
+                      <div class="sd-event-title">
                         <a href="<?php echo esc_url(get_permalink()); ?>">
                             <?php 
                             the_title( '<h1 class="archive-title">', '</h1>' );
                             ?>
                         </a>
-                        <?php
-                        echo '<p>' . Utils::get_value_by_language($sd_data['subtitle'] ?? null ) . '</p>'; 
-                        $facilitators = Utils::get_facilitators($sd_data['facilitators'] ?? array() );
-                        if ($facilitators) {
-                            ?>
-                            <p><strong>Facilitator: </strong><?php echo $facilitators; ?></p>
-                            <?php
-                        }
-                        $img_url = Utils::get_value_by_language($sd_data['headerPictureUrl'] ?? $sd_data['pictureUrl'] ?? null);
-                        echo Utils::get_img_remote( $img_url, '150', '', 'remote image failed', '<p>', '</p>' );
-                        echo '<div>' . Utils::get_value_by_language( $sd_data['teaser'] ?? $sd_data['description'] ?? null ) . '</div>';
-                        ?>
+                      </div>
+                      <div class="sd-event-container">
+                        <div class="sd-event-props">
+                          <?php
+                          // TODO: get the date
+                          echo '<p>' . Utils::get_value_by_language($sd_data['subtitle'] ?? null ) . '</p>'; 
+                          Utils::get_facilitators( $sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>' . __('Facilitator: ', 'hueman-7l-child') . '</strong>', '</div>', true);
+                          ?>
+                        </div> <!-- sd-event-props -->
+                        <div class="sd-event-image">
+                          <?php
+                          $img_url = Utils::get_value_by_language($sd_data['headerPictureUrl'] ?? $sd_data['pictureUrl'] ?? null);
+                          echo Utils::get_img_remote( $img_url, '300', '', 'remote image failed', '<p>', '</p>' );
+                          ?>
+                        </div> <!-- sd-event-image -->
+                        <div class=sd-event-teaser>
+                          <?php
+                          // TODO: replace by teaser
+                          echo '<div>' . Utils::get_value_by_language( $sd_data['teaser'] ?? $sd_data['description'] ?? null ) . '</div>';
+                          ?>
+                        </div> <!-- sd-event-teaser -->
+                      </div> <!-- sd-event-container -->
                     </div>
+                    </div> <!-- sd-event -->
                     <?php  
                 }   
             } else {
@@ -260,10 +274,7 @@ get_header();
                 <div class="has-text-align-center">
             <br><p>
                 <?php
-                echo paginate_links( array(
-                    'base' => add_query_arg('page', '%#%'),
-                    'format' => '?page=%#%',
-                ) );
+                        echo paginate_links();
                 ?>
             </p>
         </div>
