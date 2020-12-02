@@ -98,15 +98,16 @@ get_header();
                   <?php
                     $additionalFields = $post->sd_data['additionalFields'];
                     // TODO and not empty
+                    $fieldName = '# Qualifikation Referent*in';
                     if ( isset($additionalFields)
-                      && isset($additionalFields['Qualifikation Referent*in'])
-                      && !empty($additionalFields['Qualifikation Referent*in']) ) {
-                      echo '<p name="referee-qualification">' . $additionalFields['Qualifikation Referent*in'] . '</p>';
+                      && isset($additionalFields[$fieldName])
+                      && !empty($additionalFields[$fieldName]) ) {
+                      echo '<p name="referee-qualification">' . $additionalFields[$fieldName] . '</p>';
                     }
 
                     // $is_empty = array_filter($playerlist, 'strlen') == [];
-                    $facilitators = Utils::get_facilitators($post->sd_data['facilitators']);
-                    if ($facilitators) {
+                    $facilitators = Utils::get_facilitators( $post->sd_data['facilitators'] );
+                    if ( $facilitators ) {
                         echo '<strong>';
                         _e( 'More about the facilitators: ', 'hueman-7l-child' );
                         echo '</strong>';
@@ -116,14 +117,40 @@ get_header();
                     echo "<hr>";
 
                     // $is_empty = array_filter($playerlist, 'strlen') == [];
+                    $fieldName = '# Vorraussetzung für Teilnahme';
                     if ( isset($additionalFields)
-                      && isset($additionalFields['Vorraussetzung für Teilnahme'])
-                      && !empty($additionalFields['Vorraussetzung für Teilnahme']) ) {
+                      && isset($additionalFields[$fieldName])
+                      && !empty($additionalFields[$fieldName]) ) {
                       echo '<p name="participation-requirements">';
                       echo '<h3>';
 						          _e( "Voraussetzungen für Teilnahme:" );
                       echo '</h3>';
-						          echo $additionalFields['Vorraussetzung für Teilnahme'];
+						          echo $additionalFields[$fieldName];
+                      echo '</p>';
+                    }
+
+                    $fieldName = '# Bildungsurlaub';
+                    if ( isset($additionalFields)
+                      && isset($additionalFields[$fieldName])
+                      && !empty($additionalFields[$fieldName]) ) {
+                      echo '<p name="bildungsurlaub">';
+                      echo '<h3>';
+						          _e( "Bildungsurlaub:" );
+                      echo '</h3>';
+						          echo $additionalFields[$fieldName];
+                      echo '</p>';
+                    }
+
+
+                    $fieldName = '# Lehrerfortbildung';
+                    if ( isset($additionalFields)
+                      && isset($additionalFields[$fieldName])
+                      && !empty($additionalFields[$fieldName]) ) {
+                      echo '<p name="teacher-education">';
+                      echo '<h3>';
+						          _e( "Lehrerfortbildung:" );
+                      echo '</h3>';
+						          echo $additionalFields[$fieldName];
                       echo '</p>';
                     }
 
