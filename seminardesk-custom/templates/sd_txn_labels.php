@@ -45,8 +45,7 @@ get_header();
         <div class="archive-header-inner section-inner medium">
             <h1 class="archive-title">
                 <?php 
-                $title = $term->description . ' (' . $term_meta['abbreviation'] . ')';
-                echo $title;
+                echo $term->description;
                 ?>
             </h1>
             <?php 
