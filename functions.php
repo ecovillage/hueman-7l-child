@@ -329,3 +329,11 @@ function h7lc_load_code() {
   locate_template( array( 'inc/h7lc_settings.php' ), true, true );
 }
 add_action( 'after_setup_theme', 'h7lc_load_code' );
+
+
+function h7lc_rubrik_query_limit( $query ) {
+  if ( $query->is_main_query() && $query->query_vars['sd_txn_labels'] === 'rubrik' ) {
+    $query->set( 'posts_per_page', '-1' ); // -1 -> (all posts)
+  }
+}
+add_action( 'pre_get_posts', 'h7lc_rubrik_query_limit' );
