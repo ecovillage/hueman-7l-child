@@ -72,12 +72,12 @@ get_header();
                             Utils::get_value_by_language($post->sd_data['priceInfo'], 'DE', '<div class="sd-event-price"><strong>' . __('Price: ', 'hueman-7l-child') . '</strong>', '</div>', true );
                             Utils::get_venue($post->sd_data['venue'], '<div class="sd-event-venue"><strong>' . __('Venue: ', 'hueman-7l-child') . '</strong>', '</div>', true);
                             ?>
-                        </div>
+                        </div> <!-- sd-event-props -->
                         <div class=sd-event-image>
                             <?php
                             Utils::get_img_remote(  Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl']), '300', '', $alt = __('remote image failed', 'hueman-7l-child'), '', '', true);
                             ?>
-                        </div>
+                        </div> <!-- sd-event-image -->
                         <div class=sd-event-teaser>
                             <?php 
                             echo Utils::get_value_by_language($post_event->sd_data['teaser']) 
@@ -87,8 +87,8 @@ get_header();
                                     <?php esc_html_e('More', 'hueman-7l-child')?>
                                 </a>
                             </div> 
-                        </div>
-                    </div>
+                        </div> <!-- sd-event-teaser -->
+                    </div> <!-- sd-event-container -->
                     
                 </div>
             </div>
