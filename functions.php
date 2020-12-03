@@ -332,7 +332,7 @@ add_action( 'after_setup_theme', 'h7lc_load_code' );
 
 
 function h7lc_rubrik_query_limit( $query ) {
-  if ( $query->is_main_query() && $query->query_vars['sd_txn_labels'] === 'rubrik' ) {
+  if ( $query->is_main_query() && array_key_exists( 'sd_txn_labels', $query->query_vars ) ) {
     $query->set( 'posts_per_page', '-1' ); // -1 -> (all posts)
   }
 }
