@@ -226,6 +226,38 @@ get_header();
                 <?php
             }
             break;
+        
+        case 'sd_cpt_label':
+            if (have_posts()) {
+                while (have_posts()) {
+                    the_post();
+                    $sd_data = $post->sd_data;
+                    ?>
+                    <div class="sd-event">
+                      <div class="entry-header-inner section-inner small">
+                        <div class="sd-event-title">
+                          <a href="<?php echo esc_url(get_permalink()); ?>">
+                              <?php 
+                              the_title( '<h2 class="archive-title">', '</h2>' );
+                              ?>
+                          </a>
+                        </div>
+                      </div> <!-- entry-header-inner -->
+                    </div> <!-- sd-event -->
+                    <?php  
+                }   
+            } else {
+                ?>
+                <div class="has-text-align-center">
+            <br><p>
+                <?php
+                        echo paginate_links();
+                ?>
+            </p>
+        </div>
+                <?php
+            }
+            break;
         /**
          * template part - sd_cpt_label (labelGroup/label), sd_cpt_events
          */
@@ -280,7 +312,7 @@ get_header();
         </div>
                 <?php
             }
-    } 
+    }
 ?>
 
 </div><!-- #site-content -->
