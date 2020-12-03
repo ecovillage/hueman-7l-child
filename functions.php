@@ -323,9 +323,9 @@ function h7lc_show_registration_form($atts) {
 
 add_shortcode( 'event_registration_form', 'h7lc_show_registration_form');
 
-function h7cl_load_code() {
+function h7lc_load_code() {
   // This takes into account parent and child themes as well
   // alternative: require_once( get_stylesheet_directory() . '/inc/custom.php' );
   locate_template( array( 'inc/h7lc_settings.php' ), true, true );
 }
-add_action( 'after_setup_theme', 'h7cl_load_code');
+add_action( 'after_setup_theme', 'h7lc_load_code' );
