@@ -21,16 +21,20 @@ css styles for template of taxonomy sd_txn_labels
 	box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
 	line-height: 50px;
     text-align: center;
-
 }
+
 .sd-event-title{
 	text-align: left;
+  margin-bottom: 1.5em;
 }
 .sd-event-title h2 {
 	font-size: 1.5em !important;
 	font-weight: 600;
-	margin: 2em 0 0.5em;
-	padding-bottom: 15px;
+	margin: 2em 0em;
+  margin-bottom: 0px !important;
+	padding-bottom: 0px !important;
+}
+.sd-event-title .subtitle {
 }
 .sd-event-props{
 	grid-area: props;
