@@ -271,7 +271,7 @@ get_header();
                       <div class="sd-event-title">
                         <a href="<?php echo esc_url(get_permalink()); ?>">
                             <?php 
-                            the_title( '<h1 class="archive-title">', '</h1>' );
+                            the_title( '<h2 class="archive-title">', '</h2>' );
                             ?>
                         </a>
                       </div>
