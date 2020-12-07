@@ -15,22 +15,47 @@ css styles for single template of CPT sd_cpt_event
   color: #989F30;
 }
 
+.event-block {
+  display: grid;
+
+  grid-template-areas:
+    'image props'
+    'teaser teaser';
+  grid-template-columns: 50% auto;
+}
+
 .event-block .facilitator-event-tease h3 {
+  grid-area: props;
+
   font-size: 1em;
   margin-bottom: 0px;
 }
 
 .event-block-date {
+
   margin-bottom: 1em;
 }
 
 .facilitator-event-tease-img {
+  grid-area: image;
+
   float: left;
   margin-right: 1em;
+	width: 95%;
+	float: left;
+	box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+	line-height: 50px;
+  text-align: center;
 }
 
 .facilitator-event-tease-img img {
   border-radius: 0%;
   height: 100%;
   width: 100%;
+}
+
+.facilitator-event-tease-text {
+  grid-area: teaser;
+
+  margin-top: 1em;
 }
