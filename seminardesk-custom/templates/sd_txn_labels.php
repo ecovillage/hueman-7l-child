@@ -15,6 +15,8 @@
  */
 
 use Inc\Utils\TemplateUtils as Utils;
+require_once( get_stylesheet_directory() . '/includes/SDTemplateUtils.php' );
+use SDTemplateUtils as SDUtils;
 
 $timestamp_today = strtotime(wp_date('Y-m-d')); // current time
 // $timestamp_today = strtotime('2020-07-01'); // debugging
@@ -274,12 +276,28 @@ get_header();
                             the_title( '<h2 class="archive-title">', '</h2>' );
                             ?>
                         </a>
+                        <?php
+                          $subtitle = Utils::get_value_by_language($sd_data['subtitle'] ?? null );
+                          if ( $subtitle ) {
+                            echo $subtitle;
+                          }
+                        ?>
                       </div>
                       <div class="sd-event-container">
                         <div class="sd-event-props">
                           <?php
-                          // TODO: get the date
-                          echo '<p>' . Utils::get_value_by_language($sd_data['subtitle'] ?? null ) . '</p>'; 
+                          $date_posts = SDUtils::get_upcoming_dates_query(  $post->sd_event_id )->get_posts();
+                          if ( count($date_posts) > 0 ) {
+                            echo "<strong>Termine:</strong><br>";
+
+                            foreach( $date_posts as $upcoming_date ) {
+                              $date_str = Utils::get_date( $upcoming_date->sd_date_begin,  $upcoming_date->sd_date_end );
+                              echo $date_str;
+                              echo "<br>";
+                            }
+                            echo "<br>";
+                          }
+
                           Utils::get_facilitators( $sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>' . __('Facilitator: ', 'hueman-7l-child') . '</strong>', '</div>', true);
                           ?>
                         </div> <!-- sd-event-props -->
