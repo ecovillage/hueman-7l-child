@@ -95,6 +95,30 @@ class SDTemplateUtils {
       return NULL;
     }
   }
+
+  public static function get_facilitator_post( $sd_facilitator_id ) {
+    $custom_query = new WP_Query(
+        array(
+            'post_type'   => 'sd_cpt_facilitator',
+            'post_status' => 'publish',
+            'meta_key'    => 'sd_facilitator_id',
+            'meta_query'  => array(
+                'key'     => 'sd_facilitator_id',
+                'value'   => $sd_facilitator_id,
+                'type'    => 'numeric',
+                'compare' => '=',
+            ),
+        )
+    );
+    $facilitator_posts = $custom_query->get_posts();
+
+    if ( $custom_query->have_posts() ) {
+      return $facilitator_posts[0];
+    }
+
+    return NULL;
+  }
+
 }
 
 ?>

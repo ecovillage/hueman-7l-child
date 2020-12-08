@@ -105,7 +105,10 @@ get_header();
                       echo '<p name="referee-qualification">' . $additionalFields[$fieldName] . '</p>';
                     }
 
-                    // $is_empty = array_filter($playerlist, 'strlen') == [];
+                    foreach( $post->sd_data['facilitators'] as $facilitator) {
+                      $facilitator_post = SDUtils::get_facilitator_post($facilitator['id']);
+                      echo !empty( $facilitator_post->sd_data['pictureUrl'] ) ? '<p>' . Utils::get_img_remote($facilitator_post->sd_data['pictureUrl'], '100') . '</p>' : null;
+                    }
                     $facilitators = Utils::get_facilitators( $post->sd_data['facilitators'] );
                     if ( $facilitators ) {
                         echo '<strong>';
@@ -116,7 +119,6 @@ get_header();
 
                     echo "<hr>";
 
-                    // $is_empty = array_filter($playerlist, 'strlen') == [];
                     $fieldName = '# Vorraussetzung für Teilnahme';
                     if ( isset($additionalFields)
                       && isset($additionalFields[$fieldName])
