@@ -105,16 +105,21 @@ get_header();
                       echo '<p name="referee-qualification">' . $additionalFields[$fieldName] . '</p>';
                     }
 
-                    _e( 'More about the facilitators: ', 'hueman-7l-child' );
-                    foreach( $post->sd_data['facilitators'] as $facilitator) {
-                      echo '<div class="facilitator">';
-                      $facilitator_post = SDUtils::get_facilitator_post($facilitator['id']);
-                      echo !empty( $facilitator_post->sd_data['pictureUrl'] ) ? Utils::get_img_remote($facilitator_post->sd_data['pictureUrl'], '100') : null;
-                      echo '<a href="' . get_permalink($facilitator_post->ID) . '">' . get_the_title($facilitator_post) . '</a>';
-                      echo '</div>';
-                    }
+                    if (! empty($post->sd_data['facilitators'])) {
+                      echo '<div><strong>';
+                      _e( 'More about the facilitators: ', 'hueman-7l-child' );
+                      echo '</strong></div>';
 
-                    echo '<hr class="clearfix">';
+                      foreach( $post->sd_data['facilitators'] as $facilitator) {
+                        echo '<div class="facilitator">';
+                        $facilitator_post = SDUtils::get_facilitator_post($facilitator['id']);
+                        echo !empty( $facilitator_post->sd_data['pictureUrl'] ) ? Utils::get_img_remote($facilitator_post->sd_data['pictureUrl'], '100') : null;
+                        echo '<a href="' . get_permalink($facilitator_post->ID) . '">' . get_the_title($facilitator_post) . '</a>';
+                        echo '</div>';
+                      }
+
+                      echo '<hr class="clearfix">';
+                    }
 
                     $fieldName = '# Vorraussetzung für Teilnahme';
                     if ( isset($additionalFields)
