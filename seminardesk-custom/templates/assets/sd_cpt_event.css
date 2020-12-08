@@ -24,12 +24,12 @@ css styles for single template of CPT sd_cpt_event
 .facilitator {
   display: inline-block;
   float:   left;
+
+  text-align: center;
 }
 
 .facilitator img {
   display: block;
-
-  text-align: center;
 
   height: 150px;
   width:  150px;
