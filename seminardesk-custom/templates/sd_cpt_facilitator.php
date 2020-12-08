@@ -121,13 +121,13 @@ get_header();
                                 Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '', true);
                               ?>
                             </div>
-                            <div class="facilitator-event-tease-text">
-                              <?php
-                                echo wp_strip_all_tags( Utils::get_value_by_language( $post_event->sd_data['teaser'], 'DE',  '<p>', '</p>', false ) );
-                              ?>
-                            </div>
-                            <hr style="width:60%;margin:0em auto 2em">
                           </div>
+                          <div class="facilitator-event-tease-text">
+                            <?php
+                              echo wp_strip_all_tags( Utils::get_value_by_language( $post_event->sd_data['teaser'], 'DE',  '<p>', '</p>', false ) );
+                            ?>
+                          </div>
+                          <hr style="width:60%;margin:0em auto 2em">
                         </div>
                         <?php
                     }

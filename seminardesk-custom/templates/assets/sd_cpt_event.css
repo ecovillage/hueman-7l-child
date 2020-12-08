@@ -21,6 +21,26 @@ css styles for single template of CPT sd_cpt_event
   font-size: 1.25em;
 }
 
+.facilitator {
+  display: inline-block;
+  float:   left;
+}
+
+.facilitator img {
+  display: block;
+
+  text-align: center;
+
+  height: 150px;
+  width:  150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+hr.clearfix {
+  clear: both;
+}
+
  /* BEGIN modal popup box */
  .sd-modal {
     position: fixed;

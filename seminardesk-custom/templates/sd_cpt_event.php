@@ -105,19 +105,16 @@ get_header();
                       echo '<p name="referee-qualification">' . $additionalFields[$fieldName] . '</p>';
                     }
 
+                    _e( 'More about the facilitators: ', 'hueman-7l-child' );
                     foreach( $post->sd_data['facilitators'] as $facilitator) {
+                      echo '<div class="facilitator">';
                       $facilitator_post = SDUtils::get_facilitator_post($facilitator['id']);
-                      echo !empty( $facilitator_post->sd_data['pictureUrl'] ) ? '<p>' . Utils::get_img_remote($facilitator_post->sd_data['pictureUrl'], '100') . '</p>' : null;
-                    }
-                    $facilitators = Utils::get_facilitators( $post->sd_data['facilitators'] );
-                    if ( $facilitators ) {
-                        echo '<strong>';
-                        _e( 'More about the facilitators: ', 'hueman-7l-child' );
-                        echo '</strong>';
-                        echo $facilitators;
+                      echo !empty( $facilitator_post->sd_data['pictureUrl'] ) ? Utils::get_img_remote($facilitator_post->sd_data['pictureUrl'], '100') : null;
+                      echo '<a href="' . get_permalink($facilitator_post->ID) . '">' . get_the_title($facilitator_post) . '</a>';
+                      echo '</div>';
                     }
 
-                    echo "<hr>";
+                    echo '<hr class="clearfix">';
 
                     $fieldName = '# Vorraussetzung für Teilnahme';
                     if ( isset($additionalFields)
