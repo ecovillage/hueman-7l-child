@@ -1,4 +1,8 @@
 <?php
+
+// Load the upcoming dates shortcode
+require_once( get_stylesheet_directory() . '/includes/shortcodes.php' );
+
 // Load translation files from your child theme instead of the parent theme
 function load_hueman_7l_child_theme_locale() {
   load_child_theme_textdomain( 'hueman-7l-child', get_stylesheet_directory() . '/languages' );

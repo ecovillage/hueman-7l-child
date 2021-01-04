@@ -64,6 +64,10 @@ Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'bet
 
 Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'betrieb' archive view.
 
+### parts/event_list_alx.php
+
+Partial for the event list in sidebar, widget style.
+
 ### content.php
 
 Overwritten from vanilla hueman (3.3.4) - do not category if about in a 'betrieb' post (over)view.
@@ -96,7 +100,8 @@ Helpers for the proprietary solution.
 ## Provided shortcodes
 
   - featured_news
-  - upcoming_events
+  - upcoming_events (currently in sidebar)
+  - h7lc_sd_upcoming_events (for sidebar)
   - pages_list
   - event_calendar
     use like
