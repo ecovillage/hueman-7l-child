@@ -1,4 +1,7 @@
 <?php
+use Inc\Utils\TemplateUtils as Utils;
+?>
+<?php
 /*  Print the post date. Compatible with Google Structured data. Must be used in the WordPress loop
 * @php return html string
 /* ------------------------------------ */
@@ -19,6 +22,9 @@
   } elseif(get_post_type() == "ev7l-event") { ?>
     <?php echo __("Veranstaltung von ", 'hueman-7l-child'); ?><?php echo date_i18n(__('D d.M. Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
     <?php echo __("bis", 'hueman-7l-child'); ?> <?php echo date_i18n(__('D d.M. Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
+  <?php } elseif(get_post_type() == "sd_cpt_event") { ?>
+    <?php echo __("Veranstaltung von ", 'hueman-7l-child'); ?>
+    <?php /* date/span */ ?>
   <?php } else { ?>
     <time class="published updated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time( get_option('date_format') ); ?></time>
   <?php } ?>

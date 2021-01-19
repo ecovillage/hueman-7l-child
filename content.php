@@ -1,12 +1,24 @@
+<?php
+use Inc\Utils\TemplateUtils as Utils;
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( array('group', 'grid-item') ); ?>>
 	<div class="post-inner post-hover">
 
 		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php hu_the_post_thumbnail('thumb-medium'); ?>
-				<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-play"></i></span>'; ?>
-				<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-volume-up"></i></span>'; ?>
-				<?php if ( is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-star"></i></span>'; ?>
+      <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+        <?php
+        if ($post->post_type == 'sd_cpt_event') {
+        	$img_url = wp_strip_all_tags(Utils::get_value_by_language($post->sd_data['headerPictureUrl']));
+          echo '<img src="'.$img_url.'" class="attachment-thumb-medium size-thumb-medium wp-post-image" loading="lazy" sizes="(max-width: 520px) 100vw, 520px" width="520" height="245">';
+        } else { ?>
+				  <?php hu_the_post_thumbnail('thumb-medium'); ?>
+				  <?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-play"></i></span>'; ?>
+				  <?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-volume-up"></i></span>'; ?>
+          <?php if ( is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-star"></i></span>'; ?>
+          <?php
+        }
+        ?>
 			</a>
 			<?php if ( comments_open() && ( hu_is_checked( 'comment-count' ) ) ): ?>
 				<a class="post-comments" href="<?php comments_link(); ?>"><span><i class="fa fa-comments-o"></i><?php comments_number( '0', '1', '%' ); ?></span></a>
