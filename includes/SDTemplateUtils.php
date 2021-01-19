@@ -35,6 +35,47 @@ class SDTemplateUtils {
     return $custom_query;
   }
 
+  public static function get_dates_query( $event_id ) {
+    $custom_query = new WP_Query(
+      array(
+        'post_type'     => 'sd_cpt_date',
+        'post_status'   => 'publish',
+        'meta_key'      => 'sd_date_begin',
+        'order'         => 'ASC',
+        'limit'         => 1,
+        'meta_query'    => array(
+          'condition2'    => array(
+            'key'           => 'sd_event_id',
+            'value'         => $event_id,
+            'type'          => 'CHAR',
+            'compare'       => '='
+          ),
+        ),
+      )
+    );
+
+    return $custom_query;
+  }
+
+  /**
+   * Return 'first' date post of an event.
+   * Not necessarily chronologically ordered.
+   */
+  public static function get_first_date( $event_id ) {
+    $custom_query = self::get_dates_query( $event_id );
+
+    $date_posts = $custom_query->get_posts();
+
+    if ( $custom_query->have_posts() ) {
+      return $date_posts[0];
+    }
+
+    return NULL;
+  }
+
+  /**
+   * Return first future date post of an event.
+   */
   public static function get_first_upcoming_date( $event_id ) {
     $custom_query = self::get_upcoming_dates_query( $event_id );
 

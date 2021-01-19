@@ -23,8 +23,14 @@ use Inc\Utils\TemplateUtils as Utils;
     <?php echo __("Veranstaltung von ", 'hueman-7l-child'); ?><?php echo date_i18n(__('D d.M. Y', 'hueman-7l-child'), get_post_meta($post->ID, 'fromdate', true)); ?>
     <?php echo __("bis", 'hueman-7l-child'); ?> <?php echo date_i18n(__('D d.M. Y', 'hueman-7l-child'), get_post_meta($post->ID, 'todate', true)); ?>
   <?php } elseif(get_post_type() == "sd_cpt_event") { ?>
-    <?php echo __("Veranstaltung von ", 'hueman-7l-child'); ?>
-    <?php /* date/span */ ?>
+    <?php
+      echo __("Veranstaltung von ", 'hueman-7l-child');
+      echo "&nbsp;";
+      $date_post = SDUtils::get_first_date($post->sd_event_id);
+  		Utils::get_date_span( $date_post->sd_date_begin, $date_post->sd_date_end, null, null, null, null, true);
+    ?>
+  <?php } elseif(get_post_type() == "sd_cpt_facilitator") { ?>
+    <?php echo __("Referent*in", 'hueman-7l-child'); ?>
   <?php } else { ?>
     <time class="published updated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time( get_option('date_format') ); ?></time>
   <?php } ?>
