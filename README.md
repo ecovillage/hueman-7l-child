@@ -194,6 +194,22 @@ Most texts are translatable (for translations, look in the `languages` folder).
 
 [wphierarchy](https://wphierarchy.com/) comes in handy sometimes.
 
+#### Debugging
+
+*Because I always forget how to*
+
+In `wp-config.php`
+```
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+```
+
+- Then use `error_log` to write to the default debug file (`wp-content/debug.log`).
+- Use `json_encode()` to get a JSON representation of a complicated object.
+- Or use `print_r` to print datastructures
+- Also `var_dump` comes helpful for variables / datastructures.
+
 ## Release
 
   - Change version in style.css and commit
