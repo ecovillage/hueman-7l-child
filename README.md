@@ -99,17 +99,19 @@ Helpers for the proprietary solution.
 
 ## Provided shortcodes
 
-  - featured_news
-  - upcoming_events (currently in sidebar)
-  - h7lc_sd_upcoming_events (for sidebar)
-  - pages_list
-  - event_calendar
+  - `[featured_news]`
+  - `[upcoming_events]` (currently in sidebar)
+  - `[h7lc_sd_upcoming_events]` (for sidebar)
+  - `[pages_list]`
+  - `[event_calendar]`
     use like
     `[event_calendar]`. Optional arguments are `year(="2019")` and `month(="11")`.
     Will render an unsorted list, with elements in `parts/event_list_line`.
-  - event_calendar_this_year_past
-  - event_calendar_this_year_upcoming
-  - event_registration_form (eventuuid)
+  - `[event_calendar_this_year_past]`
+  - `[event_calendar_this_year_upcoming]`
+  - `[event_registration_form]` (eventuuid)
+  - `[sd_booking_button event_uuid='...']` to display a booking button that
+    triggers the modal (style and js inline).
 
 ... to be explained
 

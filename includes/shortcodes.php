@@ -42,3 +42,35 @@ function h7lc_sd_show_upcoming() {
 }
 add_shortcode( 'h7lc_sd_upcoming_dates',
   'h7lc_sd_show_upcoming' );
+
+function h7lc_sd_show_registration_button( $atts ) {
+  $a = shortcode_atts( array('event_uuid' => 'uid'), $atts );
+  $uuid = $a['event_uuid'];
+  if ( !$uuid ) {
+    return '';
+  }
+
+  require_once( get_stylesheet_directory() . '/includes/SDTemplateUtils.php' );
+
+  ob_start();
+  $event_post  = SDTemplateUtils::get_event_by_sd_event_id( $uuid );
+  $booking_url = esc_url( $event_post->sd_data['bookingPageUrl'][0]['value'] ?? null );
+
+  echo '<style>';
+  get_template_part( 'seminardesk-custom/templates/assets/sd_cpt_event.css' );
+  echo '</style>';
+
+  get_template_part( 'parts/booking_modal.php' );
+
+  echo '<script>';
+  get_template_part( 'seminardesk-custom/templates/assets/sd_cpt_event.js' );
+  echo '</script>';
+
+  echo '<br><p><button class="sd-modal-booking-btn">Buchung</button></p>';
+
+  $ret = ob_get_contents();
+  ob_end_clean();
+  return $ret;
+}
+
+add_shortcode( 'sd_booking_button', 'h7lc_sd_show_registration_button' );
