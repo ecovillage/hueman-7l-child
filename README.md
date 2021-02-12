@@ -113,6 +113,9 @@ Helpers for the proprietary solution.
   - `[sd_booking_button event_uuid='...']` to display a booking button that
     triggers the modal (style and js inline).
 
+To find the uuid of an SD-event, while being logged in, browse to its page,
+click on "edit event" and scroll down to find the `sd_event_id` metadata.
+
 ... to be explained
 
 ## About registrations
