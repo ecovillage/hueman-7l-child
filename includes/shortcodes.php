@@ -59,8 +59,9 @@ function h7lc_sd_show_registration_button( $atts ) {
   echo '<style>';
   get_template_part( 'seminardesk-custom/templates/assets/sd_cpt_event.css' );
   echo '</style>';
-
-  get_template_part( 'parts/booking_modal.php' );
+ 
+  set_query_var( 'booking_url', $booking_url );
+  get_template_part( 'parts/booking_modal' );
 
   echo '<script>';
   get_template_part( 'seminardesk-custom/templates/assets/sd_cpt_event.js' );
