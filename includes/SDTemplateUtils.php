@@ -2,6 +2,7 @@
 //namespace includes;
 
 use Inc\Utils\TemplateUtils as Utils;
+use Inc\Utils\WebhookUtils as WebhookUtils;
 
 class SDTemplateUtils {
 
@@ -83,6 +84,21 @@ class SDTemplateUtils {
 
     if ( $custom_query->have_posts() ) {
       return $date_posts[0];
+    }
+
+    return NULL;
+  }
+
+  /**
+   * Return event post with given sd_event_id .
+   */
+  public static function get_event_by_sd_event_id( $event_id ) {
+    $custom_query = WebhookUtils::get_query_by_meta( 'sd_cpt_event', 'sd_event_id', $event_id );
+
+    $event_posts = $custom_query->get_posts();
+
+    if ( $custom_query->have_posts() ) {
+      return $event_posts[0];
     }
 
     return NULL;

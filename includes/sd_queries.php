@@ -19,7 +19,7 @@ function modify_search( $search ) {
             'lang'              => '',
         ) );
         $wp_query->posts = array_unique( array_merge( $custon_posts, $wp_query->posts ), SORT_REGULAR );
-        $wp_query->post_count = count( $wp_query->posts );
+        $wp_query->post_count  = count( $wp_query->posts );
         $wp_query->found_posts = count( $wp_query->posts );
     }
 
