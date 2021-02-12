@@ -57,17 +57,17 @@ function h7lc_sd_show_registration_button( $atts ) {
   $booking_url = esc_url( $event_post->sd_data['bookingPageUrl'][0]['value'] ?? null );
 
   echo '<style>';
-  get_template_part( 'seminardesk-custom/templates/assets/sd_cpt_event.css' );
+  get_template_part( 'parts/sd_cpt_event.css' );
   echo '</style>';
  
   set_query_var( 'booking_url', $booking_url );
   get_template_part( 'parts/booking_modal' );
 
-  echo '<script>';
-  get_template_part( 'seminardesk-custom/templates/assets/sd_cpt_event.js' );
-  echo '</script>';
-
   echo '<br><p><button class="sd-modal-booking-btn">Buchung</button></p>';
+
+  echo '<script>';
+  get_template_part( 'parts/sd_cpt_event.js' );
+  echo '</script>';
 
   $ret = ob_get_contents();
   ob_end_clean();
