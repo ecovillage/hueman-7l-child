@@ -53,7 +53,7 @@ get_header();
             <?php 
             $img_url = Utils::get_value_by_language($term_meta['pictureUrl']) ?? null;
             echo '<p>' . Utils::get_value_by_language($term_meta['description']) . '</p>';
-            echo Utils::get_img_remote( $img_url, '150', '', 'remote image failed', '', '' );        
+            echo Utils::get_img_remote( wp_strip_all_tags($img_url), '150', '', 'remote image failed', '', '' );
             ?>
         </div><!-- .archive-header-inner -->
     </header><!-- .archive-header -->
@@ -304,7 +304,7 @@ get_header();
                         <div class="sd-event-image">
                           <?php
                           $img_url = Utils::get_value_by_language($sd_data['headerPictureUrl'] ?? $sd_data['pictureUrl'] ?? null);
-                          echo Utils::get_img_remote( $img_url, '300', '', 'remote image failed', '<p>', '</p>' );
+                          echo Utils::get_img_remote( wp_strip_all_tags($img_url), '300', '', 'remote image failed', '<p>', '</p>' );
                           ?>
                         </div> <!-- sd-event-image -->
                         <div class=sd-event-teaser>

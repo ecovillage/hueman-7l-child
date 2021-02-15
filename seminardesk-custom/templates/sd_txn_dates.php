@@ -75,7 +75,7 @@ get_header();
                         </div> <!-- sd-event-props -->
                         <div class=sd-event-image>
                             <?php
-                            Utils::get_img_remote(  Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl']), '300', '', $alt = __('remote image failed', 'hueman-7l-child'), '', '', true);
+                            Utils::get_img_remote(  wp_strip_all_tags(Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl'])), '300', '', $alt = __('remote image failed', 'hueman-7l-child'), '', '', true);
                             ?>
                         </div> <!-- sd-event-image -->
                         <div class=sd-event-teaser>
