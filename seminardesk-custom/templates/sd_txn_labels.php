@@ -111,7 +111,7 @@ get_header();
                                 Utils::get_facilitators($post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>Facilitator: </strong>', '</div>', true);
                                 Utils::get_value_by_language($post->sd_data['priceInfo'], 'DE', '<div class="sd-event-price"><strong>Price: </strong>', '</div>', true );
                                 Utils::get_venue($post->sd_data['venue'], '<div class="sd-event-venue"><strong>Venue: </strong>', '</div>', true);
-                                Utils::get_img_remote(  Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl'] ?? null), '300', '', 'remote image failed', '', '', true);
+                                Utils::get_img_remote( wp_strip_all_tags( Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl'] ?? null)), '300', '', 'remote image failed', '', '', true);
                                 echo Utils::get_value_by_language($post_event->sd_data['teaser']);
                                 if ( $post_event_status === 'publish' ){
                                     ?>
@@ -167,7 +167,7 @@ get_header();
                             Utils::get_facilitators($post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>Facilitator: </strong>', '</div>', true);
                             Utils::get_value_by_language($post->sd_data['priceInfo'], 'DE', '<div class="sd-event-price"><strong>Price: </strong>', '</div>', true );
                             Utils::get_venue($post->sd_data['venue'], '<div class="sd-event-venue"><strong>Venue: </strong>', '</div>', true);
-                            Utils::get_img_remote(  Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl'] ?? null), '300', '', 'remote image failed', '', '', true);
+                            Utils::get_img_remote( wp_strip_all_tags( Utils::get_value_by_language($post_event->sd_data['teaserPictureUrl'] ?? null) ), '300', '', 'remote image failed', '', '', true);
                             echo Utils::get_value_by_language($post_event->sd_data['teaser']); 
                             if ( $post_event_status === 'publish' ){
                                 ?>

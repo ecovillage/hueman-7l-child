@@ -31,15 +31,15 @@
               $event_post = get_post( $post->wp_event_id );
               $event_url  = esc_url( get_permalink( $post->wp_event_id ) );
             ?>
-            <a href="<?php echo $event_url; ?>" title="<?php echo get_the_title( $post->ID ); ?>">
-              <?php Utils::get_img_remote( Utils::get_value_by_language( $event_post->sd_data['teaserPictureUrl'] ?? null ), '300', '', $alt = "remote image load failed", '<p>', '</p>', true ); ?>
+            <a href="<?php echo $event_url; ?>" title="<?php echo wp_strip_all_tags(get_the_title( $post->ID )); ?>">
+              <?php Utils::get_img_remote( wp_strip_all_tags(Utils::get_value_by_language( $event_post->sd_data['teaserPictureUrl'] ?? null ) ), '300', '', $alt = "remote image load failed", '<p>', '</p>', true ); ?>
             </a>
           </div>
           <div class="post-item-inner group">
             <p class="post-item-category"><a href="<?php echo $event_url; ?>" rel="category tag"><?php echo __( 'Veranstaltung', 'hueman-7l-child' ); ?></a>
             </p>
             <p class="post-item-title">
-              <a href="<?php echo $event_url; ?>" rel="bookmark" title="<?php echo get_the_title( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+              <a href="<?php echo $event_url; ?>" rel="bookmark" title="<?php echo wp_strip_all_tags(get_the_title( $post->ID )); ?>"><?php echo get_the_title( $post->ID ); ?></a>
             </p>
             <p class="post-item-date">
               <?php echo date_i18n(__('D, d.m', 'hueman-7l-child'), $post->sd_date_begin / 1000); ?>
