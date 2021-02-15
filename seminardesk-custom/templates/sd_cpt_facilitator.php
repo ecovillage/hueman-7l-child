@@ -118,7 +118,7 @@ get_header();
                             </h3>
                             <div class="event-block-date">
                               <?php
-                                Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '', true);
+                                Utils::get_date_span( $post->sd_data['beginDate'], $post->sd_data['endDate'], '','','', '', true);
                               ?>
                             </div>
                           </div>
@@ -168,7 +168,7 @@ get_header();
                         ?>
                             <div style="margin:1em">
                                 <?php 
-                                Utils::get_date( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', ': ', true);
+                                Utils::get_date_span( $post->sd_data['beginDate'], $post->sd_data['endDate'], '','','', ': ', true);
                                 ?>
                                 <a href="<?php echo esc_url(get_permalink($post->wp_event_id)); ?>">
                                     <?php
