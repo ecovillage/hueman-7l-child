@@ -107,7 +107,7 @@ get_header();
                                 } else {
                                     the_title( '<p><h2 class="archive-title">', '</h2></p>' );
                                 }
-                                Utils::get_date( $post->sd_date_begin, $post->sd_date_end, '<div class="sd-event-date"><strong>Date: </strong>', '</div>', true);
+                                Utils::get_date_span( $post->sd_date_begin, $post->sd_date_end, '', '', '<div class="sd-event-date"><strong>Date: </strong>', '</div>', true);
                                 Utils::get_facilitators($post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>Facilitator: </strong>', '</div>', true);
                                 Utils::get_value_by_language($post->sd_data['priceInfo'], 'DE', '<div class="sd-event-price"><strong>Price: </strong>', '</div>', true );
                                 Utils::get_venue($post->sd_data['venue'], '<div class="sd-event-venue"><strong>Venue: </strong>', '</div>', true);
@@ -163,7 +163,7 @@ get_header();
                             } else {
                                 the_title( '<p><h2 class="archive-title">', '</h2></p>' );
                             }
-                            Utils::get_date( $post->sd_date_begin, $post->sd_date_end, '<div class="sd-event-date"><strong>Date: </strong>', '</div>', true);
+                            Utils::get_date_span( $post->sd_date_begin, $post->sd_date_end, '', '', '<div class="sd-event-date"><strong>Date: </strong>', '</div>', true);
                             Utils::get_facilitators($post_event->sd_data['facilitators'], '<div class="sd-event-facilitators"><strong>Facilitator: </strong>', '</div>', true);
                             Utils::get_value_by_language($post->sd_data['priceInfo'], 'DE', '<div class="sd-event-price"><strong>Price: </strong>', '</div>', true );
                             Utils::get_venue($post->sd_data['venue'], '<div class="sd-event-venue"><strong>Venue: </strong>', '</div>', true);
@@ -291,7 +291,7 @@ get_header();
                             echo "<strong>Termine:</strong><br>";
 
                             foreach( $date_posts as $upcoming_date ) {
-                              $date_str = Utils::get_date( $upcoming_date->sd_date_begin,  $upcoming_date->sd_date_end );
+                              $date_str = Utils::get_date_span( $upcoming_date->sd_date_begin,  $upcoming_date->sd_date_end );
                               echo $date_str;
                               echo "<br>";
                             }

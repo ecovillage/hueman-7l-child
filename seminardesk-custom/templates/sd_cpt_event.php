@@ -52,7 +52,7 @@ get_header();
         <div class="post-format">
           <div class="image-container">
             <?php
-              $url = Utils::get_value_by_language($post->sd_data['headerPictureUrl']);
+              $url = wp_strip_all_tags( Utils::get_value_by_language($post->sd_data['headerPictureUrl']) );
               //Utils::get_img_remote( $url, '300', '', $alt = __('remote image failed', 'seminardesk'));
             ?>
             <img src="<?php echo $url; ?>" class="attachment-thumb-large size-thumb-large wp-post-image" alt="" loading="lazy" sizes="(max-width: 720px) 100vw, 720px" width="720" height="340">

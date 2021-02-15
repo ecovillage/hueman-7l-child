@@ -109,7 +109,7 @@ class SDTemplateUtils {
       return NULL;
     }
 
-    $date_str = Utils::get_date( $date->sd_date_begin,  $date->sd_date_end );
+    $date_str = Utils::get_date_span( $date->sd_date_begin,  $date->sd_date_end );
     // rtrim() or wp_strip_all_tags...
     $title_str = wp_strip_all_tags( $date->post_title ) . ': ';
     $price_str = wp_strip_all_tags( Utils::get_value_by_language( $date->sd_data['priceInfo'] ) );
@@ -146,7 +146,7 @@ class SDTemplateUtils {
 
   public static function get_dates_str( $date ) {
     if ( $date ) {
-      return Utils::get_date( $date->sd_date_begin, $date->sd_date_end );
+      return Utils::get_date_span( $date->sd_date_begin, $date->sd_date_end );
     }
     else {
       return NULL;
