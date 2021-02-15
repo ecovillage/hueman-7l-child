@@ -46,7 +46,7 @@ get_header();
             </header>
             <div class="post-meta-wrapper post-meta-single post-meta-single-top sd-facilitator-post">
                 <?php
-                echo !empty( $post->sd_data['pictureUrl'] ) ? '<p>' . Utils::get_img_remote($post->sd_data['pictureUrl'], '100') . '</p>' : null;
+                echo !empty( $post->sd_data['pictureUrl'] ) ? '<p>' . Utils::get_img_remote(wp_strip_all_tags($post->sd_data['pictureUrl']), '100') . '</p>' : null;
                 $about = Utils::get_value_by_language( $post->sd_data['about'] );
                 echo !empty($about) ? '<p>' . $about . '</p>' : null;     
 
@@ -105,7 +105,7 @@ get_header();
                         <div class="event-block" style="margin:1em">
                           <div class="facilitator-event-tease-img">
                             <?php 
-                              Utils::get_img_remote( Utils::get_value_by_language( $post_event->sd_data['teaserPictureUrl'] ?? null ), '300', '', $alt = "remote image load failed", '', '', true );
+                              Utils::get_img_remote( wp_strip_all_tags(Utils::get_value_by_language( $post_event->sd_data['teaserPictureUrl'] ?? null )), '300', '', $alt = "remote image load failed", '', '', true );
                             ?>
                           </div>
                           <div class="facilitator-event-tease">
