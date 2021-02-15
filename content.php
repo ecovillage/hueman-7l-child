@@ -6,11 +6,11 @@ use Inc\Utils\TemplateUtils as Utils;
 	<div class="post-inner post-hover">
 
 		<div class="post-thumbnail">
-      <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+      <a href="<?php the_permalink(); ?>" class="<?php echo $post->post_type; ?>-search-result" title="<?php echo wp_strip_all_tags(the_title('','',false)); ?>">
         <?php
         if ($post->post_type == 'sd_cpt_event') {
         	$img_url = wp_strip_all_tags(Utils::get_value_by_language($post->sd_data['headerPictureUrl']));
-          echo '<img src="'.$img_url.'" class="attachment-thumb-medium size-thumb-medium wp-post-image" loading="lazy" sizes="(max-width: 520px) 100vw, 520px" width="520" height="245">';
+          echo '<img src="'.$img_url.'" class="attachment-thumb-medium size-thumb-medium wp-post-image sd-event-search-result" loading="lazy" sizes="(max-width: 520px) 100vw, 520px" width="520" height="245">';
         } else { ?>
 				  <?php hu_the_post_thumbnail('thumb-medium'); ?>
 				  <?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-play"></i></span>'; ?>
@@ -35,7 +35,7 @@ use Inc\Utils\TemplateUtils as Utils;
 		</div><!--/.post-meta-->
 
 		<h2 class="post-title entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo wp_strip_all_tags(the_title('', '', false)); ?>"><?php the_title(); ?></a>
 		</h2><!--/.post-title-->
 
 		<?php if (hu_get_option('excerpt-length') != '0'): ?>
