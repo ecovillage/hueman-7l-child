@@ -1,5 +1,7 @@
 <?php
 
+use Inc\Utils\TemplateUtils as Utils;
+
 /** Similar to legacy h7lc_shortcode_upcoming_events, collect upcoming events
  * and return html for it. */
 function h7lc_sd_show_upcoming() {
@@ -75,3 +77,10 @@ function h7lc_sd_show_registration_button( $atts ) {
 }
 
 add_shortcode( 'sd_booking_button', 'h7lc_sd_show_registration_button' );
+
+function h7lc_sd_event_title( $atts ) {
+  global $post;
+  return Utils::get_value_by_language( $post->sd_data['title'], 'DE', '', '', false); 
+}
+
+add_shortcode( 'h7lc_sd_event_title', 'h7lc_sd_event_title' );
