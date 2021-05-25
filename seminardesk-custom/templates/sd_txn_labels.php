@@ -53,7 +53,9 @@ get_header();
             <?php 
             $img_url = Utils::get_value_by_language($term_meta['pictureUrl']) ?? null;
             echo '<p>' . Utils::get_value_by_language($term_meta['description']) . '</p>';
-            echo Utils::get_img_remote( wp_strip_all_tags($img_url), '150', '', 'remote image failed', '', '' );
+            if ( $img_url ) {
+              echo Utils::get_img_remote( wp_strip_all_tags($img_url), '150', '', 'remote image failed', '', '' );
+            }
             ?>
         </div><!-- .archive-header-inner -->
     </header><!-- .archive-header -->
