@@ -7,8 +7,12 @@
 			<li class="category"><?php the_category(' <span>/</span> '); ?></li>
 			<?php if ( comments_open() && ( hu_is_checked( 'comment-count' ) ) ): ?>
 			<li class="comments"><a href="<?php comments_link(); ?>"><i class="fa fa-comments-o"></i><?php comments_number( '0', '1', '%' ); ?></a></li>
-			<?php endif; ?>
-		</ul>
+      <?php endif; ?>
+    </ul>
+
+    <?php if( get_post_type( $post ) == 'podcast' ): ?>
+      Ökodorf Sieben Linden Podcast
+    <?php endif; ?>
 
 	<?php elseif ( is_page() ): ?>
     <?php /* Leaving vanilla hueman 3.2.9 parts/page-title.php */ ?>

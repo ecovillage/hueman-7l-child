@@ -3,7 +3,11 @@
     <div class="post-inner group">
 
       <?php /* Leaving vanilla theme to include image in standard post format. */ ?>
-      <?php if(get_post_format($post) == '') : ?>
+      <?php if(get_post_type($post) == 'podcast') : ?>
+        <?php
+          //echo get_the_post_thumbnail($post, array(100,100), array( 'class' => 'alignleft', 'style' => 'width: 50%;' ) );
+        ?>
+      <?php elseif(get_post_format($post) == '') : ?>
         <div class="post-format">
           <div class="image-container">
             <?php if ( has_post_thumbnail() ) {
@@ -16,7 +20,9 @@
       <?php endif; ?>
       <?php /* Re-entering vanilla hueman theme. */ ?>
 
-      <?php hu_get_template_part('parts/single-heading'); ?>
+      <?php if( get_post_type( $post ) != 'podcast' ) {
+        hu_get_template_part('parts/single-heading');
+      } ?>
 
       <?php if( get_post_format() ) { get_template_part('parts/post-formats'); } ?>
 
