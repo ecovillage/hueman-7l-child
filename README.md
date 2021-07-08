@@ -140,6 +140,10 @@ Example: `[pages_list parent_name="My Parent Page Title"]`
 
 Backend theme listing image.
 
+## Handling of other plugins
+
+Currently, post types from the podlove and seminardesk plugins are handled.
+
 ## Hueman settings at siebenlinden.org
 
 Global Settings -> Identity -> Display Logo (X), max-height: 145
