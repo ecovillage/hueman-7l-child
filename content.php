@@ -5,12 +5,14 @@ use Inc\Utils\TemplateUtils as Utils;
 <article id="post-<?php the_ID(); ?>" <?php post_class( array('group', 'grid-item') ); ?>>
 	<div class="post-inner post-hover">
 
-		<div class="post-thumbnail">
+		<div class="post-thumbnail" <?php if( get_post_type( $post ) == 'podcast' ) { echo "style=\"display:inline-block;\""; } ?> >
       <a href="<?php the_permalink(); ?>" class="<?php echo $post->post_type; ?>-search-result" title="<?php echo wp_strip_all_tags(the_title('','',false)); ?>">
         <?php
         if ($post->post_type == 'sd_cpt_event') {
         	$img_url = wp_strip_all_tags(Utils::get_value_by_language($post->sd_data['headerPictureUrl']));
           echo '<img src="'.$img_url.'" class="attachment-thumb-medium size-thumb-medium wp-post-image sd-event-search-result" loading="lazy" sizes="(max-width: 520px) 100vw, 520px" width="520" height="245">';
+        } elseif( get_post_type( $post ) == 'podcast' )  {
+          echo get_the_post_thumbnail($post, array(512, 512), array( 'class' => '', 'style' => '' ) );
         } else { ?>
 				  <?php hu_the_post_thumbnail('thumb-medium'); ?>
 				  <?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-play"></i></span>'; ?>
