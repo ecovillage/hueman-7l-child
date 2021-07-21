@@ -239,9 +239,9 @@ get_header();
                         if ( !empty($booking_url) && $post->sd_data['registrationAvailable'] === true ) {
                             ?>
 
-                            <br><p><button class="sd-modal-booking-btn">
+                            <br><p style="display: flex;"><button class="sd-modal-booking-btn" style="margin: auto; margin-top: 1em; font-size: 1.75em;">
                                 <?php 
-                                _e( 'Booking', 'hueman-7l-child' );
+                                _e( 'Zur Buchung', 'hueman-7l-child' );
                                 ?>
                             </button></p>
                             </p>
