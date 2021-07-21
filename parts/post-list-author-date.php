@@ -1,5 +1,8 @@
 <?php
 use Inc\Utils\TemplateUtils as Utils;
+require_once( get_stylesheet_directory() . '/includes/SDTemplateUtils.php' );
+use SDTemplateUtils as SDUtils;
+
 ?>
 <?php
 /*  Print the post date. Compatible with Google Structured data. Must be used in the WordPress loop

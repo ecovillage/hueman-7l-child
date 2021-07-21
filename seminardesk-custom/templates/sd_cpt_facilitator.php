@@ -118,7 +118,7 @@ get_header();
                             </h3>
                             <div class="event-block-date">
                               <?php
-                                Utils::get_date_span( $post->sd_data['beginDate'], $post->sd_data['endDate'], '','','', '', true);
+                                Utils::get_date_span( $post->sd_data['beginDate'], $post->sd_data['endDate'], '', '', '', '', true);
                               ?>
                             </div>
                           </div>

@@ -206,6 +206,7 @@ get_header();
 
                     $booking_list = Utils::get_event_dates_list( $post->sd_event_id, $status_lib );
                     $booking_url = esc_url( Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ?? null ) );
+			$booking_url =  Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ) ;
 
                     if ( $only_date || $booking_list ) {
                         ?>
@@ -232,7 +233,9 @@ get_header();
                         } else {
                           echo $booking_list;
                         }
-                        
+						$booking_url =  Utils::get_value_by_language( $post->sd_data['bookingPageUrl'] ) ;
+						
+			
                         if ( !empty($booking_url) && $post->sd_data['registrationAvailable'] === true ) {
                             ?>
 
@@ -260,7 +263,7 @@ get_header();
                 <div class="sd-modal-content">
                     <span class="sd-modal-close-btn">&times;</span>
                     <h4 class="sd-modal-title"><?php _e('Booking', 'hueman-7l-child');?></h4>
-                    <iframe class="sd-modal-booking" src="<?php echo $booking_url ?>/embed" title="Seminardesk Booking"></iframe>
+                    <iframe class="sd-modal-booking" src="<?php echo wp_strip_all_tags($booking_url); ?>/embed" title="Seminardesk Booking"></iframe>
                 </div>
             </div>
             <!-- END modal content -->
