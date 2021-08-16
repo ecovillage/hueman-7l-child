@@ -264,10 +264,25 @@ get_header();
         /**
          * template part - sd_cpt_label (labelGroup/label), sd_cpt_events
          */
+        // case, here: e.g. the normal single "Rubrik" view
         default:
-            if (have_posts()) {
-                while (have_posts()) {
-                    the_post();
+              if ( have_posts() ) {
+                // Sort by firsts date begin date
+                function firstDateSort( $a, $b ) {
+                  $a_first_date = SDUtils::get_first_upcoming_date( $a->sd_event_id );
+                  $b_first_date = SDUtils::get_first_upcoming_date( $b->sd_event_id );
+
+                  $a_first_date_begin_date = $a_first_date->sd_date_begin;
+                  $b_first_date_begin_date = $b_first_date->sd_date_begin;
+
+                  return ( $a_first_date_begin_date < $b_first_date_begin_date ) ? -1 : 1;
+                }
+
+                usort( $posts, "firstDateSort" );
+
+                //while ( have_posts() ) {
+                foreach ( $posts as $post ) {
+                    //the_post();
                     $sd_data = $post->sd_data;
                     ?>
                     <div class="sd-event">
@@ -288,7 +303,7 @@ get_header();
                       <div class="sd-event-container">
                         <div class="sd-event-props">
                           <?php
-                          $date_posts = SDUtils::get_upcoming_dates_query(  $post->sd_event_id )->get_posts();
+                          $date_posts = SDUtils::get_upcoming_dates_query( $post->sd_event_id )->get_posts();
                           if ( count($date_posts) > 0 ) {
                             echo "<strong>Termine:</strong><br>";
 
