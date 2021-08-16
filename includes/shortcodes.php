@@ -2,7 +2,8 @@
 
 use Inc\Utils\TemplateUtils as Utils;
 
-/** Similar to legacy h7lc_shortcode_upcoming_events, collect upcoming events
+/** Similar to legacy h7lc_shortcode_upcoming_events, collect upcoming
+ * (ending in the future) events
  * and return html for it. */
 function h7lc_sd_show_upcoming() {
   global $upcoming_dates;
@@ -15,7 +16,7 @@ function h7lc_sd_show_upcoming() {
     'post_type'         => 'sd_cpt_date',
     'post_status'       => 'publish',
     'posts_per_page'    => $limit,
-    'meta_key'          => 'sd_date_begin',
+    'meta_key'          => 'sd_date_end',
     'orderby'           => 'meta_value_num',
     'order'             => 'ASC',
     'meta_query'        => array(
@@ -25,7 +26,7 @@ function h7lc_sd_show_upcoming() {
       //  'value'     => $wp_event_ids,
       //),
       array(
-        'key'       => 'sd_date_begin',
+        'key'       => 'sd_date_end',
         'value'     => $timestamp_today*1000, //in ms
         'type'      => 'numeric',
         'compare'   => '>=',
