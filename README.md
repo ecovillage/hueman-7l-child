@@ -1,8 +1,7 @@
 # Hueman 7L Wordpress Child Theme
-
 A [hueman child theme](http://presscustomizr.com/hueman/) for the wordpress installation of the ecovillage Sieben Linden (siebenlinden.org).
 
-Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018, 2019, 2020 released under the GPLv3+. Original content in `seminardesk-wordpress-custom` is Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
+Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018, 2019, 2020, 2021, 2022 released under the GPLv3+. Original content in `seminardesk-wordpress-custom` is Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
 
 See a [list of contributors here](https://github.com/ecovillage/hueman-7l-child/graphs/contributors).
 
