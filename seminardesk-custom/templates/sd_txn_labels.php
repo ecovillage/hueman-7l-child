@@ -87,7 +87,7 @@ get_header();
                         ),
                     );
                     $wp_query->meta_query->queries = $meta_query;
-                    set_query_var( 'meta_query', $wp_query->meta_query->queries);
+                    set_query_var( 'meta_query', $wp_query->meta_query->queries );
                     $wp_query->get_posts();
                     if (have_posts()) {
                         while (have_posts()) {
@@ -279,9 +279,16 @@ get_header();
                 }
 
                 usort( $posts, "firstDateSort" );
+				$end_of_last_year = new DateTime('last day of december last year');
 
                 //while ( have_posts() ) {
                 foreach ( $posts as $post ) {
+					$first_upcoming_date = new DateTime('NOW');
+					$first_upcoming_date->setTimestamp(SDUtils::get_first_upcoming_date( $post->sd_event_id )->sd_date_begin / 1000);
+
+					if ($first_upcoming_date < $end_of_last_year) {
+						continue;
+					}
                     //the_post();
                     $sd_data = $post->sd_data;
                     ?>
