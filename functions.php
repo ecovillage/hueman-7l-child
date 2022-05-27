@@ -344,3 +344,13 @@ function h7lc_rubrik_query_limit( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'h7lc_rubrik_query_limit' );
+
+remove_filter('the_content', 'wpautop');
+
+add_action('template_redirect', 'webroom_force_ssl');
+function webroom_force_ssl(){
+	if (!is_ssl()) {
+		wp_redirect('https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 301);
+		exit();
+	}
+}
