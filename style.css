@@ -505,3 +505,96 @@ li.calendar-event-row {
   float: right;
   width: 220px;
 }
+
+
+
+/* Jens: no klicky on header image */
+
+#header-image-wrap {
+  pointer-events: none;
+}
+
+/* Jens: there, fixed it for you */
+
+.sidebar {
+  padding-bottom: 0;
+}
+
+.page-title {
+	background-color: #f0f0f0;
+}
+
+
+
+
+/* general */
+@media only screen and (max-width: 719px) {
+  .site-image {
+    display: none;
+  }
+}
+
+/* util */
+.center {
+	margin: 0 auto;
+}
+
+.wp-block-columns {
+  /* gap: 2rem; */
+}
+
+/* fullwidth page template */
+.container.fullwidth {
+    padding: 0 0;
+}
+.container-inner.fullwidth {
+	max-width:100%;
+}
+#page .container-inner.fullwidth .main .pad {
+    padding: 0 !important;
+}
+@media (max-width: 719px) {
+	.fullwidth .main-inner 	{
+        margin-inline: 1rem;
+    }
+}
+
+/* Jens: we don't want breadcrumbs on fullwidth pages */
+.fullwidth .page-title {
+	display: none;
+}
+
+
+/* Partner-grid */
+
+
+/* Jens: We want custom colorz on our menus on camp sites like sommercamp etc */
+
+#menu-sommercamp-1:has(li.current_page_item) li.current_page_item,
+#menu-sommercamp-1:has(li.current-page-item) li.current-page-item {
+    background-color: #9b9c96; /* change me! */
+}
+#menu-sommercamp-1:has(li.current-page-ancestor) li.current-page-ancestor,
+#menu-sommercamp-1:has(li.current-page-parent) li.current-page-parent {
+	background-color: inherit;
+}
+
+
+#menu-biodanza-plus-1:has(li.current_page_item) li.current_page_item,
+#menu-biodanza-plus-1:has(li.current-page-item) li.current-page-item {
+    background-color: #9b9c96; /* change me! */
+}
+#menu-biodanza-plus-1:has(li.current-page-ancestor) li.current-page-ancestor, 
+#menu-biodanza-plus-1:has(li.current-page-parent) li.current-page-parent {
+	background-color:inherit;
+}
+
+
+#menu-silvesterretreat-1:has(li.current_page_item) li.current_page_item,
+#menu-silvesterretreat-1:has(li.current-page-item) li.current-page-item {
+    background-color: #9b9c96; /* change me! */
+}
+#menu-silvesterretreat-1:has(li.current-page-ancestor) li.current-page-ancestor, 
+#menu-silvesterretreat-1:has(li.current-page-parent) li.current-page-parent {
+	background-color:inherit;
+}
