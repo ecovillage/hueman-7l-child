@@ -344,3 +344,19 @@ function h7lc_rubrik_query_limit( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'h7lc_rubrik_query_limit' );
+
+
+
+
+// Jens: remove added html if code from editor is pasted
+remove_filter('the_content', 'wpautop');
+
+
+// Jens: order category entries by date
+function custom_order_by_date( $query ) {
+    if ( is_category() && $query->is_main_query() ) {
+        $query->set( 'order', 'DESC' ); // newest first
+        $query->set( 'orderby', 'date' );
+    }
+}
+add_action( 'pre_get_posts', 'custom_order_by_date' );
