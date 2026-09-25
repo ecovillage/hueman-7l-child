@@ -176,3 +176,31 @@ function childtheme_enqueue_parent_style() {
   }
 
 /** END Submenu in sidebar.php **/
+
+/* ------------------------------------------------------------------------- *
+ *  Customizer: Widget-Bereiche auch ohne manage_options speichern
+ * ------------------------------------------------------------------------- */
+// Problem: Nutzer ohne Admin-Rechte (z. B. "Martin", Rolle "Theme-Editor" mit
+// edit_theme_options) konnten im Customizer Änderungen am Menü einer Seite nicht
+// speichern: "Das Speichern ist aufgrund 1 ungültiger Einstellung nicht möglich."
+//
+// Ursache: Das Hueman-Pro-Theme registriert seine Optionen standardmäßig mit der
+// Berechtigung manage_options (hueman-pro/functions/czr/class-czr-init.php,
+// hu_customize_arguments()). Die Oberfläche "Widget-Bereiche verwalten"
+// (hu_theme_options[sidebar-areas]) markiert ihren Wert beim Laden des
+// Customizers als geändert und schickt ihn deshalb bei JEDEM Speichern mit,
+// auch wenn niemand die Widget-Bereiche angefasst hat. Ohne manage_options
+// lehnt WordPress das als "unauthorized" ab, und der ganze Speichervorgang scheitert.
+//
+// Lösung: Nur für diese eine Einstellung reicht jetzt edit_theme_options (die
+// übliche Berechtigung für Menüs, Widgets und Customizer). So müssen wir
+// Redakteuren nicht manage_options geben, das Zugriff auf alle
+// Einstellungsseiten bedeuten würde (bis hin zur Standardrolle bei der Registrierung).
+// Priorität PHP_INT_MAX, damit das Theme die Einstellung vorher registriert hat.
+add_action( 'customize_register', 'sl_sidebar_areas_capability', PHP_INT_MAX );
+function sl_sidebar_areas_capability( $wp_customize ) {
+    $setting = $wp_customize->get_setting( 'hu_theme_options[sidebar-areas]' );
+    if ( $setting ) {
+        $setting->capability = 'edit_theme_options';
+    }
+}
