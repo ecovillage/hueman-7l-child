@@ -1,233 +1,105 @@
-# Hueman 7L Wordpress Child Theme
-A [hueman child theme](http://presscustomizr.com/hueman/) for the wordpress installation of the ecovillage Sieben Linden (siebenlinden.org).
+# Hueman 7L WordPress Child Theme
+Ein Child Theme für [Hueman Pro](https://presscustomizr.com/hueman-pro/), für die WordPress-Installation des Ökodorfs Sieben Linden (siebenlinden.org).
 
-Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018, 2019, 2020, 2021, 2022 released under the GPLv3+. Original content in `seminardesk-wordpress-custom` is Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
+Ursprünglich von Felix Wolfsteller (2016–2022), 2025 neu aufgebaut von Matthias Drees. Veröffentlicht unter der GPLv3+.
 
-See a [list of contributors here](https://github.com/ecovillage/hueman-7l-child/graphs/contributors).
-
-The ecovillage hosts a range of educational seminars and events, prior to 2021
-these were managed using a self built application, where event data was pushed
-to wordpress and handled with the with custom wordpress plugin [ev7l-events](https://github.com/ecovillage/ev7l-events) .
-
-In 2020 the decision was done to switch to a proprietary, non-visionary
-un-community ( :( ) solution, which
-uses a different plugin.
-
-The original and awesome Presscustomizr hueman theme source can also be [found at github](https://github.com/presscustomizr/hueman).
+Siehe die [Liste der Mitwirkenden](https://github.com/ecovillage/hueman-7l-child/graphs/contributors).
 
 ## Installation
 
-Fit to be used with the [github updater plugin](https://github.com/afragen/github-updater/wiki/Installation).
+Voraussetzung ist das installierte Parent-Theme Hueman Pro.
 
-## Files Included
+Das Child Theme kann mit dem Plugin [Git Updater](https://git-updater.com/) installiert und aktualisiert werden.
 
-### single-ev7l-event.php
-
-View of a single event.
-
-### archive-ev7l-event.php
-
-View list of events (this could become the calendar).
-
-### sd-facilitators-list.php
-
-A template to be used (create a page with this template) to show alphabetically
-sorted referees. Because seminardesk-wordpress plugin overrides archive
-generation.
-
-### single-ev7l-event-category.php
-
-View of a single event category (listing events).
-
-### single-ev7l-referee.php
-
-View of a single referee (listing events).
-
-### page.php
-
-Standard page, with heading above image.
-
-### page-calendar.php
-
-Calendar page, if needed.  In order for it to work, you'll need a page called ... 'calendar'.
-
-### content-featured-custom.php
-
-For 'featured-news-slider' (used by shortcode), do not display the category.  Derived from content-featured.php (vanilla hueman 3.3.4).
-
-### parts/single-author-date.php
-
-Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'betrieb' single view.
-
-### parts/post-list-author-date.php
-
-Overwritten from vanilla hueman (3.3.4) - do not display author and date in 'betrieb' archive view.
-
-### parts/event_list_alx.php
-
-Partial for the event list in sidebar, widget style.
-
-### content.php
-
-Overwritten from vanilla hueman (3.3.4) - do not category if about in a 'betrieb' post (over)view.
-
+## Enthaltene Dateien
 
 ### style.css
 
-Main css overrides and new definitions.
+Theme-Header sowie CSS-Überschreibungen und eigene Regeln.
 
 ### functions.php
 
-Enough emptiness for everybody.  Now, things start to happen here.
+Lädt die Stylesheets von Parent- und Child-Theme sowie Flexslider, registriert den Shortcode `[featured_news]` und enthält Hilfsfunktionen für das Untermenü in `sidebar.php`.
 
-### parts/registration.php
+### fullwidth-template.php
 
-Registration form, mailer and logic, integrated into legacy system.
+Seitentemplate „Fullwidth-Template“: Layout in voller Breite, Header und Navigation sind direkt eingebunden. Lädt das AOS-Stylesheet aus `/wp-content/uploads/7l-landing/`.
 
-## seminardesk-custom/*
+### landingpage-template.php
 
-Template files overridden from plugin for proprietary event booking solution.
+Seitentemplate „Landingpage-Template“: gibt nur den Inhalt aus dem Editor aus (rohes HTML), ohne Theme-Styling. Gedacht für eigenständig gestaltete Seiten wie die Landingpage.
 
-## includes/SDTemplateUtils.php
+### sidebar.php
 
-Helpers for the proprietary solution.
+Überschreibt die Sidebar des Parent-Themes. Zeigt ein Untermenü zum aktuellen Zweig des ersten Navigationsmenüs.
 
-## includes/shortcodes.php
+### content-featured.php
 
-Helpers for the proprietary solution.
+Markup eines einzelnen Beitrags im News-Slider.
 
-## Provided shortcodes
+### parts/featured.php
 
-  - `[featured_news]`
-  - `[upcoming_events]` (currently in sidebar)
-  - `[h7lc_sd_upcoming_events]` (for sidebar)
-  - `[pages_list]`
-  - `[event_calendar]`
-    use like
-    `[event_calendar]`. Optional arguments are `year(="2019")` and `month(="11")`.
-    Will render an unsorted list, with elements in `parts/event_list_line`.
-  - `[event_calendar_this_year_past]`
-  - `[event_calendar_this_year_upcoming]`
-  - `[event_registration_form]` (eventuuid)
-  - `[sd_booking_button event_uuid='...']` to display a booking button that
-    triggers the modal (style and js inline).
+Flexslider für den Shortcode `[featured_news]`.
 
-To find the uuid of an SD-event, while being logged in, browse to its page,
-click on "edit event" and scroll down to find the `sd_event_id` metadata.
+### parts/page-image.php
 
-... to be explained
+Beitragsbild einer Seite, mit dem Seitentitel als Bildunterschrift.
 
-## About registrations
+### parts/page-title.php
 
-### Prior to 2021
-Will be put in pseudo-randomly named files (for legacy database, json import) in the `registrations` subdirectory of your wordpress home base.  You should put a `.htaccess` file there and instruct your webserver to not let anybody come close to that data.
+Überschreibt den Seitentitel-Teil des Parent-Themes.
 
-##### [featured_news]
+## Shortcodes
 
-Shows a flexslider running through latest posts of the 'news' category.
+  - `[featured_news]`: Zeigt einen Flexslider mit den neuesten Beiträgen der Kategorie „news“.
 
-##### [upcoming_events]
+## Hueman-Einstellungen auf siebenlinden.org
 
-Shows an 'alx' style list of upcoming events, much like in the sidebar widget of the ev7l-events plugin.
+*Achtung: Diese Angaben stammen noch aus der Zeit vor dem Neuaufbau 2025 und sind möglicherweise veraltet.*
 
-##### [pages_list]
+  - Global Settings -> Identity -> Display Logo (X), max-height: 145
+  - Global Settings -> Identity -> no tagline
+  - Global Settings -> General Design -> Sidebar Padding for Widgets: 20px
+  - Global Settings -> General Design -> Primary color #c9d30e
+  - Global Settings -> General Design -> Secondary color #f29400
+  - Global Settings -> General Design -> Topbar Background : #cad133
+  - Global Settings -> General Design -> Header Background : #f5f5f5
+  - Comments -> Posts and Pages
+  - Header -> Header Menu -> no default
+  - Header -> Design -> no tagline
+  - Content -> Front page: static
+  - Footer -> Credit Text
 
-Shows child pages of a certain page as in the two-column post list.
-Example: `[pages_list parent_name="My Parent Page Title"]`
+Blog-Design und -Inhalte sind nicht in allen Versionen verfügbar.
 
-### screenshot.png
+## Ressourcen
 
-Backend theme listing image.
+### Template-Hierarchie
 
-## Handling of other plugins
+[wphierarchy](https://wphierarchy.com/) hilft beim Nachschlagen, welches Template WordPress wann verwendet.
 
-Currently, post types from the podlove and seminardesk plugins are handled.
+### Debugging
 
-## Hueman settings at siebenlinden.org
-
-Global Settings -> Identity -> Display Logo (X), max-height: 145
-Global Settings -> Identity -> no tagline
-Global Settings -> General Design -> Sidebar Padding for Widgets: 20px
-Global Settings -> General Design -> Primary color #c9d30e
-Global Settings -> General Design -> Secondary color #f29400
-Global Settings -> General Design -> Topbar Background : #cad133
-Global Settings -> General Design -> Header Background : #f5f5f5
-Comments -> Posts and Pages
-Header -> Header Menu -> no default
-Header -> Design -> no tagline
-Content -> Front page: static
-
-Footer -> Credit Text
-
-Blog design and content not available in all versions.
-
-## Update to match upstream stable hueman theme
-
-The original Presscustomizr hueman theme ([source](https://github.com/presscustomizr/hueman)) still receives updates (as of late 2019). To integrate changes and fixes, this Child Theme has to be updated every once in a while.
-
-The process is yet unclear and a WIP, relevant scripts might be placed in a runbook at https://github.com/ecovillage/operations .
-
-### WIP doc
-
-The "current" version of the upstream Hueman (the "parent") theme that this child theme is based on needs to be know.
-For now, its placed in `HUEMAN_BASE_VERION`
-
-  * we need to know which files are based of which parent files:
-    * get list of files `git ls-files | sort > FILES`
-  * add a sorted list of files that are included but independent of parent version
-    * (FILES.ignore)
-  * also CSS rules need to be checked
-
-
-## Update translations
-
-Most texts are translatable (for translations, look in the `languages` folder).
-
-### Graphically: Use poedit
-  - `poedit`
-  - (Initial setup) File > Catalog Manager > New : Project Name = hueman-child-7l; Directories = Browse
-  - File > Catalogs Manager > Update all
-  - (edit)
-  - Save and Update
-
-
-### For you:
-  - to update the compiled catalog: `msgfmt catalog.po -o catalog.mo` (for ubuntu/debian: in gettext package).
-  - in the concrete example: `msgfmt de_DE.po -o de_DE.mo`
-
-
-### Resources
-
-#### Looking for the Hierarchy?
-
-[wphierarchy](https://wphierarchy.com/) comes in handy sometimes.
-
-#### Debugging
-
-*Because I always forget how to*
-
-In `wp-config.php`
+In `wp-config.php`:
 ```
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', false );
 ```
 
-- Then use `error_log` to write to the default debug file (`wp-content/debug.log`).
-- Use `json_encode()` to get a JSON representation of a complicated object.
-- Or use `print_r` to print datastructures
-- Also `var_dump` comes helpful for variables / datastructures.
+- Mit `error_log` in die Standard-Logdatei schreiben (`wp-content/debug.log`).
+- Mit `json_encode()` komplexe Objekte als JSON ausgeben.
+- Mit `print_r` Datenstrukturen ausgeben.
+- Auch `var_dump` hilft bei Variablen und Datenstrukturen.
 
 ## Release
 
-  - Change version in style.css and commit
-  - git tag -a VERSION -m VERSION
-  - git push && git push --tags
+  - Version in `style.css` ändern und committen
+  - `git tag -a VERSION -m VERSION`
+  - `git push && git push --tags`
 
-That means, the releases are tags in git (typical setup).
+Releases sind also Git-Tags.
 
-## License
+## Lizenz
 
-Authored by Felix Wolfsteller, Copyright 2016, 2017, 2018, 2019, 2020 released under the GPLv3+.
-Original content in `seminardesk-wordpress-custom` is Copyright 2020 SeminarDesk – Danker, Smaluhn & Tammen GbR .
-
+Copyright 2016–2022 Felix Wolfsteller, 2025 Matthias Drees. Veröffentlicht unter der GPLv3+.

@@ -1,14 +1,30 @@
 /*
-Theme Name: siebenlinden.org hueman child theme
-Version: 1.2.14
-Description: A child theme of Hueman for siebenlinden.org (https://github.com/ecovillage/hueman-7l-child)
-Template: hueman
-Author: Felix Wolfsteller
-GitHub Theme URI: https://github.com/ecovillage/hueman-7l-child
+	Theme Name: Hueman Pro Child
+	Theme URI: http://presscustomizr.com/hueman-pro/
+	Description: Remake 2025-08-15
+	Author: Matthias Drees
+	Author URI:
+	Template: hueman-pro
+	Version: 1.3.0
 */
 
-@import url("../hueman/style.css");
-/* Your awesome customization starts here */
+/* ------------------------------------------------------------------------- *
+ *  Theme customization starts here
+ * ------------------------------------------------------------------------- */
+
+/* add display:swap to all fonts, thus avoiding layout shifts */
+@font-face {
+  /*font-display: swap;*/
+  font-display: optional;
+}
+
+body {
+  font-display: swap;
+}
+
+html {
+  font-display: swap;
+}
 
 /* Darken font color. */
 body {
@@ -36,17 +52,17 @@ body {
 
 /* Greyish footer */
 #footer-bottom.container {
-  background-color: rgb(245,245,245);
+  background-color: rgb(245, 245, 245);
 }
 
 /* Darker script on greyish footer */
 #copyright p {
-  color: rgb(102,102,102);
+  color: rgb(102, 102, 102);
 }
 
 /* Background in header on home front page */
 .home #header .pad {
-  background: url("/wp-content/uploads/2016/06/header_bg.jpg");
+  background: url('/wp-content/uploads/2016/06/header_bg.jpg');
 }
 
 /* Right sidebar (formerly orangish) */
@@ -54,17 +70,12 @@ body {
   background-color: #fff;
 }
 
-/* Highlight current position in menu in darker green */
-#nav-topbar li.current_page_item, li.current-page-ancestor, li.current-page-parent, li.current-page-item {
-  background-color: #b5bd0d;
-}
-
-/* Less white space in header (no submenu), but space white indeed */
+/* Less white space in header (no submenu), but space white indeed
 #header .pad {
   padding-top: 10px;
   padding-bottom: 10px;
   background: white;
-}
+}*/
 
 /* Green content top header bar on homepage */
 .home .page-title {
@@ -83,81 +94,17 @@ body {
 }
 
 /* Darken link color a bit */
-.content a {
+.content a,article a,.content a:hover,article a:hover{
   font-weight: 400;
-  color: #989F30;
+  color: #989f30;
 }
 
-/* Left sidebar smaller (280px instead of 340px) */
-/*
-.col-2cl .main-inner { padding-right: -280px; }
-.col-2cl .s1 { margin-right: -280px; }
-
-.col-2cr .main-inner { padding-left: 280px; }
-.col-2cr .s1 { margin-left: -280px; }
-
-.col-3cm .main-inner { padding-left: 280px;}
-.col-3cm .s1 { margin-left: -280px; }
-
-.s1 { width: 280px; }
-
-.search-expand { width: 280px; }
 
 
-@media only screen and (min-width: 961px) and (max-width: 1200px) {
-  .col-3cl .main-inner { padding-right: 330px; }
-  .col-3cl .s1 { margin-right: -330px; }
-  .col-3cl.s2-expand .s2 { right: 280px; }
 
-  .col-3cr .main-inner { padding-left: 330px; }
-  .col-3cr .s1 { margin-left: -330px; }
-  .col-3cr.s2-expand .s2 { left: 280px; }
-}
+/* START hier kann fast alles, was folgt raus - bitte nichts hinzufügen
 
-@media only screen and (min-width: 480px) and (max-width: 960px) {
-  .s1-expand .s1 { width: 280px; }
-  .s1-expand .s1 .sidebar-content,
-  .s1-expand .s1 .post-nav { min-width: 280px; }
-  .safari.s1-expand .s1 { min-width: 280px; max-width: 280px; }
-}
-
-.col-2cl .main-inner { background-size: 280px; }
-.col-2cr .main-inner { background-size: 280px; }
-.col-3cm .main-inner { background-size: 280px; }
-*/
-/*
-.col-3cm .s1 {
- margin-left: -280px;
-}
-
-.col-3cm .main-inner {
-  background-size: 280px auto;
-}
-
-.main-inner.group {
-  padding-left: 280px;
-}
-*/
-
-/*
-li.current_page_item {
-  background-color: #b5bd0d;
-}
-
-li.current-page-ancestor {
-  background-color: #b5bd0d;
-}
-
-li.current-page-parent {
-  background-color: #b5bd0d;
-}
-
-li.current-page-item {
-  background-color: #b5bd0d;
-}
-*/
-
-/* ev7l Event List Widget heading */
+/? ev7l Event List Widget heading ?/
 h2.event-list-month-name {
   color: #f29400;
   padding-bottom: 1em;
@@ -173,7 +120,7 @@ ul.ev7l_event_list {
 .ev7l_event_list > li {
   color: black;
 }
-.ev7l_event_list > li > a{
+.ev7l_event_list > li > a {
   color: black;
 }
 
@@ -196,17 +143,17 @@ article.ev7l-event h3 {
   padding-bottom: 2em;
 }
 .upcoming-events h2 {
-  color: #989F30;
+  color: #989f30;
   font-size: 16pt;
   margin-bottom: 2em;
   margin-top: 2em;
 }
 .past-events {
   background-color: #ececed;
-  margin-left:  -30px;
+  margin-left: -30px;
   margin-right: -30px;
   padding-right: 30px;
-  padding-left:  30px;
+  padding-left: 30px;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -225,18 +172,18 @@ article.ev7l-event h3 {
   margin-right: 2em;
   padding-right: 2em;
 }
-.eventcol a{
+.eventcol a {
   font-weight: 400;
   color: black;
 }
 
 .event-dates-small {
-  color: #989F30;
+  color: #989f30;
   font-size: 12pt;
 }
 
 #referees {
-  display: "inline-block";
+  display: 'inline-block';
   margin-bottom: 8px;
   margin-top: 12px;
 }
@@ -247,20 +194,20 @@ article.ev7l-event h3 {
 }
 
 #referees h3 {
-  color: #989F30;
+  color: #989f30;
   font-size: 1.1em;
 }
 
 #registration {
-  display: "inline-block";
+  display: 'inline-block';
 }
 
 ul.calendar-events {
   list-style: none;
 }
 
-/* Make calendar images h-align with text. */
-ul.calendar-events img{
+/? Make calendar images h-align with text. ?/
+ul.calendar-events img {
   margin-top: 10px;
 }
 
@@ -301,86 +248,54 @@ h2.firstlettername {
   font-size: 16pt;
 }
 
-h2.breadcrumbs {
-  color: #989F30;
-}
-
 #event-infos h2 {
   color: #666;
   font-size: 1.125em;
 }
 
 #event-infos h3 {
-  color: #989F30;
+  color: #989f30;
   font-size: 14pt;
   margin-bottom: 8px;
   margin-top: 12px;
 }
 
-/* fa-circle-thin: "\f1db" for menu items without children */
-.child-menu > li > ul > li > a.childless::before {
-  content: "\f1db";
-  visibility: hidden;
-}
-
-.child-menu a {
-  color: #222;
-}
-
-.child-menu a:hover {
-  color: #b5bd0d;
-}
-
-
-/* Black highlight of left child menus current page. */
-.sidebar-content .child-menu .current_page_item > a {
-  color: black;
-}
-
-/* Image caption now serves as heading. Change color to whitish. */
-.caption {
-  color: white;
-  display: inline-block;
-  background: #C9D30E;
-}
-
-/* Image caption now serves as heading. Change color to whitish, margins. */
-.caption h1 {
-  color: white;
-  margin-left:    10px;
-  margin-right:   10px;
-  margin-top:    -10px;
-  margin-bottom: -10px;
-}
-
-/* Do not show headings in featured images of events. */
+/? Do not show headings in featured images of events. ?/
 .type-ev7l-event .caption h1 {
   display: none;
 }
 
-/* Text in image should be at 1/3 height. */
+/? Text in image should be at 1/3 height. ?/
 .page-image-text {
   top: 30%;
 }
 
-/* Adjust event featured image text overlay. */
-.ev7l-event .post-inner .entry .entry-inner .page-image .image-container .page-image-text .caption h1 {
-  font-weight:600;
+/? Adjust event featured image text overlay. ?/
+.ev7l-event
+  .post-inner
+  .entry
+  .entry-inner
+  .page-image
+  .image-container
+  .page-image-text
+  .caption
+  h1 {
+  font-weight: 600;
   font-size: xx-large;
   line-height: 1.6em;
 }
 
-/* Text in image: hide original h1 */
+/? Text in image: hide original h1 ?/
 .ev7l-event .post-inner h1.entry-title {
   display: none;
 }
 
-/* Do not show list bullets for flexslider navigation */
+/? Do not show list bullets for flexslider navigation ?/
 #flexslider-featured li {
   list-style: none;
 }
 
-/* Let event list look wider on start page */
+/? Let event list look wider on start page ?/
 .home .ev7l_event_list {
   margin-left: 0px;
 }
@@ -414,17 +329,17 @@ li.calendar-event-row {
   width: 50%;
 }
 
-/* Make mobile menu background color green. */
+/? Make mobile menu background color green. ?/
 #header .nav-container.mobile-sticky ul {
   background-color: #c9d30e;
 }
 
-/* Make cancellation condition text smaller */
+/? Make cancellation condition text smaller ?/
 .cancel_conditions {
   font-size: 0.8em;
 }
 
-/* Dark color on news slider, search results ... */
+/? Dark color on news slider, search results ... ?/
 .entry.excerpt.entry-summary {
   color: #222;
 }
@@ -433,13 +348,23 @@ li.calendar-event-row {
   font-size: 0.8em;
 }
 
-/* Make button["button"]s look like button["submit"]s. */
-.themeform button[type="button"] { background: #16cfc1; color: #fff; padding: 8px 14px; font-weight: 600; display: inline-block; border: none; cursor: pointer; -webkit-border-radius: 3px; border-radius: 3px; }
+/? Make button["button"]s look like button["submit"]s. ?/
+.themeform button[type='button'] {
+  background: #16cfc1;
+  color: #fff;
+  padding: 8px 14px;
+  font-weight: 600;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
 
-/* Registration response messages. */
-#response .success::before{
-  font-family: "FontAwesome";
-  content: "\f164 ";
+/? Registration response messages. ?/
+#response .success::before {
+  font-family: 'FontAwesome';
+  content: '\f164 ';
   padding-right: 5px;
   padding-left: 5px;
 }
@@ -447,9 +372,9 @@ li.calendar-event-row {
   background: #82b965;
 }
 
-#response .error::before{
-  font-family: "FontAwesome";
-  content: "\f071 ";
+#response .error::before {
+  font-family: 'FontAwesome';
+  content: '\f071 ';
   padding-right: 5px;
   padding-left: 5px;
 }
@@ -472,7 +397,8 @@ li.calendar-event-row {
   padding-right: 10px;
 }
 
-#registration .success, .error {
+#registration .success,
+.error {
   margin-left: -10px;
   margin-right: -10px;
   padding-top: 10px;
@@ -481,51 +407,66 @@ li.calendar-event-row {
   padding-right: 5px;
 }
 
-/* Put infos in non-green. */
+/? Put infos in non-green. ?/
 #event-infos {
   color: #444;
-  /* weight */
 }
 
-#donation, #donateamount {
+
+#donation,
+#donateamount {
   display: inline-block;
 }
 
-/* Menu colors when scrolled */
+/? Menu colors when scrolled ?/
 .is-scrolled .sub-menu {
-  background-color: rgba(201,211,14,0.92) !important;
+  background-color: rgba(201, 211, 14, 0.92) !important;
 }
 
-.is-scrolled #nav-topbar {
-  background-color: rgba(201,211,14,0.92) !important;
-}
-
-/* In calendar event iteration, move image to right. */
+/? In calendar event iteration, move image to right. ?/
 .sd-event-container img {
   float: right;
   width: 220px;
 }
 
 
+ ENDE hier kann fast alles, was hierdrüber ist raus - bitte nichts hinzufügen*/
+
+
+
+
+
+h2.breadcrumbs {color:#989f30;}
+
+/* Do not show list bullets for flexslider navigation */
+#flexslider-featured li {list-style: none;}
+
+/* fa-circle-thin: "\f1db" for menu items without children */
+.child-menu > li > ul > li > a.childless::before {content: '\f1db';visibility: hidden;}
+.child-menu a {color:#222;}
+.child-menu a:hover{color:#b5bd0d;}
+/* Black highlight of left child menus current page. */
+.sidebar-content .child-menu .current_page_item > a {color:black;}
+
+/* Image caption now serves as heading. Change color to whitish. */
+.caption {color: white;display: inline-block;background: #c9d30e;}
+/* Image caption now serves as heading. Change color to whitish, margins. */
+.caption h1 {color: white;margin-left: 10px;margin-right: 10px;margin-top: -10px;margin-bottom: -10px;}
+
+
 
 /* Jens: no klicky on header image */
-
 #header-image-wrap {
   pointer-events: none;
 }
 
 /* Jens: there, fixed it for you */
-
 .sidebar {
   padding-bottom: 0;
 }
-
 .page-title {
 	background-color: #f0f0f0;
 }
-
-
-
 
 /* general */
 @media only screen and (max-width: 719px) {
@@ -543,58 +484,113 @@ li.calendar-event-row {
   /* gap: 2rem; */
 }
 
-/* fullwidth page template */
-.container.fullwidth {
-    padding: 0 0;
-}
-.container-inner.fullwidth {
-	max-width:100%;
-}
-#page .container-inner.fullwidth .main .pad {
-    padding: 0 !important;
-}
+/* Jens: fullwidth page template */
+.container.fullwidth {padding: 0 0;}
+.container-inner.fullwidth {max-width:100%;}
+#page .container-inner.fullwidth .main .pad {padding: 0 !important;}
 @media (max-width: 719px) {
-	.fullwidth .main-inner 	{
-        margin-inline: 1rem;
-    }
+  .fullwidth .main-inner 	{margin-inline: 1rem;}
 }
 
 /* Jens: we don't want breadcrumbs on fullwidth pages */
-.fullwidth .page-title {
-	display: none;
+.fullwidth .page-title {display: none;visibility:hidden;}
+
+/* Jens: We want custom colorz on our menus on camp sites like sommercamp etc
+#menu-sommercamp-1:has(li.current_page_item) li.current_page_item,#menu-sommercamp-1:has(li.current-page-item) li.current-page-item {background-color: #9b9c96;}
+#menu-sommercamp-1:has(li.current-page-ancestor) li.current-page-ancestor,#menu-sommercamp-1:has(li.current-page-parent) li.current-page-parent {background-color: inherit;}
+#menu-biodanza-plus-1:has(li.current_page_item) li.current_page_item,#menu-biodanza-plus-1:has(li.current-page-item) li.current-page-item {background-color: #9b9c96;}
+#menu-biodanza-plus-1:has(li.current-page-ancestor) li.current-page-ancestor,#menu-biodanza-plus-1:has(li.current-page-parent) li.current-page-parent {background-color:inherit;}
+#menu-silvesterretreat-1:has(li.current_page_item) li.current_page_item,#menu-silvesterretreat-1:has(li.current-page-item) li.current-page-item {background-color: #9b9c96;}
+#menu-silvesterretreat-1:has(li.current-page-ancestor) li.current-page-ancestor,#menu-silvesterretreat-1:has(li.current-page-parent) li.current-page-parent {background-color:inherit;}
+*/
+
+
+
+/* Matthias Drees - Nach dem Main Theme Update */
+
+/* Global */
+/*.pad {padding: 30px 30px 20px;}*/
+
+header > .container{padding:0px;}
+header > .container .container-inner{margin:0;max-width:inherit;}
+
+#nav-topbar li.current_page_item, #nav-topbar li.current-page-ancestor, #nav-topbar li.current-page-parent, #nav-topbar li.current-page-item, #nav-topbar li.current-menu-parent, #nav-topbar li.current-menu-ancestor, #nav-topbar li.current-menu-item{background-color:rgb(181,189,13);}
+
+#bottom-welcome-note a, .comment-body a, .widget_text a, article .entry a{text-decoration:none;}
+
+.page-image-text .caption{padding:15px 10px;line-height:normal;}
+
+/* bessermitfahren.de Mitfahrzentrale Formular-Snippet */
+#bmfcontent input, #bmfcontent select, .bmfoverlay input, .bmfoverlay select {line-height:initial!important;height:40px!important;}
+
+/* Matthias: Social Media Icons im Footer entfernen */
+#footer-bottom .grid.one-half.last{display:none!important;visibility:hidden;}
+
+/* Matthias: contextulizer funktioniert bei 'Sidebares nicht anzeigen' nicht - darum Sidebars per CSS auf Startseite entfernt und mittleren Container verbreitert */
+.page-id-16483 .sidebar.s1,.page-id-16483 .sidebar.s2{display:none!important;visibility:hidden;}
+.page-id-16483.col-3cm .container-inner > .main::before,.page-id-16483.col-3cm .container-inner > .main::after,.page-id-16483.col-3cm .main-inner{padding:0;}
+
+/* Matthias: Fix Height to 0 in Mobile Menu */
+/*.header-mobile-sticky #header{min-height:0;height:0!important;}*/
+
+/* Matthias: Komische Farben (Grau-Töne) wegen Hueman Pro Theme main.css - finde ich nicht im Customizer zum umstellen - sorry */
+/*#header{background:none;}
+#page{background:#f5f5f5;}
+#nav-topbar .nav ul,.is-scrolled .topbar-transparent #nav-topbar.desktop-sticky .nav ul{background:#bbc235!important;}
+.sidebar.s1 .sidebar-top,.sidebar.s1 .sidebar-toggle,input[type="submit"]{background:#cad133;}
+.post-hover:hover .post-title a{color:#cad133;}*/
+
+/* Matthias: Menü-Punkt "Mitglied werden" */
+.menu-item-26481{background:#f29400;font-weight:bold;}
+.menu-item-26481 a{color:#fff!important;}
+
+/* Matthias: Suchfeld */
+.search-expand-inner{background:rgba(201,211,14,0.8)}
+#topbar-header-search [role="search"].search-form input[type="submit"]{display:none;visibility:hidden;}
+
+/* Matthias: Highlight current position in menu in darker green
+#nav-topbar li.current_page_item,
+li.current-page-ancestor,
+li.current-page-parent,
+li.current-page-item {
+  background-color: #b5bd0d;
+}*/
+/*
+ #nav-topbar.nav-container,#header #nav-mobile,.is-scrolled #header #nav-mobile{background:#d1d93c;}
+ .is-scrolled #nav-topbar {background-color: rgba(201, 211, 14, 0.92) !important;}
+*/
+
+
+/* Matthias: Sommercamp Seite Menü Farbanpassung per Page ID und Parent Page ID
+.page-id-5787 .search-expand-inner,.page-id-5787 #nav-topbar.nav-container,.page-id-5787 #header #nav-mobile,.page-id-5787 .is-scrolled #header #nav-mobile,.parent-pageid-5787 .search-expand-inner,.parent-pageid-5787 #nav-topbar.nav-container,.parent-pageid-5787 #header #nav-mobile,.parent-pageid-5787 .is-scrolled #header #nav-mobile{background:#7e7be7!important;}
+.page-id-5787 .is-scrolled #nav-topbar.nav-container{background-color:rgba(126,123,231,0.8)!important;}
+.page-id-5787 #nav-topbar .nav li a,.parent-pageid-5787 #nav-topbar .nav li a,.page-id-5787 #header .nav-container .nav li a,.page-id-5787 #header .hu-dropdown-toggle{color:#fff;}
+.page-id-5787 #header .nav-container.mobile-sticky ul{background-color: inherit;}
+
+.page-id-5787 header{height:0;}
+.page-id-5787 header .container.fullwidth{display:none;visibility:hidden;}*/
+
+
+/* Matthias: Silvesterretreat Seite Menü - Farbanpassung per Page ID und Parent Page ID */
+/*.page-id-23132 .search-expand,.page-id-23132 #nav-topbar.nav-container,.page-id-23132 #header #nav-mobile,.page-id-23132 .is-scrolled #header #nav-mobile,.parent-pageid-23132 .search-expand,.parent-pageid-23132 #nav-topbar.nav-container,.parent-pageid-23132 #header #nav-mobile,.parent-pageid-23132 .is-scrolled #header #nav-mobile{background:#d5c088!important;}
+.page-id-23132 #nav-topbar .nav li a,.parent-pageid-23132 #nav-topbar .nav li a{color:#fff;}*/
+
+
+
+
+/* Tablet - 800px, 768px & 720px */
+@media only screen and (min-width: 720px) and (max-width: 800px) {
+
 }
 
-
-/* Partner-grid */
-
-
-/* Jens: We want custom colorz on our menus on camp sites like sommercamp etc */
-
-#menu-sommercamp-1:has(li.current_page_item) li.current_page_item,
-#menu-sommercamp-1:has(li.current-page-item) li.current-page-item {
-    background-color: #9b9c96; /* change me! */
-}
-#menu-sommercamp-1:has(li.current-page-ancestor) li.current-page-ancestor,
-#menu-sommercamp-1:has(li.current-page-parent) li.current-page-parent {
-	background-color: inherit;
+/* Mobile - 480px & 320px */
+@media only screen and (max-width: 719px) {
+	header > .container .container-inner{display:none;visibility:hidden;}
+	#header .nav-container .nav li.current-menu-item > a, #header .nav-container .nav li.current-post-parent > a, #header .nav-container .nav li.current_page_item > a,#header .nav-container .nav li a,#header .hu-dropdown-toggle,.themeform button[type="submit"], input[type="submit"]{color:black;}
+	#header .nav-container .nav li.current-menu-item > a, #header .nav-container .nav li.current-post-parent > a, #header .nav-container .nav li.current_page_item > a{color:#fff;text-decoration:none;}
 }
 
+/* Mobile - 320px */
+@media only screen and (max-width: 479px) {
 
-#menu-biodanza-plus-1:has(li.current_page_item) li.current_page_item,
-#menu-biodanza-plus-1:has(li.current-page-item) li.current-page-item {
-    background-color: #9b9c96; /* change me! */
-}
-#menu-biodanza-plus-1:has(li.current-page-ancestor) li.current-page-ancestor, 
-#menu-biodanza-plus-1:has(li.current-page-parent) li.current-page-parent {
-	background-color:inherit;
-}
-
-
-#menu-silvesterretreat-1:has(li.current_page_item) li.current_page_item,
-#menu-silvesterretreat-1:has(li.current-page-item) li.current-page-item {
-    background-color: #9b9c96; /* change me! */
-}
-#menu-silvesterretreat-1:has(li.current-page-ancestor) li.current-page-ancestor, 
-#menu-silvesterretreat-1:has(li.current-page-parent) li.current-page-parent {
-	background-color:inherit;
 }

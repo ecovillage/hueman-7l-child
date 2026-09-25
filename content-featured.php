@@ -13,10 +13,6 @@
 			<?php endif; ?>
 		</div><!--/.post-thumbnail-->
 
-		<div class="post-meta group">
-      <?php get_template_part('parts/post-list-author-date'); ?>
-		</div><!--/.post-meta-->
-
 		<h2 class="post-title entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 		</h2><!--/.post-title-->
