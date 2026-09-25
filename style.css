@@ -438,7 +438,7 @@ li.calendar-event-row {
 
 
 
-h2.breadcrumbs {color:#989f30;}
+.breadcrumbs {color:#989f30;}
 
 /* Do not show list bullets for flexslider navigation */
 #flexslider-featured li {list-style: none;}

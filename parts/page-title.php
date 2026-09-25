@@ -34,7 +34,7 @@ if ( is_single() ) {
 				}
 			?>
 			<?php echo hu_get_page_title(); ?>
-			</h2>
+			</nav>
 			<?php /* Re-entering vanilla hueman */ ?>
     	<?php elseif ( is_search() ): ?>
     		<h1><?php echo hu_get_search_title(); ?></h1>
