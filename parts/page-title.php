@@ -27,7 +27,7 @@ if ( is_single() ) {
 			<?php /* Leaving vanilla hueman 3.7.25 parts/page-title.php */ ?>
 			<!--<h1><?php echo hu_get_page_title(); ?></h1>-->
 			<?php /* Poor mans breadcrumbs */ ?>
-			<h2 class="breadcrumbs">
+			<nav class="breadcrumbs" aria-label="Breadcrumb">
 			<?php
 				foreach ( array_reverse(get_ancestors($post->ID, 'page')) as $ancestor) {
 				echo '<a href="' . get_page_link($ancestor) .'">' . get_page($ancestor)->post_title .  ' / </a>';
