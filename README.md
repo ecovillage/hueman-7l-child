@@ -19,7 +19,7 @@ Theme-Header sowie CSS-Überschreibungen und eigene Regeln.
 
 ### functions.php
 
-Lädt die Stylesheets von Parent- und Child-Theme sowie Flexslider, registriert den Shortcode `[featured_news]` und enthält Hilfsfunktionen für das Untermenü in `sidebar.php`.
+Lädt die Stylesheets von Parent- und Child-Theme, Flexslider (nur auf Seiten mit `[featured_news]`) und das Skript für die Podcast-Suche. Registriert die Shortcodes, den REST-Endpoint `oekodorf/v1/search` für die Podcast-Suche und enthält Hilfsfunktionen für das Untermenü in `sidebar.php`.
 
 ### fullwidth-template.php
 
@@ -47,11 +47,16 @@ Beitragsbild einer Seite, mit dem Seitentitel als Bildunterschrift.
 
 ### parts/page-title.php
 
-Überschreibt den Seitentitel-Teil des Parent-Themes.
+Überschreibt den Seitentitel-Teil des Parent-Themes. Zeigt auf Seiten einfache Breadcrumbs.
+
+### js/podcast-search.js
+
+Suche nach Podcast-Episoden (im Footer). Erwartet ein Eingabefeld `#ep-search` und eine Liste `#ep-results`. Durchsucht ab drei Zeichen zuerst die Episodentitel und ergänzt dann Treffer aus den Shownotes über den Endpoint `oekodorf/v1/search`.
 
 ## Shortcodes
 
   - `[featured_news]`: Zeigt einen Flexslider mit den neuesten Beiträgen der Kategorie „news“.
+  - `[jahr]`: Gibt das aktuelle Jahr aus, z. B. für den Copyright-Hinweis.
 
 ## Hueman-Einstellungen auf siebenlinden.org
 
