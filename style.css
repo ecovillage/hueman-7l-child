@@ -24,7 +24,9 @@ body {
 
 html {
   font-display: swap;
+  scroll-behavior: smooth;
 }
+
 
 /* Darken font color. */
 body {
@@ -519,6 +521,7 @@ header > .container .container-inner{margin:0;max-width:inherit;}
 #bottom-welcome-note a, .comment-body a, .widget_text a, article .entry a{text-decoration:none;}
 
 .page-image-text .caption{padding:15px 10px;line-height:normal;}
+article.post .image-container{margin-bottom:30px;}
 
 /* bessermitfahren.de Mitfahrzentrale Formular-Snippet */
 #bmfcontent input, #bmfcontent select, .bmfoverlay input, .bmfoverlay select {line-height:initial!important;height:40px!important;}
@@ -594,3 +597,81 @@ li.current-page-item {
 @media only screen and (max-width: 479px) {
 
 }
+
+
+/* Martin: Remove title, author etc. from podcast pages */
+article.podcast h1.post-title {
+	display: none;
+}
+
+/* Jens: additional styling for new section "further reading" in podcast shownotes*/
+.further-reading {
+  margin: 15px 0!important;
+  border-radius: 8px!important;
+  padding: 34px 24px!important;
+  border: 1px solid rgb(127 127 127 / .25);
+}
+
+/* Jens: we want a bit more space */
+.wp-block-details > *:not(summary) {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+
+}
+.wp-block-details > p {
+margin-left: 30px;
+}
+
+
+/* Jens: additional styling for index*/
+.index {
+margin: 15px 0 !important;
+  background-color: #6c6c650a !important;
+  border-radius: 6px !important;
+  padding: 19px 24px !important;
+}
+.index ul li {
+list-style: disclosure-closed;
+}
+
+.index ul li a{
+color: black;
+}
+
+/* Nur wenn das äußere li eine ul hat UND keinen direkten a-Tag */
+.index ul > li:has(> ul):not(:has(> a)) {
+  list-style: none;
+}
+
+/* Jens: Start-Page: spalten below the fold werden bei kleinen displays ausgeblendet */
+/* Nur die unteren 2 Spalten ansprechen */
+.below-fold-columns .wp-block-column:last-child {
+  display: block;
+}
+
+/* Rechte Spalte auf kleinen Bildschirmen ausblenden */
+@media (max-width: 1274px) {
+  .below-fold-columns .wp-block-column:last-child {
+    display: none !important;
+  }
+  
+  .below-fold-columns .wp-block-column:first-child {
+    width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+
+
+.icons-row {
+margin: 30px 0px;
+}
+.icons-row img {
+height: 80px;
+margin-bottom: 14px;
+}
+
+.podcast-copyright{
+line-height: 1.1rem;
+}}
