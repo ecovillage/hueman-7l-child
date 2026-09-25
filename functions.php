@@ -214,6 +214,99 @@ add_shortcode ('jahr', 'jahr_shortcode');
 
 
 
+// Script für podcast-Episoden suche im footer laden.
+
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script(
+        'podcast-search',
+        get_stylesheet_directory_uri() . '/js/podcast-search.js',
+        array(),
+        '1.2',
+        true
+    );
+});
+
+// Eigener Such-Endpoint für die Podcast-Suche
+add_action('rest_api_init', function () {
+    register_rest_route('oekodorf/v1', '/search', array(
+        'methods'  => 'GET',
+        'callback' => 'oekodorf_episode_search',
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'q' => array(
+                'required' => true,
+                'sanitize_callback' => 'sanitize_text_field',
+            ),
+        ),
+    ));
+});
+
+function oekodorf_episode_search($request) {
+    $q = trim($request->get_param('q'));
+
+    if (mb_strlen($q) < 3) {
+        return array();
+    }
+
+    $query = new WP_Query(array(
+        'post_type'      => 'podcast',
+        'post_status'    => 'publish',
+        's'              => $q,
+        'posts_per_page' => 10,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ));
+
+    $out = array();
+
+    foreach ($query->posts as $post) {
+        $title = html_entity_decode(get_the_title($post), ENT_QUOTES, 'UTF-8');
+
+        // Shownotes: Rohtext aus der DB, ohne gerenderten Player/Boilerplate
+        $body = wp_strip_all_tags(strip_shortcodes($post->post_content));
+        $body = html_entity_decode($body, ENT_QUOTES, 'UTF-8');
+        $body = trim(preg_replace('/\s+/u', ' ', $body));
+
+        $excerpt = '';
+
+        // Auszug nur, wenn der Begriff nicht schon im Titel steht
+        if (mb_stripos($title, $q) === false) {
+            $pos = mb_stripos($body, $q);
+            if ($pos !== false) {
+                $start = max(0, $pos - 60);
+                $len   = mb_strlen($q) + 150;
+                $excerpt = mb_substr($body, $start, $len);
+
+                if ($start > 0) {
+                    $sp = mb_strpos($excerpt, ' ');
+                    if ($sp !== false) {
+                        $excerpt = mb_substr($excerpt, $sp + 1);
+                    }
+                    $excerpt = '… ' . $excerpt;
+                }
+                if ($start + $len < mb_strlen($body)) {
+                    $sp = mb_strrpos($excerpt, ' ');
+                    if ($sp !== false) {
+                        $excerpt = mb_substr($excerpt, 0, $sp);
+                    }
+                    $excerpt .= ' …';
+                }
+            }
+        }
+
+        $out[] = array(
+            'id'      => $post->ID,
+            'link'    => get_permalink($post),
+            'title'   => $title,
+            'excerpt' => $excerpt,
+        );
+    }
+
+    wp_reset_postdata();
+
+    return $out;
+}
+
 /* ------------------------------------------------------------------------- *
  *  Customizer: Widget-Bereiche auch ohne manage_options speichern
  * ------------------------------------------------------------------------- */
