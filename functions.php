@@ -28,24 +28,51 @@ function childtheme_enqueue_parent_style() {
 
   /* TODO This needs more precision, we do not always need the flexslider js, but
     * for pages that use the featured posts feature ... */
-  function load_flexslider_js() {
-    //  if ( is_page_template( 'template-registration-page.php' ) ) {
-    if (1 == 1) {
+  // function load_flexslider_js() {
+  //   //  if ( is_page_template( 'template-registration-page.php' ) ) {
+  //   if (1 == 1) {
+  //     wp_enqueue_script(
+  //       'flexslider',
+  //       get_template_directory_uri() . '/assets/front/js/libs/jquery.flexslider.js',
+  //       array( 'jquery' ),
+  //       '',
+  //       false
+  //     );
+  //   }
+  // }
+
+  // add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
+
+  // /** Load featured_custom partial to render news as a flexslider.
+  // * Currently, the categories and encoded languages are hardcoded.
+  // * This could be changed in the future by passing in a parameter. */
+  // function h7lc_shortcode_featured_flexslider() {
+  //   ob_start();
+  //   get_template_part('parts/featured');
+  //   $ret = ob_get_contents();
+  //   ob_end_clean();
+  //   return $ret;
+  // }
+
+  // add_shortcode('featured_news', 'h7lc_shortcode_featured_flexslider' );
+
+   function load_flexslider_js() {
+    global $post;
+    if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'featured_news' ) ) {
       wp_enqueue_script(
         'flexslider',
         get_template_directory_uri() . '/assets/front/js/libs/jquery.flexslider.js',
         array( 'jquery' ),
-        '',
-        false
+        wp_get_theme()->get( 'Version' ), // statt '' -> echtes Cache-Busting statt WP-Core-Version
+        true // in den Footer, nicht render-blockierend im <head>
       );
     }
   }
-
-  add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );
+  add_action( 'wp_enqueue_scripts', 'load_flexslider_js' );                                                                                                                 
 
   /** Load featured_custom partial to render news as a flexslider.
-  * Currently, the categories and encoded languages are hardcoded.
-  * This could be changed in the future by passing in a parameter. */
+   * Currently, the categories and encoded languages are hardcoded.
+   * This could be changed in the future by passing in a parameter. */
   function h7lc_shortcode_featured_flexslider() {
     ob_start();
     get_template_part('parts/featured');
@@ -53,8 +80,8 @@ function childtheme_enqueue_parent_style() {
     ob_end_clean();
     return $ret;
   }
-
   add_shortcode('featured_news', 'h7lc_shortcode_featured_flexslider' );
+  
 
 /** END Flexslider News Startseite **/
 
