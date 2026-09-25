@@ -656,7 +656,7 @@ color: black;
   .below-fold-columns .wp-block-column:last-child {
     display: none !important;
   }
-  
+
   .below-fold-columns .wp-block-column:first-child {
     width: 100% !important;
     flex-basis: 100% !important;
@@ -674,4 +674,4 @@ margin-bottom: 14px;
 
 .podcast-copyright{
 line-height: 1.1rem;
-}}
+}

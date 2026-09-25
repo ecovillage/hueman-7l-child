@@ -1,63 +1,33 @@
-<!-- <script type="text/javascript">
-  // Check if first slider image is loaded, and load flexslider on document ready
-  jQuery(function($){
-    var firstImage = $('#flexslider-featured').find('img').filter(':first');
-    var image = firstImage.get(0);
+<script type="text/javascript">
+  // Load flexslider once the first slide image is ready (or immediately if it's already cached)
+  jQuery(function ($) {
+    var $slider = $('#flexslider-featured');
+    var image = $slider.find('img').filter(':first').get(0);
 
-    image.onload = function() {
-        $.when( $('#flexslider-featured').flexslider({
+    function initSlider() {
+      $slider.flexslider({
         animation: "slide",
-          useCSS: false, // Fix iPad flickering issue
-          directionNav: true,
-          controlNav: true,
-          pauseOnHover: true,
-          animationSpeed: 400,
-          smoothHeight: true,
-          touch: 1,
-          slideshow: true,
-          slideshowSpeed: 5000,
-        }) ).done( function() {
-          var $_self = $(this);
-          _trigger = function( $_self ) {
-            $_self.trigger('featured-slider-ready');
-          };
-          _trigger = _.debounce( _trigger, 100 );
-          _trigger( $_self );
-        } );
+        useCSS: false, // Fix iPad flickering issue
+        directionNav: true,
+        controlNav: true,
+        pauseOnHover: true,
+        animationSpeed: 400,
+        smoothHeight: true,
+        touch: 1,
+        slideshow: true,
+        slideshowSpeed: 5000
+      });
+      $slider.trigger('featured-slider-ready');
+    }
+
+    if (!image || (image.complete && image.naturalWidth > 0)) {
+      initSlider(); // Bild schon geladen (z. B. aus dem Cache) -> sofort starten
+    } else {
+      image.addEventListener('load', initSlider, { once: true });
+      image.addEventListener('error', initSlider, { once: true }); // nicht ewig hängen, falls Bild kaputt ist
     }
   });
-</script> -->
-
-  <script type="text/javascript">
-    // Load flexslider once the first slide image is ready (or immediately if it's already cached)
-    jQuery(function ($) {
-      var $slider = $('#flexslider-featured');
-      var image = $slider.find('img').filter(':first').get(0);
-      
-      function initSlider() {
-        $slider.flexslider({
-          animation: "slide",
-          useCSS: false, // Fix iPad flickering issue
-          directionNav: true,
-          controlNav: true,
-          pauseOnHover: true,
-          animationSpeed: 400,
-          smoothHeight: true,
-          touch: 1,
-          slideshow: true,
-          slideshowSpeed: 5000
-        });
-        $slider.trigger('featured-slider-ready');
-      } 
-      
-      if (!image || (image.complete && image.naturalWidth > 0)) {
-        initSlider(); // Bild schon geladen (z. B. aus dem Cache) -> sofort starten
-      } else {
-        image.addEventListener('load', initSlider, { once: true });
-        image.addEventListener('error', initSlider, { once: true }); // nicht ewig hängen, falls Bild kaputt ist
-      } 
-    });
-  </script>
+</script>
 
 <?php
   // Query featured entries
