@@ -204,6 +204,16 @@ function childtheme_enqueue_parent_style() {
 
 /** END Submenu in sidebar.php **/
 
+
+//Shortcode für automatisches Copyright Datum
+function jahr_shortcode () {
+$jahr = date('Y');
+return $jahr;
+}
+add_shortcode ('jahr', 'jahr_shortcode');
+
+
+
 /* ------------------------------------------------------------------------- *
  *  Customizer: Widget-Bereiche auch ohne manage_options speichern
  * ------------------------------------------------------------------------- */
