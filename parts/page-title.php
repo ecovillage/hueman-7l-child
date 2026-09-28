@@ -22,7 +22,7 @@ if ( is_single() ) {
     		</ul>
       <?php // For a CPT, we display the post title ?>
       <?php elseif ( is_single() && 'post' !== $post_type ): ?>
-        <h1><?php echo hu_get_page_title(); ?></h1>
+		<span class="page-title-text"><?php echo hu_get_page_title(); ?></span>
     	<?php elseif ( is_page() ): ?>
 			<?php /* Leaving vanilla hueman 3.7.25 parts/page-title.php */ ?>
 			<!--<h1><?php echo hu_get_page_title(); ?></h1>-->
