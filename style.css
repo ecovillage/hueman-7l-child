@@ -663,6 +663,7 @@ color: black;
   }
 }
 
+/* Jens: some styling for facts icons above articles, like here /de/oekologischer-fussabdruck/ */
 
 .icons-row {
 margin: 30px 0px;
@@ -675,3 +676,9 @@ margin-bottom: 14px;
 .podcast-copyright{
 line-height: 1.1rem;
 }
+
+
+/* Jens:  Auf Camp Seiten läuft der full width banner höhenmäßig aus dem ruder und verschluckt bei großen Bildschirmen den darunter liegenden Content. 
+Fix: bei den images im Banner full width einstellen. Zusätzlich diese Klassen */
+
+.entry .wp-block-cover .wp-block-cover__image-background { height: 100%; }
