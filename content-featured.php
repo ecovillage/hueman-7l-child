@@ -13,9 +13,9 @@
 			<?php endif; ?>
 		</div><!--/.post-thumbnail-->
 
-		<h2 class="post-title entry-title">
+		<h3 class="post-title entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2><!--/.post-title-->
+		</h3><!--/.post-title-->
 
 		<?php if ( ! hu_is_checked('featured-posts-full-content') ) : ?>
   		<div class="entry excerpt entry-summary">
