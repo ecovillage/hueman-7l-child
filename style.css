@@ -682,3 +682,10 @@ line-height: 1.1rem;
 Fix: bei den images im Banner full width einstellen. Zusätzlich diese Klassen */
 
 .entry .wp-block-cover .wp-block-cover__image-background { height: 100%; }
+
+/* Jens: smaller headings for featured articles  */
+ .featured h3.post-title.entry-title {
+    font-size: 1.6em;
+    letter-spacing: normal;
+    line-height: 1.3em;
+  }
