@@ -689,3 +689,10 @@ Fix: bei den images im Banner full width einstellen. Zusätzlich diese Klassen *
     letter-spacing: normal;
     line-height: 1.3em;
   }
+
+
+/* Jens: smaller headings for "angebote" in start-3  */
+
+h3.widget-title {
+  font-size: 1.25rem;
+}
