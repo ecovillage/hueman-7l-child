@@ -696,3 +696,11 @@ Fix: bei den images im Banner full width einstellen. Zusätzlich diese Klassen *
 h3.widget-title {
   font-size: 1.25rem;
 }
+
+/* and smaller headings for featured news */
+
+.featured h3.post-title.entry-title {
+  font-size: 1.3em;
+letter-spacing: normal;
+line-height: 1.3em;
+}
