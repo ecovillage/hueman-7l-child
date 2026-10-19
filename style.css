@@ -706,3 +706,44 @@ letter-spacing: normal;
 line-height: 1.3em;
 
 }
+
+/* Martin: Anpassungen für benutzerdefinierte Blöcke. Alle Namen beginnen per Konvention mit fk7l-, Blöcke dürfen nicht synchronisiert sein.
+Der Inhalt der Blöcke wird definiert entweder unter
+- Design -> Design -> Vorlagen, oder
+- Blöcke -> Wiederverwendbare Blöcke
+*/
+
+/* FAQs mit Akkordeon: Bei Klick auf die Frage fährt die Antwort als Akkordeon aus. */
+.fk7l-faq-with-accordion {
+    border: 4px solid #fafafa;
+    border-radius: 15px;
+    padding: 10px 20px 50px;
+}
+.fk7l-faq-with-accordion h2.wp-block-heading {
+    color: #989f30;
+    font-variant-caps: all-small-caps;
+    font-weight: bold !important;
+}
+.fk7l-faq-with-accordion .wp-block-accordion-heading {
+    color: #000 !important;
+    font-weight: bold !important;
+    font-size: 20.5px !important;
+}
+.fk7l-faq-with-accordion .wp-block-accordion-item {
+    padding-left: 20px;
+}
+.fk7l-faq-with-accordion .wp-block-accordion-item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 4px solid #fafafa;
+}
+.fk7l-faq-with-accordion .wp-block-accordion-heading__toggle-icon {
+    color: #989f30;
+    font-size: 170%;
+    height: inherit;
+    font-weight: normal;   
+}
+
+
+
