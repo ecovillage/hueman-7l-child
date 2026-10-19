@@ -663,6 +663,7 @@ color: black;
   }
 }
 
+/* Jens: some styling for facts icons above articles, like here /de/oekologischer-fussabdruck/ */
 
 .icons-row {
 margin: 30px 0px;
@@ -674,4 +675,34 @@ margin-bottom: 14px;
 
 .podcast-copyright{
 line-height: 1.1rem;
+}
+
+
+/* Jens:  Auf Camp Seiten läuft der full width banner höhenmäßig aus dem ruder und verschluckt bei großen Bildschirmen den darunter liegenden Content. 
+Fix: bei den images im Banner full width einstellen. Zusätzlich diese Klassen */
+
+.entry .wp-block-cover .wp-block-cover__image-background { height: 100%; }
+
+/* Jens: smaller headings for featured articles  */
+ .featured h3.post-title.entry-title {
+    font-size: 1.6em;
+    letter-spacing: normal;
+    line-height: 1.3em;
+  }
+
+
+
+/* Jens: smaller headings for "angebote" in start-3  */
+
+h3.widget-title {
+  font-size: 1.25rem;
+}
+
+/* and smaller headings for featured news */
+
+.featured h3.post-title.entry-title {
+  font-size: 1.3em;
+letter-spacing: normal;
+line-height: 1.3em;
+
 }
