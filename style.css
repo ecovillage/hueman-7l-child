@@ -27,7 +27,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 /* Darken font color. */
 body {
   color: #000;
@@ -64,7 +63,7 @@ body {
 
 /* Background in header on home front page */
 .home #header .pad {
-  background: url('/wp-content/uploads/2016/06/header_bg.jpg');
+  background: url("/wp-content/uploads/2016/06/header_bg.jpg");
 }
 
 /* Right sidebar (formerly orangish) */
@@ -96,13 +95,13 @@ body {
 }
 
 /* Darken link color a bit */
-.content a,article a,.content a:hover,article a:hover{
+.content a,
+article a,
+.content a:hover,
+article a:hover {
   font-weight: 400;
   color: #989f30;
 }
-
-
-
 
 /* START hier kann fast alles, was folgt raus - bitte nichts hinzufügen
 
@@ -434,28 +433,45 @@ li.calendar-event-row {
 
  ENDE hier kann fast alles, was hierdrüber ist raus - bitte nichts hinzufügen*/
 
-
-
-
-
-.breadcrumbs {color:#989f30;}
+.breadcrumbs {
+  color: #989f30;
+}
 
 /* Do not show list bullets for flexslider navigation */
-#flexslider-featured li {list-style: none;}
+#flexslider-featured li {
+  list-style: none;
+}
 
 /* fa-circle-thin: "\f1db" for menu items without children */
-.child-menu > li > ul > li > a.childless::before {content: '\f1db';visibility: hidden;}
-.child-menu a {color:#222;}
-.child-menu a:hover{color:#b5bd0d;}
+.child-menu > li > ul > li > a.childless::before {
+  content: "\f1db";
+  visibility: hidden;
+}
+.child-menu a {
+  color: #222;
+}
+.child-menu a:hover {
+  color: #b5bd0d;
+}
 /* Black highlight of left child menus current page. */
-.sidebar-content .child-menu .current_page_item > a {color:black;}
+.sidebar-content .child-menu .current_page_item > a {
+  color: black;
+}
 
 /* Image caption now serves as heading. Change color to whitish. */
-.caption {color: white;display: inline-block;background: #c9d30e;}
+.caption {
+  color: white;
+  display: inline-block;
+  background: #c9d30e;
+}
 /* Image caption now serves as heading. Change color to whitish, margins. */
-.caption h1 {color: white;margin-left: 10px;margin-right: 10px;margin-top: -10px;margin-bottom: -10px;}
-
-
+.caption h1 {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
 
 /* Jens: no klicky on header image */
 #header-image-wrap {
@@ -467,7 +483,7 @@ li.calendar-event-row {
   padding-bottom: 0;
 }
 .page-title {
-	background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 /* general */
@@ -479,7 +495,7 @@ li.calendar-event-row {
 
 /* util */
 .center {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .wp-block-columns {
@@ -487,15 +503,26 @@ li.calendar-event-row {
 }
 
 /* Jens: fullwidth page template */
-.container.fullwidth {padding: 0 0;}
-.container-inner.fullwidth {max-width:100%;}
-#page .container-inner.fullwidth .main .pad {padding: 0 !important;}
+.container.fullwidth {
+  padding: 0 0;
+}
+.container-inner.fullwidth {
+  max-width: 100%;
+}
+#page .container-inner.fullwidth .main .pad {
+  padding: 0 !important;
+}
 @media (max-width: 719px) {
-  .fullwidth .main-inner 	{margin-inline: 1rem;}
+  .fullwidth .main-inner {
+    margin-inline: 1rem;
+  }
 }
 
 /* Jens: we don't want breadcrumbs on fullwidth pages */
-.fullwidth .page-title {display: none;visibility:hidden;}
+.fullwidth .page-title {
+  display: none;
+  visibility: hidden;
+}
 
 /* Jens: We want custom colorz on our menus on camp sites like sommercamp etc
 #menu-sommercamp-1:has(li.current_page_item) li.current_page_item,#menu-sommercamp-1:has(li.current-page-item) li.current-page-item {background-color: #9b9c96;}
@@ -506,32 +533,70 @@ li.calendar-event-row {
 #menu-silvesterretreat-1:has(li.current-page-ancestor) li.current-page-ancestor,#menu-silvesterretreat-1:has(li.current-page-parent) li.current-page-parent {background-color:inherit;}
 */
 
-
-
 /* Matthias Drees - Nach dem Main Theme Update */
 
 /* Global */
 /*.pad {padding: 30px 30px 20px;}*/
 
-header > .container{padding:0px;}
-header > .container .container-inner{margin:0;max-width:inherit;}
+header > .container {
+  padding: 0px;
+}
+header > .container .container-inner {
+  margin: 0;
+  max-width: inherit;
+}
 
-#nav-topbar li.current_page_item, #nav-topbar li.current-page-ancestor, #nav-topbar li.current-page-parent, #nav-topbar li.current-page-item, #nav-topbar li.current-menu-parent, #nav-topbar li.current-menu-ancestor, #nav-topbar li.current-menu-item{background-color:rgb(181,189,13);}
+#nav-topbar li.current_page_item,
+#nav-topbar li.current-page-ancestor,
+#nav-topbar li.current-page-parent,
+#nav-topbar li.current-page-item,
+#nav-topbar li.current-menu-parent,
+#nav-topbar li.current-menu-ancestor,
+#nav-topbar li.current-menu-item {
+  background-color: rgb(181, 189, 13);
+}
 
-#bottom-welcome-note a, .comment-body a, .widget_text a, article .entry a{text-decoration:none;}
+#bottom-welcome-note a,
+.comment-body a,
+.widget_text a,
+article .entry a {
+  text-decoration: none;
+}
 
-.page-image-text .caption{padding:15px 10px;line-height:normal;}
-article.post .image-container{margin-bottom:30px;}
+.page-image-text .caption {
+  padding: 15px 10px;
+  line-height: normal;
+}
+article.post .image-container {
+  margin-bottom: 30px;
+}
 
 /* bessermitfahren.de Mitfahrzentrale Formular-Snippet */
-#bmfcontent input, #bmfcontent select, .bmfoverlay input, .bmfoverlay select {line-height:initial!important;height:40px!important;}
+#bmfcontent input,
+#bmfcontent select,
+.bmfoverlay input,
+.bmfoverlay select {
+  line-height: initial !important;
+  height: 40px !important;
+}
 
 /* Matthias: Social Media Icons im Footer entfernen */
-#footer-bottom .grid.one-half.last{display:none!important;visibility:hidden;}
+#footer-bottom .grid.one-half.last {
+  display: none !important;
+  visibility: hidden;
+}
 
 /* Matthias: contextulizer funktioniert bei 'Sidebares nicht anzeigen' nicht - darum Sidebars per CSS auf Startseite entfernt und mittleren Container verbreitert */
-.page-id-16483 .sidebar.s1,.page-id-16483 .sidebar.s2{display:none!important;visibility:hidden;}
-.page-id-16483.col-3cm .container-inner > .main::before,.page-id-16483.col-3cm .container-inner > .main::after,.page-id-16483.col-3cm .main-inner{padding:0;}
+.page-id-16483 .sidebar.s1,
+.page-id-16483 .sidebar.s2 {
+  display: none !important;
+  visibility: hidden;
+}
+.page-id-16483.col-3cm .container-inner > .main::before,
+.page-id-16483.col-3cm .container-inner > .main::after,
+.page-id-16483.col-3cm .main-inner {
+  padding: 0;
+}
 
 /* Matthias: Fix Height to 0 in Mobile Menu */
 /*.header-mobile-sticky #header{min-height:0;height:0!important;}*/
@@ -544,12 +609,22 @@ article.post .image-container{margin-bottom:30px;}
 .post-hover:hover .post-title a{color:#cad133;}*/
 
 /* Matthias: Menü-Punkt "Mitglied werden" */
-.menu-item-26481{background:#f29400;font-weight:bold;}
-.menu-item-26481 a{color:#fff!important;}
+.menu-item-26481 {
+  background: #f29400;
+  font-weight: bold;
+}
+.menu-item-26481 a {
+  color: #fff !important;
+}
 
 /* Matthias: Suchfeld */
-.search-expand-inner{background:rgba(201,211,14,0.8)}
-#topbar-header-search [role="search"].search-form input[type="submit"]{display:none;visibility:hidden;}
+.search-expand-inner {
+  background: rgba(201, 211, 14, 0.8);
+}
+#topbar-header-search [role="search"].search-form input[type="submit"] {
+  display: none;
+  visibility: hidden;
+}
 
 /* Matthias: Highlight current position in menu in darker green
 #nav-topbar li.current_page_item,
@@ -563,7 +638,6 @@ li.current-page-item {
  .is-scrolled #nav-topbar {background-color: rgba(201, 211, 14, 0.92) !important;}
 */
 
-
 /* Matthias: Sommercamp Seite Menü Farbanpassung per Page ID und Parent Page ID
 .page-id-5787 .search-expand-inner,.page-id-5787 #nav-topbar.nav-container,.page-id-5787 #header #nav-mobile,.page-id-5787 .is-scrolled #header #nav-mobile,.parent-pageid-5787 .search-expand-inner,.parent-pageid-5787 #nav-topbar.nav-container,.parent-pageid-5787 #header #nav-mobile,.parent-pageid-5787 .is-scrolled #header #nav-mobile{background:#7e7be7!important;}
 .page-id-5787 .is-scrolled #nav-topbar.nav-container{background-color:rgba(126,123,231,0.8)!important;}
@@ -573,43 +647,52 @@ li.current-page-item {
 .page-id-5787 header{height:0;}
 .page-id-5787 header .container.fullwidth{display:none;visibility:hidden;}*/
 
-
 /* Matthias: Silvesterretreat Seite Menü - Farbanpassung per Page ID und Parent Page ID */
 /*.page-id-23132 .search-expand,.page-id-23132 #nav-topbar.nav-container,.page-id-23132 #header #nav-mobile,.page-id-23132 .is-scrolled #header #nav-mobile,.parent-pageid-23132 .search-expand,.parent-pageid-23132 #nav-topbar.nav-container,.parent-pageid-23132 #header #nav-mobile,.parent-pageid-23132 .is-scrolled #header #nav-mobile{background:#d5c088!important;}
 .page-id-23132 #nav-topbar .nav li a,.parent-pageid-23132 #nav-topbar .nav li a{color:#fff;}*/
 
-
-
-
 /* Tablet - 800px, 768px & 720px */
 @media only screen and (min-width: 720px) and (max-width: 800px) {
-
 }
 
 /* Mobile - 480px & 320px */
 @media only screen and (max-width: 719px) {
-	header > .container .container-inner{display:none;visibility:hidden;}
-	#header .nav-container .nav li.current-menu-item > a, #header .nav-container .nav li.current-post-parent > a, #header .nav-container .nav li.current_page_item > a,#header .nav-container .nav li a,#header .hu-dropdown-toggle,.themeform button[type="submit"], input[type="submit"]{color:black;}
-	#header .nav-container .nav li.current-menu-item > a, #header .nav-container .nav li.current-post-parent > a, #header .nav-container .nav li.current_page_item > a{color:#fff;text-decoration:none;}
+  header > .container .container-inner {
+    display: none;
+    visibility: hidden;
+  }
+  #header .nav-container .nav li.current-menu-item > a,
+  #header .nav-container .nav li.current-post-parent > a,
+  #header .nav-container .nav li.current_page_item > a,
+  #header .nav-container .nav li a,
+  #header .hu-dropdown-toggle,
+  .themeform button[type="submit"],
+  input[type="submit"] {
+    color: black;
+  }
+  #header .nav-container .nav li.current-menu-item > a,
+  #header .nav-container .nav li.current-post-parent > a,
+  #header .nav-container .nav li.current_page_item > a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 /* Mobile - 320px */
 @media only screen and (max-width: 479px) {
-
 }
-
 
 /* Martin: Remove title, author etc. from podcast pages */
 article.podcast h1.post-title {
-	display: none;
+  display: none;
 }
 
 /* Jens: additional styling for new section "further reading" in podcast shownotes*/
 .further-reading {
-  margin: 15px 0!important;
-  border-radius: 8px!important;
-  padding: 34px 24px!important;
-  border: 1px solid rgb(127 127 127 / .25);
+  margin: 15px 0 !important;
+  border-radius: 8px !important;
+  padding: 34px 24px !important;
+  border: 1px solid rgb(127 127 127 / 0.25);
 }
 
 /* Jens: we want a bit more space */
@@ -618,26 +701,24 @@ article.podcast h1.post-title {
   margin-right: 20px;
   margin-bottom: 1em;
   margin-top: 1em;
-
 }
 .wp-block-details > p {
-margin-left: 30px;
+  margin-left: 30px;
 }
-
 
 /* Jens: additional styling for index*/
 .index {
-margin: 15px 0 !important;
+  margin: 15px 0 !important;
   background-color: #6c6c650a !important;
   border-radius: 6px !important;
   padding: 19px 24px !important;
 }
 .index ul li {
-list-style: disclosure-closed;
+  list-style: disclosure-closed;
 }
 
-.index ul li a{
-color: black;
+.index ul li a {
+  color: black;
 }
 
 /* Nur wenn das äußere li eine ul hat UND keinen direkten a-Tag */
@@ -666,31 +747,23 @@ color: black;
 /* Jens: some styling for facts icons above articles, like here /de/oekologischer-fussabdruck/ */
 
 .icons-row {
-margin: 30px 0px;
+  margin: 30px 0px;
 }
 .icons-row img {
-height: 80px;
-margin-bottom: 14px;
+  height: 80px;
+  margin-bottom: 14px;
 }
 
-.podcast-copyright{
-line-height: 1.1rem;
+.podcast-copyright {
+  line-height: 1.1rem;
 }
-
 
 /* Jens:  Auf Camp Seiten läuft der full width banner höhenmäßig aus dem ruder und verschluckt bei großen Bildschirmen den darunter liegenden Content. 
 Fix: bei den images im Banner full width einstellen. Zusätzlich diese Klassen */
 
-.entry .wp-block-cover .wp-block-cover__image-background { height: 100%; }
-
-/* Jens: smaller headings for featured articles  */
- .featured h3.post-title.entry-title {
-    font-size: 1.6em;
-    letter-spacing: normal;
-    line-height: 1.3em;
-  }
-
-
+.entry .wp-block-cover .wp-block-cover__image-background {
+  height: 100%;
+}
 
 /* Jens: smaller headings for "angebote" in start-3  */
 
@@ -702,9 +775,8 @@ h3.widget-title {
 
 .featured h3.post-title.entry-title {
   font-size: 1.3em;
-letter-spacing: normal;
-line-height: 1.3em;
-
+  letter-spacing: normal;
+  line-height: 1.3em;
 }
 
 /* Martin: Anpassungen für benutzerdefinierte Blöcke. Alle Namen beginnen per Konvention mit fk7l-, Blöcke dürfen nicht synchronisiert sein.
@@ -715,35 +787,32 @@ Der Inhalt der Blöcke wird definiert entweder unter
 
 /* FAQs mit Akkordeon: Bei Klick auf die Frage fährt die Antwort als Akkordeon aus. */
 .fk7l-faq-with-accordion {
-    border: 4px solid #fafafa;
-    border-radius: 15px;
-    padding: 10px 20px 50px;
+  border: 4px solid #fafafa;
+  border-radius: 15px;
+  padding: 10px 20px 50px;
 }
 .fk7l-faq-with-accordion h2.wp-block-heading {
-    color: #989f30;
-    font-variant-caps: all-small-caps;
-    font-weight: bold !important;
+  color: #989f30;
+  font-variant-caps: all-small-caps;
+  font-weight: bold !important;
 }
 .fk7l-faq-with-accordion .wp-block-accordion-heading {
-    color: #000 !important;
-    font-weight: bold !important;
-    font-size: 20.5px !important;
+  color: #000 !important;
+  font-weight: bold !important;
+  font-size: 20.5px !important;
 }
 .fk7l-faq-with-accordion .wp-block-accordion-item {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 .fk7l-faq-with-accordion .wp-block-accordion-item::after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-bottom: 4px solid #fafafa;
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 4px solid #fafafa;
 }
 .fk7l-faq-with-accordion .wp-block-accordion-heading__toggle-icon {
-    color: #989f30;
-    font-size: 170%;
-    height: inherit;
-    font-weight: normal;   
+  color: #989f30;
+  font-size: 170%;
+  height: inherit;
+  font-weight: normal;
 }
-
-
-
