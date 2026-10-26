@@ -951,3 +951,80 @@ div.fk7l-cta-page-end {
     justify-content: center;
   }
 }
+
+/* Zitat mit Foto: unförmig umrandetes Foto, grüne Anführungszeichen teils über dem Bild */
+.fk7l-quotation-with-photo {
+  --fk7l-quote-blob: 58% 42% 55% 45% / 52% 58% 42% 48%;
+  align-items: flex-start;
+  gap: 0;
+  margin: 40px 0;
+}
+.fk7l-quotation-with-photo .wp-block-image {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+.fk7l-quotation-with-photo .wp-block-image img {
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+/* weißer Rand: außerhalb der unförmigen Kontur ist alles weiß und überdeckt das Foto */
+.fk7l-quotation-with-photo .wp-block-image::after {
+  border-radius: var(--fk7l-quote-blob);
+  box-shadow: 0 0 0 100vmax #fff;
+  content: "";
+  inset: 6%;
+  position: absolute;
+}
+.fk7l-quotation-with-photo .wp-block-quote {
+  color: #222;
+  font-family: "Titillium", Arial, sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 60px 0 0 5%;
+  position: relative;
+}
+.fk7l-quotation-with-photo .wp-block-quote::before {
+  color: var(--color-primary);
+  content: "\201D";
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 180px;
+  font-style: normal;
+  font-weight: 700;
+  left: -8%;
+  line-height: 1;
+  position: absolute;
+  top: -25px;
+  z-index: 3;
+}
+.fk7l-quotation-with-photo .wp-block-quote p {
+  background: linear-gradient(transparent 45%, rgb(var(--color-primary-rgb) / 0.35) 45%);
+  box-decoration-break: clone;
+  display: inline;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 2;
+  padding: 0 4px;
+}
+.fk7l-quotation-with-photo .wp-block-quote cite {
+  display: block;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+  text-align: right;
+  text-transform: uppercase;
+}
+/* Spalten stapeln sich (WordPress-Umbruch bei 781px): Foto kleiner und zentriert, Anführungszeichen über dem Text statt über dem Foto */
+@media (max-width: 781px) {
+  .fk7l-quotation-with-photo .wp-block-image {
+    margin: 0 auto;
+    max-width: 180px;
+  }
+  .fk7l-quotation-with-photo .wp-block-quote::before {
+    left: 0;
+  }
+}
