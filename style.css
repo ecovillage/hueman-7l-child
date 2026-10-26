@@ -880,6 +880,10 @@ div.fk7l-cta-page-end {
   font-weight: 800;
   background: #f0f0f0;
 }
+/* Textmarkierung in den Textspalten (nicht beim Knopf): dunkelgrau, damit sie sich vom grünen Grund abhebt */
+.fk7l-cta-page-end .wp-block-column:not(:has(.wp-block-buttons)) ::selection {
+  background: #666;
+}
 /* Spalten stapeln sich (WordPress-Umbruch bei 781px): Text und Knopf zentrieren */
 @media (max-width: 781px) {
   .fk7l-cta-page-end .wp-block-column {
